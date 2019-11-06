@@ -86,6 +86,7 @@
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
           if (this.readyState == 4 && this.status == 200) {
+            console.log("readyState 4 and status 200 : " + this);
             cFunction(this);
           }
         };
