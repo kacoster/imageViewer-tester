@@ -122,9 +122,9 @@
       Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
         function(message) {
             imgNumb =  parseInt(JSON.stringify(message));
-            console.log("Tester : " +   batnum + "/" + getBatchNumber());
+            //console.log("Tester : " +   batnum + "/" + getBatchNumber());
                 Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-              1 + "/" + getBatchNumber());
+              1 + " / " + getBatchNumber());
            // console.log("Image Number from the Slider : " + imgNumb);
             initial(imgNumb,0);
           }
@@ -270,12 +270,12 @@
                batnum++;
                console.log("Tester : " +   batnum + "/" + getBatchNumber());
                 Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-              (batnum+1) + "/" + getBatchNumber());
+              (batnum+1) + " / " + getBatchNumber());
              initial(imgNumb, batnum);
 
         }else{
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-             getBatchNumber() + "/" + getBatchNumber());
+             getBatchNumber() + " / " + getBatchNumber());
           initial(imgNumb, getBatchNumber()-1);
           batnum = getBatchNumber()-1;
         }
@@ -289,12 +289,12 @@
            batnum--;
         if (batnum > 0 ) {
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-              (batnum+1) + "/" + getBatchNumber());
+              (batnum+1) + " / " + getBatchNumber());
           initial(imgNumb ,batnum);
         }else{
 
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-             1 + "/" + getBatchNumber());
+             1 + " / " + getBatchNumber());
           initial(imgNumb, 0);
           batnum = 0;
 
