@@ -118,7 +118,7 @@
         ************************************************************************/
 
       // Read the batch Image Number from from slider
-      Shiny.addCustomMessageHandler("batchImageSizeMessage",
+      Shiny.addCustomMessageHandler("img_clssfctn_ud_btch_img_thrshld",
         function(message) {
             imgNumb =  parseInt(JSON.stringify(message));
             console.log("Image Number from the Slider : " + imgNumb);
