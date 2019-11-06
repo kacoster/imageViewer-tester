@@ -266,9 +266,13 @@
       if(batnum < getBatchNumber()-1){
                batnum++;
              initial(imgNumb, batnum);
+             Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
+              batnum + "/" + getBatchNumber());
         }else{
           initial(imgNumb, getBatchNumber()-1);
           batnum = getBatchNumber()-1;
+          Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
+              batnum + "/" + getBatchNumber());
         }
       }
 
@@ -279,10 +283,14 @@
       function prev() {
            batnum--;
         if (batnum > 0 ) {
+           Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
+              batnum + "/" + getBatchNumber());
           initial(imgNumb ,batnum);
         }else{
           initial(imgNumb, 0);
           batnum = 0;
+          Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
+              batnum + "/" + getBatchNumber());
         }
       }
       /************************************************************************/
