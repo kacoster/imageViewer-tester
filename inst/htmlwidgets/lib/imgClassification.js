@@ -64,7 +64,7 @@
       var result;
       var start, end;
 
-      var batnum = 1; // default batch Number
+      var batnum = 0; // default batch Number
       var imgNumb = 9; // default image size
 
 
@@ -95,7 +95,7 @@
       }
 
       function myFunction1(xhttp) {
-        console.log("myFunction1()");
+        //console.log("myFunction1()");
         ar = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
         ar.splice(0, 1);
         ar[0] = ar[0].replace("Source", "");
@@ -122,8 +122,8 @@
       Shiny.addCustomMessageHandler("batchImageSize",
         function(message) {
             imgNumb =  parseInt(JSON.stringify(message));
-            console.log("Image Number from the Slider v11 : " + imgNumb);
-            initial(imgNumb,1);
+           // console.log("Image Number from the Slider : " + imgNumb);
+            initial(imgNumb,0);
           }
       );
 
