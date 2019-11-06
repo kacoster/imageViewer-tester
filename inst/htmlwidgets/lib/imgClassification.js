@@ -12,7 +12,7 @@
        * * ready for JavaScript code to execute
       */
       $(document).ready(function () {
-          console.log("v 0.10");
+          console.log("v 0.11");
         //readServerData();
         $("#goButton").on("click", function () {
           // send message to Shiny
@@ -64,7 +64,7 @@
       var result;
       var start, end;
 
-      var batnum = 0; // default batch Number
+      var batnum = 1; // default batch Number
       var imgNumb = 9; // default image size
 
 
@@ -121,7 +121,7 @@
       Shiny.addCustomMessageHandler("img_clssfctn_ud_btch_img_thrshld",
         function(message) {
             imgNumb =  parseInt(JSON.stringify(message));
-            console.log("Image Number from the Slider : " + imgNumb);
+            console.log("Image Number from the Slider v11 : " + imgNumb);
             initial(imgNumb,0);
           }
       );
