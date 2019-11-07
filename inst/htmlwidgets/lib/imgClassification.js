@@ -86,7 +86,7 @@
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
           if (this.readyState == 4 && this.status == 200) {
-            console.log("readyState 4 and status 200 : " + this);
+            //console.log("readyState 4 and status 200 : " + this);
             cFunction(this);
           }
         };
@@ -95,14 +95,14 @@
       }
 
       function myFunction1(xhttp) {
-        //console.log("myFunction1()");
+        console.log("myFunction1()");
         ar = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
         ar.splice(0, 1);
         ar[0] = ar[0].replace("Source", "");
         ar[0] = ar[ar.length - 1] + ar[0];
         ar.splice(ar.length - 1, 1);
         console.log("Number of Images : " + ar.length );
-        //initial(9,0);
+        initial(9,0);
        /************************************************************************
        Shiny.addCustomMessageHandler("testmessage",
           function (message) {
