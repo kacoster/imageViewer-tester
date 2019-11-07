@@ -64,8 +64,8 @@
       var result;
       var start, end;
 
-      var batnum = 0; // default batch Number
-      var imgNumb = 9; // default image size
+      var batnum ; // default batch Number
+      var imgNumb; // default image size
 
 
 
