@@ -16,10 +16,10 @@ dependencies:
 #  src: htmlwidgets
 #  script: ./lib/fetchServerData.js
 #  #style: ./lib/style.css
-#- name: createViewerComponent
-#  version: 0.0.1
-#  src: htmlwidgets
-#  script: ./lib/createViewerComponent.js
+- name: imageIndentification
+  version: 0.0.1
+  src: htmlwidgets
+  script: ./lib/imageIndentification.js
 #  #style: ./lib/style.css
 - name: jquery
   version: 0.4.10

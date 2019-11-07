@@ -10,10 +10,10 @@
       /**
        * code included inside $(document).ready() will only run once the page is
        * * ready for JavaScript code to execute
-      */
+     
       $(document).ready(function () {
           console.log("v 0.11");
-        //readServerData();
+        //fetchServerData();
         $("#goButton").on("click", function () {
           // send message to Shiny
           Shiny.onInputChange("sources", sendDataToShinny());
@@ -41,7 +41,7 @@
          Shiny.onInputChange("prev", prev());
        });
 
-       /**********************************************************************/
+       **********************************************************************
         // For Testing Purposes
         $("#prev").on("click", function () {
             prev();
@@ -49,14 +49,15 @@
        $("#next").on("click", function () {
            next();
        });
-      /**********************************************************************/
+      **********************************************************************
 
 
 
       });
+       */
 
       /**Program Global Variables */
-      var ar = [];
+      var imageArray = [];
       var resetSel = [];
       var selected_images = [];
       var tempRemoved ;
@@ -74,14 +75,14 @@
        * @parameter msg A message from Shiny indication the csv file
        *
        */
-      function readServerData(msg) {  // datapath , batchNumber , loadSize
+      function fetchServerData(msg) {  // datapath , batchNumber , loadSize
         var csvfile = "" + msg + "";
-        console.log("readServerData : " +  csvfile);
-        loadDoc( csvfile, myFunction1);
+        console.log("fetchServerData : " +  csvfile);
+        passData( csvfile, myFunction1);
       }
 
-      function loadDoc(url, cFunction) {
-        console.log("In loadDoc()");
+      function passData(url, cFunction) {
+        console.log("In passData()");
         var xhttp;
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
@@ -95,14 +96,14 @@
       }
 
       function myFunction1(xhttp) {
-        //console.log("myFunction1()");
-        ar = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
-        ar.splice(0, 1);
-        ar[0] = ar[0].replace("Source", "");
-        ar[0] = ar[ar.length - 1] + ar[0];
-        ar.splice(ar.length - 1, 1);
-        console.log("Number of Images : " + ar.length );
-        //initial(9,0);
+        console.log("myFunction1()");
+        imageArray = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
+        imageArray.splice(0, 1);
+        imageArray[0] = imageArray[0].replace("Source", "");
+        imageArray[0] = imageArray[imageArray.length - 1] + imageArray[0];
+        imageArray.splice(imageArray.length - 1, 1);
+        console.log("Number of Images : " + imageArray.length );
+        renderImages(9,0);
        /************************************************************************
        Shiny.addCustomMessageHandler("testmessage",
           function (message) {
@@ -113,12 +114,12 @@
         Shiny.addCustomMessageHandler("testmsg",
           function (message) {
             batnum = parseInt(JSON.stringify(message));
-            initial(imgNumb, batnum);
+            renderImages(imgNumb, batnum);
           }
         );
         ************************************************************************/
 
-      // Read the batch Image Number from from slider : img_clssfctn_ud_btch_img_thrshld
+      /* Read the batch Image Number from from slider : img_clssfctn_ud_btch_img_thrshld
       Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
         function(message) {
             imgNumb =  parseInt(JSON.stringify(message));
@@ -126,14 +127,14 @@
                 Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               1 + " / " + getBatchNumber());
            // console.log("Image Number from the Slider : " + imgNumb);
-            initial(imgNumb,0);
+            renderImages(imgNumb,0);
           }
-      );
+      );*/
 
       /*Shiny.addCustomMessageHandler("btch_num_msg",
       function(message) {
         batnum =  parseInt(JSON.stringify(message));
-        initial(imgNumb,batnum);
+        renderImages(imgNumb,batnum);
       }
       );*/
       }
@@ -221,25 +222,25 @@
       }
 
       /**
-       * @function initial(a,b)
+       * @function renderImages(a,b)
        * @description determines the images to be rendered
        * @parameter - number of images of render
        *           - batch number of the image lot
        * @returns void
        *
       */
-      function initial(imgnumb,bat) {
-        console.log("In initial()");
+      function renderImages(imgnumb,bat) {
+        console.log("In renderImages()");
           clearImages();
           start = bat * imgnumb;
           end = start + imgnumb;
-          result = ar.slice(start, end);
+          result = imageArray.slice(start, end);
           callImges(result);
       }
 
       function tester()
       {
-        initial(9,0);
+        renderImages(9,0);
       }
 
       /**
@@ -247,23 +248,23 @@
        * @description computes the total number of available batches
        * @constrains the number of images per batchimgNumb()
        * @return the total number of batches
-      */
+      
       function getBatchNumber()
       {
 
 
-        if((ar.length %  imgNumb)==0){
-            return (ar.length / imgNumb);
+        if((imageArray.length %  imgNumb)==0){
+            return (imageArray.length / imgNumb);
         }
         else{
-          return ((Math.floor(ar.length / imgNumb)) + 1);
+          return ((Math.floor(imageArray.length / imgNumb)) + 1);
         }
       }
-
+      */
       /**
        * @description computes and displays the next image batch
        *
-      */
+    
       function next() {
 
       if(batnum < getBatchNumber()-1){
@@ -271,55 +272,56 @@
                console.log("Tester : " +   batnum + "/" + getBatchNumber());
                 Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (batnum+1) + " / " + getBatchNumber());
-             initial(imgNumb, batnum);
+             renderImages(imgNumb, batnum);
 
         }else{
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
              getBatchNumber() + " / " + getBatchNumber());
-          initial(imgNumb, getBatchNumber()-1);
+          renderImages(imgNumb, getBatchNumber()-1);
           batnum = getBatchNumber()-1;
         }
       }
-
+        */
        /**
        * @description computes and displays the previous image batch
        *
-      */
+      
       function prev() {
            batnum--;
         if (batnum > 0 ) {
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (batnum+1) + " / " + getBatchNumber());
-          initial(imgNumb ,batnum);
+          renderImages(imgNumb ,batnum);
         }else{
 
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
              1 + " / " + getBatchNumber());
-          initial(imgNumb, 0);
+          renderImages(imgNumb, 0);
           batnum = 0;
 
         }
       }
+      */
       /************************************************************************/
 
       /************************************************************************/
 
       /**
        * @description - creates html component to display the images
-       * @param {String} ar - an array of images
-       * @returns {void} var src = ( ( ar[0].trim()).replace(/['"]+/g, ''));
+       * @param {String} imageArray - an array of images
+       * @returns {void} var src = ( ( imageArray[0].trim()).replace(/['"]+/g, ''));
       someText = src.replace(/(\r\n|\n|\r)/gm,"");
 
        */
-      function imgloop(ar) {
+      function createImageComponent(imageArray) {
 
-        console.log("In imgloop");
-        for (i = 0; i < ar.length; i++) {
+        console.log("In createImageComponent");
+        for (i = 0; i < imageArray.length; i++) {
           var liId = i;
           var img = new Image();
           var ul = document.getElementById('x');
           // img.onload = function() {
-          img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
+          img.src = ((imageArray[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
           console.log("img.src " + img.src);
           // Triming the double quotes passed on each image src
           img.alt = "Camera Trap";
@@ -346,7 +348,7 @@
        */
       function callImges(arry) {
         console.log("IN callImges()");
-        imgloop(arry);
+        createImageComponent(arry);
       }
 
       /**
@@ -389,7 +391,7 @@
        * @function selectAll()
        * @description selects all the panel images
        * @return selected_images
-      */
+    
         function selectAll() {
           $("img").each(function (index) {
             $('#' + $(this).attr('id') + '').css({
@@ -402,12 +404,12 @@
           return selected_images;
 
         }
-
+          */
       /**
        * @function deSelectAll()
        * @description deselects the currently selected images
        * @returns void
-      */
+      
         function deSelectAll() {
           $("img").each(function (index) {
             $('#' + $(this).attr('id') + '').css({
@@ -418,12 +420,12 @@
           });
           selected_images.length = 0;
         }
-
+        */
       /**
        * @function sendDataToShinny()
        * @returns an array of selected images
        * @description sends the client selected image data back to server (Shinny)
-      */
+     
         function sendDataToShinny(){
           if (selected_images === undefined || selected_images.length === 0) {
             alert("No Images Selected !!");
@@ -435,3 +437,4 @@
             return copy_selected_images;
           }
         }
+         */
