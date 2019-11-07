@@ -250,9 +250,7 @@
       */
       function getBatchNumber()
       {
-
-
-        if((ar.length %  imgNumb)==0){
+        if((ar.length %  imgNumb)===0){
             return (ar.length / imgNumb);
         }
         else{
