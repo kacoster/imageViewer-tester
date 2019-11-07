@@ -36,7 +36,8 @@ HTMLWidgets.widget({
         }
         else{
 
-          console.log("CASE : identification module");
+          console.log("CASE : spcs_idntfctn_id_rf_1");
+          readServerData(x.message);
           //var classifierViewer1 = new  ModuleViewer(10);
           //classifierViewer1.docReady();
           //classifierViewer1.readServerData(x.message);
