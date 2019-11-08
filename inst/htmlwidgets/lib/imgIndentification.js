@@ -21,8 +21,6 @@
     var imgNumb = 0; // default image size
 
 
-
-    
      /* Function to read Server Data from Server-Side
      * @parameter msg A message from Shiny indication the csv file
      *
@@ -55,7 +53,7 @@
       imageArray[0] = imageArray[imageArray.length - 1] + imageArray[0];
       imageArray.splice(imageArray.length - 1, 1);
       console.log("Number of Images : " + imageArray.length );
-      displayImages(50,0);
+      displayImages(20,0);
      /************************************************************************
      Shiny.addCustomMessageHandler("testmessage",
         function (message) {
@@ -80,7 +78,7 @@
             1 + " / " + getBatchNumber());
          // console.log("Image Number from the Slider : " + imgNumb);
           displayImages(imgNumb,0);
-       
+
     );
 
     /*Shiny.addCustomMessageHandler("btch_num_msg",
@@ -106,7 +104,7 @@
           });
     }
 
-    
+
     /**
     * Helper function for observeClick()
     * @parameter - array of selected images - highlighted_images
@@ -149,8 +147,8 @@
     function observeClick(event) {
 
         // send message to Shiny
-        //vjsCall();
-        var imageName = event.target.src;
+        vjsCall();
+       /* var imageName = event.target.src;
 
       if (event.shiftKey) {
         checkExistance(highlighted_images, event.target.src, event.target.id);
@@ -158,7 +156,7 @@
       } else {
 
         vjsCall();
-      }
+      }*/
     }
 
     /**
@@ -183,9 +181,9 @@
       displayImages(9,0);
     }
 
-    
 
-   
+
+
     /************************************************************************/
 
     /************************************************************************/
