@@ -149,8 +149,8 @@
     function observeClick(event) {
 
         // send message to Shiny
-        vjsCall();
-        /*var imageName = event.target.src;
+        //vjsCall();
+        var imageName = event.target.src;
 
       if (event.shiftKey) {
         checkExistance(highlighted_images, event.target.src, event.target.id);
@@ -158,7 +158,7 @@
       } else {
 
         vjsCall();
-      }*/
+      }
     }
 
     /**
