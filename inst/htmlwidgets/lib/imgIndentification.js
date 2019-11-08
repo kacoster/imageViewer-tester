@@ -25,15 +25,15 @@
     
      /* Function to read Server Data from Server-Side
      * @parameter msg A message from Shiny indication the csv file
-     * const multiplyES6 = (x, y) => { return x * y };
+     *
      */
-    const fetchServerData = (msg) => {  // datapath , batchNumber , loadSize
+    function fetchServerData(msg) {  // datapath , batchNumber , loadSize
       var csvfile = "" + msg + "";
       console.log("readServerData : " +  csvfile);
       getData( csvfile, processXHTTPResponse);
     }
 
-    const getData = (url, cFunction) => {
+    function getData(url, cFunction) {
       console.log("In getData()");
       var xhttp;
       xhttp = new XMLHttpRequest();
@@ -47,7 +47,7 @@
       xhttp.send();
     }
 
-    const processXHTTPResponse = (xhttp) => {
+    function processXHTTPResponse(xhttp) {
       //console.log("processXHTTPResponse()");
       imageArray = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
       imageArray.splice(0, 1);
@@ -98,7 +98,8 @@
      * Applies opacity 0.4
      * @return void
     */
-    const markImage = (elementID) =>{
+    function markImage(elementID)
+    {
       $('#' + elementID + '').css({
             'opacity': '0.4',
             'filter': 'alpha(opacity=40)'
@@ -114,7 +115,8 @@
     * Checks if target image has already been selected
     * @return void
    */
-    const checkExistance = (params,src,id) => {
+    function checkExistance(params,src,id)
+    {
       if(params.includes(src))
       {
         tempRemoved =  (params.splice(params.indexOf(src),1))[0];
@@ -131,7 +133,7 @@
     /**
      * Function inprogress to fix the previous image Reference
     */
-    const removedRef = () =>
+    function removedRef()
     {
       return tempRemoved;
     }
@@ -144,7 +146,7 @@
     * Execute appropriate instructions based on event
     * @return void
     */
-    const observeClick =  (event) => {
+    function observeClick(event) {
 
         // send message to Shiny
         //vjsCall();
@@ -167,7 +169,7 @@
      * @returns void
      *
     */
-    const displayImages = (imgnumb,bat) => {
+    function displayImages(imgnumb,bat) {
       console.log("In displayImages()");
         removeImages();
         start = bat * imgnumb;
@@ -176,7 +178,7 @@
         dispImages(result);
     }
 
-    const tester = () =>
+    function tester()
     {
       displayImages(9,0);
     }
@@ -195,7 +197,7 @@
     someText = src.replace(/(\r\n|\n|\r)/gm,"");
 
      */
-    const pasteImages = (imageArray) => {
+    function pasteImages(imageArray) {
 
       console.log("In pasteImages");
       for (i = 0; i < imageArray.length; i++) {
@@ -219,7 +221,7 @@
      * @description clears inner html components identified by elementId 'x'
      *
      */
-    const removeImages = () => {
+    function removeImages() {
       console.log("In removeImages()");
       $("#x").html("");
     }
@@ -228,7 +230,7 @@
      *
      * @param {String} arry
      */
-    const dispImages = (arry) => {
+    function dispImages(arry) {
       console.log("IN dispImages()");
       pasteImages(arry);
     }
@@ -237,7 +239,7 @@
      * @description - indirect call to the createViewerComponent() function
      * @returns image view
      */
-    const vjsCall = () => {
+    function vjsCall() {
       console.log("In vjsCall()");
       createViewerComponent();
       return;
@@ -248,7 +250,7 @@
      * @description Function that creates the viewer component to view images
      * @returns viewer component
      */
-    const createViewerComponent = () => {
+    function createViewerComponent() {
       console.log("In ViewerJS() ");
       var viewer = new Viewer(document.getElementById('spcs_idntfctn-galley'), {
         url: 'data-original',
@@ -264,7 +266,7 @@
      * @function SelectedImages()
      * @returns an array with the currently selected images
     */
-    const SelectedImages = () =>
+    function SelectedImages()
     {
       return highlighted_images;
     }
@@ -274,7 +276,7 @@
      * @description selects all the panel images
      * @return highlighted_images
     */
-    const higlightAll = () => {
+      function higlightAll() {
         $("img").each(function (index) {
           $('#' + $(this).attr('id') + '').css({
             'opacity': '0.1',
@@ -292,7 +294,7 @@
      * @description deselects the currently selected images
      * @returns void
     */
-      const removeSelected = () => {
+      function removeSelected() {
         $("img").each(function (index) {
           $('#' + $(this).attr('id') + '').css({
             'opacity': '',
