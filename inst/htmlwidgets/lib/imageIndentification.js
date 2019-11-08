@@ -103,7 +103,7 @@
         imageArray[0] = imageArray[imageArray.length - 1] + imageArray[0];
         imageArray.splice(imageArray.length - 1, 1);
         console.log("Number of Images : " + imageArray.length );
-        renderImages(50,0);
+        renderInitImages(50,0);
        /************************************************************************
        Shiny.addCustomMessageHandler("testmessage",
           function (message) {
@@ -114,7 +114,7 @@
         Shiny.addCustomMessageHandler("testmsg",
           function (message) {
             batnum = parseInt(JSON.stringify(message));
-            renderImages(imgNumb, batnum);
+            renderInitImages(imgNumb, batnum);
           }
         );
         ************************************************************************/
@@ -127,14 +127,14 @@
                 Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               1 + " / " + getBatchNumber());
            // console.log("Image Number from the Slider : " + imgNumb);
-            renderImages(imgNumb,0);
+            renderInitImages(imgNumb,0);
           }
       );*/
 
       /*Shiny.addCustomMessageHandler("btch_num_msg",
       function(message) {
         batnum =  parseInt(JSON.stringify(message));
-        renderImages(imgNumb,batnum);
+        renderInitImages(imgNumb,batnum);
       }
       );*/
       }
@@ -169,14 +169,14 @@
       }
 
       /**
-      * Helper function for isKeyPressed()
+      * Helper function for observePressedKey()
       * @parameter - array of selected images - selected_images
       *            - target image src
       *            - target element id
       * Checks if target image has already been selected
       * @return void
      */
-      function handleExistance(params,src,id)
+      function checkExistance(params,src,id)
       {
         if(params.includes(src))
         {
@@ -207,13 +207,13 @@
       * Execute appropriate instructions based on event
       * @return void
       */
-      function isKeyPressed(event) {
+      function observePressedKey(event) {
 
           // send message to Shiny
           var imageName = event.target.src;
 
         if (event.shiftKey) {
-          handleExistance(selected_images, event.target.src, event.target.id);
+          checkExistance(selected_images, event.target.src, event.target.id);
 
         } else {
 
@@ -222,25 +222,25 @@
       }
 
       /**
-       * @function renderImages(a,b)
+       * @function renderInitImages(a,b)
        * @description determines the images to be rendered
        * @parameter - number of images of render
        *           - batch number of the image lot
        * @returns void
        *
       */
-      function renderImages(imgnumb,bat) {
-        console.log("In renderImages()");
-          clearImages();
+      function renderInitImages(imgnumb,bat) {
+        console.log("In renderInitImages()");
+         removeImages();;
           start = bat * imgnumb;
           end = start + imgnumb;
           result = imageArray.slice(start, end);
-          callImges(result);
+          displayImages(result);
       }
 
       function tester()
       {
-        renderImages(9,0);
+        renderInitImages(9,0);
       }
 
       /**
@@ -272,12 +272,12 @@
                console.log("Tester : " +   batnum + "/" + getBatchNumber());
                 Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (batnum+1) + " / " + getBatchNumber());
-             renderImages(imgNumb, batnum);
+             renderInitImages(imgNumb, batnum);
 
         }else{
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
              getBatchNumber() + " / " + getBatchNumber());
-          renderImages(imgNumb, getBatchNumber()-1);
+          renderInitImages(imgNumb, getBatchNumber()-1);
           batnum = getBatchNumber()-1;
         }
       }
@@ -291,12 +291,12 @@
         if (batnum > 0 ) {
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (batnum+1) + " / " + getBatchNumber());
-          renderImages(imgNumb ,batnum);
+          renderInitImages(imgNumb ,batnum);
         }else{
 
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
              1 + " / " + getBatchNumber());
-          renderImages(imgNumb, 0);
+          renderInitImages(imgNumb, 0);
           batnum = 0;
 
         }
@@ -337,8 +337,8 @@
        * @description clears inner html components identified by elementId 'x'
        *
 
-      function clearImages() {
-        console.log("In clearImages()");
+      functionremoveImages(); {
+        console.log("InremoveImages();");
         $("#x").html("");
       }
 
@@ -346,27 +346,27 @@
        *
        * @param {String} arry
 
-      function callImges(arry) {
-        console.log("IN callImges()");
+      function displayImages(arry) {
+        console.log("IN displayImages()");
         createImageComponent(arry);
       }
 
       /**
-       * @description - indirect call to the vjs() function
+       * @description - indirect call to the vjsIdntfcnt() function
        * @returns image view
 
       function myFunction() {
         console.log("In myFunction()");
-        vjs();
+        vjsIdntfcnt();
         return;
       }
 
       /**
-       * @function vjs()
+       * @function vjsIdntfcnt()
        * @description Function that creates the viewer component to view images
        * @returns viewer component
        */
-      function vjs() {
+      function vjsIdntfcnt() {
         console.log("In ViewerJS() ");
         var viewer = new Viewer(document.getElementById('galley'), {
           url: 'data-original',
