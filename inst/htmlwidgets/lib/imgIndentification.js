@@ -55,7 +55,7 @@
       imageArray[0] = imageArray[imageArray.length - 1] + imageArray[0];
       imageArray.splice(imageArray.length - 1, 1);
       console.log("Number of Images : " + imageArray.length );
-      displayImages(9,0);
+      displayImages(50,0);
      /************************************************************************
      Shiny.addCustomMessageHandler("testmessage",
         function (message) {
