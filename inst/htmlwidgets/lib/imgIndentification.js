@@ -95,7 +95,7 @@
      * @parameter selected image id
      * Applies opacity 0.4
      * @return void
-    */
+    
     function markImage(elementID)
     {
       $('#' + elementID + '').css({
@@ -103,7 +103,7 @@
             'filter': 'alpha(opacity=40)'
           });
     }
-
+   */
 
     /**
     * Helper function for observeClick()
@@ -273,7 +273,7 @@
      * @function higlightAll()
      * @description selects all the panel images
      * @return highlighted_images
-    */
+   
       function higlightAll() {
         $("img").each(function (index) {
           $('#' + $(this).attr('id') + '').css({
@@ -286,12 +286,13 @@
         return highlighted_images;
 
       }
+       */
 
     /**
      * @function removeSelected()
      * @description deselects the currently selected images
      * @returns void
-    */
+  
       function removeSelected() {
         $("img").each(function (index) {
           $('#' + $(this).attr('id') + '').css({
@@ -302,7 +303,7 @@
         });
         highlighted_images.length = 0;
       }
-
+        */
     /**
      * @function sendDataToShinny()
      * @returns an array of selected images
