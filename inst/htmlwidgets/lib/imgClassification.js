@@ -14,10 +14,6 @@
       $(document).ready(function () {
           console.log("v 0.11");
         //readServerData();
-        $("#goButton").on("click", function () {
-          // send message to Shiny
-          Shiny.onInputChange("sources", sendDataToShinny());
-        });
 
         $("#apply").on("click", function () {
           // send message to Shiny
@@ -66,9 +62,6 @@
 
       var batnum  = 0 ; // default batch Number
       var imgNumb = 0; // default image size
-
-
-
 
        /* Function to read Server Data from Server-Side
        * @parameter msg A message from Shiny indication the csv file

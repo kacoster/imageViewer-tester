@@ -25,22 +25,11 @@ HTMLWidgets.widget({
         if(x.componentID === "img_clssfctn_ud")
         {
           console.log("CASE : classification module ");
-          //readServerData(x.message);
            readServerData(x.message);
-          //console.log("Server Data : " + getServerData());
-          //var classifierViewer = new  ModuleViewer(285);
-          //classifierViewer.docReady();
-         // initial(9,1,readServerData(x.message));
-          //classifierViewer.readServerData(x.message);
-          //classifierViewer.imgloop(classifierViewer.initial(9,0));
         }
         else{
-
           console.log("CASE : spcs_idntfctn_id_rf_1");
-           fetchServerData(x.message);
-          //var classifierViewer1 = new  ModuleViewer(10);
-          //classifierViewer1.docReady();
-          //classifierViewer1.readServerData(x.message);
+          fetchServerData(x.message);
         }
 
       },
@@ -51,6 +40,6 @@ HTMLWidgets.widget({
 
       }
 
-    }
+    };
   }
 });
