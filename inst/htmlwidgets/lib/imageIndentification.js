@@ -10,7 +10,7 @@
       /**
        * code included inside $(document).ready() will only run once the page is
        * * ready for JavaScript code to execute
-     
+
       $(document).ready(function () {
           console.log("v 0.11");
         //fetchServerData();
@@ -145,7 +145,7 @@
        * @parameter selected image id
        * Applies opacity 0.4
        * @return void
-      */
+
       function highliter(elementID)
       {
         $('#' + elementID + '').css({
@@ -159,7 +159,7 @@
       * @parameter selected image id
       * Removes opacity - reverts to original opacity
       * @return void
-      */
+
       function removeHighlight(elementID)
       {
         $('#' + elementID + '').css({
@@ -187,17 +187,17 @@
           //console.log("Not marked");
           params.push(src);
           highliter(id);
-          Shiny.onInputChange("clssfctn_slctd_img", src.substring(src.lastIndexOf("/") + 1, src.length ));
+          //Shiny.onInputChange("clssfctn_slctd_img", src.substring(src.lastIndexOf("/") + 1, src.length ));
         }
       }
 
       /**
        * Function inprogress to fix the previous image Reference
-      */
+
       function removedRef()
       {
         return tempRemoved;
-      }
+      }    */
 
       /**
       * Handles all image panel click events
@@ -248,7 +248,7 @@
        * @description computes the total number of available batches
        * @constrains the number of images per batchimgNumb()
        * @return the total number of batches
-      
+
       function getBatchNumber()
       {
 
@@ -264,7 +264,7 @@
       /**
        * @description computes and displays the next image batch
        *
-    
+
       function next() {
 
       if(batnum < getBatchNumber()-1){
@@ -285,7 +285,7 @@
        /**
        * @description computes and displays the previous image batch
        *
-      
+
       function prev() {
            batnum--;
         if (batnum > 0 ) {
@@ -336,7 +336,7 @@
       /**
        * @description clears inner html components identified by elementId 'x'
        *
-       */
+
       function clearImages() {
         console.log("In clearImages()");
         $("#x").html("");
@@ -345,7 +345,7 @@
       /**
        *
        * @param {String} arry
-       */
+
       function callImges(arry) {
         console.log("IN callImges()");
         createImageComponent(arry);
@@ -354,7 +354,7 @@
       /**
        * @description - indirect call to the vjs() function
        * @returns image view
-       */
+
       function myFunction() {
         console.log("In myFunction()");
         vjs();
@@ -381,7 +381,7 @@
       /**
        * @function getSelectedImages()
        * @returns an array with the currently selected images
-      */
+
       function getSelectedImages()
       {
         return selected_images;
@@ -391,7 +391,7 @@
        * @function selectAll()
        * @description selects all the panel images
        * @return selected_images
-    
+
         function selectAll() {
           $("img").each(function (index) {
             $('#' + $(this).attr('id') + '').css({
@@ -409,7 +409,7 @@
        * @function deSelectAll()
        * @description deselects the currently selected images
        * @returns void
-      
+
         function deSelectAll() {
           $("img").each(function (index) {
             $('#' + $(this).attr('id') + '').css({
@@ -425,7 +425,7 @@
        * @function sendDataToShinny()
        * @returns an array of selected images
        * @description sends the client selected image data back to server (Shinny)
-     
+
         function sendDataToShinny(){
           if (selected_images === undefined || selected_images.length === 0) {
             alert("No Images Selected !!");
