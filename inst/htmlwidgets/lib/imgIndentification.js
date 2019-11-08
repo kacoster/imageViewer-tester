@@ -108,7 +108,7 @@
 
     
     /**
-    * Helper function for isKeyPressed()
+    * Helper function for observeClick()
     * @parameter - array of selected images - highlighted_images
     *            - target image src
     *            - target element id
@@ -146,10 +146,11 @@
     * Execute appropriate instructions based on event
     * @return void
     */
-    function isKeyPressed(event) {
+    function observeClick(event) {
 
         // send message to Shiny
-        var imageName = event.target.src;
+        vjsCall();
+        /*var imageName = event.target.src;
 
       if (event.shiftKey) {
         checkExistance(highlighted_images, event.target.src, event.target.id);
@@ -157,7 +158,7 @@
       } else {
 
         vjsCall();
-      }
+      }*/
     }
 
     /**
