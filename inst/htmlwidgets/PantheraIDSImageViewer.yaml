@@ -11,10 +11,10 @@ dependencies:
   src: htmlwidgets
   script: ./lib/imgClassification.js
   #style: ./lib/style.css
-#- name: fetchServerData
-#  version: 0.0.1
-#  src: htmlwidgets
-#  script: ./lib/fetchServerData.js
+- name: fetchServerData
+  version: 0.0.1
+  src: htmlwidgets
+  script: ./lib/fetchServerData.js
 #  #style: ./lib/style.css
 #- name: imageIndentification
 #  version: 0.0.1
