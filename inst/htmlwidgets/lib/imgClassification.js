@@ -64,8 +64,8 @@
       var result;
       var start, end;
 
-      var batnum ; // default batch Number
-      var imgNumb; // default image size
+      var batnum  = 0 ; // default batch Number
+      var imgNumb = 0; // default image size
 
 
 
@@ -121,7 +121,7 @@
       // Read the batch Image Number from from slider : img_clssfctn_ud_btch_img_thrshld
       Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
         function(message) {
-            imgNumb =  parseInt(JSON.stringify(message));
+           imgNumb =  parseInt(JSON.stringify(message));
             //console.log("Tester : " +   batnum + "/" + getBatchNumber());
                 Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               1 + " / " + getBatchNumber());
