@@ -202,7 +202,7 @@
       for (i = 0; i < imageArray.length; i++) {
         var liId = i;
         var img = new Image();
-        var ul = document.getElementById('x');
+        var ul = document.getElementById('img_idnfctn');
         // img.onload = function() {
         img.src = ((imageArray[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
         console.log("img.src " + img.src);
