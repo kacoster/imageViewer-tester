@@ -252,7 +252,7 @@
      */
     function createViewerComponent() {
       console.log("In ViewerJS() ");
-      var viewer = new Viewer(document.getElementById('galley'), {
+      var viewer = new Viewer(document.getElementById('spcs_idntfctn-galley'), {
         url: 'data-original',
         title: function (image) {
           return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
