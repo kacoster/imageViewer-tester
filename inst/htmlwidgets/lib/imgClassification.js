@@ -357,7 +357,7 @@
        */
       function vjs() {
         console.log("In ViewerJS() ");
-        var viewer = new Viewer(document.getElementById('clsfcnt-galley'), {
+        var viewer = new Viewer(document.getElementById('galley'), {
           url: 'data-original',
           title: function (image) {
             return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
