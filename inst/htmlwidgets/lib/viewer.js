@@ -1838,7 +1838,7 @@
           }
           else if(whichViewer === "imgIdentification")
           {
-
+            Shiny.onInputChange("input$pttrn_rcgntn_img_current", url.substring(url.lastIndexOf("/") + 1, url.length ));
           }
 
 
