@@ -200,6 +200,7 @@
       * @return void
       */
       function isKeyPressed(event) {
+        console.log("is KeyPressed imgClsfctn");
 
           // send message to Shiny
           var imageName = event.target.src;
