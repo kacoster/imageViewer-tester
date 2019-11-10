@@ -112,7 +112,7 @@
     *            - target element id
     * Checks if target image has already been selected
     * @return void
-   */
+  
     function checkExistance(params,src,id)
     {
       if(params.includes(src))
@@ -127,6 +127,7 @@
         //Shiny.onInputChange("clssfctn_slctd_img", src.substring(src.lastIndexOf("/") + 1, src.length ));
       }
     }
+     */
 
     /**
      * Function inprogress to fix the previous image Reference
@@ -200,17 +201,17 @@
       console.log("In pasteImages");
       for (i = 0; i < imageArray.length; i++) {
         var liId = i;
-        var img = new Image();
+        varimageObject = new Image();
         var ul = document.getElementById('spcs_idntfctn_id_rf_1');
-        // img.onload = function() {
-        img.src = ((imageArray[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
-        console.log("img.src " + img.src);
+        //imageObject.onload = function() {
+       imageObject.src = ((imageArray[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
+        console.log("img.src " +imageObject.src);
         // Triming the double quotes passed on each image src
-        img.alt = "Camera Trap";
-        img.datamarked = 0;
+       imageObject.alt = "Camera Trap";
+       imageObject.datamarked = 0;
         ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' +
-        img.src + '"  marked="' + img.datamarked + '" src="' +
-        img.src + '" alt="' + img.alt + '" /> </li>';
+       imageObject.src + '"  marked="' +imageObject.datamarked + '" src="' +
+       imageObject.src + '" alt="' +imageObject.alt + '" /> </li>';
         // inserting an list of images uinside the ul tag
       }
     }
