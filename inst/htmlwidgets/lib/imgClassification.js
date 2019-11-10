@@ -256,6 +256,7 @@
        *
       */
       function next() {
+        console.log("img_clssfcnt Next ");
 
       if(batnum < getBatchNumber()-1){
                batnum++;
@@ -277,6 +278,7 @@
        *
       */
       function prev() {
+        console.log("img_clssfcnt Prev");
            batnum--;
         if (batnum > 0 ) {
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
