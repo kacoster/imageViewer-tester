@@ -198,7 +198,7 @@
       * Checks if event is shiftKey/click
       * Execute appropriate instructions based on event
       * @return void
-      */
+      
       function isKeyPressed(event) {
         console.log("is KeyPressed imgClsfctn");
 
@@ -212,7 +212,7 @@
 
           myFunction();
         }
-      }
+      }*/
 
       /**
        * @function initial(a,b)
