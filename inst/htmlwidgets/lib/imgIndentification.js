@@ -11,10 +11,10 @@
   
     var imageArray = [];
     var highlighted_images = [];
-    var result;
-    var start, end;
-    var batnum  = 0 ; // default batch Number
-    var imgNumb = 0; // default image size
+    var resultsArray;
+    var startIndex, endIndex;
+    //var batnum  = 0 ; // default batch Number
+    //var imgNumb = 0; // default image size
 
 
      /* Function to read Server Data from Server-Side
@@ -79,10 +79,10 @@
     function displayImages(imgnumb,bat) {
       console.log("In displayImages()");
         removeImages();
-        start = bat * imgnumb;
-        end = start + imgnumb;
-        result = imageArray.slice(start, end);
-        dispImages(result);
+        startIndex = bat * imgnumb;
+        endIndex = startIndex + imgnumb;
+        resultsArray = imageArray.slice(startIndex, endIndex);
+        dispImages(resultsArray);
     }
 
     /************************************************************************/
