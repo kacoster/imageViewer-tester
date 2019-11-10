@@ -68,6 +68,7 @@
     function observeClick(event) {
 
       console.log("In observeClick imgIdentification");
+      objectOf("imgIdentification");
         vjsCall();
     }
 

@@ -205,13 +205,13 @@
           // send message to Shiny
           var imageName = event.target.src;
 
-        if (event.shiftKey) {
-          handleExistance(selected_images, event.target.src, event.target.id);
+          if (event.shiftKey) {
+            handleExistance(selected_images, event.target.src, event.target.id);
 
-        } else {
-
-          myFunction();
-        }
+          } else {
+            objectOf("imgClassification");
+            myFunction();
+          }
       }
 
       /**

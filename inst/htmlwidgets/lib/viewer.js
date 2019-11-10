@@ -4,6 +4,12 @@
     //console.log("viewerJS called");
 
     console.log("viewer.js loaded");
+
+    var whichViewer ;
+    function objectOf(viewerType)
+    {
+      whichViewer = viewerType;
+    }
     (function (global, factory) {
       typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
       typeof define === 'function' && define.amd ? define(factory) :
@@ -1825,7 +1831,16 @@
             return;
           }
 
-          Shiny.onInputChange("clssfctn_vw_curr_img", url.substring(url.lastIndexOf("/") + 1, url.length ));
+          if( whichViewer === "imgClassification")
+          {
+            Shiny.onInputChange("clssfctn_vw_curr_img", url.substring(url.lastIndexOf("/") + 1, url.length ));
+
+          }
+          else if(whichViewer === "imgIdentification")
+          {
+
+          }
+
 
           if (isFunction(options.view)) {
             addListener(element, EVENT_VIEW, options.view, {
