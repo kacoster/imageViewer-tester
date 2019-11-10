@@ -201,7 +201,7 @@
       console.log("In pasteImages");
       for (i = 0; i < imageArray.length; i++) {
         var liId = i;
-        varimageObject = new Image();
+        var imageObject = new Image();
         var ul = document.getElementById('spcs_idntfctn_id_rf_1');
         //imageObject.onload = function() {
        imageObject.src = ((imageArray[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
