@@ -10,6 +10,11 @@ dependencies:
   src: htmlwidgets
   script: ./lib/viewer.js
 # script: ./lib/fetchServerData.js
+- name: imgIndentification
+  version: 0.0.2
+  src: htmlwidgets
+  script: ./lib/imgIndentification.js
+#  #style: ./lib/style.css
 - name: imgClassification
   version: 0.0.1
   src: htmlwidgets
@@ -19,11 +24,6 @@ dependencies:
 #  version: 0.0.1
 #  src: htmlwidgets
 #  script: ./lib/fetchServerData.js
-#  #style: ./lib/style.css
-- name: imgIndentification
-  version: 0.0.2
-  src: htmlwidgets
-  script: ./lib/imgIndentification.js
 #  #style: ./lib/style.css
 - name: jquery
   version: 0.4.10
