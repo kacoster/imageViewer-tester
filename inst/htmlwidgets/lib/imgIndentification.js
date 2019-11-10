@@ -8,7 +8,7 @@
      ***************************************************************************/
 
 
-  
+    console.log("IN IMGINDENTIFICATION.JS");
     var imageArray = [];
     var highlighted_images = [];
     var resultsArray;
@@ -28,7 +28,7 @@
     }
 
     function getData(url, cFunction) {
-      console.log("In getData()");
+      console.log("In getData() imgIdentification");
       var xhttp;
       xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function () {
@@ -43,6 +43,7 @@
 
     function processXHTTPResponse(xhttp) {
       //console.log("processXHTTPResponse()");
+      //imgIdentification
       imageArray = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
       imageArray.splice(0, 1);
       imageArray[0] = imageArray[0].replace("Source", "");
@@ -65,6 +66,8 @@
     * @return void
     */
     function observeClick(event) {
+
+      console.log("In observeClick imgIdentification");
         vjsCall();
     }
 
@@ -77,7 +80,7 @@
      *
     */
     function displayImages(imgnumb,bat) {
-      console.log("In displayImages()");
+      console.log("In displayImages() imgIdentification");
         removeImages();
         startIndex = bat * imgnumb;
         endIndex = startIndex + imgnumb;
@@ -98,7 +101,7 @@
      */
     function pasteImages(imageArray) {
 
-      console.log("In pasteImages");
+      console.log("In pasteImages imgIdentification");
       for (i = 0; i < imageArray.length; i++) {
         var liId = i;
         var imageObject = new Image();
@@ -121,7 +124,7 @@
      *
      */
     function removeImages() {
-      console.log("In removeImages()");
+      console.log("In removeImages() imgIdentification");
       $("#x").html("");
     }
 
@@ -130,7 +133,7 @@
      * @param {String} arry
      */
     function dispImages(arry) {
-      console.log("IN dispImages()");
+      console.log("IN dispImages() imgIdentification");
       pasteImages(arry);
     }
 
@@ -139,7 +142,8 @@
      * @returns image view
      */
     function vjsCall() {
-      console.log("In vjsCall()");
+      console.log("In vjsCall() imgIdentification");
+      //confirm.log("In observeClick imgIdentification");
       createViewerComponent();
       return;
     }
@@ -150,7 +154,7 @@
      * @returns viewer component
      */
     function createViewerComponent() {
-      console.log("In ViewerJS() ");
+      console.log("In ViewerJS() imgIdentification ");
       var viewer = new Viewer(document.getElementById('spcs_idntfctn-galley'), {
         url: 'data-original',
         title: function (image) {
