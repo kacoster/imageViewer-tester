@@ -1840,13 +1840,13 @@
           }
           else if(whichViewer === "imgIdentification")
           {
-            Shiny.onInputChange("pttrn_rcgntn_vw_curr_img", 
+            Shiny.onInputChange("spcs_idntfctn_id_rf_1_vw_curr_img", 
                                 url.substring(url.lastIndexOf("/") + 1,
                                 url.length ));
           }
           else if (whichViewer === "imgIdentification_rf2")
           {
-            Shiny.onInputChange("spcs_idntfctn_id_rf_2_current", 
+            Shiny.onInputChange("spcs_idntfctn_id_rf_2_vw_curr_img", 
             url.substring(url.lastIndexOf("/") + 1,
             url.length ));
            
