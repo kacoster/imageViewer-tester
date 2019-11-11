@@ -1833,12 +1833,16 @@
 
           if( whichViewer === "imgClassification")
           {
-            Shiny.onInputChange("clssfctn_vw_curr_img", url.substring(url.lastIndexOf("/") + 1, url.length ));
+            Shiny.onInputChange("clssfctn_vw_curr_img",
+                                url.substring(url.lastIndexOf("/") + 1,
+                                url.length ));
 
           }
           else if(whichViewer === "imgIdentification")
           {
-            Shiny.onInputChange("input$pttrn_rcgntn_img_current", url.substring(url.lastIndexOf("/") + 1, url.length ));
+            Shiny.onInputChange("pttrn_rcgntn_vw_curr_img", 
+                                url.substring(url.lastIndexOf("/") + 1,
+                                url.length ));
           }
 
 
