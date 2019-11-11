@@ -1836,7 +1836,7 @@
           /**
            *
           */
-          if(getSelectedImages().includes(url) || removedRef() == url )
+          if(getSelectedImages().includes(url) || removedRef() === url )
           {
             console.log("Um hidding the clicked image ");
             this.image = image;
