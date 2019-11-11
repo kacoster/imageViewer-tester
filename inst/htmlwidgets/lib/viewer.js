@@ -1832,12 +1832,13 @@
           console.log("Includes url : " + getSelectedImages().includes(url));
 
           console.log("getSelectedImages includes url-check : " + removedRef() === url );
-      
+          console.log("Checking URL : " + url);
           /**
            *
           */
           if(getSelectedImages().includes(url) || removedRef() === url)
           {
+            console.log("Checking URL  : " + url);
           
             console.log("Um hidding the clicked image");
             this.image = image;
