@@ -1797,6 +1797,7 @@
           index = Number(index) || 0;
 
           if (!this.isShown) {
+            console.log("Line 1800'");
             this.index = index;
             return this.show();
           }
@@ -1898,6 +1899,7 @@
           title.innerHTML = ''; // Generate title after viewed
 
           var onViewed = function onViewed() {
+            console.log("Line 1901");
             var imageData = _this.imageData;
             var render = Array.isArray(options.title) ? options.title[1] : options.title;
             title.innerHTML = escapeHTMLEntities(isFunction(render) ? render.call(_this, image, imageData) : "".concat(alt, " (").concat(imageData.naturalWidth, " \xD7 ").concat(imageData.naturalHeight, ")"));
