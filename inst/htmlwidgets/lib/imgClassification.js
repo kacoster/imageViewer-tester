@@ -368,9 +368,11 @@
         console.log("In ViewerJS() ");
         if(nextPrev === "1")
         {
-
+            console.log("Clicked Next");
+            return;
         }
         else{
+           console.log("Not Clicked Next");
           var viewer = new Viewer(document.getElementById('galley'), {
           url: 'data-original',
           title: function (image) {
