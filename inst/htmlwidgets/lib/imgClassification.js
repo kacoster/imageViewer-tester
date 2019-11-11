@@ -142,6 +142,7 @@
       function highliter(elementID)
       {
         $('#' + elementID + '').css({
+              'marked' : '1',
               'opacity': '0.4',
               'filter': 'alpha(opacity=40)'
             });
@@ -157,8 +158,7 @@
       {
         $('#' + elementID + '').css({
               'opacity': '',
-              'filter': '',
-              'marked':'1'
+              'filter': ''
             });
       }
 
