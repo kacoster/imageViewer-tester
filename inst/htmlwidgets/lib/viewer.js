@@ -1833,13 +1833,18 @@
 
           console.log("getSelectedImages includes url-check : " + removedRef() === url );
           var incUrl = getSelectedImages().includes(url);
-          /**
-           *
-          */
-          if(getSelectedImages().includes(url) || removedRef() === url)
+         
+          if(getSelectedImages().includes(url) )
           {
-          
-            console.log("Um hidding the clicked image");
+            console.log("Um hidding the clicked image 1");
+            this.image = image;
+            this.hide();
+            return;
+            
+          }
+          if (removedRef() === url)
+          {
+            console.log("Um hidding the clicked image 2");
             this.image = image;
             this.hide();
             return;
