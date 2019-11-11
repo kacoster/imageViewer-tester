@@ -275,7 +275,7 @@
           initial(imgNumb, getBatchNumber()-1);
           batnum = getBatchNumber()-1;
         }
-        nextPrev = "0";
+
       }
 
        /**
@@ -298,7 +298,7 @@
           batnum = 0;
 
         }
-        nextPrev = "0";
+
       }
       /************************************************************************/
 
@@ -369,6 +369,7 @@
         if(nextPrev === "1")
         {
             console.log("Clicked Next");
+            nextPrev = "0";
             return;
         }
         else{
