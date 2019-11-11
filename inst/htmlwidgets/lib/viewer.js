@@ -6,9 +6,15 @@
     console.log("viewer.js loaded");
 
     var whichViewer ;
+    var nextPrev = "0";
     function objectOf(viewerType)
     {
       whichViewer = viewerType;
+    }
+
+    function nextPrevClicked(status)
+    {
+        nextPrev = status;
     }
     (function (global, factory) {
       typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
@@ -1779,6 +1785,11 @@
          * @returns {Viewer} this
          */
         view: function view() {
+
+          if(nextPrev === "1"){
+            nextPrev = "0";
+            return;
+          }
           this.update();
           var _this = this;
 

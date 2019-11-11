@@ -258,7 +258,8 @@
        *
       */
       function next() {
-        nextPrev = "1";
+        nextPrevClicked("1");
+        //nextPrev = ;
         console.log("img_clssfcnt Next ");
 
 
@@ -283,7 +284,7 @@
        *
       */
       function prev() {
-         nextPrev = "1";
+        nextPrevClicked("1");
         console.log("img_clssfcnt Prev");
            batnum--;
         if (batnum > 0 ) {
@@ -366,21 +367,14 @@
        */
       function vjs() {
         console.log("In ViewerJS() ");
-        if(nextPrev === "1")
-        {
-            console.log("Clicked Next");
-            nextPrev = "0";
-            return;
-        }
-        else{
-           console.log("Not Clicked Next");
+        
           var viewer = new Viewer(document.getElementById('galley'), {
           url: 'data-original',
           title: function (image) {
             return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
           },
         });
-        }
+        
 
       }
 
