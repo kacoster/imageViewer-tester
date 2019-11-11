@@ -1844,6 +1844,13 @@
                                 url.substring(url.lastIndexOf("/") + 1,
                                 url.length ));
           }
+          else if (whichViewer === "imgIdentification_rf2")
+          {
+            Shiny.onInputChange("spcs_idntfctn_id_rf_2_current", 
+            url.substring(url.lastIndexOf("/") + 1,
+            url.length ));
+           
+          }
 
 
           if (isFunction(options.view)) {

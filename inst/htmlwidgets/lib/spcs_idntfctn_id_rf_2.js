@@ -54,9 +54,6 @@
     
     }
 
-   
-   
-
     /**
     * Handles all image panel click events
     * @parameter - event click/shiftKey
@@ -68,7 +65,7 @@
     function observeClick_rf2(event) {
 
       console.log("In observeClick_rf2 imgIdentification");
-      objectOf("imgIdentification");
+      objectOf("imgIdentification_rf2");
         vjsCall_rf2();
     }
 
