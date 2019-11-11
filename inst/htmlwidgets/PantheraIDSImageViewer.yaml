@@ -1,50 +1,30 @@
-# (uncomment to add a dependency)
 dependencies:
-#- name: bootstrap
-#  version: 3.5.0
-#  src: htmlwidgets
-#  script: ./lib/bootstrap.bundle.min.js
-#  #style: ./lib/bootstrap.min.css createViewerComponent.js
 - name: viewer
   version: 1.7.0
   src: htmlwidgets
   script: ./lib/viewer.js
-# script: ./lib/fetchServerData.js
 - name: imgIndentification
   version: 0.0.2
   src: htmlwidgets
   script: ./lib/imgIndentification.js
-#  #style: ./lib/style.css
 - name: imgClassification
   version: 0.0.1
   src: htmlwidgets
   script: ./lib/imgClassification.js
-  #style: ./lib/style.css
 - name: spcs_idntfctn_id_rf_2
   version: 0.0.1
   src: htmlwidgets
   script: ./lib/spcs_idntfctn_id_rf_2.js
-  #style: ./lib/style.css
 - name: jquery
   version: 0.4.10
   src: htmlwidgets
   script: ./lib/jquery-3.4.1.slim.min.js
-  #style: ./lib/jquery-ui.css
 - name: main
   version: 1.8.3
   src: htmlwidgets
   script: ./lib/main.js
-  #style: ./lib/main.css
 - name: reset
   version: 1.3
   src: htmlwidgets
-  #style: ./lib/reset.min.css
 
-  #style: ./lib/viewer.css
-#- name: createViewer
-#  version: 1.0.0
-#  script: ./lib/createViewer.js
-#- name: styles
-#  version: 1.2.9
-#  src: htmlwidgets
-#  style: ./lib/styles.css
+
