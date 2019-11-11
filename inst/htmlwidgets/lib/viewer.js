@@ -1829,16 +1829,17 @@
           console.log(getSelectedImages());
           console.log("url : " + url);
           //console.log("Prev url " + getLastViewed());
-          console.log("Includes url : " + removedRef() === url);
+          console.log("Includes url : " + getSelectedImages().includes(url));
 
-          console.log("getSelectedImages includes url-check : " +getSelectedImages().includes(url));
+          console.log("getSelectedImages includes url-check : " + removedRef() === url );
           var incUrl = getSelectedImages().includes(url);
           /**
            *
           */
-          if(getSelectedImages().includes(url) || removedRef() === url )
+          if(getSelectedImages().includes(url) || removedRef() === url)
           {
-            console.log("Um hidding the clicked image ");
+          
+            console.log("Um hidding the clicked image");
             this.image = image;
             this.hide();
             return;
@@ -1954,7 +1955,7 @@
         },
 
         /**
-         * View the previous image
+         * View the previous image 
          * @param {boolean} [loop=false] - Indicate if view the last one
          * when it is the first one at present.
          * @returns {Viewer} this
