@@ -1842,11 +1842,11 @@
             return;
             
           }
-          if (removedRef() != url)
+          if (removedRef() === url)
           {
             console.log("Um hidding the clicked image 2");
             this.image = image;
-            this.hide();
+            this.view();
             return;
           }
 
