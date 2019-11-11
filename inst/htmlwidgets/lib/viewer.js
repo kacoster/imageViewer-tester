@@ -1838,8 +1838,9 @@
           */
           if(getSelectedImages().includes(url) || removedRef() === url )
           {
-            console.log("Um hidding the clicked image " + this.image.src);
             this.image = image;
+            console.log("Um hidding the clicked image " + image.src);
+          
             this.hide();
             return;
           }
