@@ -156,7 +156,7 @@
      */
     function createViewerComponent_rf2() {
       console.log("In ViewerJS() imgIdentification ");
-      var viewer = new Viewer(document.getElementById('spcs_idntfctn-galley'), {
+      var viewer = new Viewer(document.getElementById('spcs_idntfctn-galley_rf2'), {
         url: 'data-original',
         title: function (image) {
           return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
