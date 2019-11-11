@@ -17,6 +17,7 @@ HTMLWidgets.widget({
     return {
 
       renderValue: function(x) {
+
         /**
          * Calling readServerData function
          * Passing the filePath parameter as an argument
@@ -27,9 +28,13 @@ HTMLWidgets.widget({
           console.log("CASE : classification module ");
            readServerData(x.message);
         }
-        else{
-          console.log("CASE : spcs_idntfctn_id_rf_1");
+        else if (x.componentID === "spcs_idntfctn_id_rf_1")
+        {
           fetchServerData(x.message);
+        }
+        else
+        {
+          fetchServerData_rf2(x.message);
         }
 
       },

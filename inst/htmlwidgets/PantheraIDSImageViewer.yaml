@@ -20,11 +20,11 @@ dependencies:
   src: htmlwidgets
   script: ./lib/imgClassification.js
   #style: ./lib/style.css
-#- name: fetchServerData
-#  version: 0.0.1
-#  src: htmlwidgets
-#  script: ./lib/fetchServerData.js
-#  #style: ./lib/style.css
+- name: spcs_idntfctn_id_rf_2
+  version: 0.0.1
+  src: htmlwidgets
+  script: ./lib/spcs_idntfctn_id_rf_2.js
+  #style: ./lib/style.css
 - name: jquery
   version: 0.4.10
   src: htmlwidgets
