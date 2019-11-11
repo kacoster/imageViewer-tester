@@ -1786,10 +1786,7 @@
          */
         view: function view() {
 
-          if(nextPrev === "1"){
-            nextPrev = "0";
-            return;
-          }
+          
           this.update();
           var _this = this;
 
@@ -1798,6 +1795,10 @@
 
           if (!this.isShown) {
             console.log("Line 1800'");
+            if(nextPrev === "1"){
+              nextPrev = "0";
+              return;
+            }
             this.index = index;
             return this.show();
           }
