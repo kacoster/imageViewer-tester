@@ -157,7 +157,8 @@
       {
         $('#' + elementID + '').css({
               'opacity': '',
-              'filter': ''
+              'filter': '',
+              'marked':'1'
             });
       }
 
