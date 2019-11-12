@@ -1851,11 +1851,9 @@
           if( whichViewer === "imgClassification")
           {
             console.log("In imgClassification condition ");
-
             Shiny.onInputChange("clssfctn_vw_curr_img",
                                 url.substring(url.lastIndexOf("/") + 1,
                                 url.length ));
-             Shiny.onInputChange("clssfctn_slctd_img", "");
 
           }
           else if(whichViewer === "imgIdentification")
