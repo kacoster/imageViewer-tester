@@ -182,7 +182,7 @@
           highliter(id);
          // console.log("Printing the SRC for");
           Shiny.onInputChange("clssfctn_slctd_img", src.substring(src.lastIndexOf("/") + 1, src.length ));
-          Shiny.onInputChange("clssfctn_slctd_img", "");
+          //Shiny.onInputChange("clssfctn_slctd_img", "");
         }
       }
 
