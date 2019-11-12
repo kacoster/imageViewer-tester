@@ -212,8 +212,8 @@
 
           } else {
             objectOf("imgClassification");
-            console.log("");
-            myFunction("Printing the SRC for Clicked Image : " + imageName);
+            console.log("Printing the SRC for Clicked Image : " + imageName);
+            myFunction();
           }
       }
 
