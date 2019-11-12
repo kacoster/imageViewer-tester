@@ -142,7 +142,6 @@
       function highliter(elementID)
       {
         $('#' + elementID + '').css({
-              'marked' : '1',
               'opacity': '0.4',
               'filter': 'alpha(opacity=40)'
             });
@@ -181,6 +180,7 @@
           //console.log("Not marked");
           params.push(src);
           highliter(id);
+          //console.log("Printing the SRC for ");
           Shiny.onInputChange("clssfctn_slctd_img", src.substring(src.lastIndexOf("/") + 1, src.length ));
         }
       }
@@ -212,7 +212,8 @@
 
           } else {
             objectOf("imgClassification");
-            myFunction();
+            console.log("");
+            myFunction("Printing the SRC for Clicked Image : " + imageName);
           }
       }
 
@@ -368,14 +369,14 @@
        */
       function vjs() {
         console.log("In ViewerJS() ");
-        
+
           var viewer = new Viewer(document.getElementById('galley'), {
           url: 'data-original',
           title: function (image) {
             return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
           },
         });
-        
+
 
       }
 
