@@ -1786,7 +1786,7 @@
          */
         view: function view() {
 
-          
+
           this.update();
           var _this = this;
 
@@ -1839,7 +1839,7 @@
           if(getSelectedImages().includes(url) || removedRef() === url)
           {
             console.log("Checking URL  : " + url);
-          
+
             console.log("Um hidding the clicked image");
             this.image = image;
             this.hide();
@@ -1848,6 +1848,7 @@
 
           if( whichViewer === "imgClassification")
           {
+            console.log("In imgClassification condition ");
             Shiny.onInputChange("clssfctn_vw_curr_img",
                                 url.substring(url.lastIndexOf("/") + 1,
                                 url.length ));
@@ -1855,16 +1856,18 @@
           }
           else if(whichViewer === "imgIdentification")
           {
-            Shiny.onInputChange("spcs_idntfctn_id_rf_1_vw_curr_img", 
+            console.log("In imgIdentification condition ");
+            Shiny.onInputChange("spcs_idntfctn_id_rf_1_vw_curr_img",
                                 url.substring(url.lastIndexOf("/") + 1,
                                 url.length ));
           }
           else if (whichViewer === "imgIdentification_rf2")
           {
-            Shiny.onInputChange("spcs_idntfctn_id_rf_2_vw_curr_img", 
+            console.log("In imgIdentification_rf2 condition ");
+            Shiny.onInputChange("spcs_idntfctn_id_rf_2_vw_curr_img",
             url.substring(url.lastIndexOf("/") + 1,
             url.length ));
-           
+
           }
 
 
@@ -1956,7 +1959,7 @@
         },
 
         /**
-         * View the previous image 
+         * View the previous image
          * @param {boolean} [loop=false] - Indicate if view the last one
          * when it is the first one at present.
          * @returns {Viewer} this
