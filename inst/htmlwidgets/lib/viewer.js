@@ -1846,6 +1846,8 @@
             return;
           }
 
+          console.log("Checking whichViewer : " + whichViewer);
+
           if( whichViewer === "imgClassification")
           {
             console.log("In imgClassification condition ");
