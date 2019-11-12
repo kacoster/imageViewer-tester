@@ -1845,6 +1845,8 @@
           if(getSelectedImages().includes(url) || removedRef() === url)
           {
             console.log("Checking URL  : " + url);
+            getCurrClckdImg("clssfctn_slctd_img",
+                url.substring(url.lastIndexOf("/") + 1, url.length ));
 
             console.log("Um hidding the clicked image");
             this.image = image;
