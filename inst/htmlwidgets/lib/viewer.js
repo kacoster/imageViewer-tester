@@ -16,6 +16,12 @@
     {
         nextPrev = status;
     }
+
+    function getCurrClckdImg(state, imgsrc)
+    {
+      Shiny.onInputChange(state,imgsrc);
+    }
+
     (function (global, factory) {
       typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
       typeof define === 'function' && define.amd ? define(factory) :
@@ -1851,24 +1857,25 @@
           if( whichViewer === "imgClassification")
           {
             console.log("In imgClassification condition ");
-            Shiny.onInputChange("clssfctn_vw_curr_img",
-                                url.substring(url.lastIndexOf("/") + 1,
-                                url.length ));
+
+            getCurrClckdImg("clssfctn_vw_curr_img",
+                url.substring(url.lastIndexOf("/") + 1, url.length ));
 
           }
           else if(whichViewer === "imgIdentification")
           {
             console.log("In imgIdentification condition ");
-            Shiny.onInputChange("spcs_idntfctn_id_rf_1_vw_curr_img",
-                                url.substring(url.lastIndexOf("/") + 1,
-                                url.length ));
+
+            getCurrClckdImg("spcs_idntfctn_id_rf_1_vw_curr_img",
+               url.substring(url.lastIndexOf("/") + 1, url.length ));
+
           }
           else if (whichViewer === "imgIdentification_rf2")
           {
             console.log("In imgIdentification_rf2 condition ");
-            Shiny.onInputChange("spcs_idntfctn_id_rf_2_vw_curr_img",
-            url.substring(url.lastIndexOf("/") + 1,
-            url.length ));
+
+             getCurrClckdImg("spcs_idntfctn_id_rf_2_vw_curr_img",
+             url.substring(url.lastIndexOf("/") + 1,url.length ));
 
           }
 

@@ -161,6 +161,12 @@
             });
       }
 
+
+      function getCurrClckdImg(state, imgsrc)
+      {
+        Shiny.onInputChange(state,imgsrc);
+      }
+
       /**
       * Helper function for isKeyPressed()
       * @parameter - array of selected images - selected_images
@@ -180,7 +186,8 @@
           //console.log("Not marked");
           params.push(src);
           highliter(id);
-          Shiny.onInputChange("clssfctn_slctd_img", src.substring(src.lastIndexOf("/") + 1, src.length ));
+           getCurrClckdImg("clssfctn_slctd_img",
+            src.substring(src.lastIndexOf("/") + 1, src.length ));
         }
       }
 
@@ -191,6 +198,12 @@
       {
         return tempRemoved;
       }
+
+
+      /*function sendImageName(src)
+      {
+         Shiny.onInputChange("clssfctn_slctd_img", src.substring(src.lastIndexOf("/") + 1, src.length ));
+      }*/
 
       /**
       * Handles all image panel click events
