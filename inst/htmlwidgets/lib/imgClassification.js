@@ -183,7 +183,7 @@
           removeHighlight(id);
         }
         else{
-          //console.log("Not marked");
+          console.log("Not marked");
           params.push(src);
           highliter(id);
            getCurrClckdImg("clssfctn_slctd_img",
