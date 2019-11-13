@@ -7,6 +7,7 @@
 
     var whichViewer ;
     var nextPrev = "0";
+    var clickStatus = "0";
     function objectOf(viewerType)
     {
       whichViewer = viewerType;
@@ -20,6 +21,11 @@
     function getCurrClckdImg(state, imgsrc)
     {
       Shiny.onInputChange(state,imgsrc);
+    }
+
+    function clickEventStatus(status)
+    {
+      clickStatus = status;
     }
 
     (function (global, factory) {
@@ -1848,8 +1854,12 @@
 
             console.log("Um hidding the clicked image");
             this.image = image;
-            this.hide();
-            return;
+            if(clickStatus === "0")
+            {
+              this.hide();
+              return;
+            }
+
           }
 
           console.log("Checking whichViewer : " + whichViewer);

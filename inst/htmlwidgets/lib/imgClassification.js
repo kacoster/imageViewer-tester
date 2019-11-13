@@ -223,8 +223,10 @@
             handleExistance(selected_images, event.target.src, event.target.id);
 
           } else {
+            clickEventStatus("1");
             objectOf("imgClassification");
             myFunction();
+            clickEventStatus("0");
           }
       }
 
