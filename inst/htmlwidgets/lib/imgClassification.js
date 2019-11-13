@@ -226,7 +226,7 @@
             clickEventStatus("1");
             objectOf("imgClassification");
              myFunction();
-            clickEventStatus("0");
+
           }
       }
 

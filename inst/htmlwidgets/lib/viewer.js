@@ -7,7 +7,7 @@
 
     var whichViewer ;
     var nextPrev = "0";
-    var clickStatus = "1";
+    var clickStatus = "0";
     function objectOf(viewerType)
     {
       whichViewer = viewerType;
@@ -1857,8 +1857,10 @@
             {
               console.log("Um hidding the clicked image");
               this.hide();
+              clickEventStatus("0");
               return;
             }
+
 
           }
 
