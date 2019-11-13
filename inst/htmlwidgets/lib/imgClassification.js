@@ -12,7 +12,7 @@
        * * ready for JavaScript code to execute
       */
       $(document).ready(function () {
-          console.log("v 0.11");
+          //console.log("v 0.11");
         //readServerData();
 
         $("#apply").on("click", function () {
@@ -70,12 +70,12 @@
        */
       function readServerData(msg) {  // datapath , batchNumber , loadSize
         var csvfile = "" + msg + "";
-        console.log("readServerData : " +  csvfile);
+        //console.log("readServerData : " +  csvfile);
         loadDoc( csvfile, myFunction1);
       }
 
       function loadDoc(url, cFunction) {
-        console.log("In loadDoc()");
+        //console.log("In loadDoc()");
         var xhttp;
         xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function () {
@@ -95,7 +95,7 @@
         ar[0] = ar[0].replace("Source", "");
         ar[0] = ar[ar.length - 1] + ar[0];
         ar.splice(ar.length - 1, 1);
-        console.log("Number of Images : " + ar.length );
+       // console.log("Number of Images : " + ar.length );
         //initial(9,0);
        /************************************************************************
        Shiny.addCustomMessageHandler("testmessage",
@@ -177,13 +177,15 @@
      */
       function handleExistance(params,src,id)
       {
+
+        console.log("Line : " + 181);
         if(params.includes(src))
         {
           tempRemoved =  (params.splice(params.indexOf(src),1))[0];
           removeHighlight(id);
         }
         else{
-          console.log("Not marked");
+          console.log("Line : " + 188);
           params.push(src);
           highliter(id);
            getCurrClckdImg("clssfctn_slctd_img",
@@ -214,7 +216,7 @@
       * @return void
       */
       function isKeyPressed(event) {
-        console.log("is KeyPressed imgClsfctn");
+        //console.log("is KeyPressed imgClsfctn");
 
           // send message to Shiny
           var imageName = event.target.src;
@@ -239,7 +241,7 @@
        *
       */
       function initial(imgnumb,bat) {
-        console.log("In initial()");
+        //console.log("In initial()");
           clearImages();
           start = bat * imgnumb;
           end = start + imgnumb;
@@ -275,12 +277,12 @@
       function next() {
         nextPrevClicked("1");
         //nextPrev = ;
-        console.log("img_clssfcnt Next ");
+        //console.log("img_clssfcnt Next ");
 
 
       if(batnum < getBatchNumber()-1){
                batnum++;
-               console.log("Tester : " +   batnum + "/" + getBatchNumber());
+               //console.log("Tester : " +   batnum + "/" + getBatchNumber());
                 Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (batnum+1) + " / " + getBatchNumber());
              initial(imgNumb, batnum);
@@ -300,7 +302,7 @@
       */
       function prev() {
         nextPrevClicked("1");
-        console.log("img_clssfcnt Prev");
+        //console.log("img_clssfcnt Prev");
            batnum--;
         if (batnum > 0 ) {
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
@@ -329,7 +331,7 @@
        */
       function imgloop(ar) {
 
-        console.log("In imgloop");
+        //console.log("In imgloop");
         for (i = 0; i < ar.length; i++) {
           var liId = i;
           var img = new Image();
@@ -352,7 +354,7 @@
        *
        */
       function clearImages() {
-        console.log("In clearImages()");
+        //console.log("In clearImages()");
         $("#x").html("");
       }
 
@@ -361,7 +363,7 @@
        * @param {String} arry
        */
       function callImges(arry) {
-        console.log("IN callImges()");
+        //console.log("IN callImges()");
         imgloop(arry);
       }
 
@@ -370,7 +372,7 @@
        * @returns image view
        */
       function myFunction() {
-        console.log("In myFunction()");
+        //console.log("In myFunction()");
         vjs();
         return;
       }
@@ -381,7 +383,7 @@
        * @returns viewer component
        */
       function vjs() {
-        console.log("In ViewerJS() ");
+        //console.log("In ViewerJS() ");
 
           var viewer = new Viewer(document.getElementById('galley'), {
           url: 'data-original',

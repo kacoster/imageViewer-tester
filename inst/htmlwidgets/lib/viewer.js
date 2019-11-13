@@ -1,13 +1,13 @@
-    /*!
-     * Viewer.js v1.3.5
-     */
-    //console.log("viewerJS called");
-
-    console.log("viewer.js loaded");
+   /***************************************************************************
+      @version Viewer.js v1.3.5
+      @author Valentine Tawira
+      @Copyright (C) 2019 | Panthera Corporation
+     ***************************************************************************/
 
     var whichViewer ;
     var nextPrev = "0";
     var clickStatus = "0";
+
     function objectOf(viewerType)
     {
       whichViewer = viewerType;
@@ -1798,7 +1798,6 @@
          */
         view: function view() {
 
-
           this.update();
           var _this = this;
 
@@ -1806,7 +1805,7 @@
           index = Number(index) || 0;
 
           if (!this.isShown) {
-            //console.log("Line 1800'");
+
             if(nextPrev === "1"){
               nextPrev = "0";
               return;
@@ -1835,23 +1834,9 @@
           image.src = url;
           image.alt = alt;
 
-          //var urlObject = new Object(url);
-          //var reffObject = new Object(removedRef());
-          console.log("In Viewer");
-          console.log(getSelectedImages());
-          console.log("url : " + url);
-          //console.log("Prev url " + getLastViewed());
-          console.log("Includes url : " + getSelectedImages().includes(url));
-
-          console.log("getSelectedImages includes url-check : " + removedRef() === url );
-          console.log("Checking URL : " + url);
-          /**
-           *
-          */
           if(getSelectedImages().includes(url) || removedRef() === url)
           {
             this.image = image;
-            console.log("Checking status  : " + clickStatus);
 
             if(clickStatus === "0")
             {
@@ -1860,23 +1845,16 @@
               clickEventStatus("0");
               return;
             }
-
-
           }
-
-          console.log("Checking whichViewer : " + whichViewer);
 
           if( whichViewer === "imgClassification")
           {
-            console.log("In imgClassification condition ");
-
             getCurrClckdImg("clssfctn_vw_curr_img",
                 url.substring(url.lastIndexOf("/") + 1, url.length ));
 
           }
           else if(whichViewer === "imgIdentification")
           {
-            console.log("In imgIdentification condition ");
 
             getCurrClckdImg("spcs_idntfctn_id_rf_1_vw_curr_img",
                url.substring(url.lastIndexOf("/") + 1, url.length ));
@@ -1884,13 +1862,10 @@
           }
           else if (whichViewer === "imgIdentification_rf2")
           {
-            console.log("In imgIdentification_rf2 condition ");
-
              getCurrClckdImg("spcs_idntfctn_id_rf_2_vw_curr_img",
              url.substring(url.lastIndexOf("/") + 1,url.length ));
 
           }
-
 
           if (isFunction(options.view)) {
             addListener(element, EVENT_VIEW, options.view, {
@@ -1926,16 +1901,20 @@
           title.innerHTML = ''; // Generate title after viewed
 
           var onViewed = function onViewed() {
-            //console.log("Line 1901");
+
             var imageData = _this.imageData;
             var render = Array.isArray(options.title) ? options.title[1] : options.title;
-            title.innerHTML = escapeHTMLEntities(isFunction(render) ? render.call(_this, image, imageData) : "".concat(alt, " (").concat(imageData.naturalWidth, " \xD7 ").concat(imageData.naturalHeight, ")"));
+            title.innerHTML = escapeHTMLEntities(isFunction(render) ?
+            render.call(_this, image, imageData) : "".concat(alt,
+            " (").concat(imageData.naturalWidth,
+            " \xD7 ").concat(imageData.naturalHeight, ")"));
           };
 
           var onLoad;
           addListener(element, EVENT_VIEWED, onViewed, {
             once: true
           });
+
           this.viewing = {
             abort: function abort() {
               removeListener(element, EVENT_VIEWED, onViewed);
@@ -2024,7 +2003,8 @@
          */
         move: function move(offsetX, offsetY) {
           var imageData = this.imageData;
-          this.moveTo(isUndefined(offsetX) ? offsetX : imageData.left + Number(offsetX), isUndefined(offsetY) ? offsetY : imageData.top + Number(offsetY));
+          this.moveTo(isUndefined(offsetX) ? offsetX : imageData.left + Number(offsetX),
+          isUndefined(offsetY) ? offsetY : imageData.top + Number(offsetY));
           return this;
         },
 
@@ -2082,7 +2062,8 @@
             ratio = 1 + ratio;
           }
 
-          this.zoomTo(imageData.width * ratio / imageData.naturalWidth, hasTooltip, _originalEvent);
+          this.zoomTo(imageData.width * ratio / imageData.naturalWidth,
+          hasTooltip, _originalEvent);
           return this;
         },
 
