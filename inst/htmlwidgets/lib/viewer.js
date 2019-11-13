@@ -1836,16 +1836,10 @@
 
           if(getSelectedImages().includes(url) || removedRef() === url)
           {
-            this.image = image;
-            console.log("Status : " + clickStatus);
-
-            if(clickStatus === "0")
-            {
+              this.image = image;
               console.log("Um hidding the clicked image");
               this.hide();
-              clickEventStatus("0");
               return;
-            }
           }
 
           if( whichViewer === "imgClassification")
