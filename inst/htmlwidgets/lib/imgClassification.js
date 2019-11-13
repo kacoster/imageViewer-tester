@@ -188,9 +188,16 @@
         {
           tempRemoved =  (params.splice(params.indexOf(src),1))[0];
           removeHighlight(id);
-          getCurrClckdImg("clssfctn_slctd_img",
+          if(params.length > 0)
+          {
+            getCurrClckdImg("clssfctn_slctd_img",
             params[params.length -1].substring(
               src.lastIndexOf("/") + 1, src.length ));
+          }else{
+            getCurrClckdImg("clssfctn_slctd_img","");
+          }
+
+
         }
         else{
           console.log("Line : " + 188);
