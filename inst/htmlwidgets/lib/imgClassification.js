@@ -188,6 +188,9 @@
         {
           tempRemoved =  (params.splice(params.indexOf(src),1))[0];
           removeHighlight(id);
+          getCurrClckdImg("clssfctn_slctd_img",
+            params[params.length -1].substring(
+              src.lastIndexOf("/") + 1, src.length ));
         }
         else{
           console.log("Line : " + 188);
