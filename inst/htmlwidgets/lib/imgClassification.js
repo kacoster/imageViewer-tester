@@ -186,7 +186,6 @@
         console.log("Line : " + 181);
         if(params.includes(src))
         {
-          arrayClone(params);
           tempRemoved =  (params.splice(params.indexOf(src),1))[0];
           removeHighlight(id);
         }
@@ -223,7 +222,7 @@
       */
       function isKeyPressed(event) {
         //console.log("is KeyPressed imgClsfctn");
-
+           arrayClone(selected_images);
           // send message to Shiny
           var imageName = event.target.src;
 
