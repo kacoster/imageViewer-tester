@@ -1843,6 +1843,7 @@
 
           if(getSelectedImages().includes(url) || removedRef() === url)
           {
+              console.log("Checking from clonesd : " + getSelectedImages().includes(url) || selected_images_clone.includes(url) );
               if(getSelectedImages().includes(url) || selected_images_clone.includes(url))
               {
                 this.image = image;
