@@ -1836,11 +1836,14 @@
 
           if(getSelectedImages().includes(url) || removedRef() === url)
           {
-              console.log("Contains url exp true : " + (getSelectedImages().includes(url)));
-              this.image = image;
-              console.log("Um hidding the clicked image");
-              this.hide();
-              return;
+              if(getSelectedImages().includes(url))
+              {
+                this.image = image;
+                console.log("Um hidding the clicked image");
+                this.hide();
+                return;
+              }
+
           }
 
           if( whichViewer === "imgClassification")
