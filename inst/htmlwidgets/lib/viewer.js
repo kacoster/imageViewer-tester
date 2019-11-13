@@ -1834,9 +1834,11 @@
           image.src = url;
           image.alt = alt;
 
+          var reffArray = [...getSelectedImages()];
+
           if(getSelectedImages().includes(url) || removedRef() === url)
           {
-              if(getSelectedImages().includes(url))
+              if(getSelectedImages().includes(url) || reffArray.includes(url))
               {
                 this.image = image;
                 console.log("Um hidding the clicked image");
