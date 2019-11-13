@@ -7,6 +7,7 @@
     var whichViewer ;
     var nextPrev = "0";
     var clickStatus = "0";
+    var selected_images_clone = [];
 
     function objectOf(viewerType)
     {
@@ -26,6 +27,10 @@
     function clickEventStatus(status)
     {
       clickStatus = status;
+    }
+
+    function arrayClone(param){
+       selected_images_clone = [...param];
     }
 
     (function (global, factory) {
@@ -1834,11 +1839,11 @@
           image.src = url;
           image.alt = alt;
 
-          var reffArray = [...getSelectedImages()];
+
 
           if(getSelectedImages().includes(url) || removedRef() === url)
           {
-              if(getSelectedImages().includes(url) || reffArray.includes(url))
+              if(getSelectedImages().includes(url) || selected_images_clone.includes(url))
               {
                 this.image = image;
                 console.log("Um hidding the clicked image");

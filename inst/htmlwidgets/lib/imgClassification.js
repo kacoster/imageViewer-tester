@@ -167,6 +167,11 @@
         Shiny.onInputChange(state,imgsrc);
       }
 
+      function selectedImagesClone()
+      {
+
+      }
+
       /**
       * Helper function for isKeyPressed()
       * @parameter - array of selected images - selected_images
@@ -181,6 +186,7 @@
         console.log("Line : " + 181);
         if(params.includes(src))
         {
+          arrayClone(params);
           tempRemoved =  (params.splice(params.indexOf(src),1))[0];
           removeHighlight(id);
         }
