@@ -194,7 +194,8 @@
           params.push(src);
           highliter(id);
            getCurrClckdImg("clssfctn_slctd_img",
-            src.substring(src.lastIndexOf("/") + 1, src.length ));
+            selected_images[selected_images.length -1].substring(
+              src.lastIndexOf("/") + 1, src.length ));
         }
       }
 
