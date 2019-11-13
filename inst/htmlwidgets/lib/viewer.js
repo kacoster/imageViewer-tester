@@ -1837,6 +1837,7 @@
           if(getSelectedImages().includes(url) || removedRef() === url)
           {
             this.image = image;
+            console.log("Status : " + clickStatus);
 
             if(clickStatus === "0")
             {
