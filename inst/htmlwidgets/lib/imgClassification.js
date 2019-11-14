@@ -14,7 +14,8 @@
       $(document).ready(function () {
           //console.log("v 0.11");
         //readServerData();
-        $("#list").addClass("highlighter");
+        //$("#list").addClass("highlighter");
+        $(".pictures > li").css("background-color", "yellow");
         $("#apply").on("click", function () {
           // send message to Shiny
           Shiny.onInputChange("sources", sendDataToShinny());
@@ -353,7 +354,7 @@
           // Triming the double quotes passed on each image src
           img.alt = "Camera Trap";
           img.datamarked = 0;
-          ul.innerHTML += '<li id="list"><img id="' + liId + '" data-original="' +
+          ul.innerHTML += '<li ><img id="' + liId + '" data-original="' +
           img.src + '"  marked="' + img.datamarked + '" src="' +
           img.src + '" alt="' + img.alt + '" /> </li>';
           // inserting an list of images uinside the ul tag
