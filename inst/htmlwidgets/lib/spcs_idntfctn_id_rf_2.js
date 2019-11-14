@@ -63,7 +63,7 @@
         startIndex = bat * imgnumb;
         endIndex = startIndex + imgnumb;
         resultsArray_rf2 = imageArray_rf2.slice(startIndex, endIndex);
-        imgloop(arry,'spcs_idntfctn_id_rf_2');
+        imgloop(resultsArray_rf2 ,'spcs_idntfctn_id_rf_2');
         //dispImages_rf2(resultsArray_rf2);
     }
 
