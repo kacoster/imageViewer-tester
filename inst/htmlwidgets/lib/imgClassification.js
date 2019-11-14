@@ -83,7 +83,7 @@
       }*/
 
        async function processResponse(csvfile) {
-         //console.log("myFunction1()");
+         console.log("In ProcessResponse");
         let textResult = await fetchServerFile(csvfile);
         console.log("In processResponse : " + textResult);
         ar = (textResult.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
