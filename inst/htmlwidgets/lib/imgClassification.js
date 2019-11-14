@@ -78,8 +78,8 @@
                 Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               1 + " / " + getBatchNumber());
            // console.log("Image Number from the Slider : " + imgNumb);
-             //displayImages(imgNumb,0,'x');
-            initial(imgNumb,0);
+             displayImages(imgNumb,0,'x',ar);
+            //initial(imgNumb,0);
           }
       );
 
@@ -203,7 +203,7 @@
        *           - batch number of the image lot
        * @returns void
        *
-       */
+       
      
       function initial(imgnumb,bat) {
         //console.log("In initial()");
@@ -214,7 +214,7 @@
           imgloop(result,'x');
         
       } 
-
+      */
       function tester()
       {
         initial(9,0);
@@ -252,15 +252,15 @@
                 Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (batnum+1) + " / " + getBatchNumber());
               clearImages();
-              //displayImages(imgNumb,batnum,'x');
-             initial(imgNumb, batnum);
+              displayImages(imgNumb,batnum,'x',ar);
+             //initial(imgNumb, batnum);
 
         }else{
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
              getBatchNumber() + " / " + getBatchNumber());
              clearImages();
-          initial(imgNumb, getBatchNumber()-1);
-          //displayImages(imgNumb,getBatchNumber()-1,'x');
+          //initial(imgNumb, getBatchNumber()-1);
+          displayImages(imgNumb,getBatchNumber()-1,'x',ar);
           batnum = getBatchNumber()-1;
         }
 
@@ -278,15 +278,15 @@
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (batnum+1) + " / " + getBatchNumber());
               clearImages();
-              //displayImages(imgNumb,batnum,'x');
-              initial(imgNumb ,batnum);
+              displayImages(imgNumb,batnum,'x',ar);
+              //initial(imgNumb ,batnum);
         }else{
 
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
              1 + " / " + getBatchNumber());
              clearImages();
-             //displayImages(imgNumb,0,'x');
-             initial(imgNumb, 0);
+             displayImages(imgNumb,0,'x',ar);
+             //initial(imgNumb, 0);
              batnum = 0;
 
         }
