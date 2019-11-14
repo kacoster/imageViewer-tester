@@ -51,10 +51,6 @@
       var selected_images = [];
       var tempRemoved ;
       var nextPrev = "0";
-
-      //var result;
-      var start, end;
-
       var batnum  = 0 ; // default batch Number
       var imgNumb = 0; // default image size
 
@@ -74,12 +70,9 @@
       Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
         function(message) {
            imgNumb =  parseInt(JSON.stringify(message));
-            //console.log("Tester : " +   batnum + "/" + getBatchNumber());
                 Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               1 + " / " + getBatchNumber());
-           // console.log("Image Number from the Slider : " + imgNumb);
              displayImages(imgNumb,0,'x',ar);
-            //initial(imgNumb,0);
           }
       );
 
@@ -94,6 +87,7 @@
       */
       function highliter(elementID)
       {
+        console.log("Highting the Image");
         $('#' + elementID + '').css({
               'opacity': '0.4',
               'filter': 'alpha(opacity=40)'
@@ -165,12 +159,6 @@
         return tempRemoved;
       }
 
-
-      /*function sendImageName(src)
-      {
-         Shiny.onInputChange("clssfctn_slctd_img", src.substring(src.lastIndexOf("/") + 1, src.length ));
-      }*/
-
       /**
       * Handles all image panel click events
       * @parameter - event click/shiftKey
@@ -197,30 +185,6 @@
       }
 
       /**
-       * @function initial(a,b)
-       * @description determines the images to be rendered
-       * @parameter - number of images of render
-       *           - batch number of the image lot
-       * @returns void
-       *
-       
-     
-      function initial(imgnumb,bat) {
-        //console.log("In initial()");
-          clearImages();
-          start = bat * imgnumb;
-          end = start + imgnumb;
-          let result = ar.slice(start, end);
-          imgloop(result,'x');
-        
-      } 
-      */
-      function tester()
-      {
-        initial(9,0);
-      }
-
-      /**
        * @function getBatchNumber()
        * @description computes the total number of available batches
        * @constrains the number of images per batchimgNumb()
@@ -242,10 +206,7 @@
       */
       function next() {
         nextPrevClicked("1");
-        //nextPrev = ;
-        //console.log("img_clssfcnt Next ");
-
-
+  
       if(batnum < getBatchNumber()-1){
                batnum++;
                //console.log("Tester : " +   batnum + "/" + getBatchNumber());
@@ -253,15 +214,13 @@
               (batnum+1) + " / " + getBatchNumber());
               clearImages();
               displayImages(imgNumb,batnum,'x',ar);
-             //initial(imgNumb, batnum);
 
         }else{
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
              getBatchNumber() + " / " + getBatchNumber());
              clearImages();
-          //initial(imgNumb, getBatchNumber()-1);
-          displayImages(imgNumb,getBatchNumber()-1,'x',ar);
-          batnum = getBatchNumber()-1;
+             displayImages(imgNumb,getBatchNumber()-1,'x',ar);
+             batnum = getBatchNumber()-1;
         }
 
       }
@@ -272,72 +231,24 @@
       */
       function prev() {
         nextPrevClicked("1");
-        //console.log("img_clssfcnt Prev");
-           batnum--;
+        batnum--;
         if (batnum > 0 ) {
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (batnum+1) + " / " + getBatchNumber());
               clearImages();
               displayImages(imgNumb,batnum,'x',ar);
-              //initial(imgNumb ,batnum);
         }else{
 
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
              1 + " / " + getBatchNumber());
              clearImages();
              displayImages(imgNumb,0,'x',ar);
-             //initial(imgNumb, 0);
              batnum = 0;
 
         }
 
       }
-      /************************************************************************/
-
-      /************************************************************************/
-
-      /**
-       * @description - creates html component to display the images
-       * @param {String} ar - an array of images
-       * @returns {void} var src = ( ( ar[0].trim()).replace(/['"]+/g, ''));
-       * someText = src.replace(/(\r\n|\n|\r)/gm,"");
-       
-      function imgloop(ar) {
-        $(".pictures > li").css("background-color", "white");
-        //console.log("In imgloop");
-        for (i = 0; i < ar.length; i++) {
-          var liId = i;
-          var img = new Image();
-          var ul = document.getElementById('x');
-          img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
-          // Triming the double quotes passed on each image src
-          img.alt = "Camera Trap";
-          img.datamarked = 0;
-          ul.innerHTML += '<li ><img id="' + liId + '" data-original="' +
-          img.src + '"  marked="' + img.datamarked + '" src="' +
-          img.src + '" alt="' + img.alt + '" /> </li>';
-          // inserting an list of images uinside the ul tag
-        }
-      }*/
-
-      /**
-       * @description clears inner html components identified by elementId 'x'
-       *
-       */
-      function clearImages() {
-        //console.log("In clearImages()");
-        $("#x").html("");
-      }
-
-      /**
-       *
-       * @param {String} arry
       
-      function callImges(arry) {
-       
-        imgloop(arry,'x');
-      } */
-
       /**
        * @description - indirect call to the vjs() function
        * @returns image view
