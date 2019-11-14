@@ -13,8 +13,6 @@
     var highlighted_images = [];
     var resultsArray;
     var startIndex, endIndex;
-    //var batnum  = 0 ; // default batch Number
-    //var imgNumb = 0; // default image size
 
 
      /* Function to read Server Data from Server-Side
@@ -33,7 +31,6 @@
       xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-          //console.log("readyState 4 and status 200 : " + this);
           cFunction(this);
         }
       };
@@ -42,8 +39,6 @@
     }
 
     function processXHTTPResponse(xhttp) {
-      //console.log("processXHTTPResponse()");
-      //imgIdentification
       imageArray = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
       imageArray.splice(0, 1);
       imageArray[0] = imageArray[0].replace("Source", "");
@@ -51,11 +46,7 @@
       imageArray.splice(imageArray.length - 1, 1);
       console.log("Number of Images : " + imageArray.length );
       displayImages(20,0);
-    
     }
-
-   
-   
 
     /**
     * Handles all image panel click events
@@ -97,8 +88,7 @@
      * @description - creates html component to display the images
      * @param {String} imageArray - an array of images
      * @returns {void} var src = ( ( imageArray[0].trim()).replace(/['"]+/g, ''));
-    someText = src.replace(/(\r\n|\n|\r)/gm,"");
-
+     * someText = src.replace(/(\r\n|\n|\r)/gm,"");
      */
     function pasteImages(imageArray) {
 
@@ -164,8 +154,6 @@
       });
     }
 
-
-
     /**
      * @function SelectedImages()
      * @returns an array with the currently selected images
@@ -175,4 +163,3 @@
       return highlighted_images;
     }
 
-    
