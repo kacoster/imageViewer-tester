@@ -27,17 +27,23 @@
         }
       }
 
-      /**
+      function clearImages(moduleId) {
+        //console.log("In clearImages()");
+        $('#' + moduleId + '').html("");
+        //$("#x").html("");
+      }
+
+    /**
      * @function displayImages(a,b)
      * @description determines the images to be rendered
      * @parameter - number of images of render
      *           - batch number of the image lot
      * @returns void
      *
-   
+    */
     function displayImages(imgnumb,bat,moduleId) {
           let startIndex , endIndex;
-          // removeImages();
+          clearImages(moduleId);
           startIndex = bat * imgnumb;
           endIndex = startIndex + imgnumb;
           resultsArray = imageArray.slice(startIndex, endIndex);
@@ -45,4 +51,4 @@
           //dispImages(resultsArray);
       }
 
-       */
+     
