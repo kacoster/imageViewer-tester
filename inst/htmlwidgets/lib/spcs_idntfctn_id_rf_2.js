@@ -76,7 +76,7 @@
      * @returns {void} var src = ( ( imageArray_rf2[0].trim()).replace(/['"]+/g, ''));
     someText = src.replace(/(\r\n|\n|\r)/gm,"");
 
-     */
+    
     function pasteImages_rf2(imageArray_rf2) {
 
       console.log("In pasteImages_rf2 imgIdentification");
@@ -95,7 +95,7 @@
        imageObject.src + '" alt="' +imageObject.alt + '" /> </li>';
         // inserting an list of images uinside the ul tag
       }
-    }
+    } */
 
     /**
      * @description clears inner html components identified by elementId 'x'
@@ -112,7 +112,8 @@
      */
     function dispImages_rf2(arry) {
       console.log("IN dispImages_rf2() imgIdentification");
-      pasteImages_rf2(arry);
+      imgloop(arry,'spcs_idntfctn_id_rf_2');
+      //pasteImages_rf2(arry);
     }
 
     /**

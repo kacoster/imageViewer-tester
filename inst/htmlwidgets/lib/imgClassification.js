@@ -290,7 +290,7 @@
        * @param {String} ar - an array of images
        * @returns {void} var src = ( ( ar[0].trim()).replace(/['"]+/g, ''));
        * someText = src.replace(/(\r\n|\n|\r)/gm,"");
-       */
+       
       function imgloop(ar) {
         $(".pictures > li").css("background-color", "white");
         //console.log("In imgloop");
@@ -307,7 +307,7 @@
           img.src + '" alt="' + img.alt + '" /> </li>';
           // inserting an list of images uinside the ul tag
         }
-      }
+      }*/
 
       /**
        * @description clears inner html components identified by elementId 'x'
@@ -324,7 +324,7 @@
        */
       function callImges(arry) {
        
-        imgloop(arry);
+        imgloop(arry,'x');
       }
 
       /**

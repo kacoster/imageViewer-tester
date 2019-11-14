@@ -72,7 +72,7 @@
      * @param {String} imageArray - an array of images
      * @returns {void} var src = ( ( imageArray[0].trim()).replace(/['"]+/g, ''));
      * someText = src.replace(/(\r\n|\n|\r)/gm,"");
-     */
+    
     function pasteImages(imageArray) {
 
       console.log("In pasteImages imgIdentification");
@@ -91,7 +91,7 @@
        imageObject.src + '" alt="' +imageObject.alt + '" /> </li>';
         // inserting an list of images uinside the ul tag
       }
-    }
+    } */
 
     /**
      * @description clears inner html components identified by elementId 'x'
@@ -108,7 +108,8 @@
      */
     function dispImages(arry) {
       console.log("IN dispImages() imgIdentification");
-      pasteImages(arry);
+      imgloop(arry,'spcs_idntfctn_id_rf_1');
+      //pasteImages(arry);
     }
 
     /**
