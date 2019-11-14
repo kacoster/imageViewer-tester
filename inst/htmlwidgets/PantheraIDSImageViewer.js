@@ -35,7 +35,7 @@ HTMLWidgets.widget({
         }
         else
         {
-          fetchServerData_rf2(x.message);
+          processIdnfctn2ResponseText(x.message);
         }
 
       },

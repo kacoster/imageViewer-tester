@@ -21,30 +21,10 @@
      * @parameter msg A message from Shiny indication the csv file
      *
      */
-    function fetchServerData_rf2(msg) {  // datapath , batchNumber , loadSize
-      var csvfile = "" + msg + "";
-      console.log("readServerData : " +  csvfile);
-      getData_rf2( csvfile, processXHTTPResponse_rf2);
-    }
-
-    function getData_rf2(url, cFunction) {
-      console.log("In getData_rf2() imgIdentification");
-      var xhttp;
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          //console.log("readyState 4 and status 200 : " + this);
-          cFunction(this);
-        }
-      };
-      xhttp.open("GET", url, true);
-      xhttp.send();
-    }
-
-    function processXHTTPResponse_rf2(xhttp) {
-      //console.log("processXHTTPResponse_rf2()");
-      //imgIdentification
-      imageArray_rf2 = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
+    async function processIdnfctn2ResponseText(csvfile) {
+      
+      let textResult = await fetchServerFile(csvfile);
+      imageArray_rf2 = (textResult).split(',');
       imageArray_rf2.splice(0, 1);
       imageArray_rf2[0] = imageArray_rf2[0].replace("Source", "");
       imageArray_rf2[0] = imageArray_rf2[imageArray_rf2.length - 1] + imageArray_rf2[0];
