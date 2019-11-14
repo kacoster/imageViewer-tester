@@ -41,13 +41,13 @@
      * @returns void
      *
     */
-    function displayImages(imgnumb,bat,moduleId) {
+    function displayImages(imgnumb,bat,moduleId,arry) {
           let startIndex , endIndex;
           clearImages(moduleId);
           startIndex = bat * imgnumb;
           endIndex = startIndex + imgnumb;
           resultsArray = imageArray.slice(startIndex, endIndex);
-          imgloop(resultsArray,moduleId);
+          imgloop(arry,moduleId);
           //dispImages(resultsArray);
       }
 

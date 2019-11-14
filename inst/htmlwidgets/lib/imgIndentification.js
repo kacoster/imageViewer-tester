@@ -11,7 +11,7 @@
     console.log("IN IMGINDENTIFICATION.JS");
     var imageArray = [];
     var highlighted_images = [];
-    var resultsArray;
+    //var resultsArray;
     //var startIndex, endIndex;
 
 

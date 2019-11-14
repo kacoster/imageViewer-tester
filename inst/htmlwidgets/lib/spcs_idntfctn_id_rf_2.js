@@ -30,7 +30,7 @@
       imageArray_rf2[0] = imageArray_rf2[imageArray_rf2.length - 1] + imageArray_rf2[0];
       imageArray_rf2.splice(imageArray_rf2.length - 1, 1);
       console.log("Number of Images : " + imageArray_rf2.length );
-      displayImages(20,0,'spcs_idntfctn_id_rf_2');
+      displayImages(20,0,'spcs_idntfctn_id_rf_2',imageArray_rf2);
       //displayImages_rf2(20,0);
     
     }
