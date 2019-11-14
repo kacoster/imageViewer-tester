@@ -359,6 +359,7 @@
           img.src + '" alt="' + img.alt + '" /> </li>';
           // inserting an list of images uinside the ul tag
         }
+        $(".pictures > li").css("background-color", "yellow");
       }
 
       /**
