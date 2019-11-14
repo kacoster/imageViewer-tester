@@ -52,7 +52,7 @@
       var tempRemoved ;
       var nextPrev = "0";
 
-      var result;
+      //var result;
       var start, end;
 
       var batnum  = 0 ; // default batch Number
@@ -208,8 +208,9 @@
           clearImages();
           start = bat * imgnumb;
           end = start + imgnumb;
-          result = ar.slice(start, end);
-          callImges(result);
+          let result = ar.slice(start, end);
+          imgloop(result,'x');
+        
       }
 
       function tester()
@@ -321,11 +322,11 @@
       /**
        *
        * @param {String} arry
-       */
+      
       function callImges(arry) {
        
         imgloop(arry,'x');
-      }
+      } */
 
       /**
        * @description - indirect call to the vjs() function

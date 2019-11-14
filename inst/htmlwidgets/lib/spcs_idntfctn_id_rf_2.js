@@ -63,40 +63,15 @@
         startIndex = bat * imgnumb;
         endIndex = startIndex + imgnumb;
         resultsArray_rf2 = imageArray_rf2.slice(startIndex, endIndex);
-        dispImages_rf2(resultsArray_rf2);
+        imgloop(arry,'spcs_idntfctn_id_rf_2');
+        //dispImages_rf2(resultsArray_rf2);
     }
 
     /************************************************************************/
 
     /************************************************************************/
 
-    /**
-     * @description - creates html component to display the images
-     * @param {String} imageArray_rf2 - an array of images
-     * @returns {void} var src = ( ( imageArray_rf2[0].trim()).replace(/['"]+/g, ''));
-    someText = src.replace(/(\r\n|\n|\r)/gm,"");
-
-    
-    function pasteImages_rf2(imageArray_rf2) {
-
-      console.log("In pasteImages_rf2 imgIdentification");
-      for (i = 0; i < imageArray_rf2.length; i++) {
-        var liId = i;
-        var imageObject = new Image();
-        var ul = document.getElementById('spcs_idntfctn_id_rf_2');
-        //imageObject.onload = function() {
-       imageObject.src = ((imageArray_rf2[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
-        console.log("img.src " +imageObject.src);
-        // Triming the double quotes passed on each image src
-       imageObject.alt = "Camera Trap";
-       imageObject.datamarked = 0;
-        ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' +
-       imageObject.src + '"  marked="' +imageObject.datamarked + '" src="' +
-       imageObject.src + '" alt="' +imageObject.alt + '" /> </li>';
-        // inserting an list of images uinside the ul tag
-      }
-    } */
-
+  
     /**
      * @description clears inner html components identified by elementId 'x'
      *
@@ -109,12 +84,13 @@
     /**
      *
      * @param {String} arry
-     */
+    
     function dispImages_rf2(arry) {
       console.log("IN dispImages_rf2() imgIdentification");
       imgloop(arry,'spcs_idntfctn_id_rf_2');
       //pasteImages_rf2(arry);
-    }
+    } 
+    */
 
     /**
      * @description - indirect call to the createViewerComponent_rf2() function
