@@ -199,6 +199,7 @@
         else{
           console.log("Line : " + 188);
           params.push(src);
+          $(".pictures > li").css("background-color", "yellow");
           highliter(id);
            getCurrClckdImg("clssfctn_slctd_img",
             src.substring(src.lastIndexOf("/") + 1, src.length ));
@@ -359,7 +360,6 @@
           img.src + '" alt="' + img.alt + '" /> </li>';
           // inserting an list of images uinside the ul tag
         }
-        $(".pictures > li").css("background-color", "yellow");
 
        
       }
