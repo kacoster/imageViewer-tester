@@ -34,7 +34,7 @@
      *           - batch number of the image lot
      * @returns void
      *
-    */
+   
     function displayImages(imgnumb,bat,moduleId) {
           let startIndex , endIndex;
           // removeImages();
@@ -45,4 +45,4 @@
           //dispImages(resultsArray);
       }
 
-      
+       */

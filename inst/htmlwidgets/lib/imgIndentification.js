@@ -28,7 +28,8 @@
       imageArray[0] = imageArray[imageArray.length - 1] + imageArray[0];
       imageArray.splice(imageArray.length - 1, 1);
       console.log("Number of Images : " + imageArray.length );
-      displayImages(20,0,'spcs_idntfctn_id_rf_1');
+      displayImages(20,0)
+      //displayImages(20,0,'spcs_idntfctn_id_rf_1');
     }
     /**
     * Handles all image panel click events
@@ -52,6 +53,7 @@
      *           - batch number of the image lot
      * @returns void
      *
+     */
    
     function displayImages(imgnumb,bat) {
       console.log("In displayImages() imgIdentification");
@@ -61,7 +63,7 @@
         resultsArray = imageArray.slice(startIndex, endIndex);
         imgloop(resultsArray,'spcs_idntfctn_id_rf_1');
         //dispImages(resultsArray);
-    } */
+    } 
 
     /************************************************************************/
 
