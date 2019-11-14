@@ -26,12 +26,12 @@ HTMLWidgets.widget({
         if(x.componentID === "img_clssfctn_ud")
         {
           console.log("CASE : classification module ");
-          processResponse(x.message);
-           //readServerData(x.message);
+          processClsfctnResponseText(x.message);
+
         }
         else if (x.componentID === "spcs_idntfctn_id_rf_1")
         {
-          fetchServerData(x.message);
+          processIdnfctn1ResponseText(x.message);
         }
         else
         {

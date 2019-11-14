@@ -19,35 +19,18 @@
      * @parameter msg A message from Shiny indication the csv file
      *
      */
-    function fetchServerData(msg) {  // datapath , batchNumber , loadSize
-      var csvfile = "" + msg + "";
-      console.log("readServerData : " +  csvfile);
-      getData( csvfile, processXHTTPResponse);
-    }
-
-    function getData(url, cFunction) {
-      console.log("In getData() imgIdentification");
-      var xhttp;
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          cFunction(this);
-        }
-      };
-      xhttp.open("GET", url, true);
-      xhttp.send();
-    }
-
-    function processXHTTPResponse(xhttp) {
-      imageArray = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
-      imageArray.splice(0, 1);
+    async function processIdnfctn1ResponseText(csvfile) {
+      
+     let textResult = await fetchServerFile(csvfile);
+     imageArray = (textResult).split(',');
+     imageArray.splice(0, 1);
       imageArray[0] = imageArray[0].replace("Source", "");
       imageArray[0] = imageArray[imageArray.length - 1] + imageArray[0];
       imageArray.splice(imageArray.length - 1, 1);
       console.log("Number of Images : " + imageArray.length );
       displayImages(20,0);
-    }
 
+    }
     /**
     * Handles all image panel click events
     * @parameter - event click/shiftKey

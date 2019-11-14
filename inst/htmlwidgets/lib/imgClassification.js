@@ -58,31 +58,8 @@
       var batnum  = 0 ; // default batch Number
       var imgNumb = 0; // default image size
 
-       /* Function to read Server Data from Server-Side
-       * @parameter msg A message from Shiny indication the csv file
-       *
-       
-      function readServerData(msg) {  // datapath , batchNumber , loadSize
-        var csvfile = "" + msg + "";
-        //console.log("readServerData : " +  csvfile);
-        loadDoc( csvfile, myFunction1);
-      }
-
-      function loadDoc(url, cFunction) {
-        //console.log("In loadDoc()");
-        var xhttp;
-        xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-          if (this.readyState == 4 && this.status == 200) {
-            //console.log("readyState 4 and status 200 : " + this);
-            cFunction(this);
-          }
-        };
-        xhttp.open("GET", url, true);
-        xhttp.send();
-      }*/
-
-       async function processResponse(csvfile) {
+     
+       async function processClsfctnResponseText(csvfile) {
          console.log("In ProcessResponse");
         var textResult = await fetchServerFile(csvfile);
         console.log("In PR : " + textResult);
@@ -140,11 +117,6 @@
       function getCurrClckdImg(state, imgsrc)
       {
         Shiny.onInputChange(state,imgsrc);
-      }
-
-      function selectedImagesClone()
-      {
-
       }
 
       /**
@@ -317,8 +289,7 @@
        * @description - creates html component to display the images
        * @param {String} ar - an array of images
        * @returns {void} var src = ( ( ar[0].trim()).replace(/['"]+/g, ''));
-      someText = src.replace(/(\r\n|\n|\r)/gm,"");
-
+       * someText = src.replace(/(\r\n|\n|\r)/gm,"");
        */
       function imgloop(ar) {
         $(".pictures > li").css("background-color", "white");
@@ -336,8 +307,6 @@
           img.src + '" alt="' + img.alt + '" /> </li>';
           // inserting an list of images uinside the ul tag
         }
-
-       
       }
 
       /**
@@ -354,7 +323,7 @@
        * @param {String} arry
        */
       function callImges(arry) {
-        //console.log("IN callImges()");
+       
         imgloop(arry);
       }
 
@@ -375,7 +344,6 @@
        */
       function vjs() {
         //console.log("In ViewerJS() ");
-
           var viewer = new Viewer(document.getElementById('galley'), {
           url: 'data-original',
           title: function (image) {
