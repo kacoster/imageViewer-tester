@@ -19,11 +19,11 @@
      * @parameter msg A message from Shiny indication the csv file
      *
      */
-    async function processIdnfctn1ResponseText(csvfile) {
+    async function processIdnfctnResponseText(csvfile) {
       
-     let textResult = await fetchServerFile(csvfile);
-     imageArray = (textResult).split(',');
-     imageArray.splice(0, 1);
+      let textResult = await fetchServerFile(csvfile);
+      imageArray = (textResult).split(',');
+      imageArray.splice(0, 1);
       imageArray[0] = imageArray[0].replace("Source", "");
       imageArray[0] = imageArray[imageArray.length - 1] + imageArray[0];
       imageArray.splice(imageArray.length - 1, 1);
