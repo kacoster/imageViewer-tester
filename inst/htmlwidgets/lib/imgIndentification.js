@@ -29,7 +29,7 @@
       imageArray.splice(imageArray.length - 1, 1);
       console.log("Number of Images : " + imageArray.length );
       //displayImages(20,0)
-      displayImages(20,0,'spcs_idntfctn_id_rf_1');
+      displayImages(20,0,'spcs_idntfctn_id_rf_1',imageArray);
     }
     /**
     * Handles all image panel click events
