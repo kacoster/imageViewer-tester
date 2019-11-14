@@ -46,8 +46,8 @@
           clearImages(moduleId);
           startIndex = bat * imgnumb;
           endIndex = startIndex + imgnumb;
-          resultsArray = imageArray.slice(startIndex, endIndex);
-          imgloop(arry,moduleId);
+          resultsArray = arry.slice(startIndex, endIndex);
+          imgloop(resultsArray,moduleId);
           //dispImages(resultsArray);
       }
 
