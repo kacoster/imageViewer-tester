@@ -26,3 +26,23 @@
           // inserting an list of images uinside the ul tag
         }
       }
+
+      /**
+     * @function displayImages(a,b)
+     * @description determines the images to be rendered
+     * @parameter - number of images of render
+     *           - batch number of the image lot
+     * @returns void
+     *
+    */
+    function displayImages(imgnumb,bat,moduleId) {
+          let startIndex , endIndex;
+          removeImages();
+          startIndex = bat * imgnumb;
+          endIndex = startIndex + imgnumb;
+          resultsArray = imageArray.slice(startIndex, endIndex);
+          imgloop(resultsArray,moduleId);
+          //dispImages(resultsArray);
+      }
+
+      

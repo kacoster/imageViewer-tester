@@ -12,7 +12,7 @@
     var imageArray_rf2 = [];
     var highlighted_images_rf2 = [];
     var resultsArray_rf2;
-    var startIndex, endIndex;
+    //var startIndex, endIndex;
     //var batnum  = 0 ; // default batch Number
     //var imgNumb = 0; // default image size
 
@@ -30,7 +30,8 @@
       imageArray_rf2[0] = imageArray_rf2[imageArray_rf2.length - 1] + imageArray_rf2[0];
       imageArray_rf2.splice(imageArray_rf2.length - 1, 1);
       console.log("Number of Images : " + imageArray_rf2.length );
-      displayImages_rf2(20,0);
+      displayImages(20,0,'spcs_idntfctn_id_rf_2');
+      //displayImages_rf2(20,0);
     
     }
 
@@ -56,7 +57,7 @@
      *           - batch number of the image lot
      * @returns void
      *
-    */
+   
     function displayImages_rf2(imgnumb,bat) {
       console.log("In displayImages_rf2() imgIdentification");
         removeImages_rf2();
@@ -66,6 +67,7 @@
         imgloop(resultsArray_rf2 ,'spcs_idntfctn_id_rf_2');
         //dispImages_rf2(resultsArray_rf2);
     }
+     */
 
     /************************************************************************/
 
