@@ -14,7 +14,7 @@
       $(document).ready(function () {
           //console.log("v 0.11");
         //readServerData();
-
+        $("#list").addClass("highlighter");
         $("#apply").on("click", function () {
           // send message to Shiny
           Shiny.onInputChange("sources", sendDataToShinny());
@@ -36,7 +36,6 @@
        $("#img_clssfctn_ud_prvs_bttn").on("click", function () {
          Shiny.onInputChange("prev", prev());
        });
-
        /**********************************************************************/
         // For Testing Purposes
         $("#prev").on("click", function () {
@@ -46,9 +45,6 @@
            next();
        });
       /**********************************************************************/
-
-
-
       });
 
       /**Program Global Variables */
@@ -357,7 +353,7 @@
           // Triming the double quotes passed on each image src
           img.alt = "Camera Trap";
           img.datamarked = 0;
-          ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' +
+          ul.innerHTML += '<li id="list"><img id="' + liId + '" data-original="' +
           img.src + '"  marked="' + img.datamarked + '" src="' +
           img.src + '" alt="' + img.alt + '" /> </li>';
           // inserting an list of images uinside the ul tag
@@ -409,8 +405,6 @@
 
 
       }
-
-
 
       /**
        * @function getSelectedImages()
