@@ -37,7 +37,7 @@
     */
     function displayImages(imgnumb,bat,moduleId) {
           let startIndex , endIndex;
-          removeImages();
+          // removeImages();
           startIndex = bat * imgnumb;
           endIndex = startIndex + imgnumb;
           resultsArray = imageArray.slice(startIndex, endIndex);
