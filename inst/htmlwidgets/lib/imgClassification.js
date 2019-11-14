@@ -15,7 +15,7 @@
           //console.log("v 0.11");
         //readServerData();
         //$("#list").addClass("highlighter");
-        $(".pictures > li").css("background-color", "yellow");
+       // $(".pictures > li").css("background-color", "yellow");
         $("#apply").on("click", function () {
           // send message to Shiny
           Shiny.onInputChange("sources", sendDataToShinny());
