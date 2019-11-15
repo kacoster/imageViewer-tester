@@ -166,7 +166,7 @@
         let startIndex , endIndex;
         this.clearImages();
         startIndex = bat * this.imgnumb;
-        endIndex = startIndex + imgnumb;
+        endIndex = startIndex + this.imgnumb;
         resultsArray = this.imgsArray.slice(startIndex, endIndex);
         console.log("resultsArray : " + resultsArray);
         this.buildImages(resultsArray);
