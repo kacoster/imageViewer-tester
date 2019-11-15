@@ -190,7 +190,6 @@
 
         if(this.batnum < this.getBatchNumber()-1){
             this.batnum++;
-               //console.log("Tester : " +   batnum + "/" + getBatchNumber());
             Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
                 (this.batnum + 1) + " / " + this.getBatchNumber());
             this.clearImages();
@@ -221,8 +220,3 @@
              this.batnum = 0;
         }
     };
-
-    let classification = new createViewer('imgsArray','selected_images',1,50);
-    //console.log(classification.getBatchNumber());
-    classification.processResponseText('img_clssfctn_ud.csv');
-    console.log(" Checking my Car : "+ car);
