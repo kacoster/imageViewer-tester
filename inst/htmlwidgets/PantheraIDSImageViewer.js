@@ -23,7 +23,7 @@ HTMLWidgets.widget({
          * Passing the filePath parameter as an argument
         */
 
-        let classification = new createViewer('imgsArray','selected_images',0,50,x.componentID);
+        let classification = new createViewer('imgsArray','selected_images',0,x.componentID);
         classification.processResponseText('img_clssfctn_ud.csv');
 
 
