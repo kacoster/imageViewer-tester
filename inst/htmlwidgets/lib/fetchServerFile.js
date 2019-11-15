@@ -48,7 +48,7 @@
           endIndex = startIndex + imgnumb;
           resultsArray = arry.slice(startIndex, endIndex);
           imgloop(resultsArray,moduleId);
-          //dispImages(resultsArray);
+         
       }
 
      

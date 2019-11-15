@@ -168,10 +168,8 @@
       * @return void
       */
       function isKeyPressed(event) {
-        //console.log("is KeyPressed imgClsfctn");
+
            arrayClone(selected_images);
-          // send message to Shiny
-          var imageName = event.target.src;
 
           if (event.shiftKey) {
             handleExistance(selected_images, event.target.src, event.target.id);
