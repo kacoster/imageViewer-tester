@@ -3,7 +3,6 @@
         this.imgsArray = imgsArray;
         this.selected_images = selected_images;
         this.batnum = batnum;
-        this.imgNumb = imgNumb;
         this.viewerId = viewerId;
     }
 
