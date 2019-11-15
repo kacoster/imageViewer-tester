@@ -166,8 +166,13 @@
 
         let startIndex , endIndex ,resultsArray;
         this.clearImages();
+        console.log("bat : " + bat + " imgNumb : " + this.imgNumb);
         startIndex = bat * this.imgnumb;
         endIndex = startIndex + this.imgnumb;
+
+        console.log("startIndex : " + startIndex + " endIndex : " + endIndex);
+
+        
         console.log("Slice : " + this.imgsArray.slice(startIndex, endIndex) );
         resultsArray = this.imgsArray.slice(startIndex, endIndex);
         console.log("resultsArray : " + resultsArray);
