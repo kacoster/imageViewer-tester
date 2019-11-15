@@ -164,11 +164,11 @@
     createViewer.prototype.displayImages = function (bat) {
       console.log("In displayImages " + this.imgsArray[1]);
 
-        let startIndex , endIndex ;
+        let startIndex , endIndex ,resultsArray;
         this.clearImages();
         startIndex = bat * this.imgnumb;
         endIndex = startIndex + this.imgnumb;
-        resultsArray = [...this.imgsArray.slice(startIndex, endIndex)];
+        resultsArray = this.imgsArray.slice(startIndex, endIndex);
         console.log("resultsArray : " + resultsArray);
         this.buildImages(resultsArray);
 
