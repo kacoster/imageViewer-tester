@@ -145,6 +145,7 @@
 
     // imgloop
     createViewer.prototype.buildImages = function (arry) {
+        console.log("In buildImages");
         $(".pictures > li").css("background-color", "white");
         for (i = 0; i < arry.length; i++) {
           let liId = i;
@@ -160,6 +161,7 @@
     };
 
     createViewer.prototype.displayImages = function (bat) {
+      console.log("In displayImages");
         let startIndex , endIndex;
         this.clearImages();
         startIndex = bat * this.imgnumb;
@@ -170,7 +172,7 @@
     };
 
     createViewer.prototype.clearImages = function () {
-        //console.log("In clearImages()");
+        console.log("In clearImages()");
         $('#' + this.viewerId + '').html("");
         //$("#x").html("");
     };
