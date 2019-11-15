@@ -152,6 +152,7 @@
           let img = new Image();
           let ul = document.getElementById(this.viewerId);
           img.src = ((arry[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
+          console.log("src : " + img.src);
           img.alt = "Camera Trap";
           img.datamarked = 0;
           ul.innerHTML += '<li ><img id="' + liId + '" data-original="' +
@@ -167,6 +168,7 @@
         startIndex = bat * this.imgnumb;
         endIndex = startIndex + imgnumb;
         resultsArray = this.imgsArray.slice(startIndex, endIndex);
+        console.log("resultsArray : " + resultsArray);
         this.buildImages(resultsArray);
 
     };
