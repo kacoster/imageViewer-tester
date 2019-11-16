@@ -176,6 +176,9 @@
         this.clearImages();
         console.log("bat : " + bat + " imgNumb : " + this.imgNumb);
 
+        console.log("Type of bat : " + typeof bat);
+        console.log("Type of imgNumb : " + typeof this.imgNumb);
+
         startIndex = bat * this.imgnumb;
         endIndex = startIndex + this.imgnumb;
 
