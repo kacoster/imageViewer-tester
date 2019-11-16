@@ -175,8 +175,12 @@
         let startIndex , endIndex ,resultsArray;
         this.clearImages();
         console.log("bat : " + bat + " imgNumb : " + this.imgNumb);
+
         startIndex = bat * this.imgnumb;
         endIndex = startIndex + this.imgnumb;
+
+        console.log("Type of startIndex : " + typeof startIndex);
+        console.log("Type of endIndex : " + typeof endIndex);
 
         console.log("startIndex : " + startIndex + " endIndex : " + endIndex);
 
