@@ -176,25 +176,27 @@
         this.clearImages();
 
         
-        console.log("bat is Nan  : " + (bat!==bat) + " imgNumb is Nan : " + (this.imgNumb !== this.imgNumb));
+        //console.log("bat is Nan  : " + (bat!==bat) + " imgNumb is Nan : " + (this.imgNumb !== this.imgNumb));
 
-        console.log("Type of bat : " + typeof bat);
-        console.log("Type of imgNumb : " + typeof this.imgNumb);
+       // console.log("Type of bat : " + typeof bat);
+        //console.log("Type of imgNumb : " + typeof this.imgNumb);
+
 
         this.startIndex = bat * this.imgnumb;
+        console.log("bat * imgnumb : " + bat * this.imgnumb );
         this.endIndex = this.startIndex + this.imgnumb;
 
-        console.log("bat is Nan  : " + ( startIndex !== startIndex) + " imgNumb is Nan : " + (endIndex!== endIndex));
+        //console.log("bat is Nan  : " + (startIndex !== startIndex) + " imgNumb is Nan : " + (endIndex!== endIndex));
 
-        //console.log("Type of startIndex : " + typeof startIndex);
+        //console.log( : " + typeof startIndex);
         //console.log("Type of endIndex : " + typeof endIndex);
 
-        console.log("startIndex : " + this.startIndex + " endIndex : " + this.endIndex);
+        //console.log("startIndex : " + this.startIndex + " endIndex : " + this.endIndex);
 
         
-        console.log("Slice : " + this.imgsArray.slice(this.startIndex, this.endIndex) );
+        //console.log("Slice : " + this.imgsArray.slice(this.startIndex, this.endIndex) );
         resultsArray = this.imgsArray.slice(this.startIndex, this.endIndex);
-        console.log("resultsArray : " + this.resultsArray);
+        //console.log("resultsArray : " + this.resultsArray);
         this.buildImages(this.resultsArray);
 
     };
