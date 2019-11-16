@@ -174,7 +174,9 @@
 
         let startIndex , endIndex ,resultsArray;
         this.clearImages();
-        console.log("bat : " + bat + " imgNumb : " + this.imgNumb);
+
+        
+        console.log("bat is Nan  : " + (bat!==bat) + " imgNumb is Nan : " + (this.imgNumb !== this.imgNumb));
 
         console.log("Type of bat : " + typeof bat);
         console.log("Type of imgNumb : " + typeof this.imgNumb);
@@ -182,8 +184,8 @@
         startIndex = bat * this.imgnumb;
         endIndex = startIndex + this.imgnumb;
 
-        console.log("Type of startIndex : " + typeof startIndex);
-        console.log("Type of endIndex : " + typeof endIndex);
+        //console.log("Type of startIndex : " + typeof startIndex);
+        //console.log("Type of endIndex : " + typeof endIndex);
 
         console.log("startIndex : " + startIndex + " endIndex : " + endIndex);
 
