@@ -181,19 +181,21 @@
         console.log("Type of bat : " + typeof bat);
         console.log("Type of imgNumb : " + typeof this.imgNumb);
 
-        startIndex = bat * this.imgnumb;
-        endIndex = startIndex + this.imgnumb;
+        this.startIndex = bat * this.imgnumb;
+        this.endIndex = this.startIndex + this.imgnumb;
+
+        console.log("bat is Nan  : " + ( startIndex !== startIndex) + " imgNumb is Nan : " + (endIndex!== endIndex));
 
         //console.log("Type of startIndex : " + typeof startIndex);
         //console.log("Type of endIndex : " + typeof endIndex);
 
-        console.log("startIndex : " + startIndex + " endIndex : " + endIndex);
+        console.log("startIndex : " + this.startIndex + " endIndex : " + this.endIndex);
 
         
-        console.log("Slice : " + this.imgsArray.slice(startIndex, endIndex) );
-        resultsArray = this.imgsArray.slice(startIndex, endIndex);
-        console.log("resultsArray : " + resultsArray);
-        this.buildImages(resultsArray);
+        console.log("Slice : " + this.imgsArray.slice(this.startIndex, this.endIndex) );
+        resultsArray = this.imgsArray.slice(this.startIndex, this.endIndex);
+        console.log("resultsArray : " + this.resultsArray);
+        this.buildImages(this.resultsArray);
 
     };
 
