@@ -172,7 +172,7 @@
     createViewer.prototype.displayImages = function (bat) {
       console.log("In displayImages " + this.imgsArray[1]);
 
-        let startIndex , endIndex ,resultsArray;
+        //let startIndex , endIndex ,resultsArray;
         this.clearImages();
 
         
@@ -194,8 +194,8 @@
         //console.log("startIndex : " + this.startIndex + " endIndex : " + this.endIndex);
 
         
-        //console.log("Slice : " + this.imgsArray.slice(this.startIndex, this.endIndex) );
-        resultsArray = this.imgsArray.slice(this.startIndex, this.endIndex);
+        console.log("Slice : " + this.imgsArray.slice(2, 49) );
+        resultsArray = this.imgsArray.slice(2, 49);
         //console.log("resultsArray : " + this.resultsArray);
         this.buildImages(this.resultsArray);
 
