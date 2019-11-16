@@ -13,6 +13,7 @@
 
     createViewer.prototype.fetchServerFile = async function (msg) {
         let result= await (await fetch(msg)).text();
+        this.imgNumb = 50;
         return result.replace(/^\s*$[\n\r]{1,}/gm, '');
     };
 
@@ -24,8 +25,9 @@
     this.imgsArray[0] =  this.imgsArray[0].replace("Source", "");
     this.imgsArray[0] =  this.imgsArray[ this.imgsArray.length - 1] + this.imgsArray[0];
     this.imgsArray.splice( this.imgsArray.length - 1, 1);
-    console.log("Array of Images : " + this.imgsArray);
-    this.setImageNumber(40);
+    //console.log("Array of Images : " + this.imgsArray);
+    console.log("Img Numb : " + this.imgNumb);
+    //this.setImageNumber(40);
     this.displayImages(0);
 
     // Read the batch Image Number from from slider : img_clssfctn_ud_btch_img_thrshld
