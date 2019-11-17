@@ -92,7 +92,7 @@
     };
 
     createViewer.prototype.isKeyPressed = function (event) {
-
+        console.log("In isKeyPressed");
         this.arrayClone(selected_images);
 
         if (event.shiftKey) {
