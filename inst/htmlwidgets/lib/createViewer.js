@@ -196,7 +196,7 @@
         
         console.log("Slice : " + this.imgsArray.slice(2, 49) );
         resultsArray = this.imgsArray.slice(2, 49);
-        //console.log("resultsArray : " + this.resultsArray);
+        console.log("resultsArray : " + this.resultsArray);
         this.buildImages(this.resultsArray);
 
     };
