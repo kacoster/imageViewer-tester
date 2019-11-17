@@ -141,7 +141,7 @@
 
 
     function callKeyPressed(event) {
-      this.isKeyPressed(event);
+       isKeyPressed(event);
     }
 
 
