@@ -150,6 +150,7 @@
     createViewer.prototype.buildImages = function (arry) {
         console.log("In buildImages");
         $(".pictures > li").css("background-color", "white");
+
         for (i = 0; i < arry.length; i++) {
           let liId = i;
           let img = new Image();
@@ -162,8 +163,14 @@
           img.src + '"  marked="' + img.datamarked + '" src="' +
           img.src + '" alt="' + img.alt + '" /> </li>';
         }
-    };
+        $(".inner-container").on("onmousedown", function (event) {
+          this.isKeyPressed(event);
+          // send message to Shiny
+        });
 
+
+    };
+   // inner-container
     createViewer.prototype.setImageNumber = function (imgNumb)
     {
        this.imgNumb = imgNumb;
