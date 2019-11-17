@@ -150,6 +150,11 @@
     createViewer.prototype.buildImages = function (arry) {
         console.log("In buildImages");
         $(".pictures > li").css("background-color", "white");
+        $(".pictures > li").on("onmousedown", function (event) {
+          console.log("In jquery");
+          this.isKeyPressed(event);
+          // send message to Shiny
+        });
 
         for (i = 0; i < arry.length; i++) {
           let liId = i;
@@ -163,11 +168,7 @@
           img.src + '"  marked="' + img.datamarked + '" src="' +
           img.src + '" alt="' + img.alt + '" /> </li>';
         }
-        $(".container").on("onmousedown", function (event) {
-          console.log("In jquery");
-          this.isKeyPressed(event);
-          // send message to Shiny
-        });
+        
 
 
     };
