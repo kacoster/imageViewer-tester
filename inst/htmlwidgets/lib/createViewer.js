@@ -140,6 +140,11 @@
     };
 
 
+    function callKeyPressed(event) {
+      this.isKeyPressed(event);
+    }
+
+
 
     createViewer.prototype.removedRef = function  ()
     {
