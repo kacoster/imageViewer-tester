@@ -153,7 +153,6 @@
         $(".pictures > li").on("onmousedown", function (event) {
           console.log("In jquery");
           this.isKeyPressed(event);
-          // send message to Shiny
         });
 
         for (i = 0; i < arry.length; i++) {
