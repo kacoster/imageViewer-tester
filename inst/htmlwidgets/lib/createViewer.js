@@ -164,6 +164,7 @@
           img.src + '" alt="' + img.alt + '" /> </li>';
         }
         $(".inner-container").on("onmousedown", function (event) {
+          console.log("In jquery");
           this.isKeyPressed(event);
           // send message to Shiny
         });
