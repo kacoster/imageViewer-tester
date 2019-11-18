@@ -42,6 +42,7 @@
      *
     */
     function displayImages(imgnumb,bat,moduleId,arry) {
+      console.log("In displayImages()");
           let startIndex , endIndex;
           clearImages(moduleId);
           startIndex = bat * imgnumb;
