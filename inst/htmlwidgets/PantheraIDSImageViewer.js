@@ -26,22 +26,23 @@ HTMLWidgets.widget({
 
       if(x.componentID === "img_clssfctn_ud")
       {
-        let classification = new createViewer('imgsArray','selected_images',1,50,x.componentID);
-        classification.processClsfctnResponseText(x.message);
         console.log("CASE : classification module ");
+        let classification = new createViewer('imgsArray','selected_images',1,50,x.componentID);
+        classification.processResponseText(x.message);
+
         //processClsfctnResponseText(x.message);
       }
       else if (x.componentID === "spcs_idntfctn_id_rf_1")
       {
         let spcsIdntfctn1 = new createViewer('imgsArray','selected_images',1,20,x.componentID);
-        spcsIdntfctn1.processClsfctnResponseText(x.message);
+        spcsIdntfctn1.processResponseText(x.message);
         console.log("CASE : spcs_idntfctn_id_rf_1 ");
         //processIdnfctn1ResponseText(x.message);
       }
       else
       {
         let spcsIdntfctn2 = new createViewer('imgsArray','selected_images',2,20,x.componentID);
-        spcsIdntfctn2.processClsfctnResponseText(x.message);
+        spcsIdntfctn2.processResponseText(x.message);
         console.log("CASE : spcs_idntfctn_id_rf_1 ");
         //processIdnfctn2ResponseText(x.message);
       }
