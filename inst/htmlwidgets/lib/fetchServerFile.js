@@ -15,7 +15,7 @@
         for (i = 0; i < ar.length; i++) {
           var liId = i;
           var img = new Image();
-          var ul = document.getElementById(moduleId);
+          var ul = document.getElementById('x');
           img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
           // Triming the double quotes passed on each image src
           img.alt = "Camera Trap";
