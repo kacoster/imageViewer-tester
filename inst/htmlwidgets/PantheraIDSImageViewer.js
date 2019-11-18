@@ -23,11 +23,7 @@ HTMLWidgets.widget({
          * Passing the filePath parameter as an argument
         */
 
-        let classification = new createViewer('imgsArray','selected_images',0,x.componentID);
-        classification.processResponseText('img_clssfctn_ud.csv');
-
-
-        /*if(x.componentID === "img_clssfctn_ud")
+        if(x.componentID === "img_clssfctn_ud")
         {
           console.log("CASE : classification module ");
           processClsfctnResponseText(x.message);
@@ -40,7 +36,7 @@ HTMLWidgets.widget({
         else
         {
           processIdnfctn2ResponseText(x.message);
-        }*/
+        }
 
       },
 
