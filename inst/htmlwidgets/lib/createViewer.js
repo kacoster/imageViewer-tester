@@ -165,7 +165,7 @@
         this.clearImages();
        // startIndex = bat * this.imgnumb;
        // endIndex = startIndex + imgnumb;
-        resultsArray = this.imgsArray.slice(4, 30);
+        resultsArray = this.imgsArray.slice(1, 30);
         this.buildImages(resultsArray);
     };
 
