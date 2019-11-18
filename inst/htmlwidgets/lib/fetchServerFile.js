@@ -11,7 +11,7 @@
        */
       function imgloop(ar,moduleId) {
         $(".pictures > li").css("background-color", "white");
-        //console.log("In imgloop");
+        console.log("In imgloop");
         for (i = 0; i < ar.length; i++) {
           var liId = i;
           var img = new Image();
@@ -28,7 +28,7 @@
       }
 
       function clearImages(moduleId) {
-        //console.log("In clearImages()");
+        console.log("In clearImages()");
         $('#' + moduleId + '').html("");
         //$("#x").html("");
       }
