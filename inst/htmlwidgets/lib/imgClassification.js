@@ -212,13 +212,13 @@
                //console.log("Tester : " +   batnum + "/" + getBatchNumber());
               Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (batnum+1) + " / " + getBatchNumber());
-              clearImages('x');
+              //clearImages('x');
               displayImages(imgNumb,batnum,'x',ar);
 
         }else{
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
              getBatchNumber() + " / " + getBatchNumber());
-             clearImages('x');
+             //clearImages('x');
              displayImages(imgNumb,getBatchNumber()-1,'x',ar);
              batnum = getBatchNumber()-1;
         }
@@ -235,13 +235,13 @@
         if (batnum > 0 ) {
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (batnum+1) + " / " + getBatchNumber());
-              clearImages('x');
+              //clearImages('x');
               displayImages(imgNumb,batnum,'x',ar);
         }else{
 
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
              1 + " / " + getBatchNumber());
-             clearImages('x');
+             //clearImages('x');
              displayImages(imgNumb,0,'x',ar);
              batnum = 0;
 
