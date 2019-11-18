@@ -13,12 +13,13 @@
     };
 
     createViewer.prototype.fetchServerFile = async function (msg) {
+        console.log("In fetchServerFile()");
         let result= await (await fetch(msg)).text();
         return result.replace(/^\s*$[\n\r]{1,}/gm, '');
     };
 
     createViewer.prototype.processResponseText = async function (csvfile) {
-
+    console.log("In processResponseText()");
     let textResult = await this.fetchServerFile(csvfile);
     this.imgsArray = (textResult).split(',');
     this.imgsArray.splice(0, 1);
@@ -143,6 +144,7 @@
 
     // imgloop
     createViewer.prototype.buildImages = function (arry) {
+        console.log("In buildImages()");
         $(".pictures > li").css("background-color", "white");
         for (i = 0; i < arry.length; i++) {
           let liId = i;
@@ -158,6 +160,7 @@
     };
 
     createViewer.prototype.displayImages = function (bat) {
+        console.log("In displayImages()");
         let startIndex , endIndex;
         this.clearImages();
         startIndex = bat * this.imgnumb;
