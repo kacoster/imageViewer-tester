@@ -163,6 +163,8 @@
         console.log("In displayImages()");
         let startIndex , endIndex;
         this.clearImages();
+        console.log("bat * 10 : " + bat*10 );
+        console.log("this.imgnumb * 5 : " +this.imgnumb*5 );
        // startIndex = bat * this.imgnumb;
        // endIndex = startIndex + imgnumb;
         resultsArray = this.imgsArray.slice(1, 30);
