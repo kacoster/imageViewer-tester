@@ -72,7 +72,7 @@
            imgNumb =  parseInt(JSON.stringify(message));
                 Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               1 + " / " + getBatchNumber());
-             displayImages(imgNumb,0,'x',ar);
+             displayImages(imgNumb,0,'img_clssfctn_ud',ar);
           }
       );
 
@@ -213,13 +213,13 @@
               Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (batnum+1) + " / " + getBatchNumber());
               //clearImages('x');
-              displayImages(imgNumb,batnum,'x',ar);
+              displayImages(imgNumb,batnum,'img_clssfctn_ud',ar);
 
         }else{
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
              getBatchNumber() + " / " + getBatchNumber());
              //clearImages('x');
-             displayImages(imgNumb,getBatchNumber()-1,'x',ar);
+             displayImages(imgNumb,getBatchNumber()-1,'img_clssfctn_ud',ar);
              batnum = getBatchNumber()-1;
         }
 
@@ -236,13 +236,13 @@
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (batnum+1) + " / " + getBatchNumber());
               //clearImages('x');
-              displayImages(imgNumb,batnum,'x',ar);
+              displayImages(imgNumb,batnum,'img_clssfctn_ud',ar);
         }else{
 
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
              1 + " / " + getBatchNumber());
              //clearImages('x');
-             displayImages(imgNumb,0,'x',ar);
+             displayImages(imgNumb,0,'img_clssfctn_ud',ar);
              batnum = 0;
 
         }
