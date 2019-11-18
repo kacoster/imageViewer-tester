@@ -1,5 +1,5 @@
         async function fetchServerFile(msg) {
-            var result= await (await fetch(msg)).text(); 
+            var result= await (await fetch(msg)).text();
             return result.replace(/^\s*$[\n\r]{1,}/gm, '');
         }
 
@@ -10,6 +10,7 @@
        * someText = src.replace(/(\r\n|\n|\r)/gm,"");
        */
       function imgloop(ar,moduleId) {
+        console.log("moduleId : " + moduleId);
         $(".pictures > li").css("background-color", "white");
         console.log("In imgloop");
         for (i = 0; i < ar.length; i++) {
@@ -28,7 +29,7 @@
       }
 
       function clearImages(moduleId) {
-        console.log("In clearImages()");
+        console.log("In clearImages() " + moduleId);
         $('#' + moduleId + '').html("");
         //$("#x").html("");
       }
@@ -52,4 +53,3 @@
           //dispImages(resultsArray);
       }
 
-     

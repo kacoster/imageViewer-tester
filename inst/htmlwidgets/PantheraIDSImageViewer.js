@@ -31,6 +31,7 @@ HTMLWidgets.widget({
         }
         else if (x.componentID === "spcs_idntfctn_id_rf_1")
         {
+          console.log("CASE : spcs_idntfctn_id_rf_1 ");
           processIdnfctn1ResponseText(x.message);
         }
         else

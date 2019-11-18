@@ -12,7 +12,7 @@
        * * ready for JavaScript code to execute
       */
       $(document).ready(function () {
-        
+
         $("#apply").on("click", function () {
           // send message to Shiny
           Shiny.onInputChange("sources", sendDataToShinny());
@@ -54,7 +54,7 @@
       var batnum  = 0 ; // default batch Number
       var imgNumb = 0; // default image size
 
-     
+
        async function processClsfctnResponseText(csvfile) {
          console.log("In ProcessResponse");
         var textResult = await fetchServerFile(csvfile);
@@ -64,7 +64,7 @@
         ar[0] = ar[0].replace("Source", "");
         ar[0] = ar[ar.length - 1] + ar[0];
         ar.splice(ar.length - 1, 1);
-      
+
 
       // Read the batch Image Number from from slider : img_clssfctn_ud_btch_img_thrshld
       Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
@@ -206,11 +206,11 @@
       */
       function next() {
         nextPrevClicked("1");
-  
+
       if(batnum < getBatchNumber()-1){
                batnum++;
                //console.log("Tester : " +   batnum + "/" + getBatchNumber());
-                Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
+              Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (batnum+1) + " / " + getBatchNumber());
               clearImages('x');
               displayImages(imgNumb,batnum,'x',ar);
@@ -248,7 +248,7 @@
         }
 
       }
-      
+
       /**
        * @description - indirect call to the vjs() function
        * @returns image view
