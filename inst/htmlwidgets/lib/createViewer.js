@@ -56,8 +56,14 @@
     }
 
     createViewer.prototype.getBatchNumber = function () {
-        console.log(`${this.imgNumber} elapsed batches `);
-        return this.imgsArray;
+      
+      if(((this.imgsArray).length %  this.imgNumber)===0){
+        return ((this.imgsArray).length / this.imgNumber);
+      }
+      else{
+        return ((Math.floor((this.imgsArray).length / imgNumb)) + 1);
+      }
+
     };
 
     createViewer.prototype.fetchServerFile = async function (msg) {
