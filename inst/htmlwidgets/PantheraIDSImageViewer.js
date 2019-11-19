@@ -31,7 +31,7 @@ HTMLWidgets.widget({
         classification.processResponseText(x.message);
         Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
             function(message) {
-              classification.imgNumb =  parseInt(JSON.stringify(message));
+              classification.imgNumber =  parseInt(JSON.stringify(message));
             });
         //processClsfctnResponseText(x.message);
       }
