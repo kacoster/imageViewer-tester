@@ -90,6 +90,10 @@
 
     };
 
+    Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size", function (message) {
+      this.imgNumber =  parseInt(JSON.stringify(message));
+    });
+
     createViewer.prototype.initial = function () {
       Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size", function (message) {
         this.imgNumber =  parseInt(JSON.stringify(message));
