@@ -162,8 +162,8 @@
         console.log("In displayImages()");
         let startIndex , endIndex;
         this.clearImages();
-        startIndex = bat * this.imgnumb;
-        endIndex = startIndex + imgnumb;
+        startIndex = bat * this.imgNumber;
+        endIndex = startIndex + this.imgNumber;
         //console.log("bat * 10 : " +  this.batnum *10 + " Type of " + typeof(this.batnum) );
         //console.log("this.imgnumb * 5 : " + this.imgNumber *5 + " Type of " + typeof(this.imgNumber) );
         console.log("startIndex : " +  this.startIndex    + " Type of " + typeof(this.startIndex) );
