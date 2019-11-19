@@ -1,6 +1,6 @@
-    var createViewer = function(imgsArray,selected_images,viewerId){
-        batnum = 0;
-        imgNumb = 50;
+    var createViewer = function(viewerId,imgsArray,selected_images){
+        this.batnum = 0;
+        this.imgNumb = 50;
         this.imgsArray = imgsArray;
         this.selected_images = selected_images;
         this.viewerId = viewerId;
@@ -18,15 +18,16 @@
     };
 
     createViewer.prototype.processResponseText = async function (csvfile) {
-    console.log("In processResponseText()");
-    let textResult = await this.fetchServerFile(csvfile);
-    this.imgsArray = (textResult).split(',');
-    this.imgsArray.splice(0, 1);
-    this.imgsArray[0] =  this.imgsArray[0].replace("Source", "");
-    this.imgsArray[0] =  this.imgsArray[ this.imgsArray.length - 1] + this.imgsArray[0];
-    this.imgsArray.splice( this.imgsArray.length - 1, 1);
-    console.log(this.imgsArray);
-    this.displayImages(0);
+
+      console.log("In processResponseText()");
+      let textResult = await this.fetchServerFile(csvfile);
+      this.imgsArray = (textResult).split(',');
+      this.imgsArray.splice(0, 1);
+      this.imgsArray[0] =  this.imgsArray[0].replace("Source", "");
+      this.imgsArray[0] =  this.imgsArray[ this.imgsArray.length - 1] + this.imgsArray[0];
+      this.imgsArray.splice( this.imgsArray.length - 1, 1);
+      console.log(this.imgsArray);
+      this.displayImages(0);
 
     // Read the batch Image Number from from slider : img_clssfctn_ud_btch_img_thrshld
     /*Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
@@ -68,30 +69,29 @@
 
     createViewer.prototype.highliter = function (imgId)
     {
-        console.log("Highting the Image");
-        $('#' + imgId + '').css({
-              'opacity': '0.4',
-              'filter': 'alpha(opacity=40)'
-            });
+      console.log("Highting the Image");
+      $('#' + imgId + '').css({
+          'opacity': '0.4',
+          'filter': 'alpha(opacity=40)'
+        });
     };
 
     createViewer.prototype.removeHighlight = function (imgId)
     {
-        $('#' + imgId + '').css({
-              'opacity': '',
-              'filter': ''
-            });
+      $('#' + imgId + '').css({
+        'opacity': '',
+        'filter': ''
+      });
     };
 
     createViewer.prototype.getCurrClckdImg = function (state, imgsrc)
     {
-        Shiny.onInputChange(state,imgsrc);
+      Shiny.onInputChange(state,imgsrc);
     };
 
     createViewer.prototype.isKeyPressed = function (event) {
 
         this.arrayClone(selected_images);
-
         if (event.shiftKey) {
             this.handleExistance(this.selected_images, event.target.src, event.target.id);
 
@@ -138,7 +138,7 @@
 
     createViewer.prototype.removedRef = function  ()
     {
-        return tempRemoved;
+      return tempRemoved;
     };
 
     // imgloop
@@ -162,8 +162,8 @@
         console.log("In displayImages()");
         let startIndex , endIndex;
         this.clearImages();
-        console.log("bat * 10 : " + this.batnum *10 );
-        console.log("this.imgnumb * 5 : " +  parseInt(this.imgnumb, 10) * 5 );
+        console.log("bat * 10 : " +  this.batnum *10 + " Type of " + typeof(this.batnum) );
+        console.log("this.imgnumb * 5 : " +  parseInt(this.imgnumb, 10) * 5 + " Type of " + typeof(this.imgNumb) );
        // startIndex = bat * this.imgnumb;
        // endIndex = startIndex + imgnumb;
         resultsArray = this.imgsArray.slice(1, 30);
