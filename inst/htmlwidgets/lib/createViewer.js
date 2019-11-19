@@ -74,12 +74,12 @@
 
     createViewer.prototype.processResponseText = async function (csvfile) {
 
-        console.log("In processResponseText()");
-        let textResult = await this.fetchServerFile(csvfile);
-        this.imgsArray = (textResult).split(',');
-        this.imgsArray.splice(0, 1);
-        this.imgsArray[0] =  this.imgsArray[0].replace("Source", "");
-        this.imgsArray[0] =  this.imgsArray[ this.imgsArray.length - 1] + this.imgsArray[0];
+      console.log("In processResponseText()");
+      let textResult = await this.fetchServerFile(csvfile);
+      this.imgsArray = (textResult).split(',');
+      this.imgsArray.splice(0, 1);
+      this.imgsArray[0] =  this.imgsArray[0].replace("Source", "");
+      this.imgsArray[0] =  this.imgsArray[ this.imgsArray.length - 1] + this.imgsArray[0];
         this.imgsArray.splice( this.imgsArray.length - 1, 1);
         console.log(this.imgsArray);
         this.initial();
@@ -89,18 +89,17 @@
     
 
     };
-
-    Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size", function (message) {
-      this.imgNumber =  parseInt(JSON.stringify(message));
-    });
-
+    
     createViewer.prototype.initial = function () {
-      Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size", function (message) {
-        this.imgNumber =  parseInt(JSON.stringify(message));
-      });
+      Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size", 
+        this.call(message));
+    }
+
+    createViewer.prototype.call = function (message) {
+      this.imgNumber =  parseInt(JSON.stringify(message));
       Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-        1 + " / " + this.getBatchNumber());
-        this.displayImages(0);
+      1 + " / " + this.getBatchNumber());
+      this.displayImages(0);
     }
 
     createViewer.prototype.handleExistance = function (params,src,id)
