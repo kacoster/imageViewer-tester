@@ -168,7 +168,7 @@
         //console.log("this.imgnumb * 5 : " + this.imgNumber *5 + " Type of " + typeof(this.imgNumber) );
         console.log("startIndex : " +  startIndex    + " Type of " + typeof(startIndex) );
         console.log("endIndex   : " +  endIndex  + " Type of " + typeof(endIndex) );
-        resultsArray = this.imgsArray.slice(1, 30);
+        resultsArray = this.imgsArray.slice(startIndex, endIndex);
         this.buildImages(resultsArray);
         
     };
