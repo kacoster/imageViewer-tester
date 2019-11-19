@@ -7,7 +7,7 @@
     }
 
     createViewer.prototype.getBatchNumber = function () {
-        console.log(`${this.imgNumb} elapsed batches `);
+        console.log(`${this.imgNumber} elapsed batches `);
         return this.imgsArray;
     };
 
@@ -32,7 +32,7 @@
     // Read the batch Image Number from from slider : img_clssfctn_ud_btch_img_thrshld
     /*Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
     function(message) {
-        this.imgNumb =  parseInt(JSON.stringify(message));
+        this.imgNumber =  parseInt(JSON.stringify(message));
             Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
             1 + " / " + this.getBatchNumber());
             this.displayImages(0);
@@ -162,12 +162,15 @@
         console.log("In displayImages()");
         let startIndex , endIndex;
         this.clearImages();
-        console.log("bat * 10 : " +  this.batnum *10 + " Type of " + typeof(this.batnum) );
-        console.log("this.imgnumb * 5 : " + this.imgNumber *5 + " Type of " + typeof(this.imgNumber) );
-       // startIndex = bat * this.imgnumb;
-       // endIndex = startIndex + imgnumb;
+        startIndex = bat * this.imgnumb;
+        endIndex = startIndex + imgnumb;
+        //console.log("bat * 10 : " +  this.batnum *10 + " Type of " + typeof(this.batnum) );
+        //console.log("this.imgnumb * 5 : " + this.imgNumber *5 + " Type of " + typeof(this.imgNumber) );
+        console.log("startIndex : " +  this.startIndex    + " Type of " + typeof(this.startIndex) );
+        console.log("endIndex   : " +  this.endIndex  + " Type of " + typeof(this.endIndex) );
         resultsArray = this.imgsArray.slice(1, 30);
         this.buildImages(resultsArray);
+        
     };
 
     createViewer.prototype.clearImages = function () {
@@ -178,11 +181,11 @@
 
     createViewer.prototype.getBatchNumber = function () {
 
-        if((this.imgsArray.length %  this.imgNumb)===0){
-            return (this.imgsArray.length / this.imgNumb);
+        if((this.imgsArray.length %  this.imgNumber)===0){
+            return (this.imgsArray.length / this.imgNumber);
         }
         else{
-          return ((Math.floor(this.imgsArray.length / this.imgNumb)) + 1);
+          return ((Math.floor(this.imgsArray.length / this.imgNumber)) + 1);
         }
     };
 
