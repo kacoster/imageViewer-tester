@@ -1,6 +1,6 @@
     var createViewer = function(viewerId,imgsArray,selected_images){
-        this.batnum = 3;
-        this.imgNumber = 3;
+        this.batnum = 0;
+        this.imgNumber = 20;
         this.imgsArray = imgsArray;
         this.selected_images = selected_images;
         this.viewerId = viewerId;
