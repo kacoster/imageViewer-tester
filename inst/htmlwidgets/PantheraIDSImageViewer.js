@@ -29,7 +29,10 @@ HTMLWidgets.widget({
         console.log("CASE : classification module ");
         let classification = new createViewer(x.componentID,'imgsArray','selected_images');
         classification.processResponseText(x.message);
-
+        Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
+            function(message) {
+              classification.imgNumb =  parseInt(JSON.stringify(message));
+            });
         //processClsfctnResponseText(x.message);
       }
       else if (x.componentID === "spcs_idntfctn_id_rf_1")
