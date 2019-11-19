@@ -166,8 +166,8 @@
         endIndex = startIndex + this.imgNumber;
         //console.log("bat * 10 : " +  this.batnum *10 + " Type of " + typeof(this.batnum) );
         //console.log("this.imgnumb * 5 : " + this.imgNumber *5 + " Type of " + typeof(this.imgNumber) );
-        console.log("startIndex : " +  this.startIndex    + " Type of " + typeof(this.startIndex) );
-        console.log("endIndex   : " +  this.endIndex  + " Type of " + typeof(this.endIndex) );
+        console.log("startIndex : " +  startIndex    + " Type of " + typeof(startIndex) );
+        console.log("endIndex   : " +  endIndex  + " Type of " + typeof(endIndex) );
         resultsArray = this.imgsArray.slice(1, 30);
         this.buildImages(resultsArray);
         
