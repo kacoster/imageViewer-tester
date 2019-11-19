@@ -92,7 +92,7 @@
     
     createViewer.prototype.initial = function () {
       Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size", 
-        this.call(message));
+        this.call('message'));
     }
 
     createViewer.prototype.call = function (message) {
