@@ -93,10 +93,10 @@
     createViewer.prototype.initial = function () {
       Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size", function (message) {
         this.imgNumber =  parseInt(JSON.stringify(message));
-        //Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-        //1 + " / " + this.getBatchNumber());
-        this.displayImages(0);
       });
+      Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
+        1 + " / " + this.getBatchNumber());
+        this.displayImages(0);
     }
 
     createViewer.prototype.handleExistance = function (params,src,id)
