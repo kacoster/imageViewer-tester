@@ -6,6 +6,55 @@
         this.viewerId = viewerId;
     }
 
+    createViewer.prototype.docOnReady = function () {
+      $(document).ready(function () {
+
+          $("#apply").on("click", function () {
+            Shiny.onInputChange("sources", sendDataToShinny());
+          });
+
+          $("#selectAll").on("click", function () {
+            Shiny.onInputChange("sources", selectAll());
+          });
+
+          $("#deSelectAll").on("click", function () {
+            deSelectAll();
+          });
+
+          $("#img_clssfctn_ud_nxt_bttn").on("click", function () {
+          Shiny.onInputChange("next", next());
+          });
+
+        $("#img_clssfctn_ud_prvs_bttn").on("click", function () {
+          Shiny.onInputChange("prev", prev());
+        });
+
+      });
+    }
+
+    createViewer.prototype.selectAll = function () {
+      $("img").each(function (index) {
+        $('#' + $(this).attr('id') + '').css({
+          'opacity': '0.1',
+          'filter': 'alpha(opacity=40)'
+        });
+        this.selected_images.push($(this).attr('src'));
+      });
+      return this.selected_images;  
+    }
+
+    createViewer.prototype.deSelectAll = function () {
+
+      $("img").each(function (index) {
+        $('#' + $(this).attr('id') + '').css({
+          'opacity': '',
+          'filter': ''
+        });
+      });
+      this.selected_images.length = 0;
+
+    }
+
     createViewer.prototype.getBatchNumber = function () {
         console.log(`${this.imgNumber} elapsed batches `);
         return this.imgsArray;
@@ -27,17 +76,17 @@
       this.imgsArray[0] =  this.imgsArray[ this.imgsArray.length - 1] + this.imgsArray[0];
       this.imgsArray.splice( this.imgsArray.length - 1, 1);
       console.log(this.imgsArray);
-      this.displayImages(0);
+      //this.displayImages(0);
 
     // Read the batch Image Number from from slider : img_clssfctn_ud_btch_img_thrshld
-    /*Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
+    Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
     function(message) {
         this.imgNumber =  parseInt(JSON.stringify(message));
             Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
             1 + " / " + this.getBatchNumber());
-            this.displayImages(0);
+            this.displayImages(this.batnum);
         }
-    );*/
+    );
 
     };
 
@@ -230,3 +279,9 @@
     //console.log(classification.getBatchNumber());
     //classification.processResponseText('img_clssfctn_ud.csv');
    // console.log(" Checking my Car : "+ car);
+
+
+
+
+
+   
