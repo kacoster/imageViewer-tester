@@ -1,6 +1,6 @@
     var createViewer = function(viewerId,imgsArray,selected_images){
         this.batnum = 3;
-        this.imgNumb = 3;
+        this.imgNumber = 3;
         this.imgsArray = imgsArray;
         this.selected_images = selected_images;
         this.viewerId = viewerId;
@@ -163,7 +163,7 @@
         let startIndex , endIndex;
         this.clearImages();
         console.log("bat * 10 : " +  this.batnum *10 + " Type of " + typeof(this.batnum) );
-        console.log("this.imgnumb * 5 : " +  parseInt(this.imgnumb, 10) * 5 + " Type of " + typeof(this.imgNumb) );
+        console.log("this.imgnumb * 5 : " + this.imgNumber *5 + " Type of " + typeof(this.imgNumber) );
        // startIndex = bat * this.imgnumb;
        // endIndex = startIndex + imgnumb;
         resultsArray = this.imgsArray.slice(1, 30);
