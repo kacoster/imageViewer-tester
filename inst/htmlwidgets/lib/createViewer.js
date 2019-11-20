@@ -85,7 +85,7 @@
       this.imgsArray.splice( this.imgsArray.length - 1, 1);
       console.log(this.imgsArray);
       console.log("imgNumber before change  : " + this.imgNumber);
-      let imgSize = await this.img_clssfctn_msg_handler();
+      imgSize = await this.img_clssfctn_msg_handler();
       console.log("imgSize 2 : " + imgSize);
       this.imgNumber = imgSize;
       console.log("imgNumber After change 1  : " + this.imgNumber);
