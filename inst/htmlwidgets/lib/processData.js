@@ -250,8 +250,6 @@
       */
       function getBatchNumber()
       {
-
-
         if((ar.length %  imgNumb)==0){
             return (ar.length / imgNumb);
         }
@@ -296,7 +294,7 @@
        * @description - creates html component to display the images
        * @param {String} ar - an array of images
        * @returns {void} var src = ( ( ar[0].trim()).replace(/['"]+/g, ''));
-      someText = src.replace(/(\r\n|\n|\r)/gm,"");
+         someText = src.replace(/(\r\n|\n|\r)/gm,"");
 
        */
       function imgloop(ar) {

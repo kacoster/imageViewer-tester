@@ -7,6 +7,10 @@ dependencies:
   version: 0.0.1
   src: htmlwidgets
   script: ./lib/createViewer.js
+- name: messageHandler
+  version: 0.0.1
+  src: htmlwidgets
+  script: ./lib/messageHandler.js
 #- name: fetchServerFile
 #  version: 0.0.1
 #  src: htmlwidgets

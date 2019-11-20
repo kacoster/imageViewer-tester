@@ -82,14 +82,14 @@
       this.imgsArray[0] =  this.imgsArray[ this.imgsArray.length - 1] + this.imgsArray[0];
       this.imgsArray.splice( this.imgsArray.length - 1, 1);
       console.log(this.imgsArray);
-      Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-          1 + " / " + this.getBatchNumber());
+      console.log("imgNumber before change  : " + this.imgNumber);
+      this.imgNumber = img_clssfctn_msg_handler();
+      console.log("imgNumber After change  : " + this.imgNumber);
+      Shiny.onInputChange("img_clssfctn_ud_btch_tckr", 
+        1 + " / " + this.getBatchNumber());
       this.displayImages(0);
-        //this.displayImages(0);
-        
-    // Read the batch Image Number from from slider : img_clssfctn_ud_btch_img_thrshld
+     // Read the batch Image Number from from slider : img_clssfctn_ud_btch_img_thrshld
     
-
     };
 
     createViewer.prototype.handleExistance = function (params,src,id)
