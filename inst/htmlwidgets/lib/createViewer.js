@@ -75,7 +75,7 @@
     createViewer.prototype.processResponseText = async function (csvfile) {
 
       console.log("In processResponseText()");
-      let imgSize = await this.img_clssfctn_msg_handler();
+      let imgSize = Promise.resolve(await this.img_clssfctn_msg_handler());
       console.log("imgSize : " + imgSize);
       let textResult = await this.fetchServerFile(csvfile);
       this.imgsArray = (textResult).split(',');
@@ -85,7 +85,7 @@
       this.imgsArray.splice( this.imgsArray.length - 1, 1);
       console.log(this.imgsArray);
       console.log("imgNumber before change  : " + this.imgNumber);
-      imgSize = await this.img_clssfctn_msg_handler();
+      imgSize = Promise.resolve(await this.img_clssfctn_msg_handler());
       console.log("imgSize 2 : " + imgSize);
       this.imgNumber = imgSize;
       console.log("imgNumber After change 1  : " + this.imgNumber);
