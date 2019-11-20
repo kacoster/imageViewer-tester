@@ -83,7 +83,8 @@
       this.imgsArray.splice( this.imgsArray.length - 1, 1);
       console.log(this.imgsArray);
       console.log("imgNumber before change  : " + this.imgNumber);
-      this.imgNumber = await ( await img_clssfctn_msg_handler());
+      let imgSize = await img_clssfctn_msg_handler();
+      this.imgNumber = imgSize;
       console.log("imgNumber After change  : " + this.imgNumber);
       Shiny.onInputChange("img_clssfctn_ud_btch_tckr", 
         1 + " / " + this.getBatchNumber());
