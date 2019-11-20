@@ -72,11 +72,10 @@
         return result.replace(/^\s*$[\n\r]{1,}/gm, '');
     };
 
-    createViewer.prototype.processResponseText = function (csvfile) {
+    createViewer.prototype.processResponseText = async function (csvfile) {
 
       console.log("In processResponseText()");
-      let imgSize = await this.img_clssfctn_msg_handler();
-      console.log("imgSize : " + imgSize);
+      let imgSize = await img_clssfctn_msg_handler();
       let textResult = await this.fetchServerFile(csvfile);
       this.imgsArray = (textResult).split(',');
       this.imgsArray.splice(0, 1);
@@ -85,12 +84,8 @@
       this.imgsArray.splice( this.imgsArray.length - 1, 1);
       console.log(this.imgsArray);
       console.log("imgNumber before change  : " + this.imgNumber);
-      imgSize = await this.img_clssfctn_msg_handler();
-      console.log("imgSize 2 : " + imgSize);
       this.imgNumber = imgSize;
-      console.log("imgNumber After change 1  : " + this.imgNumber);
-      this.imgNumber = this.img_clssfctn_msg_handler();
-      console.log("imgNumber After change 2  : " + this.imgNumber);
+      console.log("imgNumber After change  : " + this.imgNumber);
       Shiny.onInputChange("img_clssfctn_ud_btch_tckr", 
         1 + " / " + this.getBatchNumber());
       this.displayImages(0);
@@ -98,17 +93,17 @@
     
     };
 
-    createViewer.prototype.img_clssfctn_msg_handler =  async function (){
-      let imgSize ;
-      Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
-          function(message) {
-              console.log("MESSAGE VALUE : " + message );
-  
-              imgSize =  parseInt(JSON.stringify(message));
-          });
-          console.log("imgSize in handler  : " + imgSize );
-  
-      return imgSize;
+    createViewer.prototype.img_clssfctn_msg_handler = function (){
+          let imgSize ;
+    Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
+        function(message) {
+            console.log("MESSAGE VALUE : " + message );
+
+            imgSize =  parseInt(JSON.stringify(message));
+        });
+        console.log("imgSize in handler  : " + imgSize );
+
+    return imgSize;
     }
 
     createViewer.prototype.handleExistance = function (params,src,id)
