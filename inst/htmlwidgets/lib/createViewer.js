@@ -93,7 +93,7 @@
     
     };
 
-    createViewer.prototype.img_clssfctn_msg_handler = function (){
+    createViewer.prototype.img_clssfctn_msg_handler = async function (){
           let imgSize ;
     Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
         function(message) {
