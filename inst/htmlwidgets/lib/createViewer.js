@@ -72,10 +72,10 @@
         return result.replace(/^\s*$[\n\r]{1,}/gm, '');
     };
 
-    createViewer.prototype.processResponseText = async function (csvfile) {
+    createViewer.prototype.processResponseText = function (csvfile) {
 
       console.log("In processResponseText()");
-      let imgSize = await img_clssfctn_msg_handler();
+      let imgSize = await this.img_clssfctn_msg_handler();
       let textResult = await this.fetchServerFile(csvfile);
       this.imgsArray = (textResult).split(',');
       this.imgsArray.splice(0, 1);
