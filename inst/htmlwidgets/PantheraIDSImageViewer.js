@@ -24,14 +24,15 @@ HTMLWidgets.widget({
       */
 
 
-      if(x.componentID === "img_clssfctn_ud")
-      {
+      //if(x.componentID === "img_clssfctn_ud")
+      //{
         console.log("CASE : classification module ");
         let classification = new createViewer(x.componentID,'imgsArray','selected_images');
+        console.log("x.message : " +  x.message );
         classification.processResponseText(x.message);
         
         //processClsfctnResponseText(x.message);
-      }
+      //}
       /*else if (x.componentID === "spcs_idntfctn_id_rf_1")
       {
         let spcsIdntfctn1 = new createViewer(x.componentID,'imgsArray','selected_images');
