@@ -1,9 +1,9 @@
     var createViewer = function(viewerId,imgsArray,selected_images) {
-        this.batnum = 0;
-        this.imgNumber = 20;
+        
+        this.viewerId = viewerId;
         this.imgsArray = imgsArray;
         this.selected_images = selected_images;
-        this.viewerId = viewerId;
+       
     }
 
     createViewer.prototype.docOnReady = function () {
@@ -75,6 +75,8 @@
     createViewer.prototype.processResponseText = function (csvfile) {
 
       console.log("In processResponseText()");
+      this.batnum = 0;
+      this.imgNumber = 20;
       let imgSize = await this.img_clssfctn_msg_handler();
       let textResult = await this.fetchServerFile(csvfile);
       this.imgsArray = (textResult).split(',');
