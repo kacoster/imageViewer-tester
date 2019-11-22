@@ -32,7 +32,7 @@ HTMLWidgets.widget({
         
         //processClsfctnResponseText(x.message);
       }
-      else if (x.componentID === "spcs_idntfctn_id_rf_1")
+      /*else if (x.componentID === "spcs_idntfctn_id_rf_1")
       {
         let spcsIdntfctn1 = new createViewer(x.componentID,'imgsArray','selected_images');
         spcsIdntfctn1.processResponseText(x.message);
@@ -45,7 +45,7 @@ HTMLWidgets.widget({
         spcsIdntfctn2.processResponseText(x.message);
         console.log("CASE : spcs_idntfctn_id_rf_1 ");
         //processIdnfctn2ResponseText(x.message);
-      }
+      }*/
 
     },
 

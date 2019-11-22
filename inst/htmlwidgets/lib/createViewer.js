@@ -1,11 +1,13 @@
-    var createViewer = function(imgsArray,selected_images) {
-        
-        //this.viewerId = viewerId;
-        this.imgsArray = imgsArray;
-        this.selected_images = selected_images;
-       
-    }
-
+class createViewer {
+  constructor(viewerId, imgsArray, selected_images) {
+    this.batnum = 0;
+    this.imgNumber = 20;
+    this.imgsArray = imgsArray;
+    this.selected_images = selected_images;
+    this.viewerId = viewerId;
+  }
+}
+/*
     createViewer.prototype.docOnReady = function () {
       $(document).ready(function () {
 
@@ -75,8 +77,6 @@
     createViewer.prototype.processResponseText = function (csvfile) {
 
       console.log("In processResponseText()");
-      this.batnum = 0;
-      this.imgNumber = 20;
       let imgSize = await this.img_clssfctn_msg_handler();
       let textResult = await this.fetchServerFile(csvfile);
       this.imgsArray = (textResult).split(',');
@@ -302,4 +302,4 @@
 
 
 
-   
+   */
