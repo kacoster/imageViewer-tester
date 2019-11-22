@@ -56,26 +56,24 @@
 
 
        async function processClsfctnResponseText(csvfile) {
-         console.log("In ProcessResponse");
-        var textResult = await fetchServerFile(csvfile);
-        console.log("In PR : " + textResult);
-        ar = (textResult).split(',');
-        ar.splice(0, 1);
-        ar[0] = ar[0].replace("Source", "");
-        ar[0] = ar[ar.length - 1] + ar[0];
-        ar.splice(ar.length - 1, 1);
-
-
-      // Read the batch Image Number from from slider : img_clssfctn_ud_btch_img_thrshld
-      Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
-        function(message) {
-           imgNumb =  parseInt(JSON.stringify(message));
-                Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-              1 + " / " + getBatchNumber());
-             displayImages(imgNumb,0,'img_clssfctn_ud',ar);
-          }
-      );
-
+          console.log("In ProcessResponse");
+          var textResult = await fetchServerFile(csvfile);
+          console.log("In PR : " + textResult);
+          ar = (textResult).split(',');
+          ar.splice(0, 1);
+          ar[0] = ar[0].replace("Source", "");
+          ar[0] = ar[ar.length - 1] + ar[0];
+          ar.splice(ar.length - 1, 1);
+          
+          // Read the batch Image Number from from slider : img_clssfctn_ud_btch_img_thrshld
+          Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
+            function(message) {
+              imgNumb =  parseInt(JSON.stringify(message));
+                    Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
+                  1 + " / " + getBatchNumber());
+                displayImages(imgNumb,0,'img_clssfctn_ud',ar);
+              }
+          );
       }
 
       /************************************************************************/
