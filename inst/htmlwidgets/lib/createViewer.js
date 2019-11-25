@@ -8,20 +8,20 @@ class createViewer {
   }
 
   processResponseText(csvfile) {
-    console.log("In processResponseText()");
-    let imgSize = await this.img_clssfctn_msg_handler();
-    let textResult = await this.fetchServerFile(csvfile);
-    this.imgsArray = (textResult).split(',');
-    this.imgsArray.splice(0, 1);
-    this.imgsArray[0] = this.imgsArray[0].replace("Source", "");
-    this.imgsArray[0] = this.imgsArray[this.imgsArray.length - 1] + this.imgsArray[0];
-    this.imgsArray.splice(this.imgsArray.length - 1, 1);
-    console.log(this.imgsArray);
-    console.log("imgNumber before change  : " + this.imgNumber);
-    this.imgNumber = imgSize;
-    console.log("imgNumber After change  : " + this.imgNumber);
-    Shiny.onInputChange("img_clssfctn_ud_btch_tckr", 1 + " / " + this.getBatchNumber());
-    this.displayImages(0);
+      console.log("In processResponseText()");
+      let imgSize = await this.img_clssfctn_msg_handler();
+      let textResult = await this.fetchServerFile(csvfile);
+      this.imgsArray = (textResult).split(',');
+      this.imgsArray.splice(0, 1);
+      this.imgsArray[0] = this.imgsArray[0].replace("Source", "");
+      this.imgsArray[0] = this.imgsArray[this.imgsArray.length - 1] + this.imgsArray[0];
+      this.imgsArray.splice(this.imgsArray.length - 1, 1);
+      console.log(this.imgsArray);
+      console.log("imgNumber before change  : " + this.imgNumber);
+      this.imgNumber = imgSize;
+      console.log("imgNumber After change  : " + this.imgNumber);
+      Shiny.onInputChange("img_clssfctn_ud_btch_tckr", 1 + " / " + this.getBatchNumber());
+      this.displayImages(0);
     // Read the batch Image Number from from slider : img_clssfctn_ud_btch_img_thrshld
   }
 
@@ -30,7 +30,20 @@ class createViewer {
     let result = await (await fetch(msg)).text();
     return result.replace(/^\s*$[\n\r]{1,}/gm, '');
   }
-  /*
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
   docOnReady() {
     $(document).ready(function () {
       $("#apply").on("click", function () {
@@ -225,19 +238,6 @@ class createViewer {
       this.batnum = 0;
     }
   }
-  */
-}
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -279,4 +279,4 @@ class createViewer {
 
 
 
-   
+     */
