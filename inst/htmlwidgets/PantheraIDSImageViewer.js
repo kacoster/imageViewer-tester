@@ -29,6 +29,7 @@ HTMLWidgets.widget({
         console.log("CASE : classification module ");
         let classification = new createViewer(x.componentID,'imgsArray','selected_images');
         console.log("x.message : " +  x.message );
+        console.log("Viewer ID : " + classification.viewerId);
         classification.processResponseText(x.message);
         
         //processClsfctnResponseText(x.message);
