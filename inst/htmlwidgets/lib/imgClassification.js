@@ -12,7 +12,7 @@
        * * ready for JavaScript code to execute
       */
       $(document).ready(function () {
-
+        
         $("#apply").on("click", function () {
           // send message to Shiny
           Shiny.onInputChange("sources", sendDataToShinny());
@@ -54,26 +54,28 @@
       var batnum  = 0 ; // default batch Number
       var imgNumb = 0; // default image size
 
-
+     
        async function processClsfctnResponseText(csvfile) {
-          console.log("In ProcessResponse");
-          var textResult = await fetchServerFile(csvfile);
-          console.log("In PR : " + textResult);
-          ar = (textResult).split(',');
-          ar.splice(0, 1);
-          ar[0] = ar[0].replace("Source", "");
-          ar[0] = ar[ar.length - 1] + ar[0];
-          ar.splice(ar.length - 1, 1);
-          
-          // Read the batch Image Number from from slider : img_clssfctn_ud_btch_img_thrshld
-          Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
-            function(message) {
-              imgNumb =  parseInt(JSON.stringify(message));
-                    Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-                  1 + " / " + getBatchNumber());
-                displayImages(imgNumb,0,'img_clssfctn_ud',ar);
-              }
-          );
+         console.log("In ProcessResponse");
+        var textResult = await fetchServerFile(csvfile);
+        console.log("In PR : " + textResult);
+        ar = (textResult).split(',');
+        ar.splice(0, 1);
+        ar[0] = ar[0].replace("Source", "");
+        ar[0] = ar[ar.length - 1] + ar[0];
+        ar.splice(ar.length - 1, 1);
+      
+
+      // Read the batch Image Number from from slider : img_clssfctn_ud_btch_img_thrshld
+      Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
+        function(message) {
+           imgNumb =  parseInt(JSON.stringify(message));
+                Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
+              1 + " / " + getBatchNumber());
+             displayImages(imgNumb,0,'x',ar);
+          }
+      );
+
       }
 
       /************************************************************************/
@@ -166,10 +168,8 @@
       * @return void
       */
       function isKeyPressed(event) {
-        //console.log("is KeyPressed imgClsfctn");
+
            arrayClone(selected_images);
-          // send message to Shiny
-          var imageName = event.target.src;
 
           if (event.shiftKey) {
             handleExistance(selected_images, event.target.src, event.target.id);
@@ -204,20 +204,20 @@
       */
       function next() {
         nextPrevClicked("1");
-
+  
       if(batnum < getBatchNumber()-1){
                batnum++;
                //console.log("Tester : " +   batnum + "/" + getBatchNumber());
-              Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
+                Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (batnum+1) + " / " + getBatchNumber());
-              //clearImages('x');
-              displayImages(imgNumb,batnum,'img_clssfctn_ud',ar);
+              clearImages();
+              displayImages(imgNumb,batnum,'x',ar);
 
         }else{
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
              getBatchNumber() + " / " + getBatchNumber());
-             //clearImages('x');
-             displayImages(imgNumb,getBatchNumber()-1,'img_clssfctn_ud',ar);
+             clearImages();
+             displayImages(imgNumb,getBatchNumber()-1,'x',ar);
              batnum = getBatchNumber()-1;
         }
 
@@ -233,20 +233,20 @@
         if (batnum > 0 ) {
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (batnum+1) + " / " + getBatchNumber());
-              //clearImages('x');
-              displayImages(imgNumb,batnum,'img_clssfctn_ud',ar);
+              clearImages();
+              displayImages(imgNumb,batnum,'x',ar);
         }else{
 
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
              1 + " / " + getBatchNumber());
-             //clearImages('x');
-             displayImages(imgNumb,0,'img_clssfctn_ud',ar);
+             clearImages();
+             displayImages(imgNumb,0,'x',ar);
              batnum = 0;
 
         }
 
       }
-
+      
       /**
        * @description - indirect call to the vjs() function
        * @returns image view

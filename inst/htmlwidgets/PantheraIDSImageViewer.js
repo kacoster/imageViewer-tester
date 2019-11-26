@@ -16,40 +16,33 @@ HTMLWidgets.widget({
 
     return {
 
-    renderValue: function(x) {
+      renderValue: function(x) {
 
-      /**
-       * Calling readServerData function
-       * Passing the filePath parameter as an argument
-      */
+        /**
+         * Calling readServerData function
+         * Passing the filePath parameter as an argument
+        */
+
+        let classification = new createViewer('imgsArray','selected_images',0,x.componentID);
+        classification.processResponseText('img_clssfctn_ud.csv');
 
 
-      //if(x.componentID === "img_clssfctn_ud")
-      //{
-        console.log("CASE : classification module ");
-        let classification = new createViewer(x.componentID,'imgsArray','selected_images');
-        console.log("x.message : " +  x.message );
-        console.log("Viewer ID : " + classification.viewerId);
-        classification.processResponseText(x.message);
-        
-        //processClsfctnResponseText(x.message);
-      //}
-      /*else if (x.componentID === "spcs_idntfctn_id_rf_1")
-      {
-        let spcsIdntfctn1 = new createViewer(x.componentID,'imgsArray','selected_images');
-        spcsIdntfctn1.processResponseText(x.message);
-        console.log("CASE : spcs_idntfctn_id_rf_1 ");
-        //processIdnfctn1ResponseText(x.message);
-      }
-      else
-      {
-        let spcsIdntfctn2 = new createViewer(x.componentID,'imgsArray','selected_images');
-        spcsIdntfctn2.processResponseText(x.message);
-        console.log("CASE : spcs_idntfctn_id_rf_1 ");
-        //processIdnfctn2ResponseText(x.message);
-      }*/
+        /*if(x.componentID === "img_clssfctn_ud")
+        {
+          console.log("CASE : classification module ");
+          processClsfctnResponseText(x.message);
 
-    },
+        }
+        else if (x.componentID === "spcs_idntfctn_id_rf_1")
+        {
+          processIdnfctn1ResponseText(x.message);
+        }
+        else
+        {
+          processIdnfctn2ResponseText(x.message);
+        }*/
+
+      },
 
       resize: function(width, height) {
 

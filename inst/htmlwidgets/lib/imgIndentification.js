@@ -20,7 +20,7 @@
      *
      */
     async function processIdnfctn1ResponseText(csvfile) {
-
+      
       let textResult = await fetchServerFile(csvfile);
       imageArray = (textResult).split(',');
       imageArray.splice(0, 1);
@@ -40,9 +40,10 @@
     * @return void
     */
     function observeClick(event) {
+
       console.log("In observeClick imgIdentification");
       objectOf("imgIdentification");
-      vjsCall();
+        vjsCall();
     }
 
     /**
@@ -52,8 +53,8 @@
      *           - batch number of the image lot
      * @returns void
      *
-
-
+     
+   
     function displayImages(imgnumb,bat) {
       console.log("In displayImages() imgIdentification");
         removeImages();
@@ -80,7 +81,7 @@
     /**
      *
      * @param {String} arry
-
+     
     function dispImages(arry) {
       console.log("IN dispImages() imgIdentification");
       imgloop(arry,'spcs_idntfctn_id_rf_1');
