@@ -211,6 +211,7 @@
    *
   */
   function initial(imgnumb,bat) {
+    console.log("In initial");
       clearImages();
       start = bat * imgnumb;
       end = start + imgnumb;
@@ -293,6 +294,7 @@
 
    */
   function imgloop(ar) {
+    console.log("In imgloop ");
     $(".pictures > li").css("background-color", "white");
     for (i = 0; i < ar.length; i++) {
       var liId = i;
@@ -313,6 +315,7 @@
    *
    */
   function clearImages() {
+    console.log("clearImages ");
     $("#x").html("");
   }
 
@@ -321,6 +324,7 @@
    * @param {String} arry
    */
   function callImges(arry) {
+     console.log("callImges ");
     imgloop(arry);
   }
 
