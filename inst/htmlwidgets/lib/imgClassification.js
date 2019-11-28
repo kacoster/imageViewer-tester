@@ -36,10 +36,10 @@
         Shiny.onInputChange("prev", prev());
         });
 
-        $("#img_clssfctn_ud_fltr_button").on("click", function () {
+        /*$("#img_clssfctn_ud_fltr_button").on("click", function () {
           Shiny.onInputChange("prev", console.log("Clicked Filter"));
               //console.log("Clicked Filter"); //img_clssfctn_fltr_button
-        });
+        });*/
 
       /**********************************************************************/
         // For Testing Purposes
