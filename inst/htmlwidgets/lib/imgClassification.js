@@ -36,6 +36,10 @@
         Shiny.onInputChange("prev", prev());
         });
 
+        $("#img_clssfctn_ud_fltr_button").on("click", function () {
+              console.log("Clicked Filter");
+        });
+
       /**********************************************************************/
         // For Testing Purposes
         $("#prev").on("click", function () {
