@@ -23,24 +23,19 @@ HTMLWidgets.widget({
          * Passing the filePath parameter as an argument
         */
 
-        let classification = new createViewer('imgsArray','selected_images',0,x.componentID);
-        classification.processResponseText('img_clssfctn_ud.csv');
-
-
-        /*if(x.componentID === "img_clssfctn_ud")
+        if(x.componentID === "img_clssfctn_ud")
         {
-          console.log("CASE : classification module ");
-          processClsfctnResponseText(x.message);
-
+          console.log("case classification module ");
+           readServerData(x.message);
         }
         else if (x.componentID === "spcs_idntfctn_id_rf_1")
         {
-          processIdnfctn1ResponseText(x.message);
+          fetchServerData(x.message);
         }
         else
         {
-          processIdnfctn2ResponseText(x.message);
-        }*/
+          fetchServerData_rf2(x.message);
+        }
 
       },
 
