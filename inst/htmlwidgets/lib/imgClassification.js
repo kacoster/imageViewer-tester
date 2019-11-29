@@ -90,17 +90,14 @@
     ar.splice(ar.length - 1, 1);
 
     // Read the batch Image Number from from slider : img_clssfctn_ud_btch_img_thrshld
-
-  Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
+    Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
       function(message) {
         imgNumb =  parseInt(JSON.stringify(message));
               Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
             1 + " / " + getBatchNumber());
-            initial(imgNumb,0);
+          initial(imgNumb,0);
         }
     );
-
-
   }
 
   /************************************************************************/
