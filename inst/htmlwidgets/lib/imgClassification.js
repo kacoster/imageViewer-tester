@@ -29,17 +29,12 @@
         });
 
         $("#img_clssfctn_ud_nxt_bttn").on("click", function () {
-        Shiny.onInputChange("next", next());
+           Shiny.onInputChange("next", next());
         });
 
         $("#img_clssfctn_ud_prvs_bttn").on("click", function () {
-        Shiny.onInputChange("prev", prev());
+          Shiny.onInputChange("prev", prev());
         });
-
-        /*$("#img_clssfctn_ud_fltr_button").on("click", function () {
-          Shiny.onInputChange("prev", console.log("Clicked Filter"));
-              //console.log("Clicked Filter"); //img_clssfctn_fltr_button
-        });*/
 
       /**********************************************************************/
         // For Testing Purposes
@@ -100,8 +95,16 @@
         imgNumb =  parseInt(JSON.stringify(message));
               Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
             1 + " / " + getBatchNumber());
-          initial(imgNumb,0);
+
         }
+    );
+
+   Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_button",
+      function(message) {
+        if (parseInt(JSON.stringify(message)) == 1){
+           initial(imgNumb,0);
+        }
+      }
     );
   }
 
@@ -216,7 +219,6 @@
    *
   */
   function initial(imgnumb,bat) {
-    console.log("In initial");
       clearImages();
       start = bat * imgnumb;
       end = start + imgnumb;
@@ -299,7 +301,6 @@
 
    */
   function imgloop(ar) {
-    console.log("In imgloop ");
     $(".pictures > li").css("background-color", "white");
     for (i = 0; i < ar.length; i++) {
       var liId = i;
@@ -320,7 +321,6 @@
    *
    */
   function clearImages() {
-    console.log("clearImages ");
     $("#x").html("");
   }
 
@@ -329,7 +329,6 @@
    * @param {String} arry
    */
   function callImges(arry) {
-     console.log("callImges ");
     imgloop(arry);
   }
 
