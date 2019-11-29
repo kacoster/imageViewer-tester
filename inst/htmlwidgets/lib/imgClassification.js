@@ -101,7 +101,7 @@
               Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
             1 + " / " + getBatchNumber());
         }
-    );*/
+    );*/    alert("ImageNumber : " + imgNumb);
               initial(imgNumb,0);
 
   }
