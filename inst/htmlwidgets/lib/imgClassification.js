@@ -252,6 +252,7 @@
    *
   */
   function next() {
+    console.log("Next Clicked");
     nextPrevClicked("1");
 
     if(batnum < getBatchNumber()-1){
@@ -274,6 +275,7 @@
    *
   */
   function prev() {
+    console.log("Prev Clicked");
        nextPrevClicked("1");
        batnum--;
     if (batnum > 0 ) {
