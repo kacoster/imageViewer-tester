@@ -27,7 +27,7 @@ HTMLWidgets.widget({
         {
           console.log("case classification module ");
           Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_button",
-              function(message) {
+              function(mesg) {
                 console.log("Clicked Filter");
                // if (parseInt(JSON.stringify(message)) == 1){
                    // console.log("Inside the If Statement");
