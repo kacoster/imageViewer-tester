@@ -30,6 +30,7 @@ HTMLWidgets.widget({
               function(message) {
                 console.log("Clicked Filter");
                 if (parseInt(JSON.stringify(message)) == 1){
+                    console.log("Inside the If Statement");
                     readServerData(x.message);
                 }
               }
