@@ -326,7 +326,7 @@
    *
    */
   function clearImages() {
-    $("#x").html("");
+    $("#img_clssfctn_ud").html("");
   }
 
   /**
