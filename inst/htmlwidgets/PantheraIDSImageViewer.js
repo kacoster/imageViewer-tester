@@ -26,6 +26,12 @@ HTMLWidgets.widget({
         if(x.componentID === "img_clssfctn_ud")
         {
             console.log("case classification module ");
+            Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
+              function(message) {
+                setImagesNumber(parseInt(JSON.stringify(message)));
+                }
+            );
+
             Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_button",
                 function(mesg) {
                   console.log("Clicked Filter");
