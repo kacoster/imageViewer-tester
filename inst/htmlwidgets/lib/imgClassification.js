@@ -59,7 +59,7 @@
   var start, end;
 
   var batnum  = 0 ; // default batch Number
-  var imgNumb = 50; // default image size
+  var imgNumb = 0; // default image size
 
    /* Function to read Server Data from Server-Side
    * @parameter msg A message from Shiny indication the csv file
@@ -71,13 +71,6 @@
   }
 
   function loadDoc(url, cFunction) {
-
-    Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
-      function(message) {
-        imgNumb =  parseInt(JSON.stringify(message));
-      }
-    );
-
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -90,7 +83,6 @@
   }
 
   function myFunction1(xhttp) {
-
     ar = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
     ar.splice(0, 1);
     ar[0] = ar[0].replace("Source", "");
@@ -99,8 +91,16 @@
 
     // Read the batch Image Number from from slider : img_clssfctn_ud_btch_img_thrshld
 
-    initial(imgNumb,0);
   }
+
+  Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
+      function(message) {
+        imgNumb =  parseInt(JSON.stringify(message));
+              Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
+            1 + " / " + getBatchNumber());
+            initial(imgNumb,0);
+        }
+    );
 
   /************************************************************************/
   /**
@@ -213,8 +213,6 @@
    *
   */
   function initial(imgnumb,bat) {
-    Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-            1 + " / " + getBatchNumber());
       clearImages();
       start = bat * imgnumb;
       end = start + imgnumb;
