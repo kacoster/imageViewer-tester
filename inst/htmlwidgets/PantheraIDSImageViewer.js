@@ -29,10 +29,10 @@ HTMLWidgets.widget({
           Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_button",
               function(message) {
                 console.log("Clicked Filter");
-                if (parseInt(JSON.stringify(message)) == 1){
-                    console.log("Inside the If Statement");
+               // if (parseInt(JSON.stringify(message)) == 1){
+                   // console.log("Inside the If Statement");
                     readServerData(x.message);
-                }
+               // }
               }
           );
 
