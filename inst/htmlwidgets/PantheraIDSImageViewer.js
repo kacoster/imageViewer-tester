@@ -26,7 +26,15 @@ HTMLWidgets.widget({
         if(x.componentID === "img_clssfctn_ud")
         {
           console.log("case classification module ");
-           readServerData(x.message);
+          Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_button",
+              function(message) {
+                console.log("Clicked Filter");
+                if (parseInt(JSON.stringify(message)) == 1){
+                    readServerData(x.message);
+                }
+              }
+          );
+
         }
         else if (x.componentID === "spcs_idntfctn_id_rf_1")
         {

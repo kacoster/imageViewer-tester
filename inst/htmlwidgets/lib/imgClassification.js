@@ -95,17 +95,8 @@
         imgNumb =  parseInt(JSON.stringify(message));
               Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
             1 + " / " + getBatchNumber());
-
+            initial(imgNumb,0);
         }
-    );
-
-   Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_button",
-      function(message) {
-        console.log("Clicked Filter");
-        if (parseInt(JSON.stringify(message)) == 1){
-           initial(imgNumb,0);
-        }
-      }
     );
   }
 
