@@ -31,6 +31,7 @@
       //displayImages(20,0)
       displayImages(20,0,'spcs_idntfctn_id_rf_1',imageArray);
     }
+
     /**
     * Handles all image panel click events
     * @parameter - event click/shiftKey
