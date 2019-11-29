@@ -71,6 +71,7 @@
    *
    */
   function readServerData(msg) {  // datapath , batchNumber , loadSize
+    console.log("readServerData");
     var csvfile = "" + msg + "";
     loadDoc( csvfile, myFunction1);
   }
@@ -88,11 +89,14 @@
   }
 
   function myFunction1(xhttp) {
+    console.log("myFunction1");
     ar = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
     ar.splice(0, 1);
     ar[0] = ar[0].replace("Source", "");
     ar[0] = ar[ar.length - 1] + ar[0];
     ar.splice(ar.length - 1, 1);
+    console.log(ar);
+
 
     // Read the batch Image Number from from slider : img_clssfctn_ud_btch_img_thrshld
     /*Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
