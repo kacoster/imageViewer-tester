@@ -101,6 +101,7 @@
 
    Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_button",
       function(message) {
+        console.log("Clicked Filter");
         if (parseInt(JSON.stringify(message)) == 1){
            initial(imgNumb,0);
         }
