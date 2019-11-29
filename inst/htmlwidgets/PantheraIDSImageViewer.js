@@ -25,14 +25,13 @@ HTMLWidgets.widget({
 
         if(x.componentID === "img_clssfctn_ud")
         {
-          console.log("case classification module ");
-          Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_button",
-              function(mesg) {
-                console.log("Clicked Filter");
-                    readServerData(x.message);
-              }
-          );
-
+            console.log("case classification module ");
+            Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_button",
+                function(mesg) {
+                  console.log("Clicked Filter");
+                  readServerData(x.message);
+                }
+            );
         }
         else if (x.componentID === "spcs_idntfctn_id_rf_1")
         {
