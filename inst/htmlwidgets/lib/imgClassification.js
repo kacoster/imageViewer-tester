@@ -78,11 +78,15 @@
   }
 
   function loadDoc(url, cFunction) {
+    console.log("loadDoc");
+
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        cFunction(this);
+            console.log("Ready");
+
+           cFunction(this);
       }
     };
     xhttp.open("GET", url, true);
@@ -90,7 +94,7 @@
   }
 
   function myFunction1(xhttp) {
-    console.log("myFunction1");
+    console.log("myFunction1 ");
     ar = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
     ar.splice(0, 1);
     ar[0] = ar[0].replace("Source", "");
