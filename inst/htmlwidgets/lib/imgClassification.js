@@ -59,7 +59,7 @@
   var start, end;
 
   var batnum  = 0 ; // default batch Number
-  var imgNumb = 0; // default image size
+  var imgNumb = 50; // default image size
 
    /* Function to read Server Data from Server-Side
    * @parameter msg A message from Shiny indication the csv file
