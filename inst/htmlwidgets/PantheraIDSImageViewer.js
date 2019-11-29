@@ -26,6 +26,7 @@ HTMLWidgets.widget({
         if(x.componentID === "img_clssfctn_ud")
         {
             console.log("classification module ");
+
             Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
               function(message) {
                 setImagesNumber(parseInt(JSON.stringify(message)));
@@ -34,6 +35,7 @@ HTMLWidgets.widget({
 
             Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_button",
                 function(mesg) {
+                  console.log("Handler img_clssfctn_ud_fltr_button");
                   readServerData(x.message);
                 }
             );
