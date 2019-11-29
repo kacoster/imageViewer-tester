@@ -259,6 +259,7 @@
           batnum++;
           Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
           (batnum+1) + " / " + getBatchNumber());
+          console.log("batch Number : " + batnum);
           initial(imgNumb, batnum);
 
       }else{
@@ -281,6 +282,8 @@
     if (batnum > 0 ) {
        Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
           (batnum+1) + " / " + getBatchNumber());
+        console.log("batch Number : " + batnum);
+
       initial(imgNumb ,batnum);
     }else{
 
