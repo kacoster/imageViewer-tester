@@ -73,6 +73,7 @@
   function readServerData(msg) {  // datapath , batchNumber , loadSize
     console.log("readServerData");
     var csvfile = "" + msg + "";
+    console.log("readServerData : " + csvfile );
     loadDoc( csvfile, myFunction1);
   }
 
