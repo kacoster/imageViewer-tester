@@ -14,7 +14,7 @@ class ViewerComponent {
 
     async processResponseText(csvfile)
     {
-        this.ar = fetchServerFile(csvfile).split(',');
+        this.ar = this.fetchServerFile(csvfile).split(',');
         this.ar.splice(0, 1);
         this.ar[0] = this.ar[0].replace("Source", "");
         this.ar[0] = this.ar[this.ar.length - 1] + this.ar[0];
