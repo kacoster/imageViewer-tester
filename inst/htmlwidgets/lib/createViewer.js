@@ -1,6 +1,6 @@
 
 class ViewerComponent {
-    
+
     constructor(moduleId) {
         this.moduleId = moduleId;
         this.ar = [];
@@ -29,6 +29,7 @@ class ViewerComponent {
      
     async  fetchServerFile(msg) {
         let fetchresult = await (await fetch(msg)).text();
+        console.log("fetchresult : " + fetchresult);
         //this.writeToArray(fetchresult.replace(/^\s*$[\n\r]{1,}/gm, ''));
         return fetchresult.replace(/^\s*$[\n\r]{1,}/gm, '');
     }

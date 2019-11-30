@@ -25,10 +25,12 @@ HTMLWidgets.widget({
 
         if(x.componentID === "img_clssfctn_ud")
         {
-            let imgClssfctn = new ViewerComponent();
             console.log("classification module ");
+            let imgClssfctn = new ViewerComponent();
+            imgClssfctn.processResponseText(x.message);
+       
 
-            Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
+           /* Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
               function(message) {
                 imgClssfctn.setImagesNumber(parseInt(JSON.stringify(message)));
               }
@@ -39,7 +41,7 @@ HTMLWidgets.widget({
                 console.log("Handler img_clssfctn_ud_fltr_button");
                 imgClssfctn.processResponseText(x.message);
               }
-            );
+            );*/
         }
         else if (x.componentID === "spcs_idntfctn_id_rf_1")
         {
