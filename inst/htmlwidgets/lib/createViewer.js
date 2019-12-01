@@ -31,7 +31,7 @@ class ViewerComponent {
         let fetchresult = await (await fetch(msg)).text();
         console.log("fetchresult : " + fetchresult);
         //this.writeToArray(fetchresult.replace(/^\s*$[\n\r]{1,}/gm, ''));
-        return fetchresult.replace(/^\s*$[\n\r]{1,}/gm, '');
+        return new Promise(fetchresult.replace(/^\s*$[\n\r]{1,}/gm, ''));
     }
 
     /**
