@@ -21,7 +21,7 @@ class ViewerComponent {
         console.log("readServerData");
         var csvfile = "" + msg + "";
         console.log("readServerData : " + csvfile );
-        this.loadDoc( csvfile, processResponseText);
+        this.loadDoc( csvfile, this.processResponseText);
     }
 
     loadDoc(url, cFunction) {
