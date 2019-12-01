@@ -12,7 +12,7 @@ class ViewerComponent {
         this.imgNumb = 50;
     }
 
-    async processResponseText()
+    processResponseText()
     {
         //this.ar = this.fetchServerFile(csvfile).split(',');
         this.ar.splice(0, 1);
@@ -21,8 +21,8 @@ class ViewerComponent {
         this.ar.splice(this.ar.length - 1, 1);
         console.log(this.ar);
         alert("ImageNumber : " + this.imgNumb);
-        Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-            1 + " / " + this.getBatchNumber());
+        /*Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
+            1 + " / " + this.getBatchNumber());*/
         this.initial(this.imgNumb,0);
     }
 
