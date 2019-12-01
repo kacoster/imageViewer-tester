@@ -21,7 +21,7 @@ class ViewerComponent {
         console.log("readServerData");
         var csvfile = "" + msg + "";
         console.log("readServerData : " + csvfile );
-        loadDoc( csvfile, processResponseText);
+        this.loadDoc( csvfile, processResponseText);
     }
 
     loadDoc(url, cFunction) {
@@ -41,17 +41,16 @@ class ViewerComponent {
     
     processResponseText(xhttp) {
         console.log("myFunction1 ");
-        ar = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
-        ar.splice(0, 1);
-        ar[0] = ar[0].replace("Source", "");
-        ar[0] = ar[ar.length - 1] + ar[0];
-        ar.splice(ar.length - 1, 1);
-        console.log(ar);
-
-        alert("ImageNumber : " + imgNumb);
+        this.ar = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
+        this.ar.splice(0, 1);
+        this.ar[0] = this.ar[0].replace("Source", "");
+        this.ar[0] = this.ar[this.ar.length - 1] + this.ar[0];
+        this.ar.splice(this.ar.length - 1, 1);
+        console.log(this.ar);
+        alert("ImageNumber : " + this.imgNumb);
         Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-        1 + " / " + getBatchNumber());
-        initial(imgNumb,0);
+            1 + " / " + this.getBatchNumber());
+        this.initial(this.imgNumb,0);
     }
     
 
