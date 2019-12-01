@@ -41,6 +41,8 @@ class ViewerComponent {
     
     processResponseText(xhttp) {
         console.log("myFunction1 ");
+        console.log(this.ar.length);
+        console.log((xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(','));
         this.ar = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
         this.ar.splice(0, 1);
         this.ar[0] = this.ar[0].replace("Source", "");
