@@ -12,7 +12,50 @@ class ViewerComponent {
         this.imgNumb = 50;
     }
 
-    async processResponseText(csvfile)
+    /* 
+    * Function to read Server Data from Server-Side
+    * @parameter msg A message from Shiny indication the csv file
+    *
+    */
+    readServerData(msg) {  // datapath , batchNumber , loadSize
+        console.log("readServerData");
+        var csvfile = "" + msg + "";
+        console.log("readServerData : " + csvfile );
+        loadDoc( csvfile, processResponseText);
+    }
+
+    loadDoc(url, cFunction) {
+        console.log("loadDoc");
+
+        var xhttp;
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log("Ready");
+                cFunction(this);
+            }
+        };
+        xhttp.open("GET", url, true);
+        xhttp.send();
+    }
+    
+    processResponseText(xhttp) {
+        console.log("myFunction1 ");
+        ar = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
+        ar.splice(0, 1);
+        ar[0] = ar[0].replace("Source", "");
+        ar[0] = ar[ar.length - 1] + ar[0];
+        ar.splice(ar.length - 1, 1);
+        console.log(ar);
+
+        alert("ImageNumber : " + imgNumb);
+        Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
+        1 + " / " + getBatchNumber());
+        initial(imgNumb,0);
+    }
+    
+
+    /*async processResponseText(csvfile)
     {
         this.ar = this.fetchServerFile(csvfile).split(',');
         this.ar.splice(0, 1);
@@ -24,15 +67,15 @@ class ViewerComponent {
         Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
             1 + " / " + this.getBatchNumber());
         this.initial(this.imgNumb,0);
-    }
+    }*/
 
      
-    async  fetchServerFile(msg) {
+   /* async  fetchServerFile(msg) {
         let fetchresult = await (await fetch(msg)).text();
         console.log("fetchresult : " + fetchresult);
         //this.writeToArray(fetchresult.replace(/^\s*$[\n\r]{1,}/gm, ''));
         return new Promise(fetchresult.replace(/^\s*$[\n\r]{1,}/gm, ''));
-    }
+    }*/
 
     /**
      * @function initial(a,b)
