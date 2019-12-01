@@ -3,7 +3,7 @@ class ViewerComponent {
 
     constructor(moduleId) {
         this.moduleId = moduleId;
-        this.ar = [];
+        this.ar = [2,4,5,6,7];
         this.selected_images = [];
         this.tempRemoved = [];
         this.nextPrev = 0;
@@ -12,53 +12,9 @@ class ViewerComponent {
         this.imgNumb = 50;
     }
 
-    /* 
-    * Function to read Server Data from Server-Side
-    * @parameter msg A message from Shiny indication the csv file
-    *
-    */
-    readServerData(msg) {  // datapath , batchNumber , loadSize
-        console.log("readServerData");
-        var csvfile = "" + msg + "";
-        console.log("readServerData : " + csvfile );
-        this.loadDoc( csvfile, this.processResponseText);
-    }
-
-    loadDoc(url, cFunction) {
-        console.log("loadDoc");
-
-        var xhttp;
-        xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                console.log("Ready");
-                cFunction(this);
-            }
-        };
-        xhttp.open("GET", url, true);
-        xhttp.send();
-    }
-    
-    processResponseText(xhttp) {
-        console.log("myFunction1 ");
-        console.log(this.ar.length);
-        console.log((xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(','));
-        this.ar = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
-        this.ar.splice(0, 1);
-        this.ar[0] = this.ar[0].replace("Source", "");
-        this.ar[0] = this.ar[this.ar.length - 1] + this.ar[0];
-        this.ar.splice(this.ar.length - 1, 1);
-        console.log(this.ar);
-        alert("ImageNumber : " + this.imgNumb);
-        Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-            1 + " / " + this.getBatchNumber());
-        this.initial(this.imgNumb,0);
-    }
-    
-
-    /*async processResponseText(csvfile)
+    async processResponseText()
     {
-        this.ar = this.fetchServerFile(csvfile).split(',');
+        //this.ar = this.fetchServerFile(csvfile).split(',');
         this.ar.splice(0, 1);
         this.ar[0] = this.ar[0].replace("Source", "");
         this.ar[0] = this.ar[this.ar.length - 1] + this.ar[0];
@@ -68,15 +24,16 @@ class ViewerComponent {
         Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
             1 + " / " + this.getBatchNumber());
         this.initial(this.imgNumb,0);
-    }*/
+    }
 
      
-   /* async  fetchServerFile(msg) {
+    async fetchServerFile(msg) {
         let fetchresult = await (await fetch(msg)).text();
         console.log("fetchresult : " + fetchresult);
         //this.writeToArray(fetchresult.replace(/^\s*$[\n\r]{1,}/gm, ''));
-        return new Promise(fetchresult.replace(/^\s*$[\n\r]{1,}/gm, ''));
-    }*/
+        this.ar = (fetchresult.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
+        this.processResponseText();
+    }
 
     /**
      * @function initial(a,b)
@@ -363,3 +320,4 @@ class ViewerComponent {
 
 
 }
+

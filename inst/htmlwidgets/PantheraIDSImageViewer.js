@@ -27,7 +27,7 @@ HTMLWidgets.widget({
         {
             console.log("classification module ");
             let imgClssfctn = new ViewerComponent();
-            imgClssfctn.readServerData(x.message);
+            imgClssfctn.fetchServerFile(x.message);
        
 
            /* Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
