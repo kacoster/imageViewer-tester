@@ -24,6 +24,7 @@ HTMLWidgets.widget({
          * Calling readServerData function
          * Passing the filePath parameter as an argument
         */
+        console.log("x.componentID : " + x.componentID);
         console.log(x.componentID === "img_clssfctn_ud");
 
         if(x.componentID === "img_clssfctn_ud")
