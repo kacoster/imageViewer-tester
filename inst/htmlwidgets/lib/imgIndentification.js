@@ -8,7 +8,7 @@
      ***************************************************************************/
 
 
-    console.log("IN IMGINDENTIFICATION.JS");
+
     var imageArray = [];
     var highlighted_images = [];
     //var resultsArray;
@@ -27,7 +27,7 @@
       imageArray[0] = imageArray[0].replace("Source", "");
       imageArray[0] = imageArray[imageArray.length - 1] + imageArray[0];
       imageArray.splice(imageArray.length - 1, 1);
-      console.log("Number of Images : " + imageArray.length );
+
       //displayImages(20,0)
       displayImages(20,0,'spcs_idntfctn_id_rf_1',imageArray);
     }
