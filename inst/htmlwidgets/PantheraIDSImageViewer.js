@@ -42,7 +42,7 @@ HTMLWidgets.widget({
               function(message) {
                 setImagesNumber(parseInt(JSON.stringify(message)));
                 console.log("Handler img_clssfctn_ud_batch_image_size");
-                 readServerData(x.message);
+                 //readServerData(x.message);
                 }
             );
 
