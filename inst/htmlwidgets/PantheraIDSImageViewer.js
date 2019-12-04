@@ -34,17 +34,18 @@ HTMLWidgets.widget({
             );
 
             Shiny.addCustomMessageHandler("img_clssfctn_ud_img_clmn_numb",
-              function(message) {
+              function(message) { // img_clssfctn_ud_fltr_button
                 alert(JSON.stringify(message));
-                setColumnNumb(parseInt(JSON.stringify(message)));
                  readServerData(x.message);
+                //setColumnNumb(parseInt(JSON.stringify(message)));
                 }
             );
 
-            Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_button",
+            Shiny.addCustomMessageHandler("img_clssfctn_ud_img_clmn_numb",
                 function(mesg) {
                   console.log("Handler img_clssfctn_ud_fltr_button");
-                  readServerData(x.message);
+                  setColumnNumb(parseInt(JSON.stringify(message)));
+                  //readServerData(x.message);
                 }
             );
         }
