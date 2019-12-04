@@ -37,6 +37,7 @@ HTMLWidgets.widget({
               function(message) {
                 alert(JSON.stringify(message));
                 setColumnNumb(parseInt(JSON.stringify(message)));
+                 readServerData(x.message);
                 }
             );
 
