@@ -29,11 +29,11 @@
         });
 
         $("#img_clssfctn_ud_nxt_bttn").on("click", function () {
-        Shiny.onInputChange("next", next());
+           Shiny.onInputChange("next", next());
         });
 
         $("#img_clssfctn_ud_prvs_bttn").on("click", function () {
-        Shiny.onInputChange("prev", prev());
+          Shiny.onInputChange("prev", prev());
         });
 
       /**********************************************************************/
@@ -62,27 +62,31 @@
   var imgNumb = 50; // default image size
 
 
-
     function setImagesNumber(numb)
     {
       imgNumb = numb;
     }
-
    /* Function to read Server Data from Server-Side
    * @parameter msg A message from Shiny indication the csv file
    *
    */
   function readServerData(msg) {  // datapath , batchNumber , loadSize
+    console.log("readServerData");
     var csvfile = "" + msg + "";
+    console.log("readServerData : " + csvfile );
     loadDoc( csvfile, myFunction1);
   }
 
   function loadDoc(url, cFunction) {
+    console.log("loadDoc");
+
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-        cFunction(this);
+            console.log("Ready");
+
+           cFunction(this);
       }
     };
     xhttp.open("GET", url, true);
@@ -90,26 +94,27 @@
   }
 
   function myFunction1(xhttp) {
+    console.log("myFunction1 ");
     ar = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
     ar.splice(0, 1);
     ar[0] = ar[0].replace("Source", "");
     ar[0] = ar[ar.length - 1] + ar[0];
     ar.splice(ar.length - 1, 1);
+    console.log(ar);
 
 
-    console.log("ImageNumber : " + imgNumb);
-    Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-            1 + " / " + getBatchNumber());
-    initial(imgNumb,0);
     // Read the batch Image Number from from slider : img_clssfctn_ud_btch_img_thrshld
     /*Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
       function(message) {
         imgNumb =  parseInt(JSON.stringify(message));
-              Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-            1 + " / " + getBatchNumber());
-          initial(imgNumb,0);
+
         }
     );*/
+    alert("ImageNumber : " + imgNumb);
+    Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
+            1 + " / " + getBatchNumber());
+    initial(imgNumb,0);
+
   }
 
   /************************************************************************/
@@ -144,18 +149,7 @@
 
   function getCurrClckdImg(state, imgsrc)
   {
-    //console.log("Selected Images : " + trimImageSRC(selected_images));
     Shiny.onInputChange(state,imgsrc);
-  }
-
-  function trimImageSRC(params)
-  {
-    let trimmedSrc = [];
-
-    for each (let item in params) {
-      trimmedSrc.push(item.substring(item.lastIndexOf("/") + 1, item.length ));
-    }
-    return trimmedSrc;
   }
 
   /**
@@ -175,7 +169,6 @@
       removeHighlight(id);
       if(params.length > 0)
       {
-
         getCurrClckdImg("clssfctn_slctd_img",
         params[params.length -1].substring(
           src.lastIndexOf("/") + 1, src.length ));
@@ -187,10 +180,8 @@
     }
     else{
       params.push(src);
-
       $(".pictures > li").css("background-color", "yellow");
       highliter(id);
-
        getCurrClckdImg("clssfctn_slctd_img",
         src.substring(src.lastIndexOf("/") + 1, src.length ));
     }
@@ -270,12 +261,14 @@
    *
   */
   function next() {
+    console.log("Next Clicked");
     nextPrevClicked("1");
 
     if(batnum < getBatchNumber()-1){
           batnum++;
           Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
           (batnum+1) + " / " + getBatchNumber());
+          console.log("batch Number : " + batnum);
           initial(imgNumb, batnum);
 
       }else{
@@ -292,19 +285,20 @@
    *
   */
   function prev() {
+    console.log("Prev Clicked");
        nextPrevClicked("1");
        batnum--;
     if (batnum > 0 ) {
        Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
           (batnum+1) + " / " + getBatchNumber());
+        console.log("batch Number : " + batnum);
+
       initial(imgNumb ,batnum);
     }else{
-
        Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
          1 + " / " + getBatchNumber());
       initial(imgNumb, 0);
       batnum = 0;
-
     }
 
   }
@@ -315,8 +309,7 @@
    * @description - creates html component to display the images
    * @param {String} ar - an array of images
    * @returns {void} var src = ( ( ar[0].trim()).replace(/['"]+/g, ''));
-  someText = src.replace(/(\r\n|\n|\r)/gm,"");
-
+   * someText = src.replace(/(\r\n|\n|\r)/gm,"");
    */
   function imgloop(ar) {
     $(".pictures > li").css("background-color", "white");
@@ -371,6 +364,7 @@
         return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
       },
     });
+
 
   }
 
