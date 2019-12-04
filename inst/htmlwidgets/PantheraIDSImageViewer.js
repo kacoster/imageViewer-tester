@@ -33,6 +33,12 @@ HTMLWidgets.widget({
                 }
             );
 
+            Shiny.addCustomMessageHandler("img_clssfctn_ud_img_clmn_numb",
+              function(message) {
+                setColumnNumb(parseInt(JSON.stringify(message)));
+                }
+            );
+
             Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_button",
                 function(mesg) {
                   console.log("Handler img_clssfctn_ud_fltr_button");

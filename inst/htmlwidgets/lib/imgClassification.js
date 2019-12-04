@@ -60,31 +60,36 @@
 
   var batnum  = 0 ; // default batch Number
   var imgNumb = 50; // default image size
+  var columnSize = 3;
 
 
     function setImagesNumber(numb)
     {
       imgNumb = numb;
     }
+
+    function setColumnNumb(numb)
+    {
+      columnSize = numb;
+      $(".pictures > li").css("height", "calc(100% / columnSize)");
+      $(".pictures > li").css("width", "calc(100% / columnSize)");
+
+    }
    /* Function to read Server Data from Server-Side
    * @parameter msg A message from Shiny indication the csv file
    *
    */
   function readServerData(msg) {  // datapath , batchNumber , loadSize
-    console.log("readServerData");
     var csvfile = "" + msg + "";
-    console.log("readServerData : " + csvfile );
     loadDoc( csvfile, myFunction1);
   }
 
   function loadDoc(url, cFunction) {
-    console.log("loadDoc");
 
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
-            console.log("Ready");
 
            cFunction(this);
       }
@@ -94,7 +99,6 @@
   }
 
   function myFunction1(xhttp) {
-    console.log("myFunction1 ");
     ar = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
     ar.splice(0, 1);
     ar[0] = ar[0].replace("Source", "");
@@ -102,15 +106,6 @@
     ar.splice(ar.length - 1, 1);
     console.log(ar);
 
-
-    // Read the batch Image Number from from slider : img_clssfctn_ud_btch_img_thrshld
-    /*Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
-      function(message) {
-        imgNumb =  parseInt(JSON.stringify(message));
-
-        }
-    );*/
-    alert("ImageNumber : " + imgNumb);
     Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
             1 + " / " + getBatchNumber());
     initial(imgNumb,0);
