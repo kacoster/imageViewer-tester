@@ -149,6 +149,7 @@
 
   function getCurrClckdImg(state, imgsrc)
   {
+    trimSRC(selctdImgAry);
     Shiny.onInputChange(state,imgsrc);
   }
 
@@ -180,7 +181,6 @@
     }
     else{
       params.push(src);
-      trimSRC(selctdImgAry);
       $(".pictures > li").css("background-color", "yellow");
       highliter(id);
        //console.log("New Array : " + getSelectedImages());
