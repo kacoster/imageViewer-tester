@@ -70,8 +70,9 @@
 
     function setColumnNumb(numb)
     {
-      columnSize = numb;
-      /*$(".pictures > li").css("height", "calc(100% / columnSize)");
+      /*columnSize = numb;
+      $(".pictures > li").css('height','100% ').css();
+      $(".pictures > li").css("height", "calc(100% / columnSize)");
       $(".pictures > li").css("width", "calc(100% / columnSize)");*/
     }
    /* Function to read Server Data from Server-Side
