@@ -170,8 +170,6 @@
       removeHighlight(id);
       if(params.length > 0)
       {
-        console.log(selected_images);
-        getTrimedSelectedImages();
         getCurrClckdImg("clssfctn_slctd_img",getTrimedSelectedImages().toString());
       }else{
         getCurrClckdImg("clssfctn_slctd_img","");
@@ -183,9 +181,7 @@
       params.push(src);
       $(".pictures > li").css("background-color", "yellow");
       highliter(id);
-      console.log(selected_images);
-       getTrimedSelectedImages();//console.log("New Array : " + getSelectedImages());
-       getCurrClckdImg("clssfctn_slctd_img",getTrimedSelectedImages().toString());
+      getCurrClckdImg("clssfctn_slctd_img",getTrimedSelectedImages().toString());
     }
   }
 
@@ -314,7 +310,6 @@
       let newSRC = selctdImgAry[i].substring(selctdImgAry[i].lastIndexOf("/") + 1, selctdImgAry[i].length );
       tempArray[i] = newSRC;
     }
-    console.log("selctdImgAry : " + tempArray);
     return tempArray;
   }
 
