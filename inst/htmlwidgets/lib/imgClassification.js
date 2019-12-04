@@ -380,6 +380,7 @@
   function getSelectedImages()
   {
     // src.substring(src.lastIndexOf("/") + 1, src.length )
+    console.log(selected_images);
     return selected_images;
   }
 
