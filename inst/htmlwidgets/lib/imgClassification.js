@@ -144,6 +144,7 @@
 
   function getCurrClckdImg(state, imgsrc)
   {
+    console.log("Selected Images : " + selected_images);
     Shiny.onInputChange(state,imgsrc);
   }
 
@@ -164,7 +165,7 @@
       removeHighlight(id);
       if(params.length > 0)
       {
-        console.log("Selected Images : " + params);
+
         getCurrClckdImg("clssfctn_slctd_img",
         params[params.length -1].substring(
           src.lastIndexOf("/") + 1, src.length ));
@@ -176,8 +177,10 @@
     }
     else{
       params.push(src);
+
       $(".pictures > li").css("background-color", "yellow");
       highliter(id);
+
        getCurrClckdImg("clssfctn_slctd_img",
         src.substring(src.lastIndexOf("/") + 1, src.length ));
     }
