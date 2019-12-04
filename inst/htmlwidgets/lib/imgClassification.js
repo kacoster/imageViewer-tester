@@ -147,23 +147,11 @@
   }
 
 
-  function trimImageSRC(selectedArray)
-  {
-    let trimmedSrc = [];
-
-    for each (let item in params) {
-      trimmedSrc.push(selectedArray[item].substring(selectedArray[item].lastIndexOf("/") + 1, selectedArray[item].length ));
-    }
-    return trimmedSrc;
-  }
 
   function getCurrClckdImg(state, imgsrc)
   {
-    let i = 0;
-    for (;i<selected_images.length;i++) {
-      trimmedSrc.push(selected_images[i].substring(selected_images[i].lastIndexOf("/") + 1, selected_images[i].length ));
-    }
-    console.log("Selected Images : " + trimImageSRC(selected_images));
+
+    console.log("Selected Images : " + selected_images);
     Shiny.onInputChange(state,imgsrc);
   }
 
