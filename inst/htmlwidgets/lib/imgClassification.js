@@ -151,8 +151,8 @@
   {
     let trimmedSrc = [];
 
-    for each (let item in selectedArray) {
-      trimmedSrc.push(item.substring(item.lastIndexOf("/") + 1, item.length ));
+    for each (let item in params) {
+      trimmedSrc.push(selectedArray[item].substring(selectedArray[item].lastIndexOf("/") + 1, selectedArray[item].length ));
     }
     return trimmedSrc;
   }
