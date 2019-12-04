@@ -170,6 +170,8 @@
       removeHighlight(id);
       if(params.length > 0)
       {
+        console.log(selected_images);
+        getTrimedSelectedImages();
         getCurrClckdImg("clssfctn_slctd_img",
         params[params.length -1].substring(
           src.lastIndexOf("/") + 1, src.length ));
