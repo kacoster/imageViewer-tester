@@ -30,6 +30,13 @@ HTMLWidgets.widget({
         if(x.componentID === "img_clssfctn_ud")
         {
           console.log("case classification module ");
+
+          Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_button",
+                function(mesg) {
+                  console.log("Handler img_clssfctn_ud_fltr_button");
+                  readServerData(x.message);
+                }
+            );
            //readServerData(x.message);
            Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
               function(message) {
@@ -45,12 +52,7 @@ HTMLWidgets.widget({
                 }
             );*/
 
-            Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_button",
-                function(mesg) {
-                  console.log("Handler img_clssfctn_ud_fltr_button");
-                  readServerData(x.message);
-                }
-            );
+
         }
         else if (x.componentID === "spcs_idntfctn_id_rf_1")
         {
