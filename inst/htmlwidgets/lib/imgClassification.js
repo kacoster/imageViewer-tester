@@ -147,11 +147,11 @@
   }
 
 
-  function trimImageSRC(params)
+  function trimImageSRC(selectedArray)
   {
     let trimmedSrc = [];
 
-    for each (let item in params) {
+    for each (let item in selectedArray) {
       trimmedSrc.push(item.substring(item.lastIndexOf("/") + 1, item.length ));
     }
     return trimmedSrc;
