@@ -17,7 +17,7 @@ HTMLWidgets.widget({
     return {
 
       renderValue: function(x) {
-
+        console.log(x.componentID === "img_clssfctn_ud");
         /**
          * Calling readServerData function
          * Passing the filePath parameter as an argument
