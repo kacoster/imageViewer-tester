@@ -144,8 +144,18 @@
 
   function getCurrClckdImg(state, imgsrc)
   {
-    console.log("Selected Images : " + selected_images);
+    console.log("Selected Images : " + trimImageSRC(selected_images));
     Shiny.onInputChange(state,imgsrc);
+  }
+
+  function trimImageSRC(params)
+  {
+    let trimmedSrc = [];
+
+    for each (let item in params) {
+      trimmedSrc.push(item.substring(item.lastIndexOf("/") + 1, item.length ));
+    }
+    return trimmedSrc;
   }
 
   /**
