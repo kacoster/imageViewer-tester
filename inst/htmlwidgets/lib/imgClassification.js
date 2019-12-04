@@ -305,6 +305,8 @@
       let newSRC = selctdImgAry[i].substring(selctdImgAry[i].lastIndexOf("/") + 1, selctdImgAry[i].length );
       tempArray[i] = newSRC;
     }
+    console.log("Trimed Array")
+    console.log(tempArray);
     return tempArray;
   }
 
@@ -380,7 +382,7 @@
   function getSelectedImages()
   {
     // src.substring(src.lastIndexOf("/") + 1, src.length )
-    console.log(selected_images);
+    //console.log(selected_images);
     return selected_images;
   }
 
