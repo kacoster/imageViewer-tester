@@ -376,13 +376,6 @@
   function getSelectedImages()
   {
     // src.substring(src.lastIndexOf("/") + 1, src.length )
-    let i = 0;
-    for(i;i < selected_images.length;i++)
-    {
-      let newSRC = selected_images[i].substring(selected_images[i].lastIndexOf("/") + 1, selected_images[i].length );
-      console.log("New SRC : " + newSRC);
-      selected_images[i] = newSRC;
-    }
     return selected_images;
   }
 
