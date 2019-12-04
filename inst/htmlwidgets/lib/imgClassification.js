@@ -172,9 +172,7 @@
       {
         console.log(selected_images);
         getTrimedSelectedImages();
-        getCurrClckdImg("clssfctn_slctd_img",
-        params[params.length -1].substring(
-          src.lastIndexOf("/") + 1, src.length ));
+        getCurrClckdImg("clssfctn_slctd_img",getTrimedSelectedImages().toString());
       }else{
         getCurrClckdImg("clssfctn_slctd_img","");
       }
@@ -187,8 +185,7 @@
       highliter(id);
       console.log(selected_images);
        getTrimedSelectedImages();//console.log("New Array : " + getSelectedImages());
-       getCurrClckdImg("clssfctn_slctd_img",
-        src.substring(src.lastIndexOf("/") + 1, src.length ));
+       getCurrClckdImg("clssfctn_slctd_img",getTrimedSelectedImages().toString());
     }
   }
 
