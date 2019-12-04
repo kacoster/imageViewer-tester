@@ -149,7 +149,7 @@
 
   function getCurrClckdImg(state, imgsrc)
   {
-    trimSRC(selctdImgAry);
+    //trimSRC(selctdImgAry);
     Shiny.onInputChange(state,imgsrc);
   }
 
