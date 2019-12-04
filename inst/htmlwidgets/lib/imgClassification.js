@@ -147,13 +147,10 @@
   }
 
 
-
   function getCurrClckdImg(state, imgsrc)
   {
     Shiny.onInputChange(state,imgsrc);
   }
-
-
 
   /**
   * Helper function for isKeyPressed()
@@ -185,21 +182,10 @@
       params.push(src);
       $(".pictures > li").css("background-color", "yellow");
       highliter(id);
-      trimImageSRC(selected_images);
-      console.log("Trimmed Selected Images  : " + selected_images);
+       console.log("New Array : " + getSelectedImages());
        getCurrClckdImg("clssfctn_slctd_img",
         src.substring(src.lastIndexOf("/") + 1, src.length ));
     }
-  }
-
-  function trimImageSRC(arry)
-  {
-    let trimmedSrc = [];
-
-    for each (let i in arry) {
-      trimmedSrc.push(arry[i].substring(arry[i].lastIndexOf("/") + 1,arry[i].length ));
-    }
-    return trimmedSrc;
   }
 
   /**
@@ -389,6 +375,14 @@
   */
   function getSelectedImages()
   {
+    // src.substring(src.lastIndexOf("/") + 1, src.length )
+    let i = 0;
+    for(i;i < selected_images.length;i++)
+    {
+      let newSRC = selected_images[i].substring(selected_images[i].lastIndexOf("/") + 1, selected_images[i].length );
+      console.log("New SRC : " + newSRC);
+      selected_images[i] = newSRC;
+    }
     return selected_images;
   }
 
