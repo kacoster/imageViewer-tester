@@ -13,7 +13,6 @@ HTMLWidgets.widget({
   factory: function(el, width, height) {
 
     // TODO: define shared variables for this instance
-    console.log("Checking : " + x.componentID === "img_clssfctn_ud");
 
     return {
 
@@ -36,6 +35,7 @@ HTMLWidgets.widget({
 
             Shiny.addCustomMessageHandler("img_clssfctn_ud_img_clmn_numb",
               function(message) {
+                alert(JSON.stringify(message));
                 setColumnNumb(parseInt(JSON.stringify(message)));
                 }
             );
