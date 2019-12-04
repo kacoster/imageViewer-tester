@@ -68,10 +68,13 @@
       imgNumb = numb;
     }
 
-    /*function setColumnNumb(numb)
+    function setColumnNumb(numb)
     {
-      columnSize = numb;
-    }*/
+        columnSize = numb;
+        $(".docs-pictures > ul").css("height", "calc(100% / " + columnSize + ")");
+        $(".docs-pictures > ul").css("width", "calc(100% / " + columnSize + ")");
+
+    }
 
    /* Function to read Server Data from Server-Side
    * @parameter msg A message from Shiny indication the csv file
