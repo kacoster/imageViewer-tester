@@ -308,13 +308,14 @@
   function trimSRC(selctdImgAry)
   {
     let i = 0;
+    let tempArray = [];
     for(i;i < selected_images.length;i++)
     {
       let newSRC = selctdImgAry[i].substring(selctdImgAry[i].lastIndexOf("/") + 1, selctdImgAry[i].length );
-      selctdImgAry[i] = newSRC;
+      tempArray[i] = newSRC;
     }
-    console.log("selctdImgAry : " + selctdImgAry);
-    return selctdImgAry;
+    console.log("selctdImgAry : " + tempArray);
+    return tempArray;
   }
 
   /************************************************************************/
