@@ -165,6 +165,7 @@
       removeHighlight(id);
       if(params.length > 0)
       {
+        console.log(getTrimedSelectedImages().toString());
         getCurrClckdImg("clssfctn_slctd_img",getTrimedSelectedImages().toString());
       }else{
         getCurrClckdImg("clssfctn_slctd_img","");
@@ -176,6 +177,7 @@
       params.push(src);
       $(".pictures > li").css("background-color", "yellow");
       highliter(id);
+      console.log(getTrimedSelectedImages().toString());
       getCurrClckdImg("clssfctn_slctd_img",getTrimedSelectedImages().toString());
     }
   }
@@ -305,8 +307,8 @@
       let newSRC = selctdImgAry[i].substring(selctdImgAry[i].lastIndexOf("/") + 1, selctdImgAry[i].length );
       tempArray[i] = newSRC;
     }
-    console.log("Trimed Array")
-    console.log(tempArray);
+    //console.log("Trimed Array");
+    //console.log(tempArray);
     return tempArray;
   }
 
