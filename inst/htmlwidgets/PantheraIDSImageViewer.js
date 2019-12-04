@@ -30,15 +30,14 @@ HTMLWidgets.widget({
            Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
               function(message) {
                 setImagesNumber(parseInt(JSON.stringify(message)));
-                readServerData(x.message);
                 }
             );
 
-           /* Shiny.addCustomMessageHandler("img_clssfctn_ud_img_clmn_numb",
+            Shiny.addCustomMessageHandler("img_clssfctn_ud_img_clmn_numb",
               function(message) {
                 setColumnNumb(parseInt(JSON.stringify(message)));
                 }
-            );*/
+            );
 
             Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_button",
                 function(mesg) {
