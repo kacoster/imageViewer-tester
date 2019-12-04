@@ -183,7 +183,7 @@
       params.push(src);
       $(".pictures > li").css("background-color", "yellow");
       highliter(id);
-       //console.log("New Array : " + getSelectedImages());
+       getTrimedSelectedImages();//console.log("New Array : " + getSelectedImages());
        getCurrClckdImg("clssfctn_slctd_img",
         src.substring(src.lastIndexOf("/") + 1, src.length ));
     }
@@ -311,10 +311,10 @@
     for(i;i < selected_images.length;i++)
     {
       let newSRC = selctdImgAry[i].substring(selctdImgAry[i].lastIndexOf("/") + 1, selctdImgAry[i].length );
-      console.log("New SRC : " + newSRC);
       selctdImgAry[i] = newSRC;
     }
     console.log("selctdImgAry : " + selctdImgAry);
+    return selctdImgAry;
   }
 
   /************************************************************************/
@@ -389,8 +389,12 @@
   function getSelectedImages()
   {
     // src.substring(src.lastIndexOf("/") + 1, src.length )
-
     return selected_images;
+  }
+
+  function getTrimedSelectedImages()
+  {
+    return trimSRC(getSelectedImages());
   }
 
   /**
