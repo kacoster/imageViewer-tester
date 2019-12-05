@@ -71,8 +71,12 @@
     function setColumnNumb(numb)
     {
         columnSize = numb;
-        $(".docs-pictures > ul").css("height", "calc(100% / " + columnSize + ")");
-        $(".docs-pictures > ul").css("width", "calc(100% / " + columnSize + ")");
+        //let 100/columnSize
+        $(".docs-pictures > ul").css( { height: `calc(100% / ${columnSize}px)` } );
+        $(".docs-pictures > ul").css( { width: `calc(100% / ${columnSize}px)` } );
+        alert(columnSize);
+        //$(".docs-pictures > ul").css("height", calc(100% / columnSize ));
+        //$(".docs-pictures > ul").css("width", "calc(100% / " + columnSize + ")");
 
     }
 
