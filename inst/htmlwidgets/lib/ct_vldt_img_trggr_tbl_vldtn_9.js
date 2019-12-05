@@ -345,7 +345,7 @@
       ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' +
       img.src + '"  marked="' + img.datamarked + '" src="' +
       img.src + '" alt="' + img.alt + '" /> </li>';
-      setCol_ct_vldt();
+      //setCol_ct_vldt();
       // inserting an list of images uinside the ul tag
     }
   }
