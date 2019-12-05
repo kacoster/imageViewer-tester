@@ -72,6 +72,8 @@
     {
         columnSize = numb;
         //let 100/columnSize
+        //float: left;
+        $('.pictures > li').css({float: ''});
         $('.pictures > li').css( { height: 'calc(100% / ' + columnSize + ')' } );
         $('.pictures > li').css( { width: 'calc(100% / ' + columnSize + ')' } );
         //$(".docs-pictures > ul").css( { height: `calc(100% / ${columnSize})` } );
