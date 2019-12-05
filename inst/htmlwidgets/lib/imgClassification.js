@@ -78,10 +78,10 @@
         //$('.pictures > li').css( { width: calc(100%  + '/' + columnSize  ) } );
         //$(".docs-pictures > ul").css( { height: `calc(100% / ${columnSize})` } );
         //$(".docs-pictures > ul").css( { width: `calc(100% / ${columnSize})` } );
-        alert(columnSize);
-        $('.pictures > li').css({
-          	'width' : 'calc(100% /' + columnSize +')'
-        });
+        //alert(columnSize);
+        //$('.pictures > li').css({
+        //  	'width' : 'calc(100% /' + columnSize +')'
+        //});
 
         //$(".docs-pictures > ul").css("height", calc(100% / columnSize ));
         //$(".docs-pictures > ul").css("width", "calc(100% / " + columnSize + ")");
@@ -153,6 +153,13 @@
           'filter': ''
         });
   }
+  function setCol(){
+
+    $('.pictures > li').css({
+          	'width' : 'calc(100% /' + columnSize +')'
+        });
+  }
+
 
 
   function getCurrClckdImg(state, imgsrc)
@@ -345,9 +352,11 @@
       img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
       img.alt = "Camera Trap";
       img.datamarked = 0;
+      setCol();
       ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' +
       img.src + '"  marked="' + img.datamarked + '" src="' +
       img.src + '" alt="' + img.alt + '" /> </li>';
+      setCol();
       // inserting an list of images uinside the ul tag
     }
   }
