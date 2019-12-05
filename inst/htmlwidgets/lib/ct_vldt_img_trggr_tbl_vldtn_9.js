@@ -79,12 +79,13 @@
    *
    */
   function readServerData_ct_vldt(msg) {  // datapath , batchNumber , loadSize
+    console.log("In readServerData_ct_vldt ");
     var csvfile = "" + msg + "";
     loadDoc_ct_vldt( csvfile, myFunction1_ct_vldt);
   }
 
   function loadDoc_ct_vldt(url, cFunction) {
-
+     console.log("In loadDoc_ct_vldt ");
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -98,6 +99,7 @@
   }
 
   function myFunction1_ct_vldt(xhttp) {
+     console.log("In myFunction1_ct_vldt ");
     ar_ct_vldt = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
     ar_ct_vldt.splice(0, 1);
     ar_ct_vldt[0] = ar_ct_vldt[0].replace("Source", "");
@@ -229,6 +231,7 @@
    *
   */
   function initial_ct_vldt(imgnumb,bat) {
+    console.log("In initial_ct_vldt ");
       clearImages_ct_vldt();
       start_ct_vldt = bat * imgnumb;
       end = start_ct_vldt + imgnumb;
@@ -328,7 +331,7 @@
    */
   function imgloop_ct_vldt(ar_ct_vldt) {
     $(".pictures > li").css("background-color", "white");
-
+      console.log("In imgloop_ct_vldt ");
     //$(".pictures > li").css("width", "calc(100% / " + columnSize_ct_vldt + ")");
     //width: calc(100% / columnSize_ct_vldt  )
     for (i = 0; i < ar_ct_vldt.length; i++) {
@@ -360,6 +363,7 @@
    * @param {String} arry
    */
   function callImges_ct_vldt(arry) {
+    console.log("In callImges_ct_vldt ");
     imgloop_ct_vldt(arry);
   }
 
