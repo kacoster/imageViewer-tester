@@ -71,21 +71,7 @@
     function setColumnNumb(numb)
     {
         columnSize = numb;
-        //let 100/columnSize
-        //float: left;
-        //$('.pictures > li').css({float: ''});
-       // $('.pictures > li').css(  height: calc(100%  / columnSize  )  );
-        //$('.pictures > li').css( { width: calc(100%  + '/' + columnSize  ) } );
-        //$(".docs-pictures > ul").css( { height: `calc(100% / ${columnSize})` } );
-        //$(".docs-pictures > ul").css( { width: `calc(100% / ${columnSize})` } );
-        //alert(columnSize);
-        //$('.pictures > li').css({
-        //  	'width' : 'calc(100% /' + columnSize +')'
-        //});
-
-        //$(".docs-pictures > ul").css("height", calc(100% / columnSize ));
-        //$(".docs-pictures > ul").css("width", "calc(100% / " + columnSize + ")");
-
+        setCol();
     }
 
    /* Function to read Server Data from Server-Side
@@ -164,7 +150,6 @@
 
   function getCurrClckdImg(state, imgsrc)
   {
-    //trimSRC(selctdImgAry);
     Shiny.onInputChange(state,imgsrc);
   }
 
@@ -190,8 +175,6 @@
       }else{
         getCurrClckdImg("clssfctn_slctd_img","");
       }
-
-
     }
     else{
       params.push(src);
@@ -352,7 +335,7 @@
       img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
       img.alt = "Camera Trap";
       img.datamarked = 0;
-      setCol();
+      //setCol();
       ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' +
       img.src + '"  marked="' + img.datamarked + '" src="' +
       img.src + '" alt="' + img.alt + '" /> </li>';
