@@ -18,8 +18,6 @@ HTMLWidgets.widget({
 
       renderValue: function(x) {
 
-
-
         /**
          * Calling readServerData function
          * Passing the filePath parameter as an argument
@@ -57,9 +55,15 @@ HTMLWidgets.widget({
 
 
         }
-        else if (x.componentID === "spcs_idntfctn_id_rf_1")
+        else if (x.componentID === "ct_vldt_img_trggr_tbl_vldtn_9")
         {
-          fetchServerData(x.message);
+          Shiny.addCustomMessageHandler("ct_vldt_trggr_tbl_vldtn_9_button",
+                function(mesg) {
+                  console.log("Handler ct_vldt_trggr_tbl_vldtn_9_button");
+                  readServerData_ct_vldt(x.message);
+                }
+            );
+
         }
         else
         {
