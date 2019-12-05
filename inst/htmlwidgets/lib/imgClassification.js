@@ -332,9 +332,7 @@
    */
   function imgloop(ar) {
     $(".pictures > li").css("background-color", "white");
-    $('.pictures > li').css({
-          	'width' : 'calc(100% /' + columnSize +')'
-        });
+
     //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
     //width: calc(100% / columnSize  )
     for (i = 0; i < ar.length; i++) {
