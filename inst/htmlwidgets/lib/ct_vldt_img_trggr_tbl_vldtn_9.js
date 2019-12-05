@@ -236,6 +236,7 @@
       start_ct_vldt = bat * imgnumb;
       end = start_ct_vldt + imgnumb;
       result_ct_vldt = ar_ct_vldt.slice(start_ct_vldt, end);
+      console.log("Array Size  : " + result_ct_vldt.length);
       callImges_ct_vldt(result_ct_vldt);
   }
 
