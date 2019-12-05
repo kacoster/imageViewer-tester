@@ -144,7 +144,7 @@
   function setCol_ct_vldt(){
 
     $('.pictures > li').css({
-        'width' : 'calc(100% /' + columnSize_ct_vldt +')'
+        'width' : 'calc(100% /' + 5 +')'
     });
   }
 
@@ -345,7 +345,7 @@
       ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' +
       img.src + '"  marked="' + img.datamarked + '" src="' +
       img.src + '" alt="' + img.alt + '" /> </li>';
-      //setCol_ct_vldt();
+      setCol_ct_vldt();
       // inserting an list of images uinside the ul tag
     }
   }
