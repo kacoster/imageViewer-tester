@@ -337,7 +337,7 @@
     for (i = 0; i < ar_ct_vldt.length; i++) {
       var liId = i;
       var img = new Image();
-      var ul = document.getElementById('img_clssfctn_ud');
+      var ul = document.getElementById('ct_vldt_img_trggr_tbl_vldtn_9');
       img.src = ((ar_ct_vldt[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
       img.alt = "Camera Trap";
       img.datamarked = 0;
