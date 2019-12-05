@@ -79,9 +79,7 @@
         //$(".docs-pictures > ul").css( { height: `calc(100% / ${columnSize})` } );
         //$(".docs-pictures > ul").css( { width: `calc(100% / ${columnSize})` } );
         alert(columnSize);
-        $('.pictures > li').css({
-          	'width' : 'calc(100% /' + columnSize +')'
-        });
+
         //$(".docs-pictures > ul").css("height", calc(100% / columnSize ));
         //$(".docs-pictures > ul").css("width", "calc(100% / " + columnSize + ")");
 
@@ -334,7 +332,9 @@
    */
   function imgloop(ar) {
     $(".pictures > li").css("background-color", "white");
-
+    $('.pictures > li').css({
+          	'width' : 'calc(100% /' + columnSize +')'
+        });
     //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
     //width: calc(100% / columnSize  )
     for (i = 0; i < ar.length; i++) {
