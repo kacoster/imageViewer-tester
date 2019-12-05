@@ -74,8 +74,8 @@
         //let 100/columnSize
         //float: left;
         $('.pictures > li').css({float: ''});
-        $('.pictures > li').css( { height: 'calc(100% / ' + columnSize + ')' } );
-        $('.pictures > li').css( { width: 'calc(100% / ' + columnSize + ')' } );
+       // $('.pictures > li').css(  height: calc(100%  / columnSize  )  );
+        $('.pictures > li').css( { width: calc(100%  + '/' + columnSize  ) } );
         //$(".docs-pictures > ul").css( { height: `calc(100% / ${columnSize})` } );
         //$(".docs-pictures > ul").css( { width: `calc(100% / ${columnSize})` } );
         alert(columnSize);
@@ -331,6 +331,8 @@
    */
   function imgloop(ar) {
     $(".pictures > li").css("background-color", "white");
+    $(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
+    //width: calc(100% / columnSize  )
     for (i = 0; i < ar.length; i++) {
       var liId = i;
       var img = new Image();
