@@ -105,8 +105,8 @@
     ar_ct_vldt.splice(ar_ct_vldt.length - 1, 1);
     console.log(ar_ct_vldt);
 
-    Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-            1 + " / " + getBatchNumber_ct_vldt());
+    //Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
+     //       1 + " / " + getBatchNumber_ct_vldt());
     initial_ct_vldt(imgNumb_ct_vldt,0);
 
   }
