@@ -72,8 +72,10 @@
     {
         columnSize = numb;
         //let 100/columnSize
-        $(".docs-pictures > ul").css( { height: `calc(100% / ${columnSize})` } );
-        $(".docs-pictures > ul").css( { width: `calc(100% / ${columnSize})` } );
+        $('.docs-pictures > ul').css( { height: 'calc(100% / ' + columnSize + ')' } );
+        $('.docs-pictures > ul').css( { width: 'calc(100% / ' + columnSize + ')' } );
+        //$(".docs-pictures > ul").css( { height: `calc(100% / ${columnSize})` } );
+        //$(".docs-pictures > ul").css( { width: `calc(100% / ${columnSize})` } );
         alert(columnSize);
         //$(".docs-pictures > ul").css("height", calc(100% / columnSize ));
         //$(".docs-pictures > ul").css("width", "calc(100% / " + columnSize + ")");
