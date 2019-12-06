@@ -14,6 +14,11 @@
       whichViewer = viewerType;
     }
 
+    function resetwhichViewer()
+    {
+      whichViewer = "";
+    }
+
     function nextPrevClicked(status)
     {
         nextPrev = status;
@@ -1850,6 +1855,7 @@
                   this.image = image;
                   console.log("Um hidding the clicked image");
                   this.hide();
+                  resetwhichViewer();
                   return;
                 }
             }
@@ -1862,6 +1868,7 @@
             console.log(" Which Viewer : imgClassification");
             getCurrClckdImg("clssfctn_vw_curr_img",
                 url.substring(url.lastIndexOf("/") + 1, url.length ));
+                resetwhichViewer();
 
           }
           else if(whichViewer === "imgIdentification")
@@ -1870,6 +1877,7 @@
 
             getCurrClckdImg("spcs_idntfctn_id_rf_1_vw_curr_img",
                url.substring(url.lastIndexOf("/") + 1, url.length ));
+               resetwhichViewer();
 
           }
           else if (whichViewer === "imgIdentification_rf2")
@@ -1877,6 +1885,7 @@
              console.log(" Which Viewer : imgIdentification_rf2");
              getCurrClckdImg("spcs_idntfctn_id_rf_2_vw_curr_img",
              url.substring(url.lastIndexOf("/") + 1,url.length ));
+             resetwhichViewer();
 
           }
 
