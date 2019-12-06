@@ -11,6 +11,7 @@
 
     function objectOf(viewerType)
     {
+      console.log("in objectOf()");
       whichViewer = viewerType;
     }
 
@@ -1809,6 +1810,8 @@
          */
         view: function view() {
 
+          console.log("In view()");
+
           this.update();
           var _this = this;
 
@@ -1818,6 +1821,7 @@
           if (!this.isShown) {
 
             if(nextPrev === "1"){
+              console.log("Line 1824 returns");
               nextPrev = "0";
               return;
             }
