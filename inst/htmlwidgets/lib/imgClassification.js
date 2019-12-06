@@ -202,15 +202,18 @@
   * @return void
   */
   function isKeyPressed(event) {
+      console.log(" isKeyPressed(event)");
        arrayClone(selected_images);
       // send message to Shiny
       var imageName = event.target.src;
 
       if (event.shiftKey) {
+        console.log(" isKeyPressed : event.shiftKey");
         handleExistance(selected_images, event.target.src, event.target.id);
 
       } else {
         //clickEventStatus("0");
+        console.log(" isKeyPressed : event.click");
         objectOf("imgClassification");
          myFunction();
 
