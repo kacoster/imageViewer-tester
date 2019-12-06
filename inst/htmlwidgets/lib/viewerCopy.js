@@ -86,7 +86,7 @@
         backdrop: true,
 
         /**
-         * Show the button on the top-right of the vwr.
+         * Show the button on the top-right of the viewer.
          * @type {boolean}
          */
         button: true,
@@ -110,13 +110,13 @@
         toolbar: true,
 
         /**
-         * Custom class name(s) to add to the vwr's root element.
+         * Custom class name(s) to add to the viewer's root element.
          * @type {string}
          */
         className: '',
 
         /**
-         * Define where to put the vwr in modal mode.
+         * Define where to put the viewer in modal mode.
          * @type {string | Element}
          */
         container: 'body',
@@ -170,13 +170,13 @@
         loop: true,
 
         /**
-         * Min width of the vwr in inline mode.
+         * Min width of the viewer in inline mode.
          * @type {number}
          */
         minWidth: 200,
 
         /**
-         * Min height of the vwr in inline mode.
+         * Min height of the viewer in inline mode.
          * @type {number}
          */
         minHeight: 100,
@@ -225,13 +225,13 @@
         transition: false,
 
         /**
-         * Define the CSS `z-index` value of vwr in modal mode.
+         * Define the CSS `z-index` value of viewer in modal mode.
          * @type {number}
          */
         zIndex: 2015,
 
         /**
-         * Define the CSS `z-index` value of vwr in inline mode.
+         * Define the CSS `z-index` value of viewer in inline mode.
          * @type {number}
          */
         zIndexInline: 0,
@@ -275,13 +275,13 @@
         zoomed: null
       };
 
-      var TEMPLATE = '<div class="vwr-container" touch-action="none">' + '<div class="vwr-canvas"></div>' + '<div class="vwr-footer">' + '<div class="vwr-title"></div>' + '<div class="vwr-toolbar"></div>' + '<div class="vwr-navbar">' + '<ul class="vwr-list"></ul>' + '</div>' + '</div>' + '<div class="vwr-tooltip"></div>' + '<div role="button" class="vwr-button" data-vwr-action="mix"></div>' + '<div class="vwr-player"></div>' + '</div>';
+      var TEMPLATE = '<div class="viewer-container" touch-action="none">' + '<div class="viewer-canvas"></div>' + '<div class="viewer-footer">' + '<div class="viewer-title"></div>' + '<div class="viewer-toolbar"></div>' + '<div class="viewer-navbar">' + '<ul class="viewer-list"></ul>' + '</div>' + '</div>' + '<div class="viewer-tooltip"></div>' + '<div role="button" class="viewer-button" data-viewer-action="mix"></div>' + '<div class="viewer-player"></div>' + '</div>';
 
       var IS_BROWSER = typeof window !== 'undefined';
       var WINDOW = IS_BROWSER ? window : {};
       var IS_TOUCH_DEVICE = IS_BROWSER ? 'ontouchstart' in WINDOW.document.documentElement : false;
       var HAS_POINTER_EVENT = IS_BROWSER ? 'PointerEvent' in WINDOW : false;
-      var NAMESPACE = 'vwr'; // Actions
+      var NAMESPACE = 'viewer'; // Actions
 
       var ACTION_MOVE = 'move';
       var ACTION_SWITCH = 'switch';
@@ -981,7 +981,7 @@
         },
         renderViewer: function renderViewer() {
           if (this.options.inline && !this.fulled) {
-            setStyle(this.vwr, this.viewerData);
+            setStyle(this.viewer, this.viewerData);
           }
         },
         initList: function initList() {
@@ -1009,7 +1009,7 @@
               img.alt = alt;
               img.setAttribute('data-index', index);
               img.setAttribute('data-original-url', url || src);
-              img.setAttribute('data-vwr-action', 'view');
+              img.setAttribute('data-viewer-action', 'view');
               img.setAttribute('role', 'button');
               item.appendChild(img);
               list.appendChild(item);
@@ -1177,15 +1177,15 @@
       var events = {
         bind: function bind() {
           var options = this.options,
-              vwr = this.vwr,
+              viewer = this.viewer,
               canvas = this.canvas;
           var document = this.element.ownerDocument;
-          addListener(vwr, EVENT_CLICK, this.onClick = this.click.bind(this));
-          addListener(vwr, EVENT_WHEEL, this.onWheel = this.wheel.bind(this), {
+          addListener(viewer, EVENT_CLICK, this.onClick = this.click.bind(this));
+          addListener(viewer, EVENT_WHEEL, this.onWheel = this.wheel.bind(this), {
             passive: false,
             capture: true
           });
-          addListener(vwr, EVENT_DRAG_START, this.onDragStart = this.dragstart.bind(this));
+          addListener(viewer, EVENT_DRAG_START, this.onDragStart = this.dragstart.bind(this));
           addListener(canvas, EVENT_POINTER_DOWN, this.onPointerDown = this.pointerdown.bind(this));
           addListener(document, EVENT_POINTER_MOVE, this.onPointerMove = this.pointermove.bind(this));
           addListener(document, EVENT_POINTER_UP, this.onPointerUp = this.pointerup.bind(this));
@@ -1198,15 +1198,15 @@
         },
         unbind: function unbind() {
           var options = this.options,
-              vwr = this.vwr,
+              viewer = this.viewer,
               canvas = this.canvas;
           var document = this.element.ownerDocument;
-          removeListener(vwr, EVENT_CLICK, this.onClick);
-          removeListener(vwr, EVENT_WHEEL, this.onWheel, {
+          removeListener(viewer, EVENT_CLICK, this.onClick);
+          removeListener(viewer, EVENT_WHEEL, this.onWheel, {
             passive: false,
             capture: true
           });
-          removeListener(vwr, EVENT_DRAG_START, this.onDragStart);
+          removeListener(viewer, EVENT_DRAG_START, this.onDragStart);
           removeListener(canvas, EVENT_POINTER_DOWN, this.onPointerDown);
           removeListener(document, EVENT_POINTER_MOVE, this.onPointerMove);
           removeListener(document, EVENT_POINTER_UP, this.onPointerUp);
@@ -1653,8 +1653,8 @@
       };
 
       var methods = {
-        /** Show the vwr (only available in modal mode)
-         * @param {boolean} [immediate=false] - Indicates if show the vwr immediately or not.
+        /** Show the viewer (only available in modal mode)
+         * @param {boolean} [immediate=false] - Indicates if show the viewer immediately or not.
          * @returns {Viewer} this
          */
         show: function show() {
@@ -1692,27 +1692,27 @@
 
           this.showing = true;
           this.open();
-          var vwr = this.vwr;
-          removeClass(vwr, CLASS_HIDE);
+          var viewer = this.viewer;
+          removeClass(viewer, CLASS_HIDE);
 
           if (options.transition && !immediate) {
             var shown = this.shown.bind(this);
             this.transitioning = {
               abort: function abort() {
-                removeListener(vwr, EVENT_TRANSITION_END, shown);
-                removeClass(vwr, CLASS_IN);
+                removeListener(viewer, EVENT_TRANSITION_END, shown);
+                removeClass(viewer, CLASS_IN);
               }
             };
-            addClass(vwr, CLASS_TRANSITION); // Force reflow to enable CSS3 transition
+            addClass(viewer, CLASS_TRANSITION); // Force reflow to enable CSS3 transition
             // eslint-disable-next-line
 
-            vwr.offsetWidth;
-            addListener(vwr, EVENT_TRANSITION_END, shown, {
+            viewer.offsetWidth;
+            addListener(viewer, EVENT_TRANSITION_END, shown, {
               once: true
             });
-            addClass(vwr, CLASS_IN);
+            addClass(viewer, CLASS_IN);
           } else {
-            addClass(vwr, CLASS_IN);
+            addClass(viewer, CLASS_IN);
             this.shown();
           }
 
@@ -1720,8 +1720,8 @@
         },
 
         /**
-         * Hide the vwr (only available in modal mode)
-         * @param {boolean} [immediate=false] - Indicates if hide the vwr immediately or not.
+         * Hide the viewer (only available in modal mode)
+         * @param {boolean} [immediate=false] - Indicates if hide the viewer immediately or not.
          * @returns {Viewer} this
          */
         hide: function hide() {
@@ -1755,7 +1755,7 @@
             this.viewing.abort();
           }
 
-          var vwr = this.vwr;
+          var viewer = this.viewer;
 
           if (options.transition && !immediate) {
             var hidden = this.hidden.bind(this);
@@ -1763,10 +1763,10 @@
             var hide = function hide() {
               // XXX: It seems the `event.stopPropagation()` method does not work here
               setTimeout(function () {
-                addListener(vwr, EVENT_TRANSITION_END, hidden, {
+                addListener(viewer, EVENT_TRANSITION_END, hidden, {
                   once: true
                 });
-                removeClass(vwr, CLASS_IN);
+                removeClass(viewer, CLASS_IN);
               }, 0);
             };
 
@@ -1775,7 +1775,7 @@
                 if (this.viewed) {
                   removeListener(this.image, EVENT_TRANSITION_END, hide);
                 } else {
-                  removeListener(vwr, EVENT_TRANSITION_END, hidden);
+                  removeListener(viewer, EVENT_TRANSITION_END, hidden);
                 }
               }
             }; // Note that the `CLASS_TRANSITION` class will be removed on pointer down (#255)
@@ -1789,7 +1789,7 @@
               hide();
             }
           } else {
-            removeClass(vwr, CLASS_IN);
+            removeClass(viewer, CLASS_IN);
             this.hidden();
           }
 
@@ -2137,7 +2137,7 @@
             this.zooming = true;
 
             if (_originalEvent) {
-              var offset = getOffset(this.vwr);
+              var offset = getOffset(this.viewer);
               var center = pointers && Object.keys(pointers).length ? getPointersCenter(pointers) : {
                 pageX: _originalEvent.pageX,
                 pageY: _originalEvent.pageY
@@ -2349,7 +2349,7 @@
           var _this5 = this;
 
           var options = this.options,
-              vwr = this.vwr,
+              viewer = this.viewer,
               image = this.image,
               list = this.list;
 
@@ -2369,9 +2369,9 @@
             }
           }
 
-          addClass(vwr, CLASS_FIXED);
-          vwr.setAttribute('style', '');
-          setStyle(vwr, {
+          addClass(viewer, CLASS_FIXED);
+          viewer.setAttribute('style', '');
+          setStyle(viewer, {
             zIndex: options.zIndex
           });
           this.initContainer();
@@ -2398,7 +2398,7 @@
           var _this6 = this;
 
           var options = this.options,
-              vwr = this.vwr,
+              viewer = this.viewer,
               image = this.image,
               list = this.list;
 
@@ -2418,8 +2418,8 @@
             }
           }
 
-          removeClass(vwr, CLASS_FIXED);
-          setStyle(vwr, {
+          removeClass(viewer, CLASS_FIXED);
+          setStyle(viewer, {
             zIndex: options.zIndexInline
           });
           this.viewerData = assign({}, this.parentData);
@@ -2514,11 +2514,11 @@
 
           return this;
         },
-        // Update vwr when images changed
+        // Update viewer when images changed
         update: function update() {
           var element = this.element,
               options = this.options,
-              isImg = this.isImg; // Destroy vwr if the target image was deleted
+              isImg = this.isImg; // Destroy viewer if the target image was deleted
 
           if (isImg && !element.parentNode) {
             return this.destroy();
@@ -2588,7 +2588,7 @@
 
           return this;
         },
-        // Destroy the vwr
+        // Destroy the viewer
         destroy: function destroy() {
           var element = this.element,
               options = this.options;
@@ -2630,7 +2630,7 @@
             }
 
             this.ready = false;
-            this.vwr.parentNode.removeChild(this.vwr);
+            this.viewer.parentNode.removeChild(this.viewer);
           } else if (options.inline) {
             if (this.delaying) {
               this.delaying.abort();
@@ -2690,7 +2690,7 @@
           this.isShown = false;
           this.close();
           this.unbind();
-          addClass(this.vwr, CLASS_HIDE);
+          addClass(this.viewer, CLASS_HIDE);
           this.resetList();
           this.resetImage();
           this.hiding = false;
@@ -2886,7 +2886,7 @@
                     abort: function abort() {
                       clearTimeout(timeout);
                     }
-                  }; // build asynchronously to keep `this.vwr` is accessible in `ready` event handler.
+                  }; // build asynchronously to keep `this.viewer` is accessible in `ready` event handler.
 
                   timeout = setTimeout(function () {
                     _this.delaying = false;
@@ -2936,29 +2936,29 @@
             var parent = element.parentNode;
             var template = document.createElement('div');
             template.innerHTML = TEMPLATE;
-            var vwr = template.querySelector(".".concat(NAMESPACE, "-container"));
-            var title = vwr.querySelector(".".concat(NAMESPACE, "-title"));
-            var toolbar = vwr.querySelector(".".concat(NAMESPACE, "-toolbar"));
-            var navbar = vwr.querySelector(".".concat(NAMESPACE, "-navbar"));
-            var button = vwr.querySelector(".".concat(NAMESPACE, "-button"));
-            var canvas = vwr.querySelector(".".concat(NAMESPACE, "-canvas"));
+            var viewer = template.querySelector(".".concat(NAMESPACE, "-container"));
+            var title = viewer.querySelector(".".concat(NAMESPACE, "-title"));
+            var toolbar = viewer.querySelector(".".concat(NAMESPACE, "-toolbar"));
+            var navbar = viewer.querySelector(".".concat(NAMESPACE, "-navbar"));
+            var button = viewer.querySelector(".".concat(NAMESPACE, "-button"));
+            var canvas = viewer.querySelector(".".concat(NAMESPACE, "-canvas"));
             this.parent = parent;
-            this.vwr = vwr;
+            this.viewer = viewer;
             this.title = title;
             this.toolbar = toolbar;
             this.navbar = navbar;
             this.button = button;
             this.canvas = canvas;
-            this.footer = vwr.querySelector(".".concat(NAMESPACE, "-footer"));
-            this.tooltipBox = vwr.querySelector(".".concat(NAMESPACE, "-tooltip"));
-            this.player = vwr.querySelector(".".concat(NAMESPACE, "-player"));
-            this.list = vwr.querySelector(".".concat(NAMESPACE, "-list"));
+            this.footer = viewer.querySelector(".".concat(NAMESPACE, "-footer"));
+            this.tooltipBox = viewer.querySelector(".".concat(NAMESPACE, "-tooltip"));
+            this.player = viewer.querySelector(".".concat(NAMESPACE, "-player"));
+            this.list = viewer.querySelector(".".concat(NAMESPACE, "-list"));
             addClass(title, !options.title ? CLASS_HIDE : getResponsiveClass(Array.isArray(options.title) ? options.title[0] : options.title));
             addClass(navbar, !options.navbar ? CLASS_HIDE : getResponsiveClass(options.navbar));
             toggleClass(button, CLASS_HIDE, !options.button);
 
             if (options.backdrop) {
-              addClass(vwr, "".concat(NAMESPACE, "-backdrop"));
+              addClass(viewer, "".concat(NAMESPACE, "-backdrop"));
 
               if (!options.inline && options.backdrop !== 'static') {
                 setData(canvas, DATA_ACTION, 'hide');
@@ -2968,7 +2968,7 @@
             if (isString(options.className) && options.className) {
               // In case there are multiple class names
               options.className.split(REGEXP_SPACES).forEach(function (className) {
-                addClass(vwr, className);
+                addClass(viewer, className);
               });
             }
 
@@ -3033,7 +3033,7 @@
 
             if (options.inline) {
               addClass(button, CLASS_FULLSCREEN);
-              setStyle(vwr, {
+              setStyle(viewer, {
                 zIndex: options.zIndexInline
               });
 
@@ -3043,13 +3043,13 @@
                 });
               }
 
-              parent.insertBefore(vwr, element.nextSibling);
+              parent.insertBefore(viewer, element.nextSibling);
             } else {
               addClass(button, CLASS_CLOSE);
-              addClass(vwr, CLASS_FIXED);
-              addClass(vwr, CLASS_FADE);
-              addClass(vwr, CLASS_HIDE);
-              setStyle(vwr, {
+              addClass(viewer, CLASS_FIXED);
+              addClass(viewer, CLASS_FADE);
+              addClass(viewer, CLASS_HIDE);
+              setStyle(viewer, {
                 zIndex: options.zIndex
               });
               var container = options.container;
@@ -3062,7 +3062,7 @@
                 container = this.body;
               }
 
-              container.appendChild(vwr);
+              container.appendChild(viewer);
             }
 
             if (options.inline) {
@@ -3089,8 +3089,8 @@
             }
           }
           /**
-           * Get the no conflict vwr class.
-           * @returns {Viewer} The vwr class.
+           * Get the no conflict viewer class.
+           * @returns {Viewer} The viewer class.
            */
 
         }], [{

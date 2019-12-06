@@ -375,7 +375,7 @@
    * @returns viewer component
    */
   function vjs() {
-      var vwr = new Viewer(document.getElementById('galley'), {
+      var viewer = new Viewer(document.getElementById('galley'), {
       url: 'data-original',
       title: function (image) {
         return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
