@@ -364,7 +364,7 @@
    * @param {String} arry
    */
   function callImges_ct_vldt(arry) {
-    console.log("In callImges_ct_vldt ");
+    console.log("In callImges_ct_vldt");
     imgloop_ct_vldt(arry);
   }
 
