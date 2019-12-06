@@ -19,7 +19,7 @@ viewerimgclssfctnud <- function(filePath, width = NULL, height = NULL, elementId
     x,
     width = width,
     height = height,
-    package = 'viewerimgclssfctnud',
+    package = 'PantheraIDSImageViewer',
     elementId = elementId
   )
 }
@@ -42,7 +42,7 @@ viewerimgclssfctnud <- function(filePath, width = NULL, height = NULL, elementId
 #'
 #' @export
 viewerimgclssfctnudOutput <- function(outputId, width = '100%', height = '400px'){
-  htmlwidgets::shinyWidgetOutput(outputId, 'viewerimgclssfctnud', width, height, package = 'viewerimgclssfctnud')
+  htmlwidgets::shinyWidgetOutput(outputId, 'viewerimgclssfctnud', width, height, package = 'PantheraIDSImageViewer')
 }
 
 #' @rdname viewerimgclssfctnud-shiny
