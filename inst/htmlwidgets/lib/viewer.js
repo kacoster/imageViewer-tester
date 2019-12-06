@@ -1841,19 +1841,20 @@
           image.alt = alt;
 
 
-
-          if(getSelectedImages().includes(url) || removedRef() === url)
+          if( whichViewer === "imgClassification")
           {
-              console.log("Checking from clonesd : " + getSelectedImages().includes(url) || selected_images_clone.includes(url) );
-              if(getSelectedImages().includes(url) || selected_images_clone.includes(url))
-              {
-                this.image = image;
-                console.log("Um hidding the clicked image");
-                this.hide();
-                return;
-              }
-
+            if(getSelectedImages().includes(url) || removedRef() === url)
+            {
+                if(getSelectedImages().includes(url) || selected_images_clone.includes(url))
+                {
+                  this.image = image;
+                  console.log("Um hidding the clicked image");
+                  this.hide();
+                  return;
+                }
+            }
           }
+
 
           if( whichViewer === "imgClassification")
           {
