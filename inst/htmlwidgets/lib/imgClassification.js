@@ -212,7 +212,7 @@
       } else {
         //clickEventStatus("0");
         objectOf("imgClassification");
-         myFunction();
+         //myFunction();
 
       }
   }
@@ -375,7 +375,7 @@
    * @returns viewer component
    */
   function vjs() {
-      var viewer = new Viewer(document.getElementById('gall'), {
+      var viewer = new Viewer(document.getElementById('galley'), {
       url: 'data-original',
       title: function (image) {
         return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
