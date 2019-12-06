@@ -207,7 +207,7 @@
        //arrayClone(selected_images_ct_vldt);
       // send message to Shiny
 
-      objectOf("imgClassification");
+      objectOf("ct_vldt_img_trggr_tbl_vldtn_9");
       myFunction_ct_vldt();
       /*var imageName = event.target.src;
 
