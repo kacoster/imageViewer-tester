@@ -356,7 +356,7 @@
    *
    */
   function clearImages_ct_vldt() {
-    $("#img_clssfctn_ud").html("");
+    $("#ct_vldt_img_trggr_tbl_vldtn_9").html("");
   }
 
   /**
