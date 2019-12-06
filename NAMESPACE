@@ -3,3 +3,7 @@
 export(PantheraIDSImageViewerOutput)
 export(imageViewer)
 export(renderPantheraIDSImageViewer)
+export(renderViewerimgclssfctnud)
+export(viewerimgclssfctnud)
+export(viewerimgclssfctnudOutput)
+import(htmlwidgets)
