@@ -15,7 +15,7 @@ viewerimgclssfctnud <- function(filePath, width = NULL, height = NULL, elementId
 
   # create widget
   htmlwidgets::createWidget(
-    name = 'viewerimgclssfctnud',
+    name = 'PantheraIDSImageViewer',
     x,
     width = width,
     height = height,
