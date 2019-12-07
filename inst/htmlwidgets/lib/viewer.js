@@ -1856,9 +1856,9 @@
           if( whichViewer === "imgClassification")
           {
             console.log("In whichViewer : imgClassification");
-            if(getSelectedImages().includes(url) || removedRef() === url)
+            if(imgClssfctnObj.getSelectedImages().includes(url) || removedRef.removedRef() === url)
             {
-                if(getSelectedImages().includes(url) || selected_images_clone.includes(url))
+                if(imgClssfctnObj.getSelectedImages().includes(url) || selected_images_clone.includes(url))
                 {
                   this.image = image;
                   console.log("Um hidding the clicked image");
