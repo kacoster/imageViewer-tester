@@ -97,7 +97,7 @@
        arrayClone(imgClssfctnObj.selected_images);
       if (event.shiftKey) {
         console.log(" isKeyPressed : event.shiftKey");
-        imgClssfctnObj.handleExistance(selected_images, event.target.src, event.target.id);
+        imgClssfctnObj.handleExistance(imgClssfctnObj.selected_images, event.target.src, event.target.id);
 
       } else {
         //clickEventStatus("0");
