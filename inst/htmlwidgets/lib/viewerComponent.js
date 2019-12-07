@@ -176,7 +176,7 @@ class ViewerComponent {
 
     getTrimedSelectedImages()
     {
-        return this.trimSRC(getSelectedImages());
+        return this.trimSRC(this.getSelectedImages());
     }
 
     // This is specific to tag #
