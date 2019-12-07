@@ -153,7 +153,7 @@
    * @param {String} arry
    */
   function callImges(arry) {
-    imgClssfctnObj.imgloop(arry);
+    imgloop(arry);
   }
 
   /**
