@@ -65,7 +65,8 @@
   }
 
   function myFunction1(xhttp) {
-    let ar = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
+    let ar = [];
+    ar = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
     ar.splice(0, 1);
     ar[0] = ar[0].replace("Source", "");
     ar[0] = ar[ar.length - 1] + ar[0];
@@ -73,10 +74,10 @@
     imgClssfctnObj.imgArray = [...ar];
     console.log(ar);
     //return ar;
-
     Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
             1 + " / " + imgClssfctnObj.getBatchNumber());
-    imgClssfctnObj.displayImages(imgClssfctnObj.imgNumb,0);
+
+    callImges(imgClssfctnObj.displayImages(imgClssfctnObj.imgNumb,0));
 
   }
 

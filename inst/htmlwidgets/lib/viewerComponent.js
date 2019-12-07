@@ -81,12 +81,14 @@ class ViewerComponent {
     }
 
     displayImages(imgnumb,bat) {
+        console.log("Display Images");
         this.clearImages();
         let start ,end;
         start = bat * imgnumb;
         end = start + imgnumb;
-        result = this.imgArray.slice(start, end);
-        this.callImges(result);
+        this.result = this.imgArray.slice(start, end);
+        return this.result;
+        //this.callImges(this.result);
     }
 
     getBatchNumber()
