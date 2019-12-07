@@ -142,7 +142,7 @@ class ViewerComponent {
     {
         let i = 0;
         let tempArray = [];
-        for(i;i < selected_images.length;i++)
+        for(i;i < this.selected_images.length;i++)
         {
             let newSRC = selctdImgAry[i].substring(selctdImgAry[i].lastIndexOf("/") + 1, 
                 selctdImgAry[i].length );
