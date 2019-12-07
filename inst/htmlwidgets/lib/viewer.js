@@ -1856,7 +1856,7 @@
           if( whichViewer === "imgClassification")
           {
             console.log("In whichViewer : imgClassification");
-            if(imgClssfctnObj.getSelectedImages().includes(url) || removedRef() === url)
+            if(imgClssfctnObj.getSelectedImages().includes(url) || imgClssfctnObj.removedRef() === url)
             {
                 if(imgClssfctnObj.getSelectedImages().includes(url) || selected_images_clone.includes(url))
                 {
