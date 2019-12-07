@@ -1825,6 +1825,7 @@
               nextPrev = "0";
               return;
             }
+            console.log("Return this.show()");
             this.index = index;
             return this.show();
           }
@@ -1848,6 +1849,8 @@
           var image = document.createElement('img');
           image.src = url;
           image.alt = alt;
+
+          console.log("Image URL : " + image.src);
 
 
           if( whichViewer === "imgClassification")
