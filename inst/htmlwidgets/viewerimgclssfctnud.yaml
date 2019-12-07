@@ -3,6 +3,10 @@ dependencies:
   version: 1.7.0
   src: htmlwidgets
   script: ./lib/viewer.js
+- name: viewerComponent
+  version: 1.7.0
+  src: htmlwidgets
+  script: ./lib/viewerComponent.js
 - name: imgClassification
   version: 0.0.1
   src: htmlwidgets

@@ -1,85 +1,52 @@
 
     /***************************************************************************
-      @version Viewer.js v1.3.5
-      @author Valentine Tawira
-      @description PantheraImageViewer Script for handling the processing of the
-                  file data and rendering of the viewer panel
-      Copyright (C) 2019 | Panthera Corporation
-     ***************************************************************************/
+    @version Viewer.js v1.3.5
+    @author Valentine Tawira
+    @description PantheraImageViewer Script for handling the processing of the
+            file data and rendering of the viewer panel
+    Copyright (C) 2019 | Panthera Corporation
+    ***************************************************************************/
 
-      /**
-       * code included inside $(document).ready() will only run once the page is
-       * * ready for JavaScript code to execute
-      */
+    /****************************************************************************
+     code included inside $(document).ready() will only run once the page is
+      ready for JavaScript code to execute
+    ***************************************************************************/
+
+     var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud");
      $(document).ready(function () {
-
 
         $("#apply").on("click", function () {
           // send message to Shiny
-          Shiny.onInputChange("sources", sendDataToShinny());
+          Shiny.onInputChange("sources", imgClssfctnObj.sendDataToShinny());
         });
 
         $("#selectAll").on("click", function () {
-          Shiny.onInputChange("sources", selectAll());
+          Shiny.onInputChange("sources", imgClssfctnObj.selectAll());
 
         });
 
         $("#deSelectAll").on("click", function () {
-          deSelectAll();
+          imgClssfctnObj.deSelectAll();
         });
 
         $("#img_clssfctn_ud_nxt_bttn").on("click", function () {
-           Shiny.onInputChange("next", next());
+           Shiny.onInputChange("next", imgClssfctnObj.next());
         });
 
         $("#img_clssfctn_ud_prvs_bttn").on("click", function () {
-          Shiny.onInputChange("prev", prev());
+          Shiny.onInputChange("prev", imgClssfctnObj.prev());
         });
-
-      /**********************************************************************/
-        // For Testing Purposes
-        $("#prev").on("click", function () {
-            prev();
-        });
-        $("#next").on("click", function () {
-            next();
-        });
-      /**********************************************************************/
 
   });
 
-  /**Program Global Variables */
-  var ar = [];
-  var resetSel = [];
-  var selected_images = [];
-  var tempRemoved ;
-  var nextPrev = "0";
 
-  var result;
-  var start, end;
-
-  var batnum  = 0 ; // default batch Number
-  var imgNumb = 50; // default image size
-  var columnSize = 5;
-
-
-    function setImagesNumber(numb)
-    {
-      imgNumb = numb;
-    }
-
-    function setColumnNumb(numb)
-    {
-        columnSize = numb;
-        setCol();
-    }
-
-   /* Function to read Server Data from Server-Side
+   /*
+   * Function to read Server Data from Server-Side
    * @parameter msg A message from Shiny indication the csv file
    *
    */
   function readServerData(msg) {  // datapath , batchNumber , loadSize
-    var csvfile = "" + msg + "";
+    let csvfile = "" + msg + "";
     loadDoc( csvfile, myFunction1);
   }
 
@@ -98,100 +65,23 @@
   }
 
   function myFunction1(xhttp) {
-    ar = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
+    let ar = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
     ar.splice(0, 1);
     ar[0] = ar[0].replace("Source", "");
     ar[0] = ar[ar.length - 1] + ar[0];
     ar.splice(ar.length - 1, 1);
+    imgClssfctnObj.imgArray = [...ar];
     console.log(ar);
+    //return ar;
 
     Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-            1 + " / " + getBatchNumber());
-    initial(imgNumb,0);
+            1 + " / " + imgClssfctnObj.getBatchNumber());
+    imgClssfctnObj.displayImages(imgClssfctnObj.imgNumb,0);
 
   }
 
   /************************************************************************/
-  /**
-   * Highlights a selected image
-   * @parameter selected image id
-   * Applies opacity 0.4
-   * @return void
-  */
-  function highliter(elementID)
-  {
-    $('#' + elementID + '').css({
-          'opacity': '0.4',
-          'filter': 'alpha(opacity=40)'
-        });
-  }
 
-  /**
-  * Removes Highlights a unselected image
-  * @parameter selected image id
-  * Removes opacity - reverts to original opacity
-  * @return void
-  */
-  function removeHighlight(elementID)
-  {
-    $('#' + elementID + '').css({
-          'opacity': '',
-          'filter': ''
-        });
-  }
-  function setCol(){
-
-    $('.pictures > li').css({
-          	'width' : 'calc(100% /' + columnSize +')'
-        });
-  }
-
-
-
-  function getCurrClckdImg(state, imgsrc)
-  {
-    Shiny.onInputChange(state,imgsrc);
-  }
-
-  /**
-  * Helper function for isKeyPressed()
-  * @parameter - array of selected images - selected_images
-  *            - target image src
-  *            - target element id
-  * Checks if target image has already been selected
-  * @return void
- */
-  function handleExistance(params,src,id)
-  {
-
-    if(params.includes(src))
-    {
-      tempRemoved =  (params.splice(params.indexOf(src),1))[0];
-      removeHighlight(id);
-      if(params.length > 0)
-      {
-        console.log(getTrimedSelectedImages().toString());
-        getCurrClckdImg("clssfctn_slctd_img",getTrimedSelectedImages().toString());
-      }else{
-        getCurrClckdImg("clssfctn_slctd_img","");
-      }
-    }
-    else{
-      params.push(src);
-      $(".pictures > li").css("background-color", "yellow");
-      highliter(id);
-      console.log(getTrimedSelectedImages().toString());
-      getCurrClckdImg("clssfctn_slctd_img",getTrimedSelectedImages().toString());
-    }
-  }
-
-  /**
-   * Function inprogress to fix the previous image Reference
-  */
-  function removedRef()
-  {
-    return tempRemoved;
-  }
 
   /**
   * Handles all image panel click events
@@ -203,13 +93,10 @@
   */
   function isKeyPressed(event) {
       console.log(" isKeyPressed(event)");
-       arrayClone(selected_images);
-      // send message to Shiny
-      var imageName = event.target.src;
-
+       arrayClone(imgClssfctnObj.selected_images);
       if (event.shiftKey) {
         console.log(" isKeyPressed : event.shiftKey");
-        handleExistance(selected_images, event.target.src, event.target.id);
+        imgClssfctnObj.handleExistance(selected_images, event.target.src, event.target.id);
 
       } else {
         //clickEventStatus("0");
@@ -220,103 +107,8 @@
       }
   }
 
-  /**
-   * @function initial(a,b)
-   * @description determines the images to be rendered
-   * @parameter - number of images of render
-   *           - batch number of the image lot
-   * @returns void
-   *
-  */
-  function initial(imgnumb,bat) {
-      clearImages();
-      start = bat * imgnumb;
-      end = start + imgnumb;
-      result = ar.slice(start, end);
-      callImges(result);
-  }
 
-  function tester()
-  {
-    initial(9,0);
-  }
 
-  /**
-   * @function getBatchNumber()
-   * @description computes the total number of available batches
-   * @constrains the number of images per batchimgNumb()
-   * @return the total number of batches
-  */
-  function getBatchNumber()
-  {
-    if((ar.length %  imgNumb)===0){
-        return (ar.length / imgNumb);
-    }
-    else{
-      return ((Math.floor(ar.length / imgNumb)) + 1);
-    }
-  }
-
-  /**
-   * @description computes and displays the next image batch
-   *
-  */
-  function next() {
-    console.log("Next Clicked");
-    nextPrevClicked("1");
-
-    if(batnum < getBatchNumber()-1){
-          batnum++;
-          Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-          (batnum+1) + " / " + getBatchNumber());
-          console.log("batch Number : " + batnum);
-          initial(imgNumb, batnum);
-
-      }else{
-        Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-          getBatchNumber() + " / " + getBatchNumber());
-        initial(imgNumb, getBatchNumber()-1);
-        batnum = getBatchNumber()-1;
-      }
-
-  }
-
-   /**
-   * @description computes and displays the previous image batch
-   *
-  */
-  function prev() {
-    console.log("Prev Clicked");
-       nextPrevClicked("1");
-       batnum--;
-    if (batnum > 0 ) {
-       Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-          (batnum+1) + " / " + getBatchNumber());
-        console.log("batch Number : " + batnum);
-
-      initial(imgNumb ,batnum);
-    }else{
-       Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-         1 + " / " + getBatchNumber());
-      initial(imgNumb, 0);
-      batnum = 0;
-    }
-
-  }
-
-  function trimSRC(selctdImgAry)
-  {
-    let i = 0;
-    let tempArray = [];
-    for(i;i < selected_images.length;i++)
-    {
-      let newSRC = selctdImgAry[i].substring(selctdImgAry[i].lastIndexOf("/") + 1, selctdImgAry[i].length );
-      tempArray[i] = newSRC;
-    }
-    //console.log("Trimed Array");
-    //console.log(tempArray);
-    return tempArray;
-  }
 
   /************************************************************************/
 
@@ -342,7 +134,7 @@
       ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' +
       img.src + '"  marked="' + img.datamarked + '" src="' +
       img.src + '" alt="' + img.alt + '" /> </li>';
-      setCol();
+      imgClssfctnObj.setCol();
       // inserting an list of images uinside the ul tag
     }
   }
@@ -360,7 +152,7 @@
    * @param {String} arry
    */
   function callImges(arry) {
-    imgloop(arry);
+    imgClssfctnObj.imgloop(arry);
   }
 
   /**
@@ -368,88 +160,10 @@
    * @returns image view
    */
   function myFunction() {
-    vjs();
+    imgClssfctnObj.vjs();
     return;
   }
 
-  /**
-   * @function vjs()
-   * @description Function that creates the viewer component to view images
-   * @returns viewer component
-   */
-  function vjs() {
-      var viewer = new Viewer(document.getElementById('galley'), {
-      url: 'data-original',
-      title: function (image) {
-        return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
-      },
-    });
 
 
-  }
 
-  /**
-   * @function getSelectedImages()
-   * @returns an array with the currently selected images
-  */
-  function getSelectedImages()
-  {
-    // src.substring(src.lastIndexOf("/") + 1, src.length )
-    //console.log(selected_images);
-    return selected_images;
-  }
-
-  function getTrimedSelectedImages()
-  {
-    return trimSRC(getSelectedImages());
-  }
-
-  /**
-   * @function selectAll()
-   * @description selects all the panel images
-   * @return selected_images
-  */
-    function selectAll() {
-      $("img").each(function (index) {
-        $('#' + $(this).attr('id') + '').css({
-          'opacity': '0.1',
-          'filter': 'alpha(opacity=40)'
-        });
-        selected_images.push($(this).attr('src'));
-      });
-      return selected_images;
-
-    }
-
-  /**
-   * @function deSelectAll()
-   * @description deselects the currently selected images
-   * @returns void
-  */
-    function deSelectAll() {
-      $("img").each(function (index) {
-        $('#' + $(this).attr('id') + '').css({
-          'opacity': '',
-          'filter': ''
-        });
-        // selected_images.splice(selected_images.indexOf($( this ).attr('src')), 1);
-      });
-      selected_images.length = 0;
-    }
-
-  /**
-   * @function sendDataToShinny()
-   * @returns an array of selected images
-   * @description sends the client selected image data back to server (Shinny)
-  */
-    function sendDataToShinny(){
-      if (selected_images === undefined || selected_images.length === 0) {
-        alert("No Images Selected !!");
-        return ;
-      }
-      else{
-        const copy_selected_images = [...selected_images];
-        deSelectAll();
-        return copy_selected_images;
-      }
-    }
