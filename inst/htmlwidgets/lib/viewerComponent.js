@@ -14,23 +14,7 @@ class ViewerComponent {
         this.tempRemoved ="";
     }
     
-    /*readServerData(msg) {  // datapath , batchNumber , loadSize
-      let csvfile = "" + msg + "";
-      this.loadDoc(csvfile);
-    }
-  
-    loadDoc(url) {
-      let xhttp;
-      xhttp = new XMLHttpRequest();
-      xhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            return this.responseText.replace(/^\s*$[\n\r]{1,}/gm, '');
-        }
-      };
-      xhttp.open("GET", url, true);
-      xhttp.send();
-    }*/
-
+   
     loadFile(filename) {
       let result = null;
       let xmlhttp = new XMLHttpRequest();
@@ -41,12 +25,10 @@ class ViewerComponent {
       }
       return result;
     }
-    
   
-    readServerData() {
-      
-      let response = this.loadFile(this.csvfile);
-      if(response === null)
+    readServerData(response) {
+      // let response = this.loadFile(this.csvfile);
+      if(response === null )
       {
         alert(" Error in reading your images.Please check if all requirements are provided.");
       }
@@ -312,40 +294,6 @@ class ViewerComponent {
       objectOf("imgClassification");
       this.callvjs();
     }
-}
-}
-
-
-/*readServerData(msg) {  // datapath , batchNumber , loadSize
-    let csvfile = "" + msg + "";
-    this.loadDoc( csvfile, processXHTTP);
-}
-
-loadDoc(url, cFunction) {
-
-    var xhttp;
-    xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-
-           cFunction(this);
-      }
-    };
-    xhttp.open("GET", url, true);
-    xhttp.send();
   }
+}
 
-processXHTTP(xhttp) {
-    let arry =[];
-    arry = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
-    arry.splice(0, 1);
-    arry[0] = arry[0].replace("Source", "");
-    arry[0] = arry[arry.length - 1] + arry[0];
-    arry.splice(arry.length - 1, 1);
-    console.log(arry);
-    return arry;
-    /*Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-            1 + " / " + getBatchNumber());
-    initial(imgNumb,0);
-
-  }*/
