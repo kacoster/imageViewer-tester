@@ -25,4 +25,4 @@ dependencies:
 - name: viewerHelpers
   version: 1.7.0
   src: htmlwidgets
-  script: ./lib/viewerHelper.js
+  script: ./lib/viewerHelpers.js
