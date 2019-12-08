@@ -65,12 +65,12 @@
       }
   }
 
-  setImagesNumber(numb)
+  function setImagesNumber(numb)
   {
     imgClssfctnObj.imgNumb = numb;
   } 
-  
-  setImageArray(resp)
+
+  function setImageArray(resp)
   {
     imgClssfctnObj.readServerData(resp);
   }
