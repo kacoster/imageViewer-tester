@@ -255,6 +255,7 @@ class ViewerComponent {
       this.liWhiteBackground();
       let ul = document.getElementById(this.moduleId);
       $("ul").addClass(this.moduleId);
+      console.log("Check ModuleID : " + this.moduleId);
       this.changeCSS(this.moduleId);
       for (let i = 0; i < ar.length; i++) {
         let liId = i;
