@@ -13,6 +13,8 @@
     ***************************************************************************/
 
      //var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud");
+     //var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud");
+
      $(document).ready(function () {
 
         $("#apply").on("click", function () {
@@ -47,10 +49,25 @@
   * Execute appropriate instructions based on event
   * @return void
   */
-  
+  function isKeyPressed(event) {
+      console.log("isKeyPressed(event)");
+      console.log("event.target.src : " + event.target.src);
+       arrayClone(imgClssfctnObj.selected_images);
+      if (event.shiftKey) {
+        console.log(" isKeyPressed : event.shiftKey");
+        imgClssfctnObj.handleExistance(imgClssfctnObj.selected_images, event.target.src, event.target.id);
+      } else {
+        console.log(" isKeyPressed : " + event.click);
+        objectOf("imgClassification");
+        imgClssfctnObj.callvjs();
+      }
+  }
+
+  function 
 
   /************************************************************************/
-  /**
+  /*
+  *
    * @description - creates html component to display the images
    * @param {String} ar - an array of images
    * @returns {void} var src = ( ( ar[0].trim()).replace(/['"]+/g, ''));
@@ -87,6 +104,7 @@
 
 
   
+
 
 
 

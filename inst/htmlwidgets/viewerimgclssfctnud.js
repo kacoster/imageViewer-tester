@@ -12,14 +12,12 @@ HTMLWidgets.widget({
 
       renderValue: function(x) {
 
-        var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud",x.message);
-
        console.log("case classification module ");
 
            //readServerData(x.message);
            Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
               function(message) {
-                imgClssfctnObj.setImagesNumber(parseInt(JSON.stringify(message)));
+                setImagesNumber(parseInt(JSON.stringify(message)));
                 console.log("Handler img_clssfctn_ud_batch_image_size " + parseInt(JSON.stringify(message)));
                  //readServerData(x.message);
                 }
@@ -27,7 +25,7 @@ HTMLWidgets.widget({
 
             Shiny.addCustomMessageHandler("img_clssfctn_ud_img_clmn_numb",
               function(message) {
-                imgClssfctnObj.setColumnNumb(parseInt(JSON.stringify(message)));
+                setColumnNumb(parseInt(JSON.stringify(message)));
                 console.log("Handler img_clssfctn_ud_img_clmn_numb : " + parseInt(JSON.stringify(message)));
                 }
             );
@@ -35,7 +33,7 @@ HTMLWidgets.widget({
             Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_button",
                 function(mesg) {
                   console.log("Handler img_clssfctn_ud_fltr_button");
-                  imgClssfctnObj.readServerData();
+                  fetchServerData(x.message,x.componentID);
                 }
             );
       },

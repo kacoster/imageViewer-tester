@@ -277,18 +277,12 @@ class ViewerComponent {
     }
 
     imgloop(ar) {
-      let ul = document.getElementById(this.moduleId);
       //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
       this.liWhiteBackground();
+      let ul = document.getElementById(this.moduleId);
       for (let i = 0; i < ar.length; i++) {
         let liId = i;
         let img = new Image();
-        //let container = document.getElementsByClassName('container'); // <div id="target">
-        //container.innerHTML += '<div id="galley" onmousedown="' + this.isKeyPressed(event) +'"  ></div>'; 
-        //let div = document.getElementById('galley');
-        //div.innerHTML += '<ul class="pictures" id="' + this.moduleId + '">'
-
-        
         img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
         img.alt = "Camera Trap";
         img.datamarked = 0;
@@ -297,7 +291,7 @@ class ViewerComponent {
         img.src + '" alt="' + img.alt + '" /> </li>';
         this.setCol();
       }
-      $('#'+this.moduleId +'').html($(ul).attr('onmousedown="' + this.isKeyPressed(event) +'"' ));
+      //$('#'+this.moduleId +'').html($(ul).attr('onmousedown="' + this.isKeyPressed(event) +'"' ));
     }
 
     liWhiteBackground()
