@@ -15,7 +15,7 @@ class ViewerComponent {
 
     readServerData(msg) {  // datapath , batchNumber , loadSize
       let csvfile = "" + msg + "";
-      this.loadDoc( csvfile, processXHTTP);
+      this.loadDoc( csvfile, this.processXHTTP);
     }
   
     loadDoc(url, cFunction) {
