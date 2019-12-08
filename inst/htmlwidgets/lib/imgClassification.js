@@ -101,7 +101,7 @@
         //clickEventStatus("0");
         console.log(" isKeyPressed : event.click");
         objectOf("imgClassification");
-         myFunction();
+        imgClssfctnObj.callvjs();
 
       }
   }
@@ -112,16 +112,16 @@
    * @param {String} ar - an array of images
    * @returns {void} var src = ( ( ar[0].trim()).replace(/['"]+/g, ''));
    * someText = src.replace(/(\r\n|\n|\r)/gm,"");
-   */
-  function imgloop(ar) {
-    $(".pictures > li").css("background-color", "white");
 
+  function imgloop(ar) {
+
+    $(".pictures > li").css("background-color", "white");
     //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
     //width: calc(100% / columnSize  )
     for (i = 0; i < ar.length; i++) {
       var liId = i;
       var img = new Image();
-      var ul = document.getElementById('img_clssfctn_ud');
+      var ul = document.getElementById(this.mo);
       img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
       img.alt = "Camera Trap";
       img.datamarked = 0;
@@ -131,8 +131,8 @@
       img.src + '" alt="' + img.alt + '" /> </li>';
       imgClssfctnObj.setCol();
       // inserting an list of images uinside the ul tag
-    }
-  }
+    }  
+  } */
 
   /**
    * @description clears inner html components identified by elementId 'x'
@@ -147,17 +147,10 @@
    * @param {String} arry
    */
   function callImges(arry) {
-    imgloop(arry);
+    imgClssfctnObj.imgloop(arry);
   }
 
-  /**
-   * @description - indirect call to the vjs() function
-   * @returns image view
-   */
-  function myFunction() {
-    imgClssfctnObj.vjs();
-    return;
-  }
+  
 
 
 

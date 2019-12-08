@@ -214,6 +214,38 @@ class ViewerComponent {
         return copy_selected_images;
       }
     }
+
+    imgloop(ar) {
+
+      //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
+      this.liWhiteBackground();
+      for (i = 0; i < ar.length; i++) {
+        var liId = i;
+        var img = new Image();
+        var ul = document.getElementById(this.moduleId);
+        img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
+        img.alt = "Camera Trap";
+        img.datamarked = 0;
+        ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' +
+        img.src + '"  marked="' + img.datamarked + '" src="' +
+        img.src + '" alt="' + img.alt + '" /> </li>';
+        imgClssfctnObj.setCol();
+      }
+    }
+
+    liWhiteBackground()
+    {
+      $(".pictures > li").css("background-color", "white");
+    }
+
+    /**
+   * @description - indirect call to the vjs() function
+   * @returns image view myFunction
+   */
+   callvjs() {   
+    this.vjs();
+    return;
+  }
 }
 
 
