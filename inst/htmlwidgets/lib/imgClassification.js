@@ -12,7 +12,7 @@
       ready for JavaScript code to execute
     ***************************************************************************/
 
-     var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud");
+     //var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud");
      $(document).ready(function () {
 
         $("#apply").on("click", function () {
@@ -44,7 +44,7 @@
    * Function to read Server Data from Server-Side
    * @parameter msg A message from Shiny indication the csv file
    *
-   */
+  
   function readServerData(msg) {  // datapath , batchNumber , loadSize
     let csvfile = "" + msg + "";
     loadDoc( csvfile, myFunction1);
@@ -79,7 +79,7 @@
 
     callImges(imgClssfctnObj.displayImages(imgClssfctnObj.imgNumb,0));
 
-  }
+  } */
 
   /************************************************************************/
   /**
