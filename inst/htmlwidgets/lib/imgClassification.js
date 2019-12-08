@@ -63,7 +63,10 @@
       }
   }
 
-  function 
+  setImagesNumber(numb)
+  {
+    imgClssfctnObj.imgNumb = numb;
+  }
 
   /************************************************************************/
   /*

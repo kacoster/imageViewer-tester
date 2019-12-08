@@ -71,14 +71,6 @@ class ViewerComponent {
       this.imgArray = [...arr];
     }
 
-    getprocessXHTTP()
-    {}
-
-    setImagesNumber(numb)
-    {
-      this.imgNumb = numb;
-    }
-
     setColumnNumb(numb)
     {
         this.columnSize = numb;
