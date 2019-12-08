@@ -253,13 +253,14 @@ class ViewerComponent {
     imgloop(ar) {
       //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
       this.liWhiteBackground();
-      let ul = document.getElementById(this.moduleId);
+      
       //var yourClass = $("#test");
       //let className = $("#"+this.moduleId+"").prop("class");
       //$("ul").addClass(this.moduleId);
       //console.log("Check className : " + className);
       //this.changeCSS(className);
       for (let i = 0; i < ar.length; i++) {
+        let ul = document.getElementById(this.moduleId);
         let liId = i;
         let img = new Image();
         img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
