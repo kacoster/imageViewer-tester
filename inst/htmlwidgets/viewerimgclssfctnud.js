@@ -33,7 +33,7 @@ HTMLWidgets.widget({
             );
 
             Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_button",
-                function() {
+                function(mesg) {
                   console.log("Handler img_clssfctn_ud_fltr_button");
                   imgClssfctnObj.readServerData(x.message);
                 }
