@@ -26,6 +26,7 @@ class ViewerComponent {
         if (this.readyState == 4 && this.status == 200) {
   
              cFunction(this);
+             console.log("Reading this : " + this);
         }
       };
       xhttp.open("GET", url, true);
@@ -40,8 +41,15 @@ class ViewerComponent {
       ar[0] = ar[ar.length - 1] + ar[0];
       ar.splice(ar.length - 1, 1);
       console.log(ar);
-      this.imgArray = [...ar];
+      //initializeImgArray();
+      //this.imgArray = [...ar];
 
+      
+    }
+
+    initializeImgArray(array)
+    {
+      this.imgArray = [...array];
       if(this.moduleId === "img_clssfctn_ud")
       {
         Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
@@ -49,6 +57,9 @@ class ViewerComponent {
       }
       this.callImges(this.displayImages(this.imgNumb,0));
     }
+
+    getprocessXHTTP()
+    {}
 
     setImagesNumber(numb)
     {
