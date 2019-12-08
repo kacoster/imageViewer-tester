@@ -12,35 +12,34 @@ class ViewerComponent {
         this.result = [];
         this.tempRemoved ="";
     }
-
-    readServerData(msg) {  // datapath , batchNumber , loadSize
+    
+    /*readServerData(msg) {  // datapath , batchNumber , loadSize
       let csvfile = "" + msg + "";
-      this.loadDoc( csvfile, this.processXHTTP);
-    }
+      this.loadDoc(csvfile);
+    }*/
   
-    loadDoc(url, cFunction) {
-  
+    loadDoc(url) {
       let xhttp;
       xhttp = new XMLHttpRequest();
       xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-  
-             cFunction(this);
+            return this.responseText.replace(/^\s*$[\n\r]{1,}/gm, '');
         }
       };
       xhttp.open("GET", url, true);
       xhttp.send();
     }
   
-    processXHTTP(xhttp) {
+    readServerData(msg) {
+      let csvfile = "" + msg + "";
       let ar = [];
-      ar = (xhttp.responseText.replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
+      ar = (this.loadDoc(csvfile)).split(',');
       ar.splice(0, 1);
       ar[0] = ar[0].replace("Source", "");
       ar[0] = ar[ar.length - 1] + ar[0];
       ar.splice(ar.length - 1, 1);
       console.log(ar);
-      _this.imgArray = [...ar];
+      this.imgArray = [...ar];
       //this.imgArray = [...ar];
 
       if(this.moduleId === "img_clssfctn_ud")
