@@ -16,7 +16,7 @@ class ViewerComponent {
     /*readServerData(msg) {  // datapath , batchNumber , loadSize
       let csvfile = "" + msg + "";
       this.loadDoc(csvfile);
-    }*/
+    }
   
     loadDoc(url) {
       let xhttp;
@@ -28,12 +28,26 @@ class ViewerComponent {
       };
       xhttp.open("GET", url, true);
       xhttp.send();
+    }*/
+
+    loadFile(filePath) {
+      let result = null;
+      let xmlhttp = new XMLHttpRequest();
+      xmlhttp.open("GET", filePath, false);
+      xmlhttp.send();
+      if (xmlhttp.status==200) {
+        result = xmlhttp.responseText;
+        this.imgArray = result.replace(/^\s*$[\n\r]{1,}/gm, '');
+        console.log(this.imgArray);
+      }
+      return result;
     }
+    
   
     readServerData(msg) {
       let csvfile = "" + msg + "";
       let ar = [];
-      ar = (this.loadDoc(csvfile)).split(',');
+      ar = (this.loadDoc(csvfile).replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
       ar.splice(0, 1);
       ar[0] = ar[0].replace("Source", "");
       ar[0] = ar[ar.length - 1] + ar[0];
