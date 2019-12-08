@@ -47,7 +47,7 @@
   * Execute appropriate instructions based on event
   * @return void
   */
-  function isKeyPressed(event) {
+  function isKeyPressed() {
       console.log(" isKeyPressed(event)");
        arrayClone(imgClssfctnObj.selected_images);
       if (event.shiftKey) {
