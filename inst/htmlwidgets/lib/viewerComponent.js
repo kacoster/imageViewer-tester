@@ -36,32 +36,33 @@ class ViewerComponent {
       xmlhttp.open("GET", filePath, false);
       xmlhttp.send();
       if (xmlhttp.status==200) {
-        result = xmlhttp.responseText;
-        this.imgArray = result.replace(/^\s*$[\n\r]{1,}/gm, '');
-        console.log(this.imgArray);
+        result = (xmlhttp.responseText).replace(/^\s*$[\n\r]{1,}/gm, '');
       }
       return result;
     }
     
   
     readServerData(msg) {
-      let csvfile = "" + msg + "";
-      let ar = [];
-      ar = (this.loadDoc(csvfile).replace(/^\s*$[\n\r]{1,}/gm, '')).split(',');
-      ar.splice(0, 1);
-      ar[0] = ar[0].replace("Source", "");
-      ar[0] = ar[ar.length - 1] + ar[0];
-      ar.splice(ar.length - 1, 1);
-      console.log(ar);
-      this.imgArray = [...ar];
-      //this.imgArray = [...ar];
-
-      if(this.moduleId === "img_clssfctn_ud")
+      
+      let response = this.loadFile(msg);
+      if(response === null)
       {
-        Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
-        1 + " / " + this.getBatchNumber());
+        alert(" Error in reading your images.Please check if all requirements are provided.");
       }
-      this.callImges(this.displayImages(this.imgNumb,0));
+      else{
+        this.imgArray = response.split(',');
+        this.imgArray.splice(0, 1);
+        this.imgArray[0] = this.imgArray[0].replace("Source", "");
+        this.imgArray[0] = this.imgArray[this.imgArray.length - 1] + this.imgArray[0];
+        this.imgArray.splice(this.imgArray.length - 1, 1);
+
+        if(this.moduleId === "img_clssfctn_ud")
+        {
+          Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
+          1 + " / " + this.getBatchNumber());
+        }
+        this.callImges(this.displayImages(this.imgNumb,0));
+      }
     }
 
     initializeImgArray(array)
