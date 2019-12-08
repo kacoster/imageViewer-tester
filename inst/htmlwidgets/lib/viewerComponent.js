@@ -277,7 +277,7 @@ class ViewerComponent {
     }
 
     imgloop(ar) {
-
+      let ul = document.getElementById(this.moduleId);
       //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
       this.liWhiteBackground();
       for (let i = 0; i < ar.length; i++) {
@@ -288,8 +288,7 @@ class ViewerComponent {
         //let div = document.getElementById('galley');
         //div.innerHTML += '<ul class="pictures" id="' + this.moduleId + '">'
 
-        let ul = document.getElementById(this.moduleId);
-        $('#'+this.moduleId +'').html($(this).attr('onmousedown="' + this.isKeyPressed(event) +'"' ));
+        
         img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
         img.alt = "Camera Trap";
         img.datamarked = 0;
@@ -298,6 +297,7 @@ class ViewerComponent {
         img.src + '" alt="' + img.alt + '" /> </li>';
         this.setCol();
       }
+      $('#'+this.moduleId +'').html($(ul).attr('onmousedown="' + this.isKeyPressed(event) +'"' ));
     }
 
     liWhiteBackground()
