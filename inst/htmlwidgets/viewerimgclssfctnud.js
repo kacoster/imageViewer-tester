@@ -7,18 +7,16 @@ HTMLWidgets.widget({
   factory: function(el, width, height) {
 
     // TODO: define shared variables for this instance
-     
 
     return {
 
       renderValue: function(x) {
 
-       
+        var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud",x.message);
 
        console.log("case classification module ");
 
            //readServerData(x.message);
-           isKeyPressed();
            Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
               function(message) {
                 imgClssfctnObj.setImagesNumber(parseInt(JSON.stringify(message)));
@@ -37,7 +35,7 @@ HTMLWidgets.widget({
             Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_button",
                 function(mesg) {
                   console.log("Handler img_clssfctn_ud_fltr_button");
-                  fetchServerData(x.message,x.componentID);
+                  imgClssfctnObj.readServerData();
                 }
             );
       },

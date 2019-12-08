@@ -3,10 +3,6 @@ dependencies:
   version: 1.7.0
   src: htmlwidgets
   script: ./lib/viewer.js
-- name: viewerHelpers
-  version: 1.7.0
-  src: htmlwidgets
-  script: ./lib/viewerHelpers.js
 - name: viewerComponent
   version: 1.7.0
   src: htmlwidgets
