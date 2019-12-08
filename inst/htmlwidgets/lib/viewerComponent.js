@@ -254,7 +254,7 @@ class ViewerComponent {
       //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
       this.liWhiteBackground();
       let ul = document.getElementById(this.moduleId);
-      let className = '.'+$('#'+this.moduleId+'').attr('class').split(' ').join('.')
+      let className = '.'+$('#'+this.moduleId).attr('class').split(' ').join('.')
       //$("ul").addClass(this.moduleId);
       console.log("Check className : " + className);
       this.changeCSS(className);
