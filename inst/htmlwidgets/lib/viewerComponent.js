@@ -254,6 +254,8 @@ class ViewerComponent {
       //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
       this.liWhiteBackground();
       let ul = document.getElementById(this.moduleId);
+      $("ul").addClass(this.moduleId);
+      this.changeCSS(this.moduleId);
       for (let i = 0; i < ar.length; i++) {
         let liId = i;
         let img = new Image();
@@ -266,6 +268,40 @@ class ViewerComponent {
         this.setCol();
       }
       //$('#'+this.moduleId +'').html($(ul).attr('onmousedown="' + this.isKeyPressed(event) +'"' ));
+    }
+
+    changeCSS(element)
+    {
+      /*$('.'+ element ).css("list-style", none);
+      $('.'+ element ).css("margin", 0);
+      $('.'+ element ).css("max-width", "500rem");
+      $('.'+ element ).css("padding", 0);*/
+
+      $('.'+ element ).css({
+        'list-style' : 'none',
+        'margin' : '0',
+        'max-width' : '500rem',
+        'padding' : ' 0'
+      });
+
+      /*$(".pictures > li").css("border", "2px solid white");
+      $(".pictures > li").css("float", "left");
+      $(".pictures > li").css("float", "left");*/
+
+      $('.'+ element + '> li').css({
+        'border' : '2px solid white',
+        'float' : 'left',
+        'width' : 'calc(100% /' + this.columnSize +')',
+        'height' : 'calc(100% /' + this.columnSize +')',
+        'margin' : '0 -1px -1px 0',
+        'overflow' : 'hidden',
+      });
+
+      $('.'+ element + '> li > img').css({
+        'cursor' : 'pointer',
+        'width' : '100%',
+        'overflow' : 'hidden'
+      });
     }
 
     liWhiteBackground()
