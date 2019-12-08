@@ -219,7 +219,7 @@ class ViewerComponent {
 
       //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
       this.liWhiteBackground();
-      for (i = 0; i < ar.length; i++) {
+      for (let i = 0; i < ar.length; i++) {
         var liId = i;
         var img = new Image();
         var ul = document.getElementById(this.moduleId);
