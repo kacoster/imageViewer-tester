@@ -14,9 +14,9 @@
 
      //var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud");
      //var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud");
-
+     
      $(document).ready(function () {
-
+      var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud",csvfile);
         $("#apply").on("click", function () {
           // send message to Shiny
           Shiny.onInputChange("sources", imgClssfctnObj.sendDataToShinny());

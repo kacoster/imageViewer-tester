@@ -3,9 +3,11 @@ HTMLWidgets.widget({
   name: 'viewerimgclssfctnud',
 
   type: 'output',
+ 
 
   factory: function(el, width, height) {
 
+  
     // TODO: define shared variables for this instance
 
     return {
