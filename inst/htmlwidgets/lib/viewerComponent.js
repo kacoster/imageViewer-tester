@@ -1,11 +1,12 @@
 class ViewerComponent {
 
-    constructor(batnum,imgNumb,columnSize,moduleId)
+    constructor(batnum,imgNumb,columnSize,moduleId,csvfile)
     {
         this.columnSize = columnSize;
         this.batnum = batnum;
         this.imgNumb = imgNumb;
         this.moduleId =moduleId;
+        this.csvfile = csvfile;
         this.imgArray = [];
         this.selected_images = [];
         this.nextPrev = "0";
@@ -30,10 +31,10 @@ class ViewerComponent {
       xhttp.send();
     }*/
 
-    loadFile(filePath) {
+    loadFile(filename) {
       let result = null;
       let xmlhttp = new XMLHttpRequest();
-      xmlhttp.open("GET", filePath, false);
+      xmlhttp.open("GET", filename, false);
       xmlhttp.send();
       if (xmlhttp.status==200) {
         result = (xmlhttp.responseText).replace(/^\s*$[\n\r]{1,}/gm, '');
@@ -42,9 +43,9 @@ class ViewerComponent {
     }
     
   
-    readServerData(msg) {
+    readServerData() {
       
-      let response = this.loadFile(msg);
+      let response = this.loadFile(this.csvfile);
       if(response === null)
       {
         alert(" Error in reading your images.Please check if all requirements are provided.");
