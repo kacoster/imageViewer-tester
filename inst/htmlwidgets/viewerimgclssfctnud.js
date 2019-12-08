@@ -18,6 +18,7 @@ HTMLWidgets.widget({
        console.log("case classification module ");
 
            //readServerData(x.message);
+           isKeyPressed(event);
            Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
               function(message) {
                 imgClssfctnObj.setImagesNumber(parseInt(JSON.stringify(message)));
