@@ -255,10 +255,10 @@ class ViewerComponent {
       this.liWhiteBackground();
       let ul = document.getElementById(this.moduleId);
       //var yourClass = $("#test");
-      let className = $("#"+this.moduleId+"").prop("class");
+      //let className = $("#"+this.moduleId+"").prop("class");
       //$("ul").addClass(this.moduleId);
-      console.log("Check className : " + className);
-      this.changeCSS(className);
+      //console.log("Check className : " + className);
+      //this.changeCSS(className);
       for (let i = 0; i < ar.length; i++) {
         let liId = i;
         let img = new Image();
