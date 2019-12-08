@@ -41,7 +41,7 @@
 
   });
 
-  var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud",csvfile);
+  var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud","img_clssfctn_ud.csv");
 
   /**
   * Handles all image panel click events
