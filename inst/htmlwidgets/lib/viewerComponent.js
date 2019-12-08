@@ -254,9 +254,10 @@ class ViewerComponent {
       //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
       this.liWhiteBackground();
       let ul = document.getElementById(this.moduleId);
-      $("ul").addClass(this.moduleId);
-      console.log("Check ModuleID : " + this.moduleId);
-      this.changeCSS(this.moduleId);
+      let className = '.'+$('#'+this.moduleId+'').attr('class').split(' ').join('.')
+      //$("ul").addClass(this.moduleId);
+      console.log("Check className : " + className);
+      this.changeCSS(className);
       for (let i = 0; i < ar.length; i++) {
         let liId = i;
         let img = new Image();
