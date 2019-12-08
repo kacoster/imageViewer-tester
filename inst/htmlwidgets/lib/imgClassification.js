@@ -47,19 +47,7 @@
   * Execute appropriate instructions based on event
   * @return void
   */
-  function isKeyPressed(event) {
-      console.log(" isKeyPressed(event)");
-      console.log("event.target.src : " + event.target.src);
-       arrayClone(imgClssfctnObj.selected_images);
-      if (event.shiftKey) {
-        console.log(" isKeyPressed : event.shiftKey");
-        imgClssfctnObj.handleExistance(imgClssfctnObj.selected_images, event.target.src, event.target.id);
-      } else {
-        console.log(" isKeyPressed : " + event.click);
-        objectOf("imgClassification");
-        imgClssfctnObj.callvjs();
-      }
-  }
+  
 
   /************************************************************************/
   /**
@@ -99,7 +87,6 @@
 
 
   
-
 
 
 
