@@ -272,21 +272,21 @@ class ViewerComponent {
 
     changeCSS(element)
     {
-      /*$('.'+ element ).css("list-style", none);
+      $('.'+ element ).css("list-style", none);
       $('.'+ element ).css("margin", 0);
       $('.'+ element ).css("max-width", "500rem");
-      $('.'+ element ).css("padding", 0);*/
+      $('.'+ element ).css("padding", 0);
 
-      $('.'+ element ).css({
+      /*$('.'+ element ).css({
         'list-style' : 'none',
         'margin' : '0',
         'max-width' : '500rem',
         'padding' : ' 0'
-      });
+      });*/
 
-      /*$(".pictures > li").css("border", "2px solid white");
-      $(".pictures > li").css("float", "left");
-      $(".pictures > li").css("float", "left");*/
+      $('.'+ element + '> li').css("border", "2px solid white");
+      $('.'+ element + '> li').css("float", "left");
+      $('.'+ element + '> li').css("float", "left");
 
       $('.'+ element + '> li').css({
         'border' : '2px solid white',
