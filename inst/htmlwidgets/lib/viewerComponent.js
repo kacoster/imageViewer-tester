@@ -283,11 +283,13 @@ class ViewerComponent {
       for (let i = 0; i < ar.length; i++) {
         let liId = i;
         let img = new Image();
-        let container = document.getElementsByClassName('container'); // <div id="target">
-        container.innerHTML += '<div id="galley" onmousedown="' + this.isKeyPressed(event) +'"  ></div>'; 
-        let div = document.getElementById('galley');
-        div.innerHTML += '<ul class="pictures" id="' + this.moduleId + '">'
+        //let container = document.getElementsByClassName('container'); // <div id="target">
+        //container.innerHTML += '<div id="galley" onmousedown="' + this.isKeyPressed(event) +'"  ></div>'; 
+        //let div = document.getElementById('galley');
+        //div.innerHTML += '<ul class="pictures" id="' + this.moduleId + '">'
+
         let ul = document.getElementById(this.moduleId);
+        $('#'+this.moduleId +'').html($(this).attr('onmousedown="' + this.isKeyPressed(event) +'"' ));
         img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
         img.alt = "Camera Trap";
         img.datamarked = 0;
