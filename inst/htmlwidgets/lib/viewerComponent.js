@@ -25,8 +25,7 @@ class ViewerComponent {
       xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
   
-             //cFunction(this);
-            console.log("Reading this : " + this.responseText.replace(/^\s*$[\n\r]{1,}/gm, '').split(','));
+             cFunction(this);
         }
       };
       xhttp.open("GET", url, true);
@@ -41,21 +40,20 @@ class ViewerComponent {
       ar[0] = ar[ar.length - 1] + ar[0];
       ar.splice(ar.length - 1, 1);
       console.log(ar);
-      //initializeImgArray();
+      _this.imgArray = [...ar];
       //this.imgArray = [...ar];
 
-      
-    }
-
-    initializeImgArray(array)
-    {
-      this.imgArray = [...array];
       if(this.moduleId === "img_clssfctn_ud")
       {
         Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
         1 + " / " + this.getBatchNumber());
       }
       this.callImges(this.displayImages(this.imgNumb,0));
+    }
+
+    initializeImgArray(array)
+    {
+      this.imgArray = [...arr];
     }
 
     getprocessXHTTP()
