@@ -1,9 +1,22 @@
 
 function fetchServerData(csvfile,moduleId)
 {
-    var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud",csvfile);
+    
     if(moduleId === "img_clssfctn_ud")
     {
-        imgClssfctnObj.readServerData();
+        setImageArray(loadFile(csvfile));
     }
 }
+
+function loadFile(filename) {
+    let result = null;
+    let xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", filename, false);
+    xmlhttp.send();
+    if (xmlhttp.status==200) {
+      result = (xmlhttp.responseText).replace(/^\s*$[\n\r]{1,}/gm, '');
+      return result;
+    }
+    alert("Error in Reading Images ");
+    return result;
+  }

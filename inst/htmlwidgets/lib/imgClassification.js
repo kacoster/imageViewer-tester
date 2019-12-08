@@ -41,7 +41,7 @@
 
   });
 
-
+  var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud",csvfile);
 
   /**
   * Handles all image panel click events
@@ -68,6 +68,11 @@
   setImagesNumber(numb)
   {
     imgClssfctnObj.imgNumb = numb;
+  } 
+  
+  setImageArray(resp)
+  {
+    imgClssfctnObj.readServerData(resp);
   }
 
   /************************************************************************/
