@@ -290,7 +290,7 @@ class ViewerComponent {
         ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' +
         img.src + '"  marked="' + img.datamarked + '" src="' +
         img.src + '" alt="' + img.alt + '" /> </li>';
-        imgClssfctnObj.setCol();
+        this.setCol();
       }
     }
 
