@@ -7,12 +7,13 @@ HTMLWidgets.widget({
   factory: function(el, width, height) {
 
     // TODO: define shared variables for this instance
+    var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud");
 
     return {
 
       renderValue: function(x) {
 
-        var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud");
+       
 
        console.log("case classification module ");
 
