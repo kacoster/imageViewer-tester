@@ -25,8 +25,8 @@ class ViewerComponent {
       xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
   
-             cFunction(this);
-             console.log("Reading this : " + this);
+             //cFunction(this);
+            console.log("Reading this : " + this.responseText.replace(/^\s*$[\n\r]{1,}/gm, '').split(','));
         }
       };
       xhttp.open("GET", url, true);
