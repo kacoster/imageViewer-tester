@@ -54,25 +54,20 @@
       if (event.shiftKey) {
         console.log(" isKeyPressed : event.shiftKey");
         imgClssfctnObj.handleExistance(imgClssfctnObj.selected_images, event.target.src, event.target.id);
-
       } else {
-        //clickEventStatus("0");
-        console.log(" isKeyPressed : event.click");
+        console.log(" isKeyPressed : " + event.click);
         objectOf("imgClassification");
         imgClssfctnObj.callvjs();
-
       }
   }
 
-  
   /************************************************************************/
-
   /**
    * @description - creates html component to display the images
    * @param {String} ar - an array of images
    * @returns {void} var src = ( ( ar[0].trim()).replace(/['"]+/g, ''));
    * someText = src.replace(/(\r\n|\n|\r)/gm,"");
-
+   
   function imgloop(ar) {
 
     $(".pictures > li").css("background-color", "white");

@@ -281,9 +281,13 @@ class ViewerComponent {
       //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
       this.liWhiteBackground();
       for (let i = 0; i < ar.length; i++) {
-        var liId = i;
-        var img = new Image();
-        var ul = document.getElementById(this.moduleId);
+        let liId = i;
+        let img = new Image();
+        let container = document.getElementsByClassName('container'); // <div id="target">
+        container.innerHTML += '<div id="galley" onmousedown="' + this.isKeyPressed(event) +'"  ></div>'; 
+        let div = document.getElementById('galley');
+        div.innerHTML += '<ul class="pictures" id="' + this.moduleId + '">'
+        let ul = document.getElementById(this.moduleId);
         img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
         img.alt = "Camera Trap";
         img.datamarked = 0;
@@ -307,6 +311,20 @@ class ViewerComponent {
     this.vjs();
     return;
   }
+
+  isKeyPressed(event) {
+    console.log(" isKeyPressed(event)");
+    console.log("event.target.src : " + event.target.src);
+     arrayClone(imgClssfctnObj.selected_images);
+    if (event.shiftKey) {
+      console.log(" isKeyPressed : event.shiftKey");
+      imgClssfctnObj.handleExistance(imgClssfctnObj.selected_images, event.target.src, event.target.id);
+    } else {
+      console.log(" isKeyPressed : " + event.click);
+      objectOf("imgClassification");
+      imgClssfctnObj.callvjs();
+    }
+}
 }
 
 
