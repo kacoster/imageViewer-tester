@@ -7,7 +7,6 @@ var ct_vldt_img_trggr_tbl_vldtn_9 = new ViewerComponent(0,50,5,"img_clssfctn_ud"
   }
 
   function getEvent(event) {
-
     console.log("keyPress(event)");
     console.log("event.target.src : " + event.target.src);
     ct_vldt_img_trggr_tbl_vldtn_9.columnSize = 5;
