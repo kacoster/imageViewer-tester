@@ -44,8 +44,8 @@ class ViewerComponent {
           Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
           1 + " / " + this.getBatchNumber());
         }
-        this.imgloop(this.displayImages(this.imgNumb,0));
       }
+      this.imgloop(this.displayImages(this.imgNumb,0));
     }
 
     initializeImgArray(array)
