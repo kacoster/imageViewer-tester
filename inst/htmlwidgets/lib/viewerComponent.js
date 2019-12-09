@@ -39,7 +39,7 @@ class ViewerComponent {
         this.imgArray[0] = this.imgArray[this.imgArray.length - 1] + this.imgArray[0];
         this.imgArray.splice(this.imgArray.length - 1, 1);
 
-        if(moduleId === "img_clssfctn_ud")
+        if(this.moduleId === "img_clssfctn_ud")
         {
           Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
           1 + " / " + this.getBatchNumber());
@@ -307,7 +307,7 @@ class ViewerComponent {
     }
 
     /**
-   * @description - indirect call to the vjs() function
+   * @description - indirect call to the vjs() function  
    * @returns image view myFunction
    */
    callvjs(elementId) {   
