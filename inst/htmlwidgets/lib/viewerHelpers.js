@@ -27,6 +27,6 @@ function loadFile(filename) {
 
   function observeClick(event)
   {
-       getEvent(event) 
+       getEvent(event);
         //alert(event.target.src);
   }
