@@ -24,3 +24,8 @@ function loadFile(filename) {
     alert("Error in Reading Images ");
     return result;
   }
+
+  function observeClick(event)
+  {
+        alert(event.target.src);
+  }
