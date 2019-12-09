@@ -65,9 +65,9 @@
         } else {
           console.log(" isKeyPressed : " + event.click);
           objectOf("imgClassification");
-          imgClssfctnObj.callvjs();
+          imgClssfctnObj.callvjs(imgClssfctnObj.moduleId+"_divId");
         }
-        
+
       /*if(id ==="ctvldt9")
       {
         console.log("In id == vctvldt9");
