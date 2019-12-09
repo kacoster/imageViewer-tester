@@ -253,22 +253,15 @@ class ViewerComponent {
     imgloop(ar) {
       //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
       this.liWhiteBackground();
-      
-      //var yourClass = $("#test");
-      //let className = $("#"+this.moduleId+"").prop("class");
-      //$("ul").addClass(this.moduleId);
-      //console.log("Check className : " + className);
-      //this.changeCSS(className);
+      console.log("Module Id in imgloop " + this.moduleId);
+      let ul = document.getElementById(this.moduleId);
       for (let i = 0; i < ar.length; i++) {
-        let ul = document.getElementById(this.moduleId);
         let liId = i;
         let img = new Image();
         img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
         img.alt = "Camera Trap";
         img.datamarked = 0;
-        ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' +
-        img.src + '"  marked="' + img.datamarked + '" src="' +
-        img.src + '" alt="' + img.alt + '" /> </li>';
+        ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '" alt="' + img.alt + '" /> </li>';
         this.setCol();
       }
       //$('#'+this.moduleId +'').html($(ul).attr('onmousedown="' + this.isKeyPressed(event) +'"' ));
