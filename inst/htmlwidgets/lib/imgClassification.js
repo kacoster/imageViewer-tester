@@ -54,7 +54,6 @@
   */
   function isKeyPressed(event,id) {
 
-      
         console.log("isKeyPressed(event)");
         console.log("event.target.src : " + event.target.src);
         arrayClone(imgClssfctnObj.selected_images);
@@ -68,27 +67,27 @@
           imgClssfctnObj.callvjs(imgClssfctnObj.moduleId+"_divId");
         }
 
-      /*if(id ==="ctvldt9")
-      {
-        console.log("In id == vctvldt9");
-        ct_vldt_img_trggr_tbl_vldtn_9.columnSize = 5;
-        ct_vldt_img_trggr_tbl_vldtn_9.imgNumb = 30;
-        objectOf("ct_vldt_img_trggr_tbl_vldtn_9");
-        ct_vldt_img_trggr_tbl_vldtn_9.callvjs(ct_vldt_img_trggr_tbl_vldtn_9.moduleId+"_divId"); 
-      }*/
+        /*if(id ==="ctvldt9")
+        {
+          console.log("In id == vctvldt9");
+          ct_vldt_img_trggr_tbl_vldtn_9.columnSize = 5;
+          ct_vldt_img_trggr_tbl_vldtn_9.imgNumb = 30;
+          objectOf("ct_vldt_img_trggr_tbl_vldtn_9");
+          ct_vldt_img_trggr_tbl_vldtn_9.callvjs(ct_vldt_img_trggr_tbl_vldtn_9.moduleId+"_divId"); 
+        }*/
       
   }
 
   function setColumnNumb(numb)
   {
     imgClssfctnObj.columnSize = numb;
-      //this.columnSize = numb;
-      //alert("Adjusted Columns " + imgClssfctnObj.columnSize);
-      imgClssfctnObj.setCol();
+    imgClssfctnObj.setCol();
+    //this.columnSize = numb;
+    //alert("Adjusted Columns " + imgClssfctnObj.columnSize);
+      
   }
   function setImagesNumber(numb)
   {
-    
     imgClssfctnObj.imgNumb = numb;
   } 
 
