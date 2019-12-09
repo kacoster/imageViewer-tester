@@ -19,6 +19,7 @@ HTMLWidgets.widget({
            //readServerData(x.message);
            Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
               function(message) {
+                console.log("img_clssfctn_ud_batch_image_size");
                 setImagesNumber(parseInt(JSON.stringify(message)));
                 console.log("Handler img_clssfctn_ud_batch_image_size " + parseInt(JSON.stringify(message)));
                  //readServerData(x.message);

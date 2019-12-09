@@ -81,6 +81,7 @@
 
   function setImagesNumber(numb)
   {
+    alert("Adjusted Columns " + numb);
     imgClssfctnObj.imgNumb = numb;
   } 
 
