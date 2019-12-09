@@ -42,6 +42,7 @@
   });
 
   var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud","img_clssfctn_ud.csv");
+  var ct_vldt_img_trggr_tbl_vldtn_9 = new ViewerComponent(0,50,5,"img_clssfctn_ud","img_clssfctn_ud.csv");
 
   /**
   * Handles all image panel click events
@@ -51,18 +52,30 @@
   * Execute appropriate instructions based on event
   * @return void
   */
-  function isKeyPressed(event) {
-      console.log("isKeyPressed(event)");
-      console.log("event.target.src : " + event.target.src);
-       arrayClone(imgClssfctnObj.selected_images);
-      if (event.shiftKey) {
-        console.log(" isKeyPressed : event.shiftKey");
-        imgClssfctnObj.handleExistance(imgClssfctnObj.selected_images, event.target.src, event.target.id);
-      } else {
-        console.log(" isKeyPressed : " + event.click);
-        objectOf("imgClassification");
-        imgClssfctnObj.callvjs();
+  function isKeyPressed(event,id) {
+
+      if(id === "img_clssfctn_ud"){
+        console.log("isKeyPressed(event)");
+        console.log("event.target.src : " + event.target.src);
+         arrayClone(imgClssfctnObj.selected_images);
+        if (event.shiftKey) {
+          console.log(" isKeyPressed : event.shiftKey");
+          imgClssfctnObj.handleExistance(imgClssfctnObj.selected_images, event.target.src, event.target.id);
+        } else {
+          console.log(" isKeyPressed : " + event.click);
+          objectOf("imgClassification");
+          imgClssfctnObj.callvjs();
+        }
       }
+      if(id ==="ctvldt9")
+      {
+        console.log("In id == vctvldt9");
+        ct_vldt_img_trggr_tbl_vldtn_9.columnSize = 5;
+        ct_vldt_img_trggr_tbl_vldtn_9.imgNumb = 30;
+        objectOf("ct_vldt_img_trggr_tbl_vldtn_9");
+        ct_vldt_img_trggr_tbl_vldtn_9.callvjs();
+      }
+      
   }
 
   function setImagesNumber(numb)
