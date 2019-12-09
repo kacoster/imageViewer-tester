@@ -27,6 +27,15 @@ function loadFile(filename) {
 
   function observeClick(event)
   {
-       getEvent(event);
+            viewy();
         //alert(event.target.src);
   }
+
+  function viewy() {
+        var viewer = new Viewer(document.getElementById('gal'), {
+            url: 'data-original',
+            title: function (image) {
+            return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
+            },
+        });
+    }
