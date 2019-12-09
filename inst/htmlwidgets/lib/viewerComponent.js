@@ -26,7 +26,7 @@ class ViewerComponent {
       return result;
     }
   
-    readServerData(response,moduleId) {
+    readServerData(response) {
       // let response = this.loadFile(this.csvfile);
       if(response === null )
       {
@@ -45,7 +45,7 @@ class ViewerComponent {
           1 + " / " + this.getBatchNumber());
         }
       }
-      this.imgloop(this.displayImages(this.imgNumb,0),moduleId);
+      this.imgloop(this.displayImages(this.imgNumb,0));
     }
 
     initializeImgArray(array)
@@ -192,8 +192,8 @@ class ViewerComponent {
     }
 
     // See if this indeed should ne var 
-    vjs() {
-        var viewer = new Viewer(document.getElementById('galley'), {
+    vjs(elementID) {
+        var viewer = new Viewer(document.getElementById(elementID), {
             url: 'data-original',
             title: function (image) {
             return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
@@ -250,11 +250,11 @@ class ViewerComponent {
       }
     }
 
-    imgloop(ar,moduleId) {
+    imgloop(ar) {
       //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
       this.liWhiteBackground();
-      console.log("Module Id in imgloop " + moduleId);
-      let ul = document.getElementById("ct_vldt_img_trggr_tbl_vldtn_9");
+      console.log("Module Id in imgloop " + this.moduleId);
+      let ul = document.getElementById(this.moduleId);
       for (let i = 0; i < ar.length; i++) {
         let liId = i;
         let img = new Image();
@@ -310,8 +310,8 @@ class ViewerComponent {
    * @description - indirect call to the vjs() function
    * @returns image view myFunction
    */
-   callvjs() {   
-    this.vjs();
+   callvjs(elementId) {   
+    this.vjs(elementId);
     return;
   }
 

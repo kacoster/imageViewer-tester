@@ -73,7 +73,7 @@
         ct_vldt_img_trggr_tbl_vldtn_9.columnSize = 5;
         ct_vldt_img_trggr_tbl_vldtn_9.imgNumb = 30;
         objectOf("ct_vldt_img_trggr_tbl_vldtn_9");
-        ct_vldt_img_trggr_tbl_vldtn_9.callvjs();
+        ct_vldt_img_trggr_tbl_vldtn_9.callvjs(ct_vldt_img_trggr_tbl_vldtn_9.moduleId +"_divId"); 
       }
       
   }
@@ -85,7 +85,7 @@
 
   function setImageArray(resp)
   {
-    imgClssfctnObj.readServerData(resp,imgClssfctnObj.moduleId);
+    imgClssfctnObj.readServerData(resp);
   }
 
   /************************************************************************/
