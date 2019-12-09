@@ -83,7 +83,7 @@
   {
     imgClssfctnObj.columnSize = numb;
       //this.columnSize = numb;
-      alert("Adjusted Columns " + imgClssfctnObj.columnSize);
+      //alert("Adjusted Columns " + imgClssfctnObj.columnSize);
       imgClssfctnObj.setCol();
   }
   function setImagesNumber(numb)
