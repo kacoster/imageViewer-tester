@@ -26,7 +26,7 @@ class ViewerComponent {
       return result;
     }
   
-    readServerData(response) {
+    readServerData(response,moduleId) {
       // let response = this.loadFile(this.csvfile);
       if(response === null )
       {
@@ -39,13 +39,13 @@ class ViewerComponent {
         this.imgArray[0] = this.imgArray[this.imgArray.length - 1] + this.imgArray[0];
         this.imgArray.splice(this.imgArray.length - 1, 1);
 
-        if(this.moduleId === "img_clssfctn_ud")
+        if(moduleId === "img_clssfctn_ud")
         {
           Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
           1 + " / " + this.getBatchNumber());
         }
       }
-      this.imgloop(this.displayImages(this.imgNumb,0));
+      this.imgloop(this.displayImages(this.imgNumb,0),moduleId);
     }
 
     initializeImgArray(array)
@@ -250,11 +250,11 @@ class ViewerComponent {
       }
     }
 
-    imgloop(ar) {
+    imgloop(ar,moduleId) {
       //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
       this.liWhiteBackground();
-      console.log("Module Id in imgloop " + this.moduleId);
-      let ul = document.getElementById(this.moduleId);
+      console.log("Module Id in imgloop " + moduleId);
+      let ul = document.getElementById(moduleId);
       for (let i = 0; i < ar.length; i++) {
         let liId = i;
         let img = new Image();

@@ -3,7 +3,7 @@ var ct_vldt_img_trggr_tbl_vldtn_9 = new ViewerComponent(0,50,5,"img_clssfctn_ud"
   function prepArray(resp)
   {
     console.log("In prepArray");
-    ct_vldt_img_trggr_tbl_vldtn_9.readServerData(resp);
+    ct_vldt_img_trggr_tbl_vldtn_9.readServerData(resp,ct_vldt_img_trggr_tbl_vldtn_9.moduleId);
   }
 
   function getEvent(event) {

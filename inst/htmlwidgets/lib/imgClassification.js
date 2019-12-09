@@ -85,7 +85,7 @@
 
   function setImageArray(resp)
   {
-    imgClssfctnObj.readServerData(resp);
+    imgClssfctnObj.readServerData(resp,imgClssfctnObj.moduleId);
   }
 
   /************************************************************************/
