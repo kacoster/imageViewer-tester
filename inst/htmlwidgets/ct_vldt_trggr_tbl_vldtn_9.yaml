@@ -3,6 +3,10 @@ dependencies:
   version: 1.7.0
   src: htmlwidgets
   script: ./lib/viewer.js
+- name: viewerComponent
+  version: 1.7.0
+  src: htmlwidgets
+  script: ./lib/viewerComponent.js
 - name: ct_vldt_img_trggr_tbl_vldtn_9
   version: 0.0.1
   src: htmlwidgets
@@ -11,10 +15,6 @@ dependencies:
   version: 1.7.0
   src: htmlwidgets
   script: ./lib/viewerHelpers.js
-- name: viewerComponent
-  version: 1.7.0
-  src: htmlwidgets
-  script: ./lib/viewerComponent.js
 - name: jquery
   version: 0.4.10
   src: htmlwidgets
