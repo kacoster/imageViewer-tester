@@ -55,6 +55,7 @@ class ViewerComponent {
 
     highliter(elementID)
     {
+        console.log("In Highlighter");
         $('#' + elementID + '').css({
             'opacity': '0.4',
             'filter': 'alpha(opacity=40)'
@@ -68,6 +69,7 @@ class ViewerComponent {
             'filter': ''
             });
     }
+    /** Not Yet Generic */
     setCol(){
 
         $('.pictures > li').css({
@@ -80,6 +82,7 @@ class ViewerComponent {
         Shiny.onInputChange(state,imgsrc);
     }
 
+    /** Not Yet Generic */
     handleExistance(params,src,id)
     {
 
