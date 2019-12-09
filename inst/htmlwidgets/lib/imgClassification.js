@@ -79,9 +79,16 @@
       
   }
 
+  function setColumnNumb(numb)
+  {
+    imgClssfctnObj.columnSize = numb;
+      //this.columnSize = numb;
+      alert("Adjusted Columns " + imgClssfctnObj.columnSize);
+      imgClssfctnObj.setCol();
+  }
   function setImagesNumber(numb)
   {
-    alert("Adjusted Columns " + numb);
+    
     imgClssfctnObj.imgNumb = numb;
   } 
 

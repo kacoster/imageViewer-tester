@@ -53,12 +53,6 @@ class ViewerComponent {
       this.imgArray = [...arr];
     }
 
-    setColumnNumb(numb)
-    {
-        this.columnSize = numb;
-        this.setCol();
-    }
-
     highliter(elementID)
     {
         $('#' + elementID + '').css({
