@@ -254,7 +254,7 @@ class ViewerComponent {
       //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
       this.liWhiteBackground();
       console.log("Module Id in imgloop " + moduleId);
-      let ul = document.getElementById(moduleId);
+      let ul = document.getElementById("ct_vldt_img_trggr_tbl_vldtn_9");
       for (let i = 0; i < ar.length; i++) {
         let liId = i;
         let img = new Image();
