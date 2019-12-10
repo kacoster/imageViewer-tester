@@ -58,7 +58,9 @@ class ViewerComponent {
         console.log("In Highlighter");
         $('#' + elementID + '').css({
             'opacity': '0.4',
-            'filter': 'alpha(opacity=40)'
+            'filter': 'alpha(opacity=40)',
+            'background-color':'yellow'
+
             });
     }
 
