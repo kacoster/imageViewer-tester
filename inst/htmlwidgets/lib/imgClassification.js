@@ -99,10 +99,12 @@
   function saveButtonListerner()
   {
     console.log("Save Click");
-    imgClssfctnObj.selected_images.length = 0;
+    imgClssfctnObj.deSelectAll();
+    //imgClssfctnObj.selected_images.length = 0;
     imgClssfctnObj.getCurrClckdImg("clssfctn_slctd_img","");
     imgClssfctnObj.getCurrClckdImg("clssfctn_vw_curr_img","");
-    imgClssfctnObj.liWhiteBackground();
+    //imgClssfctnObj.liWhiteBackground();
+
   }
 
   /************************************************************************/
