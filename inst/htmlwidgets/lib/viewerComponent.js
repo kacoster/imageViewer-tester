@@ -152,6 +152,7 @@ class ViewerComponent {
               console.log("batch Number : " + this.batnum);
               this.imgloop(this.displayImages(this.imgNumb, this.batnum));
               this.selected_images.length = 0;
+              this.getCurrClckdImg("clssfctn_slctd_img","");
     
           }else{
             Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
@@ -159,6 +160,7 @@ class ViewerComponent {
             this.imgNumb(this.displayImages(this.imgNumb, this.getBatchNumber()-1));
             this.batnum = this.getBatchNumber()-1;
             this.selected_images.length = 0;
+            this.getCurrClckdImg("clssfctn_slctd_img","");
           }
     }
 
@@ -172,11 +174,13 @@ class ViewerComponent {
             console.log("batch Number : " + this.batnum);
           this.imgloop(this.displayImages(this.imgNumb ,this.batnum));
           this.selected_images.length = 0;
+          this.getCurrClckdImg("clssfctn_slctd_img","");
         }else{
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
              1 + " / " + this.getBatchNumber());
           this.imgloop(this.displayImages(this.imgNumb, 0));
           this.selected_images.length = 0;
+          this.getCurrClckdImg("clssfctn_slctd_img","");
           this.batnum = 0;
         }
     }
