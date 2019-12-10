@@ -269,7 +269,7 @@ class ViewerComponent {
       console.log("Module Id in imgloop " + this.moduleId);
       let ul = document.getElementById(this.moduleId);
       for (let i = 0; i < ar.length; i++) {
-        let liId = i;
+        let liId = i+"_"+this.moduleId;
         let img = new Image();
         img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
         img.alt = "Camera Trap";
