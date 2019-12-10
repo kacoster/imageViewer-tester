@@ -59,7 +59,9 @@ class ViewerComponent {
         $('#' + elementID + '').css({
             'opacity': '0.4',
             'filter': 'alpha(opacity=40)'
-            });
+        });
+        $(".pictures > li").css("background-color", "yellow");
+          
     }
 
     removeHighlight(elementID)
@@ -108,7 +110,6 @@ class ViewerComponent {
         }
         else{
             params.push(src);
-            $(".pictures > li").css("background-color", "yellow");
             this.highliter(id);
             console.log(this.getTrimedSelectedImages().toString());
             this.getCurrClckdImg("clssfctn_slctd_img",this.getTrimedSelectedImages().toString());
