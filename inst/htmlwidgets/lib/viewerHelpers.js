@@ -28,7 +28,13 @@ function loadFile(filename) {
   function observeClick(event)
   {
     console.log("Type of : " + event.target.id);
-    getEvent(event);
+    let targetId = event.target.id;
+    let moduleId = targetId.substring(targetId.indexOf("_")+1);
+    if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_9")
+    {
+        getEvent(event); 
+    }
+    //str = str.substring(str.indexOf(":") + 1);
   }
 
   function viewy() {
