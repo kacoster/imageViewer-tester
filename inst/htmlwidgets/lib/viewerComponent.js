@@ -274,7 +274,7 @@ class ViewerComponent {
         img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
         img.alt = "Camera Trap";
         img.datamarked = 0;
-        ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '" alt="' + img.alt + '" /> </li>';
+        ul.innerHTML += '<li  ><img id="' + liId +"_"+this.moduleId+ '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '" alt="' + img.alt + '" /> </li>';
         this.setCol();
       }
       //$('#'+this.moduleId +'').html($(ul).attr('onmousedown="' + this.isKeyPressed(event) +'"' ));
