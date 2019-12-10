@@ -266,7 +266,7 @@ class ViewerComponent {
 
     imgloop(ar) {
       //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
-      this.liWhiteBackground();
+      //this.liWhiteBackground();
       console.log("Module Id in imgloop " + this.moduleId);
       let ul = document.getElementById(this.moduleId);
       for (let i = 0; i < ar.length; i++) {
