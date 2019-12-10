@@ -277,6 +277,7 @@ class ViewerComponent {
         ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '" alt="' + img.alt + '" /> </li>';
         this.setCol();
       }
+      $(".pictures > li").css("background-color", "yellow");
       //$('#'+this.moduleId +'').html($(ul).attr('onmousedown="' + this.isKeyPressed(event) +'"' ));
     }
 
