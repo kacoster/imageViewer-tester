@@ -59,8 +59,6 @@ class ViewerComponent {
         $('#' + elementID + '').css({
             'opacity': '0.4',
             'filter': 'alpha(opacity=40)'
-            //'background-color':'yellow'
-
             });
     }
 
@@ -73,11 +71,12 @@ class ViewerComponent {
     }
     /** Not Yet Generic */
     setCol(){
-      let className = $('#' + this.moduleId + '').attr('class'); 
-      console.log("Class Name : " + className);
-      $('.' + className + ' > li').css({
-              'width' : 'calc(100% /' + this.columnSize +')'
-      });
+
+     let cls = $('#test').attr('class'); 
+
+        $('.pictures > li').css({
+                'width' : 'calc(100% /' + this.columnSize +')'
+            });
     }
 
     /*** return the ul element class Name */
@@ -181,7 +180,7 @@ class ViewerComponent {
              1 + " / " + this.getBatchNumber());
           this.imgloop(this.displayImages(this.imgNumb, 0));
           this.selected_images.length = 0;
-          this.getCurrClckdImg("clssfctn_slctd_img","");
+           this.getCurrClckdImg("clssfctn_slctd_img","");
           this.batnum = 0;
         }
     }
@@ -270,7 +269,7 @@ class ViewerComponent {
       console.log("Module Id in imgloop " + this.moduleId);
       let ul = document.getElementById(this.moduleId);
       for (let i = 0; i < ar.length; i++) {
-        let liId = i+"_"+this.moduleId;
+        let liId = i;
         let img = new Image();
         img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
         img.alt = "Camera Trap";
@@ -278,7 +277,6 @@ class ViewerComponent {
         ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '" alt="' + img.alt + '" /> </li>';
         this.setCol();
       }
-      //$(".pictures > li").css("background-color", "yellow");
       //$('#'+this.moduleId +'').html($(ul).attr('onmousedown="' + this.isKeyPressed(event) +'"' ));
     }
 
