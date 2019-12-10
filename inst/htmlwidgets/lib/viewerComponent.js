@@ -72,9 +72,17 @@ class ViewerComponent {
     /** Not Yet Generic */
     setCol(){
 
+     let cls = $('#test').attr('class'); 
+
         $('.pictures > li').css({
                 'width' : 'calc(100% /' + this.columnSize +')'
             });
+    }
+
+    /*** return the ul element class Name */
+    getULClass()
+    {
+
     }
 
     getCurrClckdImg(state, imgsrc)
@@ -136,19 +144,21 @@ class ViewerComponent {
     next() {
         console.log("Next Clicked");
         nextPrevClicked("1");
-    
+
         if(this.batnum < this.getBatchNumber()-1){
               this.batnum++;
               Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (this.batnum+1) + " / " + this.getBatchNumber());
               console.log("batch Number : " + this.batnum);
               this.imgloop(this.displayImages(this.imgNumb, this.batnum));
+              this.selected_images.length = 0;
     
           }else{
             Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               this.getBatchNumber() + " / " + this.getBatchNumber());
             this.imgNumb(this.displayImages(this.imgNumb, this.getBatchNumber()-1));
             this.batnum = this.getBatchNumber()-1;
+            this.selected_images.length = 0;
           }
     }
 
@@ -160,12 +170,13 @@ class ViewerComponent {
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (this.batnum+1) + " / " + this.getBatchNumber());
             console.log("batch Number : " + this.batnum);
-    
           this.imgloop(this.displayImages(this.imgNumb ,this.batnum));
+          this.selected_images.length = 0;
         }else{
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
              1 + " / " + this.getBatchNumber());
           this.imgloop(this.displayImages(this.imgNumb, 0));
+          this.selected_images.length = 0;
           this.batnum = 0;
         }
     }
