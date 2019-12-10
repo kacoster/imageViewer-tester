@@ -39,6 +39,16 @@ HTMLWidgets.widget({
                   fetchServerData(x.message,x.componentID);
                 }
             );
+
+            Shiny.addCustomMessageHandler("img_clssfctn_ud_sv_edt_button",
+                function(msg) {
+                  saveButtonListerner();
+                  //console.log("Handler img_clssfctn_ud_fltr_button");
+                  //fetchServerData(x.message,x.componentID);
+                }
+            );
+
+            
       },
 
       resize: function(width, height) {
