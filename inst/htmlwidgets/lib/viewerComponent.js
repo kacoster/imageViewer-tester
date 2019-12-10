@@ -71,13 +71,11 @@ class ViewerComponent {
     }
     /** Not Yet Generic */
     setCol(){
-
-     let className = $('#' + this.moduleId + '').attr('class'); 
-     console.log("Class Name : " + className);
-
-        $('.' + className + ' > li').css({
-                'width' : 'calc(100% /' + this.columnSize +')'
-        });
+      let className = $('#' + this.moduleId + '').attr('class'); 
+      console.log("Class Name : " + className);
+      $('.' + className + ' > li').css({
+              'width' : 'calc(100% /' + this.columnSize +')'
+      });
     }
 
     /*** return the ul element class Name */
