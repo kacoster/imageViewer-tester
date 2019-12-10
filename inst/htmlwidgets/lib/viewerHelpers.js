@@ -41,5 +41,6 @@ function loadFile(filename) {
 
     function clcsfcnSave()
     {
+        console.log("In clcsfcnSave()");
         saveButtonListerner();
     }
