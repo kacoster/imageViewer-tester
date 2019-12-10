@@ -25,9 +25,9 @@ function loadFile(filename) {
     return result;
   }
 
-  function observeClick(event,type)
+  function observeClick(event)
   {
-    console.log("Type of : " + type);
+    console.log("Type of : " + event.target.id);
     getEvent(event);
   }
 
