@@ -34,6 +34,10 @@ function loadFile(filename) {
     {
         getEvent(event); 
     }
+    if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_10")
+    {
+        
+    }
     //str = str.substring(str.indexOf(":") + 1);
   }
 
