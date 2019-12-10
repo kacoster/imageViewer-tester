@@ -109,7 +109,7 @@ class ViewerComponent {
         else{
             params.push(src);
             $(".pictures > li").css("background-color", "yellow");
-            this.highliter(id);
+            this.highliter(35);
             console.log(this.getTrimedSelectedImages().toString());
             this.getCurrClckdImg("clssfctn_slctd_img",this.getTrimedSelectedImages().toString());
         }
