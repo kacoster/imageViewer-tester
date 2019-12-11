@@ -207,7 +207,7 @@ class ViewerComponent {
     // See if this indeed should ne var 
     vjs(elementID) {
         console.log("vjs : " + elementID);
-        var viewer = new Viewer(document.getElementById(elementID), {
+        var elementID = new Viewer(document.getElementById(elementID), {
             url: 'data-original',
             title: function (image) {
             return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
