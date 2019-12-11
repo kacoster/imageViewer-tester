@@ -49,5 +49,5 @@ ct_vldt_trggr_tbl_vldtn_10Output <- function(outputId, width = '100%', height = 
 #' @export
 renderCt_vldt_trggr_tbl_vldtn_10 <- function(expr, env = parent.frame(), quoted = FALSE) {
   if (!quoted) { expr <- substitute(expr) } # force quoted
-  htmlwidgets::shinyRenderWidget(expr, ct_vldt_trggr_tbl_vldtn_9Output, env, quoted = TRUE)
+  htmlwidgets::shinyRenderWidget(expr, ct_vldt_trggr_tbl_vldtn_10Output, env, quoted = TRUE)
 }
