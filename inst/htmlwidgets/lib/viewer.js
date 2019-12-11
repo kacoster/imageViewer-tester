@@ -37,8 +37,6 @@
     }
 
     function arrayClone(param){
-      console.log("Cloning Array");
-      //selected_images_clone.length = 0;
        selected_images_clone = [...param];
     }
 
@@ -1828,7 +1826,6 @@
               return;
             }
             console.log("Return this.show()");
-            console.log("sel clone : " + selected_images_clone);
             this.index = index;
             return this.show();
           }
@@ -1859,8 +1856,6 @@
           if( whichViewer === "imgClassification")
           {
             console.log("In whichViewer : imgClassification");
-            selected_images_clone = 0;
-            selected_images_clone = [...imgClssfctnObj.getSelectedImages()];
             if(imgClssfctnObj.getSelectedImages().includes(url) || imgClssfctnObj.removedRef() === url)
             {
                 if(imgClssfctnObj.getSelectedImages().includes(url) || selected_images_clone.includes(url))
@@ -1877,18 +1872,21 @@
 
           if( whichViewer === "imgClassification")
           {
+
             console.log(" Which Viewer : imgClassification");
-           
             getCurrClckdImg("clssfctn_vw_curr_img",
                 url.substring(url.lastIndexOf("/") + 1, url.length ));
                 //resetwhichViewer();
+
           }
           else if(whichViewer === "imgIdentification")
           {
             console.log(" Which Viewer : imgIdentification");
+
             getCurrClckdImg("spcs_idntfctn_id_rf_1_vw_curr_img",
                url.substring(url.lastIndexOf("/") + 1, url.length ));
                //resetwhichViewer();
+
           }
           else if (whichViewer === "imgIdentification_rf2")
           {
@@ -1896,6 +1894,7 @@
              getCurrClckdImg("spcs_idntfctn_id_rf_2_vw_curr_img",
              url.substring(url.lastIndexOf("/") + 1,url.length ));
              //resetwhichViewer();
+
           }
 
           if (isFunction(options.view)) {

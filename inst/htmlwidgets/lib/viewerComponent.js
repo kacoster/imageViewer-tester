@@ -204,7 +204,7 @@ class ViewerComponent {
         $('#' + this.moduleId + '').html("");
     }
 
-    // See if this indeed should ne var 
+    // See if this indeed should var 
     vjs(elementID) {
         console.log("vjs : " + elementID);
         var elementID = new Viewer(document.getElementById(elementID), {
@@ -215,14 +215,13 @@ class ViewerComponent {
         });
     }
 
-   
     getSelectedImages()
     {
         // src.substring(src.lastIndexOf("/") + 1, src.length )
         //console.log(selected_images);
         return this.selected_images;
     }
-
+    
     getTrimedSelectedImages()
     {
         return this.trimSRC(this.getSelectedImages());
