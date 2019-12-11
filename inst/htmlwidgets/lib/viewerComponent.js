@@ -218,7 +218,7 @@ class ViewerComponent {
     getSelectedImages()
     {
         // src.substring(src.lastIndexOf("/") + 1, src.length )
-        console.log("getSelectedImages : " +  selected_images);
+        console.log("getSelectedImages : " +  this.selected_images);
         return this.selected_images;
     }
     
