@@ -55,7 +55,7 @@ class ViewerComponent {
 
     highliter(elementID)
     {
-        console.log("In Highlighter");
+        //console.log("In Highlighter");
         $('#' + elementID + '').css({
             'opacity': '0.4',
             'filter': 'alpha(opacity=40)'
@@ -102,7 +102,7 @@ class ViewerComponent {
             this.removeHighlight(id);
             if(params.length > 0)
             {
-                console.log(this.getTrimedSelectedImages().toString());
+                //console.log(this.getTrimedSelectedImages().toString());
                 this.getCurrClckdImg("clssfctn_slctd_img",this.getTrimedSelectedImages().toString());
                 console.log("Trimmed Sel : " + this.getTrimedSelectedImages().toString());
             }else{
@@ -112,7 +112,7 @@ class ViewerComponent {
         else{
             params.push(src);
             this.highliter(id);
-            console.log(this.getTrimedSelectedImages().toString());
+            //console.log(this.getTrimedSelectedImages().toString());
             this.getCurrClckdImg("clssfctn_slctd_img",this.getTrimedSelectedImages().toString());
             console.log("Trimmed Sel : " + this.getTrimedSelectedImages().toString());
         }
@@ -124,7 +124,7 @@ class ViewerComponent {
     }
 
     displayImages(imgnumb,bat) {
-        console.log("Display Images");
+        //console.log("Display Images");
         this.clearImages();
         let start ,end;
         start = bat * imgnumb;
@@ -152,7 +152,7 @@ class ViewerComponent {
               this.batnum++;
               Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (this.batnum+1) + " / " + this.getBatchNumber());
-              console.log("batch Number : " + this.batnum);
+              //console.log("batch Number : " + this.batnum);
               this.imgloop(this.displayImages(this.imgNumb, this.batnum));
               this.selected_images.length = 0;
               this.getCurrClckdImg("clssfctn_slctd_img","");
@@ -174,7 +174,7 @@ class ViewerComponent {
         if (this.batnum > 0 ) {
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (this.batnum+1) + " / " + this.getBatchNumber());
-            console.log("batch Number : " + this.batnum);
+            //console.log("batch Number : " + this.batnum);
           this.imgloop(this.displayImages(this.imgNumb ,this.batnum));
           this.selected_images.length = 0;
           this.getCurrClckdImg("clssfctn_slctd_img","");
@@ -208,7 +208,7 @@ class ViewerComponent {
 
     // See if this indeed should var 
     vjs(elementID) {
-        console.log("vjs : " + elementID);
+        //console.log("vjs : " + elementID);
         var elementID = new Viewer(document.getElementById(elementID), {
             url: 'data-original',
             title: function (image) {
@@ -220,13 +220,13 @@ class ViewerComponent {
     getSelectedImages()
     {
         // src.substring(src.lastIndexOf("/") + 1, src.length )
-        console.log("getSelectedImages : " +  this.selected_images);
+        //console.log("getSelectedImages : " +  this.selected_images);
         return this.selected_images;
     }
     
     getTrimedSelectedImages()
     {
-        console.log("getTrimedSelectedImages S I : " + this.getSelectedImages());
+        //console.log("getTrimedSelectedImages S I : " + this.getSelectedImages());
         return this.trimSRC(this.getSelectedImages());
     }
 
@@ -269,7 +269,7 @@ class ViewerComponent {
     imgloop(ar) {
       //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
       //this.liWhiteBackground();
-      console.log("Module Id in imgloop " + this.moduleId);
+      //console.log("Module Id in imgloop " + this.moduleId);
       let ul = document.getElementById(this.moduleId);
       for (let i = 0; i < ar.length; i++) {
         let liId = i;

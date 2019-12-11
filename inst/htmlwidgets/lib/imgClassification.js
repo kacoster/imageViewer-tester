@@ -54,22 +54,22 @@
   */
   function isKeyPressed(event,id) {
 
-        console.log("isKeyPressed(event)");
-        console.log("event.target.src : " + event.target.src);
+        //console.log("isKeyPressed(event)");
+        //console.log("event.target.src : " + event.target.src);
 
         arrayClone(imgClssfctnObj.selected_images);
 
         if (event.shiftKey) {
           
-          console.log(" isKeyPressed : event.shiftKey");
+          //console.log(" isKeyPressed : event.shiftKey");
           if(imgClssfctnObj.selected_images.includes(event.target.src))
           {
             selectionFind(true);
           }
-          console.log("isKeyPressed : " + imgClssfctnObj.selected_images);
+          //console.log("isKeyPressed : " + imgClssfctnObj.selected_images);
           imgClssfctnObj.handleExistance(imgClssfctnObj.selected_images, event.target.src, event.target.id);
         } else {
-          console.log(" isKeyPressed : " + event.click);
+          //console.log(" isKeyPressed : " + event.click);
           objectOf("imgClassification");
           imgClssfctnObj.callvjs(imgClssfctnObj.moduleId+"_divId");
         }

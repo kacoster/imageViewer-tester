@@ -21,7 +21,7 @@ HTMLWidgets.widget({
               function(message) {
                 //console.log("img_clssfctn_ud_batch_image_size");
                 setImagesNumber(parseInt(JSON.stringify(message)));
-                console.log("Handler img_clssfctn_ud_batch_image_size " + parseInt(JSON.stringify(message)));
+                //console.log("Handler img_clssfctn_ud_batch_image_size " + parseInt(JSON.stringify(message)));
                  //readServerData(x.message);
                 }
             );
@@ -29,13 +29,13 @@ HTMLWidgets.widget({
             Shiny.addCustomMessageHandler("img_clssfctn_ud_img_clmn_numb",
               function(message) {
                 setColumnNumb(parseInt(JSON.stringify(message)));
-                console.log("Handler img_clssfctn_ud_img_clmn_numb : " + parseInt(JSON.stringify(message)));
+               // console.log("Handler img_clssfctn_ud_img_clmn_numb : " + parseInt(JSON.stringify(message)));
                 }
             );
 
             Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_button",
                 function(mesg) {
-                  console.log("Handler img_clssfctn_ud_fltr_button");
+                  //console.log("Handler img_clssfctn_ud_fltr_button");
                   fetchServerData(x.message,x.componentID);
                   resetSelectedImages();
                 }
@@ -43,7 +43,7 @@ HTMLWidgets.widget({
 
             Shiny.addCustomMessageHandler("img_clssfctn_ud_sv_edt_button",
                 function(msg) {
-                  console.log("In Handler img_clssfctn_ud_sv_edt_button");
+                  //console.log("In Handler img_clssfctn_ud_sv_edt_button");
                   saveButtonListerner();
                   //console.log("Handler img_clssfctn_ud_fltr_button");
                   //fetchServerData(x.message,x.componentID);
