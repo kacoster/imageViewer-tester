@@ -105,7 +105,7 @@ class ViewerComponent {
                 console.log(this.getTrimedSelectedImages().toString());
                 this.getCurrClckdImg("clssfctn_slctd_img",this.getTrimedSelectedImages().toString());
             }else{
-                this.getCurrClckdImg("clssfctn_slctd_img","");
+                this.getCurrClckdImg("clssfctn_slctd_img",);
             }
         }
         else{
@@ -218,12 +218,13 @@ class ViewerComponent {
     getSelectedImages()
     {
         // src.substring(src.lastIndexOf("/") + 1, src.length )
-        //console.log(selected_images);
+        console.log("getSelectedImages : " +  selected_images);
         return this.selected_images;
     }
     
     getTrimedSelectedImages()
     {
+        console.log("getTrimedSelectedImages S I : " + this.getSelectedImages());
         return this.trimSRC(this.getSelectedImages());
     }
 
@@ -328,7 +329,7 @@ class ViewerComponent {
     return;
   }
 
-  isKeyPressed(event) {
+  /*isKeyPressed(event) {
     console.log(" isKeyPressed(event)");
     console.log("event.target.src : " + event.target.src);
      //arrayClone(this.selected_images);
@@ -340,6 +341,6 @@ class ViewerComponent {
       objectOf("imgClassification");
       this.callvjs();
     }
-  }
+  }*/
 }
 

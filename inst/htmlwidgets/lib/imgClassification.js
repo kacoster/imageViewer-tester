@@ -66,6 +66,7 @@
           {
             selectionFind(true);
           }
+          console.log("isKeyPressed : " + imgClssfctnObj.selected_images);
           imgClssfctnObj.handleExistance(imgClssfctnObj.selected_images, event.target.src, event.target.id);
         } else {
           console.log(" isKeyPressed : " + event.click);

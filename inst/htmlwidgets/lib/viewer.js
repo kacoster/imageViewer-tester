@@ -1886,21 +1886,17 @@
 
           if( whichViewer === "imgClassification")
           {
-
             console.log(" Which Viewer : imgClassification");
             getCurrClckdImg("clssfctn_vw_curr_img",
                 url.substring(url.lastIndexOf("/") + 1, url.length ));
                 //resetwhichViewer();
-
           }
           else if(whichViewer === "imgIdentification")
           {
             console.log(" Which Viewer : imgIdentification");
-
             getCurrClckdImg("spcs_idntfctn_id_rf_1_vw_curr_img",
                url.substring(url.lastIndexOf("/") + 1, url.length ));
                //resetwhichViewer();
-
           }
           else if (whichViewer === "imgIdentification_rf2")
           {
