@@ -1828,7 +1828,7 @@
               return;
             }
             console.log("Return this.show()");
-            console.log("sel clone : " + selected_images_clone);
+            //console.log("sel clone : " + selected_images_clone);
             this.index = index;
             return this.show();
           }
