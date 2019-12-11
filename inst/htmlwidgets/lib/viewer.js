@@ -37,6 +37,8 @@
     }
 
     function arrayClone(param){
+      console.log("Cloning Array");
+      //selected_images_clone.length = 0;
        selected_images_clone = [...param];
     }
 
@@ -1857,6 +1859,8 @@
           if( whichViewer === "imgClassification")
           {
             console.log("In whichViewer : imgClassification");
+            selected_images_clone = 0;
+            selected_images_clone = [...imgClssfctnObj.getSelectedImages];
             if(imgClssfctnObj.getSelectedImages().includes(url) || imgClssfctnObj.removedRef() === url)
             {
                 if(imgClssfctnObj.getSelectedImages().includes(url) || selected_images_clone.includes(url))
@@ -1874,6 +1878,7 @@
           if( whichViewer === "imgClassification")
           {
             console.log(" Which Viewer : imgClassification");
+           
             getCurrClckdImg("clssfctn_vw_curr_img",
                 url.substring(url.lastIndexOf("/") + 1, url.length ));
                 //resetwhichViewer();

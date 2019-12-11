@@ -332,7 +332,7 @@ class ViewerComponent {
   isKeyPressed(event) {
     console.log(" isKeyPressed(event)");
     console.log("event.target.src : " + event.target.src);
-     arrayClone(this.selected_images);
+     //arrayClone(this.selected_images);
     if (event.shiftKey) {
       console.log(" isKeyPressed : event.shiftKey");
       this.handleExistance(this.selected_images, event.target.src, event.target.id);
