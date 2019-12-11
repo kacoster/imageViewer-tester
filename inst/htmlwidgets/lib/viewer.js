@@ -1828,7 +1828,7 @@
               return;
             }
             console.log("Return this.show()");
-            //console.log("sel clone : " + selected_images_clone);
+            console.log("sel clone : " + selected_images_clone);
             this.index = index;
             return this.show();
           }
@@ -1860,7 +1860,7 @@
           {
             console.log("In whichViewer : imgClassification");
             selected_images_clone = 0;
-            selected_images_clone = [...imgClssfctnObj.getSelectedImages];
+            selected_images_clone = [...imgClssfctnObj.getSelectedImages()];
             if(imgClssfctnObj.getSelectedImages().includes(url) || imgClssfctnObj.removedRef() === url)
             {
                 if(imgClssfctnObj.getSelectedImages().includes(url) || selected_images_clone.includes(url))
