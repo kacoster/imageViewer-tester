@@ -95,6 +95,7 @@ class ViewerComponent {
     /** Not Yet Generic */
     handleExistance(params,src,id)
     {
+
         if(params.includes(src))
         {
             this.tempRemoved =  (params.splice(params.indexOf(src),1))[0];
@@ -104,7 +105,7 @@ class ViewerComponent {
                 console.log(this.getTrimedSelectedImages().toString());
                 this.getCurrClckdImg("clssfctn_slctd_img",this.getTrimedSelectedImages().toString());
             }else{
-                this.getCurrClckdImg("clssfctn_slctd_img",);
+                this.getCurrClckdImg("clssfctn_slctd_img","");
             }
         }
         else{
