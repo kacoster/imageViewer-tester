@@ -1835,6 +1835,7 @@
             if(find_flag === true)
             {
               console.log("I am hidding the image");
+              find_flag = false;
               return this.hide();
             }
 
