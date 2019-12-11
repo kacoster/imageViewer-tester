@@ -1820,13 +1820,13 @@
 
           if (!this.isShown) {
 
-            console.log("sel clone : " + selected_images_clone);
             if(nextPrev === "1"){
               console.log("Line 1824 returns");
               nextPrev = "0";
               return;
             }
             console.log("Return this.show()");
+            console.log("sel clone : " + selected_images_clone);
             this.index = index;
             return this.show();
           }
