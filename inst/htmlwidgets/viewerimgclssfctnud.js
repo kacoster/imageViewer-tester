@@ -37,6 +37,7 @@ HTMLWidgets.widget({
                 function(mesg) {
                   console.log("Handler img_clssfctn_ud_fltr_button");
                   fetchServerData(x.message,x.componentID);
+                  resetSelectedImages();
                 }
             );
 

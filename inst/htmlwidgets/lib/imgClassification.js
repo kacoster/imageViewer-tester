@@ -84,6 +84,11 @@
       
   }
 
+  function resetSelectedImages()
+  {
+    imgClssfctnObj.selected_images.length = 0;
+  }
+
   function setColumnNumb(numb)
   {
     imgClssfctnObj.columnSize = numb;
