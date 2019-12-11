@@ -21,7 +21,7 @@ function loadFile(filename) {
       result = (xmlhttp.responseText).replace(/^\s*$[\n\r]{1,}/gm, '');
       return result;
     }
-    alert("Error in Reading Images ");
+    //alert("Error in Reading Images ");
     return result;
   }
 
@@ -36,7 +36,7 @@ function loadFile(filename) {
     }
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_10")
     {
-        
+
     }
     //str = str.substring(str.indexOf(":") + 1);
   }

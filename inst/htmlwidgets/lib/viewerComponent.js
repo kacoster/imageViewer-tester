@@ -95,7 +95,6 @@ class ViewerComponent {
     /** Not Yet Generic */
     handleExistance(params,src,id)
     {
-
         if(params.includes(src))
         {
             this.tempRemoved =  (params.splice(params.indexOf(src),1))[0];
