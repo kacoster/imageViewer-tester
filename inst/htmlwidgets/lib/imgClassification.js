@@ -88,6 +88,7 @@
   function resetSelectedImages()
   {
     imgClssfctnObj.selected_images.length = 0;
+    imgClssfctnObj.getCurrClckdImg("clssfctn_slctd_img","");
   }
 
   function setColumnNumb(numb)
