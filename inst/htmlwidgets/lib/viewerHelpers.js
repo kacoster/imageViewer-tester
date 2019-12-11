@@ -36,7 +36,7 @@ function loadFile(filename) {
     }
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_10")
     {
-
+        ct_vldt10_event(event);
     }
     //str = str.substring(str.indexOf(":") + 1);
   }
