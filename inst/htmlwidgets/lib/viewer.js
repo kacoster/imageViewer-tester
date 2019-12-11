@@ -8,6 +8,13 @@
     var nextPrev = "0";
     var clickStatus = "0";
     var selected_images_clone = [];
+    var find_flag = false;
+
+
+    function selectionFind(flag)
+    {
+      find_flag = flag;
+   }
 
     function objectOf(viewerType)
     {
@@ -1825,6 +1832,12 @@
               nextPrev = "0";
               return;
             }
+            if(find_flag === true)
+            {
+              console.log("I am hidding the image");
+              return this.hide();
+            }
+
             console.log("Return this.show()");
             this.index = index;
             return this.show();

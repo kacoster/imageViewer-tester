@@ -56,10 +56,16 @@
 
         console.log("isKeyPressed(event)");
         console.log("event.target.src : " + event.target.src);
+
         arrayClone(imgClssfctnObj.selected_images);
 
         if (event.shiftKey) {
+          
           console.log(" isKeyPressed : event.shiftKey");
+          if(imgClssfctnObj.selected_images.includes(event.target.src))
+          {
+            selectionFind(true);
+          }
           imgClssfctnObj.handleExistance(imgClssfctnObj.selected_images, event.target.src, event.target.id);
         } else {
           console.log(" isKeyPressed : " + event.click);
