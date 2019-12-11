@@ -104,6 +104,7 @@ class ViewerComponent {
             {
                 console.log(this.getTrimedSelectedImages().toString());
                 this.getCurrClckdImg("clssfctn_slctd_img",this.getTrimedSelectedImages().toString());
+                console.log("Trimmed Sel : " + this.getTrimedSelectedImages().toString());
             }else{
                 this.getCurrClckdImg("clssfctn_slctd_img","");
             }
@@ -113,6 +114,7 @@ class ViewerComponent {
             this.highliter(id);
             console.log(this.getTrimedSelectedImages().toString());
             this.getCurrClckdImg("clssfctn_slctd_img",this.getTrimedSelectedImages().toString());
+            console.log("Trimmed Sel : " + this.getTrimedSelectedImages().toString());
         }
     }
 
