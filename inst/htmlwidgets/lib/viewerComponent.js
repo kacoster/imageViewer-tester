@@ -326,6 +326,7 @@ class ViewerComponent {
    * @returns image view myFunction
    */
    callvjs(elementId) {   
+     console.log("callvjs : " + elementId);
     this.vjs(elementId);
     return;
   }
