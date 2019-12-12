@@ -12,7 +12,7 @@ var ct_vldt_img_trggr_tbl_vldtn_9 = new ViewerComponent(0,30,5,"ct_vldt_img_trgg
     ct_vldt_img_trggr_tbl_vldtn_9.columnSize = 5;
     ct_vldt_img_trggr_tbl_vldtn_9.imgNumb = 30;
     ct_vldt_img_trggr_tbl_vldtn_9.setCol();
-    objectOf("ct_vldt_img_trggr_tbl_vldtn_9");
+    //objectOf("ct_vldt_img_trggr_tbl_vldtn_9");
     ct_vldt_img_trggr_tbl_vldtn_9.callvjs(ct_vldt_img_trggr_tbl_vldtn_9.moduleId+"_divId");
   }
 
