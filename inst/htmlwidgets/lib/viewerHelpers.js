@@ -13,10 +13,10 @@ function fetchServerData(csvfile,moduleId)
         prepArrayvldtn_10(loadFile(csvfile));
     }
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_11"){
-        prepArrayvldtn_11(csvfile);
+        prepArrayvldtn_11(loadFile(csvfile));
     }
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_12"){
-        prepArrayvldtn_12(csvfile);
+        prepArrayvldtn_12(loadFile(csvfile));
     }
 }
 
