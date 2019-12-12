@@ -23,6 +23,3 @@ dependencies:
   version: 1.8.3
   src: htmlwidgets
   script: ./lib/main.js
-- name: reset
-  version: 1.3
-  src: htmlwidgets

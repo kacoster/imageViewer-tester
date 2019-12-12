@@ -6,12 +6,17 @@ function fetchServerData(csvfile,moduleId)
     {
         setImageArray(loadFile(csvfile));
     }
-    if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_9")
-    {
+    if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_9"){
         prepArray(loadFile(csvfile));
     }
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_10"){
         prepArrayvldtn_10(loadFile(csvfile));
+    }
+    if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_11"){
+        prepArrayvldtn_11(csvfile);
+    }
+    if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_12"){
+        prepArrayvldtn_12(csvfile);
     }
 }
 
@@ -41,7 +46,16 @@ function loadFile(filename) {
     {
         ct_vldt10_event(event);
     }
-    //str = str.substring(str.indexOf(":") + 1);
+    if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_11")
+    {
+        ct_vldt11_event(event); 
+    }
+    if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_12")
+    {
+        ct_vldt12_event(event);
+    }
+    
+
   }
 
   function viewy() {
