@@ -11,7 +11,7 @@ var ct_vldt_img_trggr_tbl_vldtn_11 = new ViewerComponent(0,30,5,"ct_vldt_img_trg
     ct_vldt_img_trggr_tbl_vldtn_11.columnSize = 5;
     ct_vldt_img_trggr_tbl_vldtn_11.imgNumb = 30;
     ct_vldt_img_trggr_tbl_vldtn_11.setCol();
-    objectOf("ct_vldt_img_trggr_tbl_vldtn_11");
+    //objectOf("ct_vldt_img_trggr_tbl_vldtn_11");
     ct_vldt_img_trggr_tbl_vldtn_11.callvjs(ct_vldt_img_trggr_tbl_vldtn_11.moduleId+"_divId");
   }
 
