@@ -27,6 +27,7 @@ class ViewerComponent {
     }
   
     readServerData(response) {
+      console.log("readServerData");
       // let response = this.loadFile(this.csvfile);
       if(response === null )
       {
@@ -35,6 +36,7 @@ class ViewerComponent {
       else{
         this.imgArray = response.split(',');
         this.imgArray.splice(0, 1);
+        console.log(this.imgArray);
         this.imgArray[0] = this.imgArray[0].replace("Source", "");
         this.imgArray[0] = this.imgArray[this.imgArray.length - 1] + this.imgArray[0];
         this.imgArray.splice(this.imgArray.length - 1, 1);
