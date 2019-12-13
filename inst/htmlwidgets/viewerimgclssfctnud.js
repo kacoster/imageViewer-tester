@@ -41,6 +41,14 @@ HTMLWidgets.widget({
                 }
             );
 
+            Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_srvr_button",
+                function(mesg) {
+                  //console.log("Handler img_clssfctn_ud_fltr_button");
+                  fetchServerData(x.message,x.componentID);
+                  resetSelectedImages();
+                }
+            );
+
             Shiny.addCustomMessageHandler("img_clssfctn_ud_sv_edt_button",
                 function(msg) {
                   //console.log("In Handler img_clssfctn_ud_sv_edt_button");
