@@ -18,7 +18,7 @@ HTMLWidgets.widget({
           
           Shiny.addCustomMessageHandler("ct_vldt_trggr_tbl_vldtn_9_button",
                 function(mesg) {
-                  console.log("Handler ct_vldt_trggr_tbl_vldtn_9_button");
+                  //console.log("Handler ct_vldt_trggr_tbl_vldtn_9_button");
                   fetchServerData(x.message,x.componentID);
                 }
             );

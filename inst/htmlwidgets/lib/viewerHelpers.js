@@ -57,16 +57,7 @@ function loadFile(filename) {
     
 
   }
-
-  function viewy() {
-        var viewer = new Viewer(document.getElementById('gal'), {
-            url: 'data-original',
-            title: function (image) {
-            return image.alt + ' (' + (this.index + 1) + '/' + this.length + ')';
-            },
-        });
-    }
-
+  
     function clcsfcnSave()
     {
         console.log("In clcsfcnSave()");

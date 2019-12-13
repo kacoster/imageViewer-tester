@@ -76,17 +76,10 @@ class ViewerComponent {
     /** Not Yet Generic */
     setCol(){
 
-     //let cls = $('#test').attr('class'); 
-     console.log("ul class Name : " + $("ul").attr("class"));
+     //console.log("ul class Name : " + $("ul").attr("class"));
         $('.pictures > li').css({
                 'width' : 'calc(100% /' + this.columnSize +')'
             });
-    }
-
-    /*** return the ul element class Name */
-    getULClass()
-    {
-
     }
 
     getCurrClckdImg(state, imgsrc)
@@ -328,7 +321,7 @@ class ViewerComponent {
    * @returns image view myFunction
    */
    callvjs(elementId) {   
-     console.log("callvjs : " + elementId);
+     //console.log("callvjs : " + elementId);
     this.vjs(elementId);
     return;
   }
