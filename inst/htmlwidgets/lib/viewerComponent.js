@@ -269,6 +269,7 @@ class ViewerComponent {
         let liId = i;
         let img = new Image();
         img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
+        console.log(this.imageExists(""+ img.src +""));
         img.alt = "Camera Trap";
         img.datamarked = 0;
         ul.innerHTML += '<li  ><img id="' + liId +"_"+this.moduleId+ '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '" alt="' + img.alt + '" /> </li>';
@@ -324,6 +325,17 @@ class ViewerComponent {
      //console.log("callvjs : " + elementId);
     this.vjs(elementId);
     return;
+  }
+
+  imageExists(image_url){
+
+    let http = new XMLHttpRequest();
+
+    http.open('HEAD', image_url, false);
+    http.send();
+
+    return http.status != 404;
+
   }
 
   /*isKeyPressed(event) {
