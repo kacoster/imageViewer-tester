@@ -1794,14 +1794,16 @@
           index = Number(index) || 0;
 
           if (!this.isShown) {
-
+            console.log("retriImagesStatus : " + retriImagesStatus);
             if (retriImagesStatus === "1"){
-              if(prevClicked === url)
+              retriImagesStatus="0";
+                return;
+              /*if(prevClicked === url)
               {
                 prevClicked="";
                 retriImagesStatus="0";
                 return;
-              }
+              }*/
             }
             /*if(retriImagesStatus === "1"){
               retriImagesStatus = "0";
