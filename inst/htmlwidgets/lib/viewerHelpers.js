@@ -7,6 +7,8 @@ function fetchServerData(csvfile,moduleId)
         setImageArray(loadFile(csvfile));
     }
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_9"){
+        console.log("fetchserverdata : ct_vldt_img_trggr_tbl_vldtn_9")
+
         prepArray(loadFile(csvfile));
     }
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_10"){
