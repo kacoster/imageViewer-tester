@@ -1634,6 +1634,7 @@
          * @returns {Viewer} this
          */
         show: function show() {
+          console.log("In show() line : " + 1637);
           var immediate = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
           var element = this.element,
               options = this.options;
@@ -1791,6 +1792,7 @@
               retriImagesStatus = "0";
               return;
             }*/
+            console.log("!this.isShown) line 1788");
             this.index = index;
             return this.show();
           }
