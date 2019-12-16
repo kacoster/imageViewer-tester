@@ -4,14 +4,7 @@
       @Copyright (C) 2019 | Panthera Corporation
      ***************************************************************************/
     var retriImagesStatus = "0";
-    var prevClicked = "";
-
- 
-    /*function retriveImages(status)
-    {
-      retriImagesStatus = status;
-    }*/
-
+  
     function pullSpecClicked(status)
     {
       retriImagesStatus = status;
@@ -1794,22 +1787,11 @@
           index = Number(index) || 0;
 
           if (!this.isShown) {
-            console.log("retriImagesStatus : " + retriImagesStatus);
+           
             if (retriImagesStatus === "1"){
               retriImagesStatus="0";
-                return;
-              /*if(prevClicked === url)
-              {
-                prevClicked="";
-                retriImagesStatus="0";
-                return;
-              }*/
-            }
-            /*if(retriImagesStatus === "1"){
-              retriImagesStatus = "0";
               return;
-            }*/
-            console.log("!this.isShown) line 1788");
+            }
             this.index = index;
             return this.show();
           }
