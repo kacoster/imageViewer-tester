@@ -4,11 +4,18 @@
       @Copyright (C) 2019 | Panthera Corporation
      ***************************************************************************/
     var retriImagesStatus = "0";
+    var prevClicked = "";
 
+ 
     /*function retriveImages(status)
     {
       retriImagesStatus = status;
     }*/
+
+    function pullSpecClicked(status)
+    {
+      retriImagesStatus = status;
+    }
     (function (global, factory) {
       typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
       typeof define === 'function' && define.amd ? define(factory) :
@@ -1788,6 +1795,14 @@
 
           if (!this.isShown) {
 
+            if (retriImagesStatus === "1"){
+              if(prevClicked === url)
+              {
+                prevClicked="";
+                retriImagesStatus="0";
+                return;
+              }
+            }
             /*if(retriImagesStatus === "1"){
               retriImagesStatus = "0";
               return;
@@ -1816,7 +1831,9 @@
           var image = document.createElement('img');
           image.src = url;
           image.alt = alt;
-          console.log("image.src : " + image.src);
+          //imgsrc = 
+          prevClicked = image.src;
+          console.log("image.src : " + url);
          
           if (isFunction(options.view)) {
             addListener(element, EVENT_VIEW, options.view, {
