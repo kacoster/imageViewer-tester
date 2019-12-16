@@ -1816,7 +1816,7 @@
           image.src = url;
           image.alt = alt;
           //imgsrc = 
-          prevClicked = image.src;
+          //prevClicked = image.src;
           console.log("image.src : " + url);
          
           if (isFunction(options.view)) {

@@ -11,9 +11,6 @@ HTMLWidgets.widget({
     return {
 
       renderValue: function(x) {
-           //console.log("ct_vldt_img_trggr_tbl_vldtn_12");
-           //console.log("x.message : " + x.message);
-           //console.log("x.componentID : " + x.componentID);
            
           Shiny.addCustomMessageHandler("ct_vldt_trggr_tbl_vldtn_12_pll_indvdl_button",
                 function(mesg) {
@@ -22,7 +19,6 @@ HTMLWidgets.widget({
                   fetchServerData(x.message,x.componentID);
                 }
             );
-
       },
 
       resize: function(width, height) {
