@@ -3,7 +3,12 @@
       @author Valentine Tawira
       @Copyright (C) 2019 | Panthera Corporation
      ***************************************************************************/
+    var retriImagesStatus = "0";
 
+    /*function retriveImages(status)
+    {
+      retriImagesStatus = status;
+    }*/
     (function (global, factory) {
       typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
       typeof define === 'function' && define.amd ? define(factory) :
@@ -1782,8 +1787,8 @@
 
           if (!this.isShown) {
 
-            /*if(nextPrev === "1"){
-              nextPrev = "0";
+            /*if(retriImagesStatus === "1"){
+              retriImagesStatus = "0";
               return;
             }*/
             this.index = index;
@@ -1809,7 +1814,8 @@
           var image = document.createElement('img');
           image.src = url;
           image.alt = alt;
-
+          console.log("image.src : " + image.src);
+         
           if (isFunction(options.view)) {
             addListener(element, EVENT_VIEW, options.view, {
               once: true
