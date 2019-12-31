@@ -13,8 +13,8 @@ class ViewerComponent {
         this.result = [];
         this.tempRemoved ="";
     }
-    
-   
+
+
     loadFile(filename) {
       let result = null;
       let xmlhttp = new XMLHttpRequest();
@@ -25,7 +25,7 @@ class ViewerComponent {
       }
       return result;
     }
-  
+
     readServerData(response) {
       //console.log("readServerData");
       // let response = this.loadFile(this.csvfile);
@@ -63,7 +63,7 @@ class ViewerComponent {
             'filter': 'alpha(opacity=40)'
         });
         $(".pictures > li").css("background-color", "yellow");
-          
+
     }
 
     removeHighlight(elementID)
@@ -150,7 +150,7 @@ class ViewerComponent {
               this.imgloop(this.displayImages(this.imgNumb, this.batnum));
               this.selected_images.length = 0;
               this.getCurrClckdImg("clssfctn_slctd_img","");
-    
+
           }else{
             Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               this.getBatchNumber() + " / " + this.getBatchNumber());
@@ -188,7 +188,7 @@ class ViewerComponent {
         let tempArray = [];
         for(i;i < this.selected_images.length;i++)
         {
-            let newSRC = selctdImgAry[i].substring(selctdImgAry[i].lastIndexOf("/") + 1, 
+            let newSRC = selctdImgAry[i].substring(selctdImgAry[i].lastIndexOf("/") + 1,
                 selctdImgAry[i].length );
             tempArray[i] = newSRC;
         }
@@ -200,7 +200,7 @@ class ViewerComponent {
         $('#' + this.moduleId + '').html("");
     }
 
-    // See if this indeed should var 
+    // See if this indeed should var
     vjs(elementID) {
         //console.log("vjs : " + elementID);
         var elementID = new Viewer(document.getElementById(elementID), {
@@ -217,7 +217,7 @@ class ViewerComponent {
         //console.log("getSelectedImages : " +  this.selected_images);
         return this.selected_images;
     }
-    
+
     getTrimedSelectedImages()
     {
         //console.log("getTrimedSelectedImages S I : " + this.getSelectedImages());
@@ -269,7 +269,7 @@ class ViewerComponent {
         let liId = i;
         let img = new Image();
         img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
-        console.log(this.imageExists(""+ img.src +""));
+        //console.log(this.imageExists(""+ img.src +""));
         img.alt = "Camera Trap";
         img.datamarked = 0;
         ul.innerHTML += '<li  ><img id="' + liId +"_"+this.moduleId+ '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '" alt="' + img.alt + '" /> </li>';
@@ -318,10 +318,10 @@ class ViewerComponent {
     }
 
     /**
-   * @description - indirect call to the vjs() function  
+   * @description - indirect call to the vjs() function
    * @returns image view myFunction
    */
-   callvjs(elementId) {   
+   callvjs(elementId) {
      //console.log("callvjs : " + elementId);
     this.vjs(elementId);
     return;
