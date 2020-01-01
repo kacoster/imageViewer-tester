@@ -261,7 +261,6 @@ class ViewerComponent {
     }
 
     imgloop(ar) {
-      console.log("In imgloop");
       //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
       //this.liWhiteBackground();
       //console.log("Module Id in imgloop " + this.moduleId);
@@ -270,12 +269,10 @@ class ViewerComponent {
         let liId = i;
         let img = new Image();
         img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
-        //console.log(img.src);
-
         //console.log(this.imageExists(""+ img.src +""));
         img.alt = "Camera Trap";
         img.datamarked = 0;
-        ul.innerHTML += '<li  ><img id="' + liId +"_"+this.moduleId+ '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + '" alt="' + img.alt + '" /> </li>';
+        ul.innerHTML += '<li  ><img id="' + liId +"_"+this.moduleId+ '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '" alt="' + img.alt + '" /> </li>';
         this.setCol();
       }
       //$('#'+this.moduleId +'').html($(ul).attr('onmousedown="' + this.isKeyPressed(event) +'"' ));

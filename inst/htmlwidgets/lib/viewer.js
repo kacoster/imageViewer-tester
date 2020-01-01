@@ -32,12 +32,6 @@
         nextPrev = status;
     }
 
-    function ImageError(element)
-    {
-      console.log("In ImageError");
-      $(element).hide();
-    }
-
     function getCurrClckdImg(state, imgsrc)
     {
       console.log("In getCurrClckdImg");
