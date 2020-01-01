@@ -269,6 +269,7 @@ class ViewerComponent {
         let liId = i;
         let img = new Image();
         img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
+        console.log(img.src);
         $.ajax({
                 url:img.src,
                 type:'HEAD',
