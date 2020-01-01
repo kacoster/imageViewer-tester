@@ -34,6 +34,7 @@
 
     function ImageError(element)
     {
+      console.log("In ImageError");
       $(element).hide();
     }
 
