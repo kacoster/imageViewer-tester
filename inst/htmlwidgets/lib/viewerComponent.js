@@ -267,7 +267,7 @@ class ViewerComponent {
       function brokenImges(liId)
       {
         console.log("brokenImges");
-          $('#'+liId).hide();
+          //$('#'+liId).hide();
       }
       let ul = document.getElementById(this.moduleId);
       for (let i = 0; i < ar.length; i++) {
