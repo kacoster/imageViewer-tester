@@ -32,6 +32,11 @@
         nextPrev = status;
     }
 
+    function ImageError(element)
+    {
+      $(element).hide();
+    }
+
     function getCurrClckdImg(state, imgsrc)
     {
       console.log("In getCurrClckdImg");
@@ -1903,7 +1908,7 @@
              console.log(" Which Viewer : imgIdentification_rf2");
              getCurrClckdImg("spcs_idntfctn_id_rf_2_vw_curr_img",
              url.substring(url.lastIndexOf("/") + 1,url.length ));
-             
+
           }
 
           if (isFunction(options.view)) {
