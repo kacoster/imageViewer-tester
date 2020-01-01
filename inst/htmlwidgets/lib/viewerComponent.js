@@ -277,8 +277,8 @@ class ViewerComponent {
         //console.log(this.imageExists(""+ img.src +""));
         img.alt = "Camera Trap";
         img.datamarked = 0;
-        ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '" alt="' + img.alt + '" /> </li>';
-        document.getElementById(liId).addEventListener("error", brokenImges(liId));
+        ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.style.display='none'" +'"  alt="' + img.alt + '" /> </li>';
+        //document.getElementById(liId).addEventListener("error", brokenImges(liId));
         this.setCol();
       }
       //$('#'+this.moduleId +'').html($(ul).attr('onmousedown="' + this.isKeyPressed(event) +'"' ));
