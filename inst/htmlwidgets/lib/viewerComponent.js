@@ -275,7 +275,9 @@ class ViewerComponent {
             req.open('HEAD', url, false);
             req.send();
             if(req.status==200)
-            {}
+            {
+              console.log("Found image : " + url );
+            }
             else {
               count++;
             }
