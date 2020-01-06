@@ -284,7 +284,7 @@ class ViewerComponent {
     }
 
     imgloop(ar) {
-      console.log("In imgloop");
+      console.log("In imgloop()" + this.loadFile(ar));
       console.log("Check returned count : " + this.loadFile(ar) );
       if(this.loadFile(ar) === ar.length )
       {
