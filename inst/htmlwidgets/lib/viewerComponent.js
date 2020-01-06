@@ -14,16 +14,6 @@ class ViewerComponent {
         this.tempRemoved ="";
     }
 
-    loadFile(filename) {
-      let result = null;
-      let xmlhttp = new XMLHttpRequest();
-      xmlhttp.open("GET", filename, false);
-      xmlhttp.send();
-      if (xmlhttp.status==200) {
-        result = (xmlhttp.responseText).replace(/^\s*$[\n\r]{1,}/gm, '');
-      }
-      return result;
-    }
 
     readServerData(response) {
       //console.log("readServerData");
@@ -259,6 +249,23 @@ class ViewerComponent {
       }
     }
 
+
+    checkImageExistance(filename) {
+      console.log("checkImageExistance");
+      //let result = null;
+      let xmlhttp = new XMLHttpRequest();
+      xmlhttp.open("GET", filename, false);
+      xmlhttp.send();
+      if (xmlhttp.status==200) {
+        console.log("Image Found");
+        //result = (xmlhttp.responseText).replace(/^\s*$[\n\r]{1,}/gm, '');
+      }
+      else{
+        console.log("Image Not Found");
+      }
+      //return result;
+    }
+
     imgloop(ar) {
       //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
       //this.liWhiteBackground();
@@ -274,6 +281,7 @@ class ViewerComponent {
         let img = new Image();
         img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
         //console.log(this.imageExists(""+ img.src +""));
+        this.checkImageExistance(img.src)
         img.alt = "Camera Trap";
         img.datamarked = 0;
         ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.style.display='none'" +'"  alt="' + img.alt + '" /> </li>';

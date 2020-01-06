@@ -23,6 +23,7 @@ function fetchServerData(csvfile,moduleId)
 }
 
 function loadFile(filename) {
+    console.log("In loadFile");
     let result = null;
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET", filename, false);
