@@ -269,6 +269,7 @@ class ViewerComponent {
         let count = 0;
         arry.forEach(element => {
           if(element){
+            console.log("element : " + element);
             let req = new XMLHttpRequest();
             req.open('HEAD', element, false);
             req.send();
