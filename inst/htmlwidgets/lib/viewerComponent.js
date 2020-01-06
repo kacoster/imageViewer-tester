@@ -270,8 +270,9 @@ class ViewerComponent {
         for (let i = 0; i < arry.length; i++)
         {
             console.log("element : " + arry[i]);
+            let url = 'http://localhost/'+arry[i];
             let req = new XMLHttpRequest();
-            req.open('HEAD', arry[i], false);
+            req.open('HEAD', url, false);
             req.send();
             if(req.status==200)
             {}
