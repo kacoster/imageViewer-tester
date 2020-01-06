@@ -283,13 +283,12 @@ class ViewerComponent {
         console.log("brokenImges");
           //$('#'+liId).hide();
       }*/
-      console.log("ar.length : " + ar.length);
+      /*console.log("ar.length : " + ar.length);
       if(this.checkImageExistance(ar) == ar.length)
       {
         alert("No Images Found");
-      }
-      else{
-
+      }*/
+     // else{
         let ul = document.getElementById(this.moduleId);
         for (let i = 0; i < ar.length; i++) {
           let liId = i + this.moduleId;
@@ -302,8 +301,8 @@ class ViewerComponent {
           ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.style.display='none'" +'"  alt="' + img.alt + '" /> </li>';
           //document.getElementById(liId).addEventListener("error", brokenImges(liId));
           this.setCol();
-        }
-      }
+       }
+     // }
       
       //$('#'+this.moduleId +'').html($(ul).attr('onmousedown="' + this.isKeyPressed(event) +'"' ));
     }
