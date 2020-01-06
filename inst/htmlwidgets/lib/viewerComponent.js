@@ -256,7 +256,7 @@ class ViewerComponent {
 
       for(let i= 0; i< arry.length ; i++)
       {
-        url = ((arry[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
+        let url = ((arry[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
         let xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET", url, false);
         xmlhttp.send();
