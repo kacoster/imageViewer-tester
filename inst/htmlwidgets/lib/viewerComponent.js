@@ -265,6 +265,7 @@ class ViewerComponent {
     
     
      loadFile(arry) {
+       console.log("loadFile");
         let count = 0;
         arry.forEach(element => {
           if(element){
