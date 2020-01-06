@@ -267,21 +267,19 @@ class ViewerComponent {
      loadFile(arry) {
        console.log("loadFile");
         let count = 0;
-        arry.forEach(element => {
-          if(element){
-            console.log("element : " + element);
+        for (let i = 0; i < arry.length; i++)
+        {
+            console.log("element : " + arry[i]);
             let req = new XMLHttpRequest();
-            req.open('HEAD', element, false);
+            req.open('HEAD', arry[i], false);
             req.send();
             if(req.status==200)
-            {
-              
+            {}
+            else {
+              count++;
             }
-          } else {
-            count++;
-          }
-        });
-        return count;
+        }
+      return count; 
     }
 
     imgloop(ar) {
