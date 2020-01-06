@@ -250,19 +250,26 @@ class ViewerComponent {
     }
 
 
-    checkImageExistance(filename) {
+    checkImageExistance(arry) {
+      let count = 0;
       console.log("checkImageExistance");
-      //let result = null;
-      let xmlhttp = new XMLHttpRequest();
-      xmlhttp.open("GET", filename, false);
-      xmlhttp.send();
-      if (xmlhttp.status==200) {
-        console.log("Image Found");
-        //result = (xmlhttp.responseText).replace(/^\s*$[\n\r]{1,}/gm, '');
+
+      for(let i= 0; i< arry.length ; i++)
+      {
+        url = ((arry[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
+        let xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", url, false);
+        xmlhttp.send();
+        if (xmlhttp.status==200) {
+          console.log("Image Found");
+        }
+        else{
+          console.log("Image Not Found");
+          count++;
+        }
+        return count; 
       }
-      else{
-        console.log("Image Not Found");
-      }
+      
       //return result;
     }
 
@@ -270,24 +277,32 @@ class ViewerComponent {
       //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
       //this.liWhiteBackground();
       //console.log("Module Id in imgloop " + this.moduleId);
-      function brokenImges(liId)
+      /*function brokenImges(liId)
       {
         console.log("brokenImges");
           //$('#'+liId).hide();
+      }*/
+      if(this.checkImageExistance(ar) == ar.length)
+      {
+        alert("No Images Found");
       }
-      let ul = document.getElementById(this.moduleId);
-      for (let i = 0; i < ar.length; i++) {
-        let liId = i + this.moduleId;
-        let img = new Image();
-        img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
-        //console.log(this.imageExists(""+ img.src +""));
-        this.checkImageExistance(img.src)
-        img.alt = "Camera Trap";
-        img.datamarked = 0;
-        ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.style.display='none'" +'"  alt="' + img.alt + '" /> </li>';
-        //document.getElementById(liId).addEventListener("error", brokenImges(liId));
-        this.setCol();
+      else{
+
+        let ul = document.getElementById(this.moduleId);
+        for (let i = 0; i < ar.length; i++) {
+          let liId = i + this.moduleId;
+          let img = new Image();
+          img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
+          //console.log(this.imageExists(""+ img.src +""));
+          //this.checkImageExistance(img.src)
+          img.alt = "Camera Trap";
+          img.datamarked = 0;
+          ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.style.display='none'" +'"  alt="' + img.alt + '" /> </li>';
+          //document.getElementById(liId).addEventListener("error", brokenImges(liId));
+          this.setCol();
+        }
       }
+      
       //$('#'+this.moduleId +'').html($(ul).attr('onmousedown="' + this.isKeyPressed(event) +'"' ));
     }
 
