@@ -268,6 +268,7 @@ class ViewerComponent {
           count++;
         } 
       }
+      console.log("count : " + count);
       return count; 
       
       //return result;
@@ -282,6 +283,7 @@ class ViewerComponent {
         console.log("brokenImges");
           //$('#'+liId).hide();
       }*/
+      console.log("ar.length : " + ar.length);
       if(this.checkImageExistance(ar) == ar.length)
       {
         alert("No Images Found");
