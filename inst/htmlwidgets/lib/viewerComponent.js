@@ -285,12 +285,12 @@ class ViewerComponent {
 
     imgloop(ar) {
       console.log("In imgloop");
+      console.log("Check returned count : " + this.loadFile(ar) );
       if(this.loadFile(ar) === ar.length )
       {
           alert("Failed To Load Images");
       }
       else{
-
         let ul = document.getElementById(this.moduleId);
         for (let i = 0; i < ar.length; i++) {
           let liId = i + this.moduleId;
