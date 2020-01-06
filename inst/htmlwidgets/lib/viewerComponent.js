@@ -284,7 +284,7 @@ class ViewerComponent {
 
     imgloop(ar) {
       console.log("In imgloop");
-      if(loadFile(ar) === ar.length )
+      if(this.loadFile(ar) === ar.length )
       {
           alert("Failed To Load Images");
       }
