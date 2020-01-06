@@ -262,19 +262,48 @@ class ViewerComponent {
       }
     }
 
-    loadFile(filename) {
-      console.log("In loadFile");
-      let result = null;
-      let xmlhttp = new XMLHttpRequest();
-      xmlhttp.open("GET", filename, false);
-      xmlhttp.send();
-      if (xmlhttp.status==200) {
-        result = (xmlhttp.responseText).replace(/^\s*$[\n\r]{1,}/gm, '');
-      }
-      return result;
+    
+    
+     loadFile(arry) {
+        let count = 0;
+        arry.forEach(element => {
+          if(element){
+            let req = new XMLHttpRequest();
+            req.open('HEAD', element, false);
+            req.send();
+            if(req.status==200)
+            {
+              
+            }
+          } else {
+            count++;
+          }
+        });
+        return count;
     }
 
     imgloop(ar) {
+
+      if(loadFile(ar) === ar.length )
+      {
+          alert("Failed To Load Images");
+      }
+      else{
+
+        let ul = document.getElementById(this.moduleId);
+        for (let i = 0; i < ar.length; i++) {
+          let liId = i + this.moduleId;
+          let img = new Image();
+          img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
+          //console.log(this.imageExists(""+ img.src +""));
+          img.alt = "Camera Trap";
+          img.datamarked = 0;
+          ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.style.display='none'" +'"  alt="' + img.alt + '" /> </li>';
+          //document.getElementById(liId).addEventListener("error", brokenImges(liId));
+          this.setCol();
+        }
+
+      }
       //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
       //this.liWhiteBackground();
       //console.log("Module Id in imgloop " + this.moduleId);
@@ -283,18 +312,7 @@ class ViewerComponent {
         console.log("brokenImges");
           //$('#'+liId).hide();
       }*/
-      let ul = document.getElementById(this.moduleId);
-      for (let i = 0; i < ar.length; i++) {
-        let liId = i + this.moduleId;
-        let img = new Image();
-        img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
-        //console.log(this.imageExists(""+ img.src +""));
-        img.alt = "Camera Trap";
-        img.datamarked = 0;
-        ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.style.display='none'" +'"  alt="' + img.alt + '" /> </li>';
-        //document.getElementById(liId).addEventListener("error", brokenImges(liId));
-        this.setCol();
-      }
+      
       //$('#'+this.moduleId +'').html($(ul).attr('onmousedown="' + this.isKeyPressed(event) +'"' ));
     }
 
