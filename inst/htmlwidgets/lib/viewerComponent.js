@@ -14,17 +14,19 @@ class ViewerComponent {
         this.tempRemoved ="";
     }
 
+  /*  fileExists(url)
+    {
+        if(url){
+            var req = new XMLHttpRequest();
+            req.open('GET', url, false);
+            req.send();
+            return req.status==200;
+        } else {
+            return false;
+        }
+    }*/
 
-    loadFile(filename) {
-      let result = null;
-      let xmlhttp = new XMLHttpRequest();
-      xmlhttp.open("GET", filename, false);
-      xmlhttp.send();
-      if (xmlhttp.status==200) {
-        result = (xmlhttp.responseText).replace(/^\s*$[\n\r]{1,}/gm, '');
-      }
-      return result;
-    }
+  
 
     readServerData(response) {
       //console.log("readServerData");
@@ -260,15 +262,27 @@ class ViewerComponent {
       }
     }
 
+    loadFile(filename) {
+      console.log("In loadFile");
+      let result = null;
+      let xmlhttp = new XMLHttpRequest();
+      xmlhttp.open("GET", filename, false);
+      xmlhttp.send();
+      if (xmlhttp.status==200) {
+        result = (xmlhttp.responseText).replace(/^\s*$[\n\r]{1,}/gm, '');
+      }
+      return result;
+    }
+
     imgloop(ar) {
       //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
       //this.liWhiteBackground();
       //console.log("Module Id in imgloop " + this.moduleId);
-      function brokenImges(liId)
+      /*function brokenImges(liId)
       {
         console.log("brokenImges");
           //$('#'+liId).hide();
-      }
+      }*/
       let ul = document.getElementById(this.moduleId);
       for (let i = 0; i < ar.length; i++) {
         let liId = i + this.moduleId;
