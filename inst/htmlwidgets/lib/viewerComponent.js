@@ -266,9 +266,9 @@ class ViewerComponent {
         else{
           console.log("Image Not Found");
           count++;
-        }
-        return count; 
+        } 
       }
+      return count; 
       
       //return result;
     }
