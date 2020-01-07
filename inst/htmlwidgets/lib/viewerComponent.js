@@ -287,14 +287,14 @@ class ViewerComponent {
       if(this.checkImageExistance(ar) == ar.length)
       {
          Shiny.setInputValue('no_srv_imgs', 'no imgs')
-         Shiny.setInputValue('no_srv_imgs', null)
+         
         // Shiny.setInputValue('mssng_srv_imgs', null);
          //alert("No Images Found");
       }
       else if(this.checkImageExistance(ar) > 0 || this.checkImageExistance(ar) < ar.length)
       {
         Shiny.setInputValue('mssng_srv_imgs', 'missing imgs');
-        Shiny.setInputValue('mssng_srv_imgs', null);
+        
         let ul = document.getElementById(this.moduleId);
         for (let i = 0; i < ar.length; i++) {
           let liId = i + this.moduleId;
@@ -325,7 +325,8 @@ class ViewerComponent {
           this.setCol();
         }
       }
-      
+      Shiny.setInputValue('no_srv_imgs', null);
+      Shiny.setInputValue('mssng_srv_imgs', null);
       //$('#'+this.moduleId +'').html($(ul).attr('onmousedown="' + this.isKeyPressed(event) +'"' ));
     }
 
