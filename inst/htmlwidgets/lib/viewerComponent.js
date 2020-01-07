@@ -308,6 +308,8 @@ class ViewerComponent {
 
       }
      else{
+        Shiny.setInputValue('no_srv_imgs', null);
+        Shiny.setInputValue('mssng_srv_imgs', null);
         let ul = document.getElementById(this.moduleId);
         for (let i = 0; i < ar.length; i++) {
           let liId = i + this.moduleId;
