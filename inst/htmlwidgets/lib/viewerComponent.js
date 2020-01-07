@@ -287,25 +287,22 @@ class ViewerComponent {
       if(this.checkImageExistance(ar) == ar.length)
       {
          Shiny.setInputValue('no_srv_imgs', 'no imgs')
-         
-        // Shiny.setInputValue('mssng_srv_imgs', null);
-         //alert("No Images Found");
+         Shiny.setInputValue('mssng_srv_imgs', null);
+
       }
-      else if(this.checkImageExistance(ar) > 0 || this.checkImageExistance(ar) < ar.length)
+      else if(this.checkImageExistance(ar) > 0 && this.checkImageExistance(ar) < ar.length)
       {
+        Shiny.setInputValue('no_srv_imgs', null);
         Shiny.setInputValue('mssng_srv_imgs', 'missing imgs');
-        
+      
         let ul = document.getElementById(this.moduleId);
         for (let i = 0; i < ar.length; i++) {
           let liId = i + this.moduleId;
           let img = new Image();
           img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
-          //console.log(this.imageExists(""+ img.src +""));
-          //this.checkImageExistance(img.src)
           img.alt = "Camera Trap";
           img.datamarked = 0;
           ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.style.display='none'" +'"  alt="' + img.alt + '" /> </li>';
-          //document.getElementById(liId).addEventListener("error", brokenImges(liId));
           this.setCol();
        }
 
