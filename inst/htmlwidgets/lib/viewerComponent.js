@@ -325,8 +325,8 @@ class ViewerComponent {
           this.setCol();
         }
       }
-      Shiny.setInputValue('no_srv_imgs', null);
-      Shiny.setInputValue('mssng_srv_imgs', null);
+      //Shiny.setInputValue('no_srv_imgs', null);
+      //Shiny.setInputValue('mssng_srv_imgs', null);
       //$('#'+this.moduleId +'').html($(ul).attr('onmousedown="' + this.isKeyPressed(event) +'"' ));
     }
 
