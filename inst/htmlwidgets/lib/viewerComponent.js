@@ -275,28 +275,25 @@ class ViewerComponent {
     }
 
     imgloop(ar) {
-      //$(".pictures > li").css("width", "calc(100% / " + columnSize + ")");
-      //this.liWhiteBackground();
-      //console.log("Module Id in imgloop " + this.moduleId);
-      /*function brokenImges(liId)
-      {
-        console.log("brokenImges");
-          //$('#'+liId).hide();
-      }*/
-      
+    
       console.log("ar.length : " + ar.length);
       if(this.checkImageExistance(ar) == ar.length)
       {
-         Shiny.setInputValue('no_srv_imgs', 'no imgs')
-         //Shiny.setInputValue('mssng_srv_imgs', null);
+        if(this.moduleId === "img_clssfctn_ud"){
+          Shiny.setInputValue('no_srv_imgs', 'no imgs')
+          Shiny.setInputValue('mssng_srv_imgs', null);
+        }
+         
       }
       else if(this.checkImageExistance(ar) > 0 && this.checkImageExistance(ar) < ar.length)
       {
+        if(this.moduleId === "img_clssfctn_ud"){
           Shiny.setInputValue('mssng_srv_imgs', 'missing imgs');
-          //Shiny.setInputValue('no_srv_imgs', null);
-        
-          let ul = document.getElementById(this.moduleId);
-          for (let i = 0; i < ar.length; i++) {
+          Shiny.setInputValue('no_srv_imgs', null);
+        }
+  
+        let ul = document.getElementById(this.moduleId);
+        for (let i = 0; i < ar.length; i++) {
             let liId = i + this.moduleId;
             let img = new Image();
             img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
@@ -304,13 +301,17 @@ class ViewerComponent {
             img.datamarked = 0;
             ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.style.display='none'" +'"  alt="' + img.alt + '" /> </li>';
             this.setCol();
-          }
+        }
       }
      else{
-          //Shiny.setInputValue('no_srv_imgs', null);
-          //Shiny.setInputValue('mssng_srv_imgs', null);
-          let ul = document.getElementById(this.moduleId);
-          for (let i = 0; i < ar.length; i++) {
+
+        if(this.moduleId === "img_clssfctn_ud"){
+          Shiny.setInputValue('no_srv_imgs', null);
+          Shiny.setInputValue('mssng_srv_imgs', null);
+        }
+            
+        let ul = document.getElementById(this.moduleId);
+        for (let i = 0; i < ar.length; i++) {
             let liId = i + this.moduleId;
             let img = new Image();
             img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
@@ -318,7 +319,7 @@ class ViewerComponent {
             img.datamarked = 0;
             ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.style.display='none'" +'"  alt="' + img.alt + '" /> </li>';
             this.setCol();
-          }
+        }
       }
     }
 
@@ -328,13 +329,6 @@ class ViewerComponent {
       $('.'+ element ).css("margin", 0);
       $('.'+ element ).css("max-width", "500rem");
       $('.'+ element ).css("padding", 0);
-
-      /*$('.'+ element ).css({
-        'list-style' : 'none',
-        'margin' : '0',
-        'max-width' : '500rem',
-        'padding' : ' 0'
-      });*/
 
       $('.'+ element + '> li').css("border", "2px solid white");
       $('.'+ element + '> li').css("float", "left");
