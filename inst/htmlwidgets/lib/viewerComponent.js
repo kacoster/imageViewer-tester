@@ -283,20 +283,22 @@ class ViewerComponent {
         console.log("brokenImges");
           //$('#'+liId).hide();
       }*/
+      let resetFlag = false;
       console.log("ar.length : " + ar.length);
       if(this.checkImageExistance(ar) == ar.length)
       {
+        resetFlag = true;
+        //Shiny.setInputValue('mssng_srv_imgs', null);
          Shiny.setInputValue('no_srv_imgs', 'no imgs')
-         Shiny.setInputValue('mssng_srv_imgs', null);
-         Shiny.setInputValue('no_srv_imgs', null)
+        // Shiny.setInputValue('no_srv_imgs', null)
 
       }
       else if(this.checkImageExistance(ar) > 0 && this.checkImageExistance(ar) < ar.length)
       {
-        
+        resetFlag = true;
         Shiny.setInputValue('mssng_srv_imgs', 'missing imgs');
-        Shiny.setInputValue('no_srv_imgs', null);
-        Shiny.setInputValue('mssng_srv_imgs', null);
+       // Shiny.setInputValue('no_srv_imgs', null);
+        // Shiny.setInputValue('mssng_srv_imgs', null);
       
         let ul = document.getElementById(this.moduleId);
         for (let i = 0; i < ar.length; i++) {
@@ -327,6 +329,13 @@ class ViewerComponent {
           this.setCol();
         }
       }
+       
+      if(resetFlag == true)
+      {
+        Shiny.setInputValue('no_srv_imgs', null);
+        Shiny.setInputValue('mssng_srv_imgs', null);
+      }
+
       //Shiny.setInputValue('no_srv_imgs', null);
       //Shiny.setInputValue('mssng_srv_imgs', null);
       //$('#'+this.moduleId +'').html($(ul).attr('onmousedown="' + this.isKeyPressed(event) +'"' ));
