@@ -29,7 +29,7 @@ class ViewerComponent {
         this.imgArray[0] = this.imgArray[0].replace("Source", "");
         this.imgArray[0] = this.imgArray[this.imgArray.length - 1] + this.imgArray[0];
         this.imgArray.splice(this.imgArray.length - 1, 1);
-        console.log(this.imgArray);
+        //console.log(this.imgArray);
         if(this.moduleId === "img_clssfctn_ud")
         {
           Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
@@ -97,7 +97,7 @@ class ViewerComponent {
             this.highliter(id);
             //console.log(this.getTrimedSelectedImages().toString());
             this.getCurrClckdImg("clssfctn_slctd_img",this.getTrimedSelectedImages().toString());
-            console.log("Trimmed Sel : " + this.getTrimedSelectedImages().toString());
+            //console.log("Trimmed Sel : " + this.getTrimedSelectedImages().toString());
         }
     }
 
@@ -128,7 +128,7 @@ class ViewerComponent {
     }
     // We need a function that maps to diff modules
     next() {
-        console.log("Next Clicked");
+       // console.log("Next Clicked");
         nextPrevClicked("1");
 
         if(this.batnum < this.getBatchNumber()-1){
@@ -185,7 +185,7 @@ class ViewerComponent {
     }
 
     clearImages() {
-        console.log("In clearImages() " + this.moduleId);
+        //console.log("In clearImages() " + this.moduleId);
         $('#' + this.moduleId + '').html("");
     }
 
@@ -252,7 +252,7 @@ class ViewerComponent {
 
     checkImageExistance(arry) {
       let count = 0;
-      console.log("checkImageExistance");
+      //console.log("checkImageExistance");
 
       for(let i= 0; i< arry.length ; i++)
       {
@@ -261,14 +261,14 @@ class ViewerComponent {
         xmlhttp.open("GET", url, false);
         xmlhttp.send();
         if (xmlhttp.status==200) {
-          console.log("Image Found");
+          ///console.log("Image Found");
         }
         else{
-          console.log("Image Not Found");
+         // console.log("Image Not Found");
           count++;
         } 
       }
-      console.log("count : " + count);
+      //console.log("count : " + count);
       return count; 
       
       //return result;
@@ -276,7 +276,7 @@ class ViewerComponent {
 
     imgloop(ar) {
     
-      console.log("ar.length : " + ar.length);
+      //console.log("ar.length : " + ar.length);
       if(this.checkImageExistance(ar) == ar.length)
       {
         if(this.moduleId === "img_clssfctn_ud"){
@@ -299,7 +299,8 @@ class ViewerComponent {
             img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
             img.alt = "Camera Trap";
             img.datamarked = 0;
-            ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.style.display='none'" +'"  alt="' + img.alt + '" /> </li>';
+            ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.src='PantheraIDS_image_not_found_2.jpg'" +'"  alt="' + img.alt + '" /> </li>';
+            //ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.style.display='none'" +'"  alt="' + img.alt + '" /> </li>';
             this.setCol();
         }
       }
