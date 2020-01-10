@@ -289,7 +289,7 @@ class ViewerComponent {
     }
 
     imgloop(ar) {
-      rthis. placeHolder();
+      this. placeHolder();
       console.log("imageViewer-tester" );
       //console.log("ar.length : " + ar.length);
       if(this.checkImageExistance(ar) == ar.length)
