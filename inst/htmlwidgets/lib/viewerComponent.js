@@ -249,20 +249,19 @@ class ViewerComponent {
       }
     }
 
-    testPlaceHolder()
+    placeHolder()
     {
       let xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", url, false);
+        xmlhttp.open("/srv/shiny-server/www/PantheraIDS_image_not_found_2.jpg", url, false);
         xmlhttp.send();
         if (xmlhttp.status==200) {
-          ///console.log("Image Found");
+          console.log("P Image Found");
         }
         else{
-         // console.log("Image Not Found");
-          count++;
+          console.log("P Image Not Found");
+          //count++;
         } 
     }
-
 
     checkImageExistance(arry) {
       let count = 0;
@@ -272,14 +271,14 @@ class ViewerComponent {
       {
         let url = ((arry[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
         let xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("/srv/shiny-server/www/PantheraIDS_image_not_found_2.jpg", url, false);
+        xmlhttp.open("GET", url, false);
         xmlhttp.send();
         if (xmlhttp.status==200) {
-          console.log("Place Holder Image Found");
+          ///console.log("Image Found");
         }
         else{
-         console.log("Place Holder Image Not Found");
-          //count++;
+         // console.log("Image Not Found");
+          count++;
         } 
       }
       //console.log("count : " + count);
@@ -289,10 +288,9 @@ class ViewerComponent {
     }
 
     imgloop(ar) {
-
-      this.checkImageExistance();
     
-      console.log("imageViewer-tester: ");
+      this.placeHolder();
+      //console.log("ar.length : " + ar.length);
       if(this.checkImageExistance(ar) == ar.length)
       {
         if(this.moduleId === "img_clssfctn_ud"){
