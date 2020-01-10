@@ -252,13 +252,14 @@ class ViewerComponent {
     placeHolder()
     {
       let xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("/srv/shiny-server/www/PantheraIDS_image_not_found_2.jpg", url, false);
+      let url = '/srv/shiny-server/www/PantheraIDS_image_not_found_2.jpg';
+        xmlhttp.open("GET", url, false);
         xmlhttp.send();
         if (xmlhttp.status==200) {
           console.log("P Image Found");
         }
         else{
-          console.log("P Image Not Found");
+         console.log(" P Image Not Found");
           //count++;
         } 
     }
@@ -288,9 +289,9 @@ class ViewerComponent {
     }
 
     imgloop(ar) {
+      rthis. placeHolder();
       console.log("imageViewer-tester" );
-      this.placeHolder();
-      
+      //console.log("ar.length : " + ar.length);
       if(this.checkImageExistance(ar) == ar.length)
       {
         if(this.moduleId === "img_clssfctn_ud"){
