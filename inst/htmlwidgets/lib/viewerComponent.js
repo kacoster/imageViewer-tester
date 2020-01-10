@@ -288,9 +288,9 @@ class ViewerComponent {
     }
 
     imgloop(ar) {
-    
+      console.log("imageViewer-tester" );
       this.placeHolder();
-      //console.log("ar.length : " + ar.length);
+      
       if(this.checkImageExistance(ar) == ar.length)
       {
         if(this.moduleId === "img_clssfctn_ud"){
