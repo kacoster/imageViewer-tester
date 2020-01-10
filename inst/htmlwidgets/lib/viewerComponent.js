@@ -252,7 +252,7 @@ class ViewerComponent {
     placeHolder()
     {
       let xmlhttp = new XMLHttpRequest();
-      let url = '/srv/shiny-server/www/PantheraIDS_image_not_found_2.jpg';
+      let url = 'PantheraIDS_image_not_found_2.jpg';
         xmlhttp.open("GET", url, false);
         xmlhttp.send();
         if (xmlhttp.status==200) {
@@ -314,7 +314,7 @@ class ViewerComponent {
             img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
             img.alt = "Camera Trap";
             img.datamarked = 0;
-            ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.src='/srv/shiny-server/www/PantheraIDS_image_not_found_2.jpg'" +'"  alt="' + img.alt + '" /> </li>';
+            ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.src='PantheraIDS_image_not_found_2.jpg'" +'"  alt="' + img.alt + '" /> </li>';
             //ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.style.display='none'" +'"  alt="' + img.alt + '" /> </li>';
             this.setCol();
         }
