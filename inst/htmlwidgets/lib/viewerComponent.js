@@ -291,7 +291,7 @@ class ViewerComponent {
 
     imgloop(ar) {
       this. placeHolder();
-      console.log("imageViewer-tester" );
+      console.log("imageViewer-tester : " );
       //console.log("ar.length : " + ar.length);
       if(this.checkImageExistance(ar) == ar.length)
       {
@@ -315,7 +315,7 @@ class ViewerComponent {
             img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
             img.alt = "Camera Trap";
             img.datamarked = 0;
-            ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "his.onerror=null;this.src='/srv/shiny-server/www/PantheraIDS_image_not_found_2.jpg'" +'"  alt="' + img.alt + '" /> </li>';
+            ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.onerror=null;this.src='/srv/shiny-server/www/PantheraIDS_image_not_found_2.jpg'" +'"  alt="' + img.alt + '" /> </li>';
             //ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.style.display='none'" +'"  alt="' + img.alt + '" /> </li>';
             this.setCol();
         }
