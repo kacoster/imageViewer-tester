@@ -257,6 +257,7 @@ class ViewerComponent {
         xmlhttp.send();
         if (xmlhttp.status==200) {
           console.log("P Image Found");
+      
         }
         else{
          console.log(" P Image Not Found");
@@ -314,7 +315,7 @@ class ViewerComponent {
             img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
             img.alt = "Camera Trap";
             img.datamarked = 0;
-            ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.src='PantheraIDS_image_not_found_2.jpg'" +'"  alt="' + img.alt + '" /> </li>';
+            ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "his.onerror=null;this.src='PantheraIDS_image_not_found_2.jpg'" +'"  alt="' + img.alt + '" /> </li>';
             //ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.style.display='none'" +'"  alt="' + img.alt + '" /> </li>';
             this.setCol();
         }
