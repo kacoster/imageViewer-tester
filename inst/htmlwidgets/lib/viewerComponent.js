@@ -298,7 +298,7 @@ class ViewerComponent {
         if(this.moduleId === "img_clssfctn_ud"){
           console.log('no_srv_imgs');
           Shiny.setInputValue('no_srv_imgs', 'no imgs')
-          Shiny.setInputValue('mssng_srv_imgs', null);
+         // Shiny.setInputValue('mssng_srv_imgs', null);
         }
          
       }
@@ -307,7 +307,7 @@ class ViewerComponent {
         if(this.moduleId === "img_clssfctn_ud"){
           console.log('mssng_srv_imgs');
           Shiny.setInputValue('mssng_srv_imgs', 'missing imgs');
-          Shiny.setInputValue('no_srv_imgs', null);
+          //Shiny.setInputValue('no_srv_imgs', null);
         }
   
         let ul = document.getElementById(this.moduleId);
@@ -325,8 +325,8 @@ class ViewerComponent {
      else{
 
         if(this.moduleId === "img_clssfctn_ud"){
-          Shiny.setInputValue('no_srv_imgs', null);
-          Shiny.setInputValue('mssng_srv_imgs', null);
+          //Shiny.setInputValue('no_srv_imgs', null);
+         // Shiny.setInputValue('mssng_srv_imgs', null);
         }
             
         let ul = document.getElementById(this.moduleId);
