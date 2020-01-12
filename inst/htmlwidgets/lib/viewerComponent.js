@@ -96,6 +96,7 @@ class ViewerComponent {
           if(this.isPlacveHolder(src))
           {
             console.log("Cant Process Place Holder Image");
+            selectionFind(true);
           }
           else{
             params.push(src);
