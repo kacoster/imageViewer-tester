@@ -89,7 +89,7 @@ class ViewerComponent {
                 this.getCurrClckdImg("clssfctn_slctd_img",this.getTrimedSelectedImages().toString());
                 console.log("Trimmed Sel : " + this.getTrimedSelectedImages().toString());
             }else{
-                this.getCurrClckdImg("clssfctn_slctd_img","");
+                this.getCurrClckdImg("clssfctn_slctd_img",""); 
             }
         }
         else{
@@ -296,6 +296,7 @@ class ViewerComponent {
       if(this.checkImageExistance(ar) == ar.length)
       {
         if(this.moduleId === "img_clssfctn_ud"){
+          console.log('no_srv_imgs');
           Shiny.setInputValue('no_srv_imgs', 'no imgs')
           Shiny.setInputValue('mssng_srv_imgs', null);
         }
@@ -304,6 +305,7 @@ class ViewerComponent {
       else if(this.checkImageExistance(ar) > 0 && this.checkImageExistance(ar) < ar.length)
       {
         if(this.moduleId === "img_clssfctn_ud"){
+          console.log('mssng_srv_imgs');
           Shiny.setInputValue('mssng_srv_imgs', 'missing imgs');
           Shiny.setInputValue('no_srv_imgs', null);
         }
@@ -337,6 +339,16 @@ class ViewerComponent {
             ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.style.display='none'" +'"  alt="' + img.alt + '" /> </li>';
             this.setCol();
         }
+      }
+    }
+
+    resetHandlers(msg)
+    {
+      if(msg === 'msng_imgs_reset'){
+        Shiny.setInputValue('mssng_srv_imgs', null);
+      }
+      else{
+        Shiny.setInputValue('no_srv_imgs', null);
       }
     }
 
