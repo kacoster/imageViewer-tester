@@ -232,6 +232,7 @@ class ViewerComponent {
           'opacity': '',
           'filter': ''
         });
+        // selected_images.splice(selected_images.indexOf($( this ).attr('src')), 1);
       });
       this.selected_images.length = 0;
     }
@@ -248,18 +249,18 @@ class ViewerComponent {
       }
     }
 
-    placeHolder()
+    placeHolder(imgURL)
     {
       let xmlhttp = new XMLHttpRequest();
-      let url = 'PantheraIDS_image_not_found_2.jpg';
+      let url = imgURL;
         xmlhttp.open("GET", url, false);
         xmlhttp.send();
         if (xmlhttp.status==200) {
-          console.log("P Image Found");
+          return true;
       
         }
         else{
-         console.log(" P Image Not Found");
+         return false;
         } 
     }
 
@@ -305,7 +306,14 @@ class ViewerComponent {
             img.src = ((ar[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
             img.alt = "Camera Trap";
             img.datamarked = 0;
-            ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.onerror=null;this.data-original='/srv/shiny-server/www/PantheraIDS_image_not_found_2.jpg'" +'"  alt="' + img.alt + '" /> </li>';
+            if(this.placeHolder(img.src)){
+              ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.style.display='none'" +'"  alt="' + img.alt + '" /> </li>';
+            }
+            else{
+              img.src = '/srv/shiny-server/www/PantheraIDS_image_not_found_2.jpg';
+              ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src +'"  alt="' + img.alt + '" /> </li>';
+
+            }
             //ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.style.display='none'" +'"  alt="' + img.alt + '" /> </li>';
             this.setCol();
         }
