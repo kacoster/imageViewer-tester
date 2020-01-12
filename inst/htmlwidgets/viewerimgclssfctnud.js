@@ -68,6 +68,25 @@ HTMLWidgets.widget({
                 }
             );
 
+            Shiny.addCustomMessageHandler("mssng_srv_imgs_handler",
+                function(msg) {
+                  //console.log("In Handler img_clssfctn_ud_sv_edt_button");
+                  resetMsnImgsInputs(msg);
+                  //console.log("Handler img_clssfctn_ud_fltr_button");
+                  //fetchServerData(x.message,x.componentID);
+                }
+            );
+
+            Shiny.addCustomMessageHandler("no_srv_imgs_handler",
+                function(msg) {
+                  //console.log("In Handler img_clssfctn_ud_sv_edt_button");
+                  resetMsnImgsInputs(msg);
+                  //console.log("Handler img_clssfctn_ud_fltr_button");
+                  //fetchServerData(x.message,x.componentID);
+                }
+            );
+
+
 
 
 
