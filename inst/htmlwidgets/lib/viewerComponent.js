@@ -209,7 +209,6 @@ class ViewerComponent {
 
     getTrimedSelectedImages()
     {
-        //console.log("getTrimedSelectedImages S I : " + this.getSelectedImages());
         return this.trimSRC(this.getSelectedImages());
     }
 
@@ -232,7 +231,6 @@ class ViewerComponent {
           'opacity': '',
           'filter': ''
         });
-        // selected_images.splice(selected_images.indexOf($( this ).attr('src')), 1);
       });
       this.selected_images.length = 0;
     }
@@ -261,14 +259,11 @@ class ViewerComponent {
         }
         else{
          console.log(" P Image Not Found");
-          //count++;
         } 
     }
 
     checkImageExistance(arry) {
       let count = 0;
-      //console.log("checkImageExistance");
-
       for(let i= 0; i< arry.length ; i++)
       {
         let url = ((arry[i].trim()).replace(/['"]+/g, '')).replace(/(\r\n|\n|\r)/gm,"");
@@ -276,29 +271,22 @@ class ViewerComponent {
         xmlhttp.open("GET", url, false);
         xmlhttp.send();
         if (xmlhttp.status==200) {
-          ///console.log("Image Found");
         }
         else{
-         // console.log("Image Not Found");
           count++;
         } 
       }
-      //console.log("count : " + count);
       return count; 
-      
-      //return result;
     }
 
     imgloop(ar) {
       this. placeHolder();
       console.log("imageViewer-tester : " );
-      //console.log("ar.length : " + ar.length);
       if(this.checkImageExistance(ar) == ar.length)
       {
         if(this.moduleId === "img_clssfctn_ud"){
           console.log('no_srv_imgs');
           Shiny.setInputValue('no_srv_imgs', 'no imgs')
-         // Shiny.setInputValue('mssng_srv_imgs', null);
         }
          
       }
@@ -307,7 +295,6 @@ class ViewerComponent {
         if(this.moduleId === "img_clssfctn_ud"){
           console.log('mssng_srv_imgs');
           Shiny.setInputValue('mssng_srv_imgs', 'missing imgs');
-          //Shiny.setInputValue('no_srv_imgs', null);
         }
   
         let ul = document.getElementById(this.moduleId);
@@ -324,11 +311,6 @@ class ViewerComponent {
       }
      else{
 
-        if(this.moduleId === "img_clssfctn_ud"){
-          //Shiny.setInputValue('no_srv_imgs', null);
-         // Shiny.setInputValue('mssng_srv_imgs', null);
-        }
-            
         let ul = document.getElementById(this.moduleId);
         for (let i = 0; i < ar.length; i++) {
             let liId = i + this.moduleId;

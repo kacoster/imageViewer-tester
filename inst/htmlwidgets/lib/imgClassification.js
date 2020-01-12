@@ -54,7 +54,7 @@
   */
   function isKeyPressed(event,id) {
 
-        //console.log("isKeyPressed(event)");
+        console.log("isKeyPressed(event)");
         //console.log("event.target.src : " + event.target.src);
 
         arrayClone(imgClssfctnObj.selected_images);
