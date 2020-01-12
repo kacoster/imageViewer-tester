@@ -60,7 +60,7 @@
         arrayClone(imgClssfctnObj.selected_images);
 
         if (event.shiftKey) {
-          
+          console.log('event.shiftKey : ' + event.target.src);
           //console.log(" isKeyPressed : event.shiftKey");
           if(imgClssfctnObj.selected_images.includes(event.target.src))
           {
