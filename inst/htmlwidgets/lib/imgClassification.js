@@ -61,10 +61,8 @@
 
         if (event.shiftKey) {
           console.log('event.shiftKey : ' + event.target.src);
-          let src = event.target.src;
-          let res = src.split('/').pop() === 'PantheraIDS_image_not_found_2.jpg';
-          console.log(" res : " + res);
-          if(imgClssfctnObj.selected_images.includes(event.target.src) || res === true)
+          
+          if(imgClssfctnObj.selected_images.includes(event.target.src))
           {
             selectionFind(true);
           }
