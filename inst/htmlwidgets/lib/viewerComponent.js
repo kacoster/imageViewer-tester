@@ -93,12 +93,23 @@ class ViewerComponent {
             }
         }
         else{
+          if(this.isPlacveHolder(src))
+          {
+            console.log("Cant Process Place Holder Image");
+          }
+          else{
             params.push(src);
             this.highliter(id);
             //console.log(this.getTrimedSelectedImages().toString());
             this.getCurrClckdImg("clssfctn_slctd_img",this.getTrimedSelectedImages().toString());
             //console.log("Trimmed Sel : " + this.getTrimedSelectedImages().toString());
+          }
         }
+    }
+
+    isPlacveHolder(src)
+    {
+      return (src.split('/').pop() === 'PantheraIDS_image_not_found_2.jpg');
     }
 
     removedRef()
