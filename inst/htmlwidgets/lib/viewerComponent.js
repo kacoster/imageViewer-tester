@@ -344,10 +344,13 @@ class ViewerComponent {
 
     resetHandlers(msg)
     {
+      console.log('resetHandlers msg : ' + msg);
       if(msg === 'msng_imgs_reset'){
+        console.log("Inside msng_imgs_reset");
         Shiny.setInputValue('mssng_srv_imgs', null);
       }
       else{
+        console.log("Inside no_srv_imgs_reset");
         Shiny.setInputValue('no_srv_imgs', null);
       }
     }
