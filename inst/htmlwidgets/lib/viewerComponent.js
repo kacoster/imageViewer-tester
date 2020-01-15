@@ -39,6 +39,7 @@ class ViewerComponent {
       this.imgloop(this.displayImages(this.imgNumb,0));
     }
 
+    /** Redundent function*/
     initializeImgArray(array)
     {
       this.imgArray = [...arr];
@@ -52,7 +53,6 @@ class ViewerComponent {
             'filter': 'alpha(opacity=40)'
         });
         $(".pictures > li").css("background-color", "yellow");
-
     }
 
     removeHighlight(elementID)
@@ -64,7 +64,6 @@ class ViewerComponent {
     }
     /** Not Yet Generic */
     setCol(){
-
      //console.log("ul class Name : " + $("ul").attr("class"));
         $('.pictures > li').css({
                 'width' : 'calc(100% /' + this.columnSize +')'

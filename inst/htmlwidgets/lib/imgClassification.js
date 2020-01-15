@@ -39,6 +39,10 @@
           Shiny.onInputChange("prev", imgClssfctnObj.prev());
         });
 
+        $( function() {
+          $( "#img_clssfctn_ud_divId" ).selectable();
+        } );
+
   });
 
   var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud","img_clssfctn_ud.csv");
