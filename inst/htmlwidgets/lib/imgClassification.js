@@ -40,7 +40,7 @@
         });
 
         $( function() {
-          $( "#img_clssfctn_ud_divId" ).selectable();
+          $( "#img_clssfctn_ud").selectable();
         } );
 
   });
