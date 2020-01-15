@@ -40,6 +40,7 @@
         });
 
         $( function() {
+          console.log("Setting selectable");
           $( "#img_clssfctn_ud").selectable();
         } );
 
