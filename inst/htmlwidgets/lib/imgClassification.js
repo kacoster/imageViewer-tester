@@ -38,10 +38,13 @@
         $("#img_clssfctn_ud_prvs_bttn").on("click", function () {
           Shiny.onInputChange("prev", imgClssfctnObj.prev());
         });
+        
+        console.log("Setting selectable");
+        $( "#img_clssfctn_ud").selectable();
 
         $( function() {
           console.log("Setting selectable");
-          $( "#img_clssfctn_ud").selectable();
+         
         } );
 
   });
