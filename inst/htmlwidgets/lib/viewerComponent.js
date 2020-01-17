@@ -293,6 +293,7 @@ class ViewerComponent {
 
     displayImages(msngImgCount,ar)
     {
+      console.log("displayImages");
       if(msngImgCount > 0)
       {
         if(this.moduleId === "img_clssfctn_ud" && this.msngImgsFlag == true){
