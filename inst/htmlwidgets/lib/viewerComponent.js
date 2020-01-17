@@ -12,11 +12,12 @@ class ViewerComponent {
         this.nextPrev = "0";
         this.result = [];
         this.tempRemoved ="";
-        this.msgImgflag = true;
     }
 
 
     readServerData(response) {
+      //console.log("readServerData");
+      // let response = this.loadFile(this.csvfile);
       if(response === null )
       {
         alert(" Error in reading your images.Please check if all requirements are provided.");
@@ -24,9 +25,11 @@ class ViewerComponent {
       else{
         this.imgArray = response.split(',');
         this.imgArray.splice(0, 1);
+        //console.log(this.imgArray);
         this.imgArray[0] = this.imgArray[0].replace("Source", "");
         this.imgArray[0] = this.imgArray[this.imgArray.length - 1] + this.imgArray[0];
         this.imgArray.splice(this.imgArray.length - 1, 1);
+        //console.log(this.imgArray);
         if(this.moduleId === "img_clssfctn_ud")
         {
           Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
@@ -61,6 +64,7 @@ class ViewerComponent {
     }
     /** Not Yet Generic */
     setCol(){
+     //console.log("ul class Name : " + $("ul").attr("class"));
         $('.pictures > li').css({
                 'width' : 'calc(100% /' + this.columnSize +')'
             });
@@ -80,6 +84,7 @@ class ViewerComponent {
             this.removeHighlight(id);
             if(params.length > 0)
             {
+                //console.log(this.getTrimedSelectedImages().toString());
                 this.getCurrClckdImg("clssfctn_slctd_img",this.getTrimedSelectedImages().toString());
                 console.log("Trimmed Sel : " + this.getTrimedSelectedImages().toString());
             }else{
@@ -95,7 +100,9 @@ class ViewerComponent {
           else{
             params.push(src);
             this.highliter(id);
+            //console.log(this.getTrimedSelectedImages().toString());
             this.getCurrClckdImg("clssfctn_slctd_img",this.getTrimedSelectedImages().toString());
+            //console.log("Trimmed Sel : " + this.getTrimedSelectedImages().toString());
           }
         }
     }
@@ -288,7 +295,7 @@ class ViewerComponent {
     imgloop(ar) {
       this. placeHolder();
       console.log("imageViewer-tester : " );
-      if(this.checkImageExistance(ar) == ar.length )
+      if(this.checkImageExistance(ar) == ar.length)
       {
         if(this.moduleId === "img_clssfctn_ud"){
           console.log('no_srv_imgs');
@@ -296,12 +303,11 @@ class ViewerComponent {
         }
          
       }
-      else if(this.checkImageExistance(ar) > 0 && this.checkImageExistance(ar) < ar.length && this.msgImgflag == true)
+      else if(this.checkImageExistance(ar) > 0 && this.checkImageExistance(ar) < ar.length)
       {
         if(this.moduleId === "img_clssfctn_ud"){
           console.log('mssng_srv_imgs');
           Shiny.setInputValue('mssng_srv_imgs', 'missing imgs');
-          this.msgImgflag = false;
         }
   
         let ul = document.getElementById(this.moduleId);
