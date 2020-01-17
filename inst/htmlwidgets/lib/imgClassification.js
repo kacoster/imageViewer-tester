@@ -38,14 +38,6 @@
         $("#img_clssfctn_ud_prvs_bttn").on("click", function () {
           Shiny.onInputChange("prev", imgClssfctnObj.prev());
         });
-        
-        console.log("Setting selectable");
-        $( "#img_clssfctn_ud").selectable();
-
-        $( function() {
-          console.log("Setting selectable");
-         
-        } );
 
   });
 
@@ -87,6 +79,7 @@
   function resetSelectedImages()
   {
     imgClssfctnObj.selected_images.length = 0;
+    imgClssfctnObj.batnum = 0;
     imgClssfctnObj.getCurrClckdImg("clssfctn_slctd_img","");
   }
 
