@@ -299,7 +299,7 @@ class ViewerComponent {
       {
         if(this.moduleId === "img_clssfctn_ud" && this.msngImgsFlag == true){
           console.log('mssng_srv_imgs');
-          this.msngImgsFlag == false;
+          this.msngImgsFlag = false;
           Shiny.setInputValue('mssng_srv_imgs', 'missing imgs');
         }
   
