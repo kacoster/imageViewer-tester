@@ -56,7 +56,6 @@
 
         console.log("isKeyPressed(event)");
         //console.log("event.target.src : " + event.target.src);
-
         arrayClone(imgClssfctnObj.selected_images);
 
         if (event.shiftKey) {
@@ -73,7 +72,6 @@
           objectOf("imgClassification");
           imgClssfctnObj.callvjs(imgClssfctnObj.moduleId+"_divId");
         }
-      
   }
 
   function resetSelectedImages()

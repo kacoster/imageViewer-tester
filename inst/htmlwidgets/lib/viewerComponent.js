@@ -12,6 +12,7 @@ class ViewerComponent {
         this.nextPrev = "0";
         this.result = [];
         this.tempRemoved ="";
+        this.msngImgsFlag = true;
     }
 
 
@@ -36,7 +37,7 @@ class ViewerComponent {
           1 + " / " + this.getBatchNumber());
         }
       }
-      this.imgloop(this.displayImages(this.imgNumb,0));
+      this.imgloop(this.batchImages(this.imgNumb,0));
     }
 
     /** Redundent function*/
@@ -84,11 +85,10 @@ class ViewerComponent {
             this.removeHighlight(id);
             if(params.length > 0)
             {
-                //console.log(this.getTrimedSelectedImages().toString());
-                this.getCurrClckdImg("clssfctn_slctd_img",this.getTrimedSelectedImages().toString());
-                console.log("Trimmed Sel : " + this.getTrimedSelectedImages().toString());
+              this.getCurrClckdImg("clssfctn_slctd_img",this.getTrimedSelectedImages().toString());
+              console.log("Trimmed Sel : " + this.getTrimedSelectedImages().toString());
             }else{
-                this.getCurrClckdImg("clssfctn_slctd_img",""); 
+              this.getCurrClckdImg("clssfctn_slctd_img",""); 
             }
         }
         else{
@@ -117,7 +117,7 @@ class ViewerComponent {
         return this.tempRemoved;
     }
 
-    displayImages(imgnumb,bat) {
+    batchImages(imgnumb,bat) {
         //console.log("Display Images");
         this.clearImages();
         let start ,end;
@@ -141,23 +141,22 @@ class ViewerComponent {
     next() {
        // console.log("Next Clicked");
         nextPrevClicked("1");
-
         if(this.batnum < this.getBatchNumber()-1){
               this.batnum++;
               Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (this.batnum+1) + " / " + this.getBatchNumber());
               //console.log("batch Number : " + this.batnum);
-              this.imgloop(this.displayImages(this.imgNumb, this.batnum));
+              this.imgloop(this.batchImages(this.imgNumb, this.batnum));
               this.selected_images.length = 0;
               this.getCurrClckdImg("clssfctn_slctd_img","");
 
           }else{
             Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               this.getBatchNumber() + " / " + this.getBatchNumber());
-            this.imgNumb(this.displayImages(this.imgNumb, this.getBatchNumber()-1));
-            this.batnum = this.getBatchNumber()-1;
-            this.selected_images.length = 0;
-            this.getCurrClckdImg("clssfctn_slctd_img","");
+              this.imgNumb(this.batchImages(this.imgNumb, this.getBatchNumber()-1));
+              this.batnum = this.getBatchNumber()-1;
+              this.selected_images.length = 0;
+              this.getCurrClckdImg("clssfctn_slctd_img","");
           }
     }
 
@@ -169,13 +168,13 @@ class ViewerComponent {
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
               (this.batnum+1) + " / " + this.getBatchNumber());
             //console.log("batch Number : " + this.batnum);
-          this.imgloop(this.displayImages(this.imgNumb ,this.batnum));
+          this.imgloop(this.batchImages(this.imgNumb ,this.batnum));
           this.selected_images.length = 0;
           this.getCurrClckdImg("clssfctn_slctd_img","");
         }else{
            Shiny.onInputChange("img_clssfctn_ud_btch_tckr",
              1 + " / " + this.getBatchNumber());
-          this.imgloop(this.displayImages(this.imgNumb, 0));
+          this.imgloop(this.batchImages(this.imgNumb, 0));
           this.selected_images.length = 0;
            this.getCurrClckdImg("clssfctn_slctd_img","");
           this.batnum = 0;
@@ -292,21 +291,13 @@ class ViewerComponent {
       return count; 
     }
 
-    imgloop(ar) {
-      this. placeHolder();
-      console.log("imageViewer-tester : " );
-      if(this.checkImageExistance(ar) == ar.length)
+    displayImages(msngImgCount,ar)
+    {
+      if(msngImgCount > 0)
       {
-        if(this.moduleId === "img_clssfctn_ud"){
-          console.log('no_srv_imgs');
-          Shiny.setInputValue('no_srv_imgs', 'no imgs')
-        }
-         
-      }
-      else if(this.checkImageExistance(ar) > 0 && this.checkImageExistance(ar) < ar.length)
-      {
-        if(this.moduleId === "img_clssfctn_ud"){
+        if(this.moduleId === "img_clssfctn_ud" && this.msngImgsFlag == true){
           console.log('mssng_srv_imgs');
+          this.msngImgsFlag == false;
           Shiny.setInputValue('mssng_srv_imgs', 'missing imgs');
         }
   
@@ -323,14 +314,12 @@ class ViewerComponent {
             else{
               img.src = '/srv/shiny-server/www/PantheraIDS_image_not_found_2.jpg';
               ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src +'"  alt="' + img.alt + '" /> </li>';
-
             }
             //ul.innerHTML += '<li  ><img id="' + liId + '" data-original="' + img.src + '"  marked="' + img.datamarked + '" src="' + img.src + '"onerror="'+ "this.style.display='none'" +'"  alt="' + img.alt + '" /> </li>';
             this.setCol();
         }
       }
      else{
-
         let ul = document.getElementById(this.moduleId);
         for (let i = 0; i < ar.length; i++) {
             let liId = i + this.moduleId;
@@ -342,6 +331,23 @@ class ViewerComponent {
             this.setCol();
         }
       }
+    }
+
+    imgloop(ar) {
+      this. placeHolder();
+      console.log("imageViewer-tester : " );
+      let msngImgCount = this.checkImageExistance(ar);
+      if(msngImgCount == ar.length)
+      {
+        if(this.moduleId === "img_clssfctn_ud"){
+          console.log('no_srv_imgs');
+          Shiny.setInputValue('no_srv_imgs', 'no imgs')
+        }
+      }
+      else{
+        this.displayImages(msngImgCount,ar);
+      }
+      
     }
 
     resetHandlers(msg)
