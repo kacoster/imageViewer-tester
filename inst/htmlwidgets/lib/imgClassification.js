@@ -78,6 +78,7 @@
   {
     imgClssfctnObj.selected_images.length = 0;
     imgClssfctnObj.batnum = 0;
+    imgClssfctnObj.msngImgsFlag = true;
     imgClssfctnObj.getCurrClckdImg("clssfctn_slctd_img","");
   }
 
