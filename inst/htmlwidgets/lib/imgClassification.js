@@ -2,9 +2,9 @@
     /***************************************************************************
     @version Viewer.js v1.3.5
     @author Valentine Tawira
-    @description PantheraImageViewer Script for handling the processing of the
-            file data and rendering of the viewer panel
-    Copyright (C) 2019 | Panthera Corporation
+    @description This script handles all the logic and requirements only specific 
+                  to the image classification viewer.
+    @copyright (C) 2019 | Panthera Corporation
     ***************************************************************************/
 
     /****************************************************************************
@@ -82,13 +82,17 @@
     imgClssfctnObj.getCurrClckdImg("clssfctn_slctd_img","");
   }
 
+  /**
+   * Dynamic set of the panel columns
+   * @param num - a specific column number
+   * @returns void 
+   */
   function setColumnNumb(numb)
   {
     imgClssfctnObj.columnSize = numb;
     imgClssfctnObj.setCol();
-    //this.columnSize = numb;
-    //alert("Adjusted Columns " + imgClssfctnObj.columnSize);
   }
+
   function resetMsnImgsInputs(msg)
   {
     imgClssfctnObj.resetHandlers(msg);

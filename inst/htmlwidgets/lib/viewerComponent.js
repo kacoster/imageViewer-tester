@@ -65,7 +65,6 @@ class ViewerComponent {
     }
     /** Not Yet Generic */
     setCol(){
-     //console.log("ul class Name : " + $("ul").attr("class"));
         $('.pictures > li').css({
                 'width' : 'calc(100% /' + this.columnSize +')'
             });
