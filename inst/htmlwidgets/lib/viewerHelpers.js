@@ -12,8 +12,7 @@ function fetchServerData(csvfile,moduleId)
         setImageArray(loadFile(csvfile));
     }
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_9"){
-        console.log("fetchserverdata : ct_vldt_img_trggr_tbl_vldtn_9")
-
+        //console.log("fetchserverdata : ct_vldt_img_trggr_tbl_vldtn_9")
         prepArray(loadFile(csvfile));
     }
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_10"){
@@ -37,7 +36,6 @@ function loadFile(filename) {
       result = (xmlhttp.responseText).replace(/^\s*$[\n\r]{1,}/gm, '');
       return result;
     }
-    //alert("Error in Reading Images ");
     return result;
   }
 
@@ -62,8 +60,6 @@ function loadFile(filename) {
     {
         ct_vldt12_event(event);
     }
-    
-
   }
   
     function clcsfcnSave()

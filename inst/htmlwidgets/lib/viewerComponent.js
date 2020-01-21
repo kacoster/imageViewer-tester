@@ -17,7 +17,7 @@ class ViewerComponent {
 
 
     readServerData(response) {
-      console.log("readServerData...");
+      console.log("readServerData");
       // let response = this.loadFile(this.csvfile);
       if(response === null )
       {
@@ -38,12 +38,6 @@ class ViewerComponent {
         }
       }
       this.imgloop(this.batchImages(this.imgNumb,0));
-    }
-
-    /** Redundent function*/
-    initializeImgArray(array)
-    {
-      this.imgArray = [...arr];
     }
 
     highliter(elementID)
@@ -405,20 +399,5 @@ class ViewerComponent {
     this.vjs(elementId);
     return;
   }
-
-
-  /*isKeyPressed(event) {
-    console.log(" isKeyPressed(event)");
-    console.log("event.target.src : " + event.target.src);
-     //arrayClone(this.selected_images);
-    if (event.shiftKey) {
-      console.log(" isKeyPressed : event.shiftKey");
-      this.handleExistance(this.selected_images, event.target.src, event.target.id);
-    } else {
-      console.log(" isKeyPressed : " + event.click);
-      objectOf("imgClassification");
-      this.callvjs();
-    }
-  }*/
 }
 
