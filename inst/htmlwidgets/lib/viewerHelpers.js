@@ -1,9 +1,4 @@
 
-/***************************************************************************
- *    @version Viewer.js v1.3.5
- *    @author Valentine Tawira
- *    @Copyright (C) 2019 | Panthera Corporation
- ****************************************************************************/
 function fetchServerData(csvfile,moduleId)
 {
     
@@ -12,7 +7,8 @@ function fetchServerData(csvfile,moduleId)
         setImageArray(loadFile(csvfile));
     }
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_9"){
-        //console.log("fetchserverdata : ct_vldt_img_trggr_tbl_vldtn_9")
+        console.log("fetchserverdata : ct_vldt_img_trggr_tbl_vldtn_9")
+
         prepArray(loadFile(csvfile));
     }
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_10"){
@@ -60,6 +56,8 @@ function loadFile(filename) {
     {
         ct_vldt12_event(event);
     }
+    
+
   }
   
     function clcsfcnSave()

@@ -1,4 +1,4 @@
- var ct_vldt_img_trggr_tbl_vldtn_9 = new ViewerComponent(0,30,5,"ct_vldt_img_trggr_tbl_vldtn_9","ct_vldt_img_trggr_tbl_vldtn_9.csv");
+var ct_vldt_img_trggr_tbl_vldtn_9 = new ViewerComponent(0,30,5,"ct_vldt_img_trggr_tbl_vldtn_9","img_clssfctn_ud.csv");
 
   function prepArray(resp)
   {
@@ -15,3 +15,5 @@
     //objectOf("ct_vldt_img_trggr_tbl_vldtn_9");
     ct_vldt_img_trggr_tbl_vldtn_9.callvjs(ct_vldt_img_trggr_tbl_vldtn_9.moduleId+"_divId");
   }
+
+
