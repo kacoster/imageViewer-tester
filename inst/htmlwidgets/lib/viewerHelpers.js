@@ -39,15 +39,17 @@ function fetchServerData(csvfile,moduleId)
        // prepArray(loadFile(csvfile));
     }
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_10"){
+        console.log("fetchserverdata : ct_vldt_img_trggr_tbl_vldtn_10")
         ct_vldt_img_trggr_tbl_vldtn_10.loadFile(csvfile);
         //prepArrayvldtn_10(loadFile(csvfile));
     }
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_11"){
+        console.log("fetchserverdata : ct_vldt_img_trggr_tbl_vldtn_11")
         // prepArrayvldtn_11(loadFile(csvfile));
         ct_vldt_img_trggr_tbl_vldtn_11.loadFile(csvfile);
     }
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_12"){
-
+        console.log("fetchserverdata : ct_vldt_img_trggr_tbl_vldtn_12")
         //prepArrayvldtn_12(loadFile(csvfile));
         ct_vldt_img_trggr_tbl_vldtn_12.loadFile(csvfile);
     }
