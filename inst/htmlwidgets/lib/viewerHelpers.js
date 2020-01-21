@@ -17,6 +17,7 @@ console.log("New viewerHelper.js");
     
     if(moduleId === "img_clssfctn_ud")
     {
+        console.log("New viewerHelper.js");
         imgClssfctnObj.readServerData(loadFile(csvfile));
         //setImageArray(loadFile(csvfile));
     }
