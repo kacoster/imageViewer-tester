@@ -1,4 +1,4 @@
-var ct_vldt_img_trggr_tbl_vldtn_11 = new ViewerComponent(0,30,5,"ct_vldt_img_trggr_tbl_vldtn_11","ct_vldt_img_trggr_tbl_vldtn_11.csv");
+/* var ct_vldt_img_trggr_tbl_vldtn_11 = new ViewerComponent(0,30,5,"ct_vldt_img_trggr_tbl_vldtn_11","ct_vldt_img_trggr_tbl_vldtn_11.csv");
 
   function prepArrayvldtn_11(resp)
   {
@@ -14,3 +14,4 @@ var ct_vldt_img_trggr_tbl_vldtn_11 = new ViewerComponent(0,30,5,"ct_vldt_img_trg
     //objectOf("ct_vldt_img_trggr_tbl_vldtn_11");
     ct_vldt_img_trggr_tbl_vldtn_11.callvjs(ct_vldt_img_trggr_tbl_vldtn_11.moduleId+"_divId");
   }
+*/
