@@ -17,7 +17,7 @@ class ViewerComponent {
 
 
     readServerData(response) {
-      //console.log("readServerData");
+      console.log("readServerData");
       // let response = this.loadFile(this.csvfile);
       if(response === null )
       {
