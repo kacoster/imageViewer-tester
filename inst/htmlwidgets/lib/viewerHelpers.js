@@ -8,6 +8,8 @@
 /*******************************************************************/
 
 /*******************************************************************/
+
+console.log("viewerHelpers.js");
 var img_clssfctn_ud = new ViewerComponent(0,50,5,"img_clssfctn_ud","img_clssfctn_ud.csv"); // img_clssfctn_ud
 var ct_vldt_img_trggr_tbl_vldtn_11 = new ViewerComponent(0,30,5,"ct_vldt_img_trggr_tbl_vldtn_11","ct_vldt_img_trggr_tbl_vldtn_11.csv");
 var ct_vldt_img_trggr_tbl_vldtn_10 = new ViewerComponent(0,30,5,"ct_vldt_img_trggr_tbl_vldtn_10","ct_vldt_img_trggr_tbl_vldtn_10.csv");
@@ -67,15 +69,17 @@ function loadFile(filename) {
 
   function observeClick(event)
   {
-    console.log("Type of : " + event.target.id);
-    let targetId = event.target.id;
     let moduleId = targetId.substring(targetId.indexOf("_")+1);
+    console.log("Type of : " + moduleId);
+    let targetId = event.target.id;
+  
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_9")
     {
         getEvent(event); 
     }
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_10")
     {
+        console.log("observeClick VLDN 10 : " );
         ct_vldt10_event(event);
     }
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_11")
@@ -87,7 +91,6 @@ function loadFile(filename) {
     {
         ct_vldt12_event(event);
     }
-    
 
   }
   
