@@ -27,6 +27,7 @@ function fetchServerData(csvfile,moduleId)
 {
 
     console.log(" fetchServerData Module ID : " + moduleId);
+    console.log("columnSize : " + img_clssfctn_ud.columnSize);
     
     if(moduleId === "img_clssfctn_ud")
     {
