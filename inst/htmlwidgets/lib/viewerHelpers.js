@@ -4,7 +4,7 @@
  *    @author Valentine Tawira
  *    @Copyright (C) 2019 | Panthera Corporation
  ****************************************************************************/
-var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud","img_clssfctn_ud.csv");
+//var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud","img_clssfctn_ud.csv");
 var ct_vldt_img_trggr_tbl_vldtn_9  = new ViewerComponent(0,30,5,"ct_vldt_img_trggr_tbl_vldtn_9","ct_vldt_img_trggr_tbl_vldtn_9.csv");
 var ct_vldt_img_trggr_tbl_vldtn_10 = new ViewerComponent(0,30,5,"ct_vldt_img_trggr_tbl_vldtn_10","ct_vldt_img_trggr_tbl_vldtn_10.csv");
 var ct_vldt_img_trggr_tbl_vldtn_11 = new ViewerComponent(0,30,5,"ct_vldt_img_trggr_tbl_vldtn_11","ct_vldt_img_trggr_tbl_vldtn_11.csv");
@@ -18,8 +18,8 @@ console.log("New viewerHelper.js");
     if(moduleId === "img_clssfctn_ud")
     {
         console.log("New viewerHelper.js");
-        imgClssfctnObj.readServerData(loadFile(csvfile));
-        //setImageArray(loadFile(csvfile));
+        //imgClssfctnObj.readServerData(loadFile(csvfile));
+        setImageArray(loadFile(csvfile));
     }
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_9"){
         //console.log("fetchserverdata : ct_vldt_img_trggr_tbl_vldtn_9")
@@ -83,7 +83,7 @@ function loadFile(filename) {
       saveButtonListerner();
   }
 
-  /*************************************** */
+  /*************************************** 
  // var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud","img_clssfctn_ud.csv");
 
      $(document).ready(function () {
@@ -162,4 +162,4 @@ function loadFile(filename) {
         $("#img_clssfctn_ud").html("");
     }
 
-    /************************************************************* */
+    ************************************************************* */

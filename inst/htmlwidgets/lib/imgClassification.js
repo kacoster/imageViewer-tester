@@ -5,7 +5,7 @@
     @description This script handles all the logic and requirements only specific 
                   to the image classification viewer.
     @copyright (C) 2019 | Panthera Corporation
-    ***************************************************************************
+    ***************************************************************************/
 
      var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud","img_clssfctn_ud.csv");
 
@@ -89,5 +89,3 @@
 
     
     
-    
-    */
