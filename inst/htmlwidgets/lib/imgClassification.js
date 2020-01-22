@@ -152,10 +152,3 @@
   function clearImages() {
     $("#img_clssfctn_ud").html("");
   }
-
-
-  
-
-
-
-

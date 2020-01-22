@@ -11,10 +11,13 @@
     // console.log("columnSize v11: " + ct_vldt_img_trggr_tbl_vldtn_11.columnSize);
     // console.log("columnSize v12: " + ct_vldt_img_trggr_tbl_vldtn_12.columnSize);
     console.log("event.target.id  : " + event.target.id );
-    if(event.target.id == "ct_vldt_img_trggr_tbl_vldtn_9") { getEvent2(ct_vldt_img_trggr_tbl_vldtn_9)}
-    if(event.target.id == "ct_vldt_img_trggr_tbl_vldtn_10"){ getEvent2(ct_vldt_img_trggr_tbl_vldtn_10)}
-    if(event.target.id == "ct_vldt_img_trggr_tbl_vldtn_11"){ getEvent2(ct_vldt_img_trggr_tbl_vldtn_11)}
-    if(event.target.id == "ct_vldt_img_trggr_tbl_vldtn_12"){ getEvent2(ct_vldt_img_trggr_tbl_vldtn_12)}
+    let id =  event.target.id;
+    let moduleId = id.substr(id.indexOf("ct"), id.length);
+    console.log("moduleId : " + moduleId );
+    if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_9") { getEvent2(ct_vldt_img_trggr_tbl_vldtn_9)}
+    if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_10"){ getEvent2(ct_vldt_img_trggr_tbl_vldtn_10)}
+    if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_11"){ getEvent2(ct_vldt_img_trggr_tbl_vldtn_11)}
+    if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_12"){ getEvent2(ct_vldt_img_trggr_tbl_vldtn_12)}
     
     // if(event.target.id == "ct_vldt_img_trggr_tbl_vldtn_9"){ return ct_vldt_img_trggr_tbl_vldtn_9}
     // if(event.target.id == "ct_vldt_img_trggr_tbl_vldtn_10"){ return ct_vldt_img_trggr_tbl_vldtn_10}
