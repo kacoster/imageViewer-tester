@@ -44,7 +44,8 @@ function loadFile(filename) {
     let targetId = event.target.id;
     let moduleId = targetId.substring(targetId.indexOf("_")+1);
 
-    getEvent(event); 
+    getObject(event);
+    //getEvent(event); 
     /*if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_9")
     {
         getEvent(event); 
