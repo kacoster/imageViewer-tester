@@ -10,6 +10,8 @@
     console.log("columnSize v10: " + ct_vldt_img_trggr_tbl_vldtn_10.columnSize);
     console.log("columnSize v11: " + ct_vldt_img_trggr_tbl_vldtn_11.columnSize);
     console.log("columnSize v12: " + ct_vldt_img_trggr_tbl_vldtn_12.columnSize);
+
+    
     if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_9"){ return ct_vldt_img_trggr_tbl_vldtn_9}
     if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_10"){ return ct_vldt_img_trggr_tbl_vldtn_10}
     if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_11"){ return ct_vldt_img_trggr_tbl_vldtn_11}
@@ -26,11 +28,11 @@
     console.log("event.target.src : " + event.target.src);
     console.log("event.target.id : " +  event.target.id);
 
-    getObject(event.target.id).columnSize = 5;
+    //getObject(event.target.id).columnSize = 5;
     // ct_vldt_img_trggr_tbl_vldtn_9.columnSize = 5;
-    getObject(event.target.id).imgNumb = 30;
+    //getObject(event.target.id).imgNumb = 30;
     //ct_vldt_img_trggr_tbl_vldtn_9.imgNumb = 30;
-    getObject(event.target.id).setCol();
+    //getObject(event.target.id).setCol();
     //ct_vldt_img_trggr_tbl_vldtn_9.setCol();
     //objectOf("ct_vldt_img_trggr_tbl_vldtn_9");
     getObject(event.target.id).callvjs(getObject(event.target.id).moduleId+"_divId");
