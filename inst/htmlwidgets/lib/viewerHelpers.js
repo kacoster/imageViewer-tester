@@ -41,8 +41,8 @@ function loadFile(filename) {
   function observeClick(event)
   {
     console.log("Type of : " + event.target.id);
-    let targetId = event.target.id;
-    let moduleId = targetId.substring(targetId.indexOf("_")+1);
+    //let targetId = event.target.id;
+    //let moduleId = targetId.substring(targetId.indexOf("_")+1);
 
     getObject(event);
     //getEvent(event); 

@@ -6,11 +6,11 @@
   
   function getObject(event)
   {
-    console.log("columnSize v9: " + ct_vldt_img_trggr_tbl_vldtn_9.columnSize);
-    console.log("columnSize v10: " + ct_vldt_img_trggr_tbl_vldtn_10.columnSize);
-    console.log("columnSize v11: " + ct_vldt_img_trggr_tbl_vldtn_11.columnSize);
-    console.log("columnSize v12: " + ct_vldt_img_trggr_tbl_vldtn_12.columnSize);
-
+    // console.log("columnSize v9: " + ct_vldt_img_trggr_tbl_vldtn_9.columnSize);
+    // console.log("columnSize v10: " + ct_vldt_img_trggr_tbl_vldtn_10.columnSize);
+    // console.log("columnSize v11: " + ct_vldt_img_trggr_tbl_vldtn_11.columnSize);
+    // console.log("columnSize v12: " + ct_vldt_img_trggr_tbl_vldtn_12.columnSize);
+    console.log("event.target.id  : " + event.target.id );
     if(event.target.id == "ct_vldt_img_trggr_tbl_vldtn_9") { getEvent2(ct_vldt_img_trggr_tbl_vldtn_9)}
     if(event.target.id == "ct_vldt_img_trggr_tbl_vldtn_10"){ getEvent2(ct_vldt_img_trggr_tbl_vldtn_10)}
     if(event.target.id == "ct_vldt_img_trggr_tbl_vldtn_11"){ getEvent2(ct_vldt_img_trggr_tbl_vldtn_11)}
