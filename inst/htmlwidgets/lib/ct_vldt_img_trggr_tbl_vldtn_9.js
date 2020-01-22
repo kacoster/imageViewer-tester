@@ -10,10 +10,10 @@
     let id =  event.target.id;
     let moduleId = id.substr(id.indexOf("ct"), id.length);
     console.log("moduleId : " + moduleId );
-    if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_9" ){ getEvent2(ct_vldt_img_trggr_tbl_vldtn_9)}
-    if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_10"){ getEvent2(ct_vldt_img_trggr_tbl_vldtn_10)}
-    if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_11"){ getEvent2(ct_vldt_img_trggr_tbl_vldtn_11)}
-    if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_12"){ getEvent2(ct_vldt_img_trggr_tbl_vldtn_12)}
+    if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_9" ){ viewImages(ct_vldt_img_trggr_tbl_vldtn_9)}
+    if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_10"){ viewImages(ct_vldt_img_trggr_tbl_vldtn_10)}
+    if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_11"){ viewImages(ct_vldt_img_trggr_tbl_vldtn_11)}
+    if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_12"){ viewImages(ct_vldt_img_trggr_tbl_vldtn_12)}
   }
 
   function getObject()

@@ -13,8 +13,7 @@ class ViewerComponent {
       this.result = [];
       this.tempRemoved ="";
   }
-
-
+  
   readServerData(response) {
     //console.log("readServerData");
     // let response = this.loadFile(this.csvfile);
