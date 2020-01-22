@@ -4,7 +4,7 @@
   {
     //console.log("In prepArray");
     ct_vldt_img_trggr_tbl_vldtn_11.readServerData(resp);
-  }*/
+  }
 
   function ct_vldt11_event(event) {
     console.log("ct_vldt10_event");
@@ -15,3 +15,4 @@
     ct_vldt_img_trggr_tbl_vldtn_11.callvjs(ct_vldt_img_trggr_tbl_vldtn_11.moduleId+"_divId");
   }
 
+*/

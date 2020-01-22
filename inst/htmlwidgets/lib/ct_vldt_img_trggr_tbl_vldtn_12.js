@@ -4,7 +4,7 @@
   {
     console.log("In prepArray");
     ct_vldt_img_trggr_tbl_vldtn_12.readServerData(resp);
-  }*/
+  }
 
   function ct_vldt12_event(event) {
     ct_vldt_img_trggr_tbl_vldtn_12.columnSize = 5;
@@ -14,4 +14,4 @@
     ct_vldt_img_trggr_tbl_vldtn_12.callvjs(ct_vldt_img_trggr_tbl_vldtn_12.moduleId+"_divId");
   }
 
-
+*/

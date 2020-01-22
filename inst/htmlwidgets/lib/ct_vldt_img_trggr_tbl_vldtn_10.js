@@ -4,7 +4,7 @@
   {
     //console.log("In prepArray");
     ct_vldt_img_trggr_tbl_vldtn_10.readServerData(resp);
-  }*/
+  }
 
   function ct_vldt10_event(event) {
     //console.log("getEvent(event)");
@@ -16,5 +16,5 @@
     //objectOf("ct_vldt_img_trggr_tbl_vldtn_10");
     ct_vldt_img_trggr_tbl_vldtn_10.callvjs(ct_vldt_img_trggr_tbl_vldtn_10.moduleId+"_divId");
   }
-
+*/
 
