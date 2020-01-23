@@ -24,11 +24,10 @@ class ViewerComponent {
     else{
       this.imgArray = response.split(',');
       this.imgArray.splice(0, 1);
-      //console.log(this.imgArray);
       this.imgArray[0] = this.imgArray[0].replace("Source", "");
       this.imgArray[0] = this.imgArray[this.imgArray.length - 1] + this.imgArray[0];
       this.imgArray.splice(this.imgArray.length - 1, 1);
-      //console.log(this.imgArray);
+
       if(this.moduleId === "img_clssfctn_ud")
       {
         Shiny.onInputChange("img_clssfctn_ud_btch_tckr",

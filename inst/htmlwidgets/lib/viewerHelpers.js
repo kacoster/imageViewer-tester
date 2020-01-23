@@ -7,6 +7,7 @@ function fetchServerData(csvfile,moduleId)
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_10"){setValidationArray(loadFile(csvfile),10)}
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_11"){setValidationArray(loadFile(csvfile),11)}
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_12"){setValidationArray(loadFile(csvfile),12)}
+    if(moduleId === "idntfcntprmry"){ setIdentificationArray(loadFile(csvfile))}
 }
 
 function loadFile(filename) {
@@ -24,11 +25,14 @@ function loadFile(filename) {
 
   function observeClick(event)
   {
-    mapObject(event);
+    let id = event.target.id;
+    //let moduleId = id.substr(id.indexOf("ct"), id.length);
+    if(id.includes("ct_vldt_img_trggr_tbl_vldtn")){ mapValidationObject(event);}
+    if(id.includes("idntfcnt")){mapIdentificationObject(event)}
   }
   
   function clcsfcnSave()
   {
-      console.log("In clcsfcnSave()");
-      saveButtonListerner();
+    console.log("In clcsfcnSave()");
+    saveButtonListerner();
   }

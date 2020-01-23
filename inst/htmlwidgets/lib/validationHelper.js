@@ -4,19 +4,19 @@
   var ct_vldt_img_trggr_tbl_vldtn_12 = new ViewerComponent(0,30,5,"ct_vldt_img_trggr_tbl_vldtn_12","ct_vldt_img_trggr_tbl_vldtn_12.csv");
   
   
-  function mapObject(event)
+  function mapValidationObject(event)
   {
-    console.log("event.target.id  : " + event.target.id );
+    //console.log("event.target.id  : " + event.target.id );
     let id =  event.target.id;
     let moduleId = id.substr(id.indexOf("ct"), id.length);
     console.log("moduleId : " + moduleId );
-    if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_9" ){ viewImages(ct_vldt_img_trggr_tbl_vldtn_9)}
-    if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_10"){ viewImages(ct_vldt_img_trggr_tbl_vldtn_10)}
-    if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_11"){ viewImages(ct_vldt_img_trggr_tbl_vldtn_11)}
-    if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_12"){ viewImages(ct_vldt_img_trggr_tbl_vldtn_12)}
+    if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_9" ){ viewValidationImages(ct_vldt_img_trggr_tbl_vldtn_9)}
+    if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_10"){ viewValidationImages(ct_vldt_img_trggr_tbl_vldtn_10)}
+    if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_11"){ viewValidationImages(ct_vldt_img_trggr_tbl_vldtn_11)}
+    if(moduleId == "ct_vldt_img_trggr_tbl_vldtn_12"){ viewValidationImages(ct_vldt_img_trggr_tbl_vldtn_12)}
   }
 
-  function viewImages(object){
+  function viewValidationImages(object){
     object.columnSize = 5;
     object.imgNumb = 30;
     object.setCol();
