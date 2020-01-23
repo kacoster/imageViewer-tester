@@ -1,6 +1,7 @@
 
 function fetchServerData(csvfile,moduleId)
 {
+  console.log("fetchServerData");
     
     if(moduleId === "img_clssfctn_ud"){setImageArray(loadFile(csvfile));}
     if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_9") {setValidationArray(loadFile(csvfile),9)}
@@ -25,6 +26,7 @@ function loadFile(filename) {
 
   function observeClick(event)
   {
+    console.log("observeClick");
     let id = event.target.id;
     //let moduleId = id.substr(id.indexOf("ct"), id.length);
     if(id.includes("ct_vldt_img_trggr_tbl_vldtn")){ mapValidationObject(event);}
