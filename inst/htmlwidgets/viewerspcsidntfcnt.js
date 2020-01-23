@@ -12,6 +12,8 @@ HTMLWidgets.widget({
 
       renderValue: function(x) {
 
+        console.log("case identification module ");
+
         // TODO: code to render the widget, e.g.
         Shiny.addCustomMessageHandler("spcs_idntfctn_extrt_id_button_rf_1",
           function(msg) {
