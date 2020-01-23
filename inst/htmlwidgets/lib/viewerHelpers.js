@@ -30,7 +30,7 @@ function loadFile(filename) {
     let id = event.target.id;
     //let moduleId = id.substr(id.indexOf("ct"), id.length);
     if(id.includes("ct_vldt_img_trggr_tbl_vldtn")){ mapValidationObject(event);}
-    if(id.includes("idntfcnt")){mapIdentificationObject(event)}
+    if(id.includes("idntfcnt")){ mapIdentificationObject(event);}
   }
   
   function clcsfcnSave()

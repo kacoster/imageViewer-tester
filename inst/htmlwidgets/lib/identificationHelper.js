@@ -1,4 +1,5 @@
-var idntfcntprmry = new ViewerComponent(0,15,3,"idntfcntprmry","idntfcntprmry.csv")
+//var idntfcntprmry = new ViewerComponent(0,15,3,"idntfcntprmry","idntfcntprmry.csv")
+var idntfcntprmry  = new ViewerComponent(0,30,5,"idntfcntprmry","img_clssfctn_ud.csv");
 
 console.log("identificationHelper.js");
 
