@@ -8,7 +8,7 @@ function setIdentificationArray(resp)
     idntfcntprmry.readServerData(resp);
 }
 
-mapIdentificationObject(event)
+function mapIdentificationObject(event)
 {
     console.log("mapIdentificationObject");
     let id =  event.target.id;
