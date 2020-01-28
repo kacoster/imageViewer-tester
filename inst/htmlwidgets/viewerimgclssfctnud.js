@@ -14,12 +14,12 @@ HTMLWidgets.widget({
 
       renderValue: function(x) {
 
-       console.log("case classification module ");
+       console.log("case classification module");
 
            //readServerData(x.message);
            Shiny.addCustomMessageHandler("img_clssfctn_ud_batch_image_size",
               function(message) {
-                //console.log("img_clssfctn_ud_batch_image_size");
+                console.log("img_clssfctn_ud_batch_image_size");
                 setImagesNumber(parseInt(JSON.stringify(message)));
                 //console.log("Handler img_clssfctn_ud_batch_image_size " + parseInt(JSON.stringify(message)));
                  //readServerData(x.message);
@@ -35,7 +35,7 @@ HTMLWidgets.widget({
 
             Shiny.addCustomMessageHandler("img_clssfctn_ud_fltr_button",
                 function(mesg) {
-                  //console.log("Handler img_clssfctn_ud_fltr_button");
+                  console.log("Handler img_clssfctn_ud_fltr_button");
                   nextPrevClicked("1");
                   fetchServerData(x.message,x.componentID);
                   resetProps()();
