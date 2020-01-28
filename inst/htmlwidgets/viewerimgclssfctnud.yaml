@@ -7,18 +7,14 @@ dependencies:
   version: 1.7.0
   src: htmlwidgets
   script: ./lib/viewerHelpers.js
-- name: viewerObjects
-  version: 1.0.0
-  src: htmlwidgets
-  script: ./viewerObjects.js
 - name: viewerComponent
   version: 1.7.0
   src: htmlwidgets
   script: ./lib/viewerComponent.js
-- name: classificationHelper
+- name: imgClassification
   version: 0.0.1
   src: htmlwidgets
-  script: ./lib/classificationHelper.js
+  script: ./lib/imgClassification.js
 - name: jquery
   version: 0.4.10
   src: htmlwidgets
