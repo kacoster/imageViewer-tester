@@ -1,29 +1,14 @@
 
-/***************************************************************************
- *    @version Viewer.js v1.3.5
- *    @author Valentine Tawira
- *    @Copyright (C) 2019 | Panthera Corporation
- ****************************************************************************/
 function fetchServerData(csvfile,moduleId)
 {
+  console.log("fetchServerData");
     
-    if(moduleId === "img_clssfctn_ud")
-    {
-        setImageArray(loadFile(csvfile));
-    }
-    if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_9"){
-        //console.log("fetchserverdata : ct_vldt_img_trggr_tbl_vldtn_9")
-        prepArray(loadFile(csvfile));
-    }
-    if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_10"){
-        prepArrayvldtn_10(loadFile(csvfile));
-    }
-    if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_11"){
-        prepArrayvldtn_11(loadFile(csvfile));
-    }
-    if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_12"){
-        prepArrayvldtn_12(loadFile(csvfile));
-    }
+    if(moduleId === "img_clssfctn_ud"){setImageArray(loadFile(csvfile));}
+    if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_9") {setValidationArray(loadFile(csvfile),9)}
+    if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_10"){setValidationArray(loadFile(csvfile),10)}
+    if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_11"){setValidationArray(loadFile(csvfile),11)}
+    if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_12"){setValidationArray(loadFile(csvfile),12)}
+    if(moduleId === "idntfcntprmry"){ setIdentificationArray(loadFile(csvfile))}
 }
 
 function loadFile(filename) {
@@ -41,29 +26,15 @@ function loadFile(filename) {
 
   function observeClick(event)
   {
-    console.log("Type of : " + event.target.id);
-    let targetId = event.target.id;
-    let moduleId = targetId.substring(targetId.indexOf("_")+1);
-    if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_9")
-    {
-        getEvent(event); 
-    }
-    if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_10")
-    {
-        ct_vldt10_event(event);
-    }
-    if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_11")
-    {
-        ct_vldt11_event(event); 
-    }
-    if(moduleId === "ct_vldt_img_trggr_tbl_vldtn_12")
-    {
-        ct_vldt12_event(event);
-    }
+    console.log("observeClick");
+    let id = event.target.id;
+    //let moduleId = id.substr(id.indexOf("ct"), id.length);
+    if(id.includes("ct_vldt_img_trggr_tbl_vldtn")){ mapValidationObject(event);}
+    if(id.includes("idntfcnt")){ mapIdentificationObject(event);}
   }
   
-    function clcsfcnSave()
-    {
-        console.log("In clcsfcnSave()");
-        saveButtonListerner();
-    }
+  function clcsfcnSave()
+  {
+    console.log("In clcsfcnSave()");
+    saveButtonListerner();
+  }

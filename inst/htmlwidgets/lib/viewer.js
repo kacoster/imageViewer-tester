@@ -1,9 +1,8 @@
-
-/***************************************************************************
- *    @version Viewer.js v1.3.5
- *    @author Valentine Tawira
- *    @Copyright (C) 2019 | Panthera Corporation
- ****************************************************************************/
+   /***************************************************************************
+      @version Viewer.js v1.3.5
+      @author Valentine Tawira
+      @Copyright (C) 2019 | Panthera Corporation
+     ***************************************************************************/
 
     var whichViewer ;
     var nextPrev = "0";
@@ -1860,14 +1859,13 @@
           var item = this.items[index];
           var img = item.querySelector('img');
           var url = getData(img, 'originalUrl');
-          //var placeHolderImage = 'http://localhost/srv/shiny-server/www/PantheraIDS_image_not_found_2.jpg';
           var alt = escapeHTMLEntities(img.getAttribute('alt'));
           var image = document.createElement('img');
           image.src = url;
           image.alt = alt;
 
-
           console.log("Image URL : " + image.src);
+
 
           if( whichViewer === "imgClassification")
           {
