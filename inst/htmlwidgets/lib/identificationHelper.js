@@ -1,4 +1,4 @@
-var idntfcntprmry = new ViewerComponent(0,15,3,"idntfcntprmry","idntfcntprmry.csv")
+var idntfcntprmry = new ViewerComponent(0,15,5,"idntfcntprmry","idntfcntprmry.csv")
 
 
 function setIdentificationArray(response)
