@@ -6,7 +6,7 @@ function setIdentificationArray(response)
     idntfcntprmry.readServerData(response);
 }
 
-mapIdentificationObject(event)
+function mapIdentificationObject(event)
 {
     let id =  event.target.id;
     let moduleId = id.substr(id.indexOf("idntf"), id.length);
