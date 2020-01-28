@@ -316,7 +316,6 @@
         */
         imgloop(ar)
         {
-
             console.log("In imgloop");
             for (i = 0; i < ar.length; i++) {
             var liId = i;
