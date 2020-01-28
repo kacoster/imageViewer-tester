@@ -1,8 +1,8 @@
 dependencies:
-- name: viewer_idntfcnt_prmry_imgs
+- name: viewer_spcs_idntfctn
   version: 1.7.0
   src: htmlwidgets
-  script: ./lib/viewer_idntfcnt_prmry_imgs.js
+  script: ./lib/viewer_spcs_idntfctn.js
 - name: viewerHelpers
   version: 1.7.0
   src: htmlwidgets
