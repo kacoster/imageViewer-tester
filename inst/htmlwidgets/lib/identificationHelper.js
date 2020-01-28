@@ -8,7 +8,6 @@ function setIdentificationArray(resp)
     console.log("setIdentificationArray")
     idntfcntprmry.readServerData(resp);
 }
-
 function mapIdentificationObject(event)
 {
     console.log("mapIdentificationObject");
