@@ -14,7 +14,7 @@
 
      //var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud");
      //var imgClssfctnObj = new ViewerComponent(0,50,5,"img_clssfctn_ud");
-     console.log("classificationHelper.js");
+     
      $(document).ready(function () {
     
         $("#apply").on("click", function () {
@@ -25,6 +25,11 @@
         $("#selectAll").on("click", function () {
           Shiny.onInputChange("sources", imgClssfctnObj.selectAll());
 
+        });
+
+        $("#img_clssfctn_ud_slct_all_button").on("click", function () {
+          console.log("clicked selectAll");
+          Shiny.onInputChange("sources", imgClssfctnObj.selectAll(imgClssfctnObj));
         });
 
         $("#deSelectAll").on("click", function () {
@@ -54,11 +59,7 @@
   */
   function isKeyPressed(event,id) {
 
-        //console.log("isKeyPressed(event)");
-        //console.log("event.target.src : " + event.target.src);
-
         arrayClone(imgClssfctnObj.selected_images);
-
         if (event.shiftKey) {
           
           if(imgClssfctnObj.selected_images.includes(event.target.src))
@@ -66,11 +67,11 @@
             selectionFind(true);
           }
           imgClssfctnObj.handleExistance(imgClssfctnObj.selected_images, event.target.src, event.target.id);
+
         } else {
           objectOf("imgClassification");
           imgClssfctnObj.callvjs(imgClssfctnObj.moduleId+"_divId");
         }
-      
   }
 
   function resetProps()
@@ -144,3 +145,10 @@
   function clearImages() {
     $("#img_clssfctn_ud").html("");
   }
+
+
+  
+
+
+
+
